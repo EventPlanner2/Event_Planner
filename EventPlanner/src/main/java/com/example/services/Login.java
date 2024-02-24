@@ -7,7 +7,7 @@ import java.util.List;
 
 public class Login {
 
-    private List<User> users;
+    private final List<User> users;
 
     public String errorMessage;
     public Login(List<User> users)

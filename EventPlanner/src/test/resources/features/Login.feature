@@ -1,5 +1,5 @@
 Feature: Login
-
+  
   Background:
     Given the user has not logged in yet
   Scenario: Successful login

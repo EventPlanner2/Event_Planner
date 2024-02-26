@@ -1,7 +1,5 @@
 Feature: SignUp
 
-
-
   Scenario Outline: User SignUp
     Given the user is on the SignUp page
     When the user provides available username "Amr"

@@ -28,6 +28,15 @@ public class App {
     }
 
 
+    public String logoutPerform(){
+        if(loggedInUser != null) {
+            loggedInUser = null;
+            return "Successful Logout";
+        }
+        else {
+            return "Failed Logout";
+        }
+    }
 
 
 

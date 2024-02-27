@@ -33,10 +33,7 @@ public class Login {
 
         setErrorMessage("Login Failed");
         return null;
-
     }
-
-
 
     private void setErrorMessage(String errorMessage) {
         this.errorMessage = errorMessage;

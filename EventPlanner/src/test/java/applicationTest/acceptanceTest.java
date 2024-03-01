@@ -7,7 +7,7 @@ import org.junit.runner.RunWith;
 @RunWith(Cucumber.class)
 
 @CucumberOptions(features = "src/test/resources",
-        plugin = {"html:target/cucumber/wikipedia.html"},
+        plugin = {"summary" ,"html:target/cucumber/wikipedia.html"},
         monochrome=true,
         snippets = CucumberOptions.SnippetType.CAMELCASE,
         glue = {"applicationTest/steps"}

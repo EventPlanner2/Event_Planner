@@ -29,6 +29,7 @@ public class loginSteps {
     }
     @When("the user logs in with valid credentials")
     public void the_user_logs_in_with_valid_credentials() {
+
         app.loggedInUser = app.loginService.LoginPerformed(username,password);
     }
     @Then("the user should be logged in successfully")

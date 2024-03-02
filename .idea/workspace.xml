@@ -4,28 +4,45 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="9fc2b4a3-4e80-4dc3-b513-a55cbae36512" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/.idea/compiler.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/encodings.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/jarRepositories.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/.gitignore" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
-    </list>
+    <list default="true" id="9fc2b4a3-4e80-4dc3-b513-a55cbae36512" name="Changes" comment="ali turabi ,added feature : add event" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
     <option name="LAST_RESOLUTION" value="IGNORE" />
   </component>
   <component name="Git.Settings">
+    <option name="RECENT_BRANCH_BY_REPOSITORY">
+      <map>
+        <entry key="$PROJECT_DIR$" value="main" />
+      </map>
+    </option>
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+  </component>
+  <component name="GitHubPullRequestSearchHistory"><![CDATA[{
+  "lastFilter": {
+  }
+}]]></component>
+  <component name="GithubPullRequestsUISettings">
+    <option name="recentNewPullRequestHead">
+      <RepoCoordinatesHolder>
+        <option name="owner" value="amrbadran" />
+        <option name="repository" value="Event_Planner" />
+      </RepoCoordinatesHolder>
+    </option>
+    <option name="selectedUrlAndAccountId">
+      <UrlAndAccount>
+        <option name="accountId" value="173943d4-0144-4ac6-bcb2-ebd213d9966a" />
+        <option name="url" value="https://github.com/amrbadran/Event_Planner.git" />
+      </UrlAndAccount>
+    </option>
   </component>
   <component name="MarkdownSettingsMigration">
     <option name="stateVersion" value="1" />
   </component>
-  <component name="ProjectColorInfo"><![CDATA[{
-  "customColor": "",
-  "associatedIndex": 4
-}]]></component>
+  <component name="ProjectColorInfo">{
+  &quot;customColor&quot;: &quot;&quot;,
+  &quot;associatedIndex&quot;: 4
+}</component>
   <component name="ProjectId" id="2d8eKep6lAMukfLULPASRlaBWFy" />
   <component name="ProjectViewState">
     <option name="hideEmptyMiddlePackages" value="true" />
@@ -33,10 +50,11 @@
   </component>
   <component name="PropertiesComponent"><![CDATA[{
   "keyToString": {
+    "JUnit.acceptanceTest.executor": "Coverage",
     "RunOnceActivity.OpenProjectViewOnStart": "true",
     "RunOnceActivity.ShowReadmeOnStart": "true",
     "SHARE_PROJECT_CONFIGURATION_FILES": "true",
-    "git-widget-placeholder": "main",
+    "git-widget-placeholder": "Main__addfeature",
     "last_opened_file_path": "C:/SoftwareProject/Event_Planner",
     "project.structure.last.edited": "Modules",
     "project.structure.proportion": "0.0",
@@ -62,6 +80,10 @@
     <recent_temporary>
       <list>
         <item itemvalue="JUnit.acceptanceTest" />
+        <item itemvalue="JUnit.acceptanceTest" />
+        <item itemvalue="JUnit.acceptanceTest" />
+        <item itemvalue="JUnit.acceptanceTest" />
+        <item itemvalue="JUnit.acceptanceTest" />
       </list>
     </recent_temporary>
   </component>
@@ -74,6 +96,51 @@
       <option name="presentableId" value="Default" />
       <updated>1709394069522</updated>
     </task>
+    <task id="LOCAL-00001" summary="ali turabi ,added feature : add event">
+      <option name="closed" value="true" />
+      <created>1709401701193</created>
+      <option name="number" value="00001" />
+      <option name="presentableId" value="LOCAL-00001" />
+      <option name="project" value="LOCAL" />
+      <updated>1709401701193</updated>
+    </task>
+    <task id="LOCAL-00002" summary="ali turabi ,added feature : add event">
+      <option name="closed" value="true" />
+      <created>1709401781953</created>
+      <option name="number" value="00002" />
+      <option name="presentableId" value="LOCAL-00002" />
+      <option name="project" value="LOCAL" />
+      <updated>1709401781953</updated>
+    </task>
+    <task id="LOCAL-00003" summary="ali turabi ,added feature : add event">
+      <option name="closed" value="true" />
+      <created>1709402150891</created>
+      <option name="number" value="00003" />
+      <option name="presentableId" value="LOCAL-00003" />
+      <option name="project" value="LOCAL" />
+      <updated>1709402150891</updated>
+    </task>
+    <task id="LOCAL-00004" summary="ali turabi ,added feature : add event">
+      <option name="closed" value="true" />
+      <created>1709402486173</created>
+      <option name="number" value="00004" />
+      <option name="presentableId" value="LOCAL-00004" />
+      <option name="project" value="LOCAL" />
+      <updated>1709402486173</updated>
+    </task>
+    <task id="LOCAL-00005" summary="ali turabi ,added feature : add event">
+      <option name="closed" value="true" />
+      <created>1709402668061</created>
+      <option name="number" value="00005" />
+      <option name="presentableId" value="LOCAL-00005" />
+      <option name="project" value="LOCAL" />
+      <updated>1709402668061</updated>
+    </task>
+    <option name="localTasksCounter" value="6" />
     <servers />
+  </component>
+  <component name="VcsManagerConfiguration">
+    <MESSAGE value="ali turabi ,added feature : add event" />
+    <option name="LAST_COMMIT_MESSAGE" value="ali turabi ,added feature : add event" />
   </component>
 </project>

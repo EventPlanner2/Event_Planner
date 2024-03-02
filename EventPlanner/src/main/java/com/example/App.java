@@ -19,6 +19,7 @@ public class App {
     public String currentPage;
     public SignUp signUpService;
     public AddRoom addRoomService;
+    public SPAcc SPAccount;
 
 
     public App()
@@ -33,6 +34,8 @@ public class App {
         RoomData rd = new RoomData();
         rooms = rd.getRooms();
         addRoomService = new AddRoom(rooms);
+        SPAccount = new SPAcc();
+        loginService.setSPAccObj(SPAccount);
     }
 
 

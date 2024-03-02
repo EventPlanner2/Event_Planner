@@ -24,8 +24,6 @@ Feature: UpgradeClient
     When the user selects Upgrade your account from the menu
     Then the system should prompt the user to log in first "You need to login first"
 
-
-
   Scenario Outline: User tries to upgrade from an invalid state
     Given the user is logged in as a <state> with <role> with <username> with <password>
     When the user selects Upgrade your account from the menu

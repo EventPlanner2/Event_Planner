@@ -20,6 +20,7 @@ public class App {
     public SignUp signUpService;
     public AddRoom addRoomService;
     public SPAcc SPAccount;
+    public SearchServiceProvider SearchSP;
 
 
     public App()
@@ -36,6 +37,7 @@ public class App {
         addRoomService = new AddRoom(rooms);
         SPAccount = new SPAcc();
         loginService.setSPAccObj(SPAccount);
+        SearchSP = new SearchServiceProvider();
     }
 
 

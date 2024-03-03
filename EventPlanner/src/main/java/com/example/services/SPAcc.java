@@ -33,13 +33,13 @@ public class SPAcc {
     }
 
 
-    private boolean findLocation(String Location){
+    protected boolean findLocation(String Location){
         for(String s : AcceptedLocations){
             if(s.equals(Location)) return true;
         }
         return false;
     }
-    private boolean findType(String Type){
+    protected boolean findType(String Type){
         for(String s : AcceptedTypes){
             if(s.equals(Type)) return true;
         }

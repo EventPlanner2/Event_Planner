@@ -13,6 +13,9 @@ public class ServiceProvider extends User{
     public ServiceProvider(String username, String password, String contactEmail, Character role) {
         super(username, password, contactEmail, role);
         firstLogin = true;
+        type = "";
+        Location = "";
+        price = 0;
     }
 
     public static ServiceProvider getSPFromData(String username){

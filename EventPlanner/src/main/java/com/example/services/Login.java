@@ -25,8 +25,6 @@ public class Login {
 
     public User LoginPerformed(String username , String password)
     {
-
-
         if(username.isEmpty() || password.isEmpty()) {
             setErrorMessage("Login Failed");
             return null;

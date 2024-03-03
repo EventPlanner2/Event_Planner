@@ -25,7 +25,6 @@ public class App {
 
     public App()
     {
-
         UserData ud = new UserData();
         users=ud.getUsers();
         loginService = new Login(users);

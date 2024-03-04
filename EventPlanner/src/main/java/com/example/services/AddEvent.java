@@ -152,18 +152,29 @@ private String username;
                 return false;
             }
         }
+
+        setMsg("Every values is valid");
+return true;
+
+    }
+    public boolean Addevent(String username,int eventId ,String name, String description, String startDate, String endDate,
+                            String startClock, String endClock, String attendeeCount, String imagePath) {
+       if(AddEventPerformed(username, eventId , name, description, startDate, endDate,
+                startClock, endClock, attendeeCount, imagePath)==false){
+
+           msg="";
+           setMsg("The Event can't be created");
+           return false;
+       }
         Event event = new Event(username, eventId, name, description, LocalDate.parse(startDate),
                 LocalDate.parse(endDate), LocalTime.parse(startClock), LocalTime.parse(endClock),
                 Integer.parseInt(attendeeCount));
         event.setPathImage(imagePath);
+       msg="";
         setMsg("The Event is created ");
         EventData.addEvent(event);
-return true;
-
+        return true;
     }
-
-
-
 
 
 

@@ -11,13 +11,13 @@ Feature: Create incomplete  Event by organizer
       |username         |Ali Turabi                       |
       | event ID        | 1                               |
       | Name           | Ali Turabi's Event               |
-      | Description    | cars event                       |
+      | Description    | cars event and explination about many thing about cars in generally                      |
       | Start Date     | 2024-03-15                       |
       | End Date       | 2024-03-15                       |
       | Start Clock    | 19:00                            |
       | End Clock      | 23:00                            |
       | Attendee Count | 50                               |
-      | image_path       | string                         |
+      | image_path       | C:\Users\USER-M\Downloads\sm20121213_120309-IMG_2953.jpg                       |
     Then the event should be successfully added
 
   Scenario: Successfully Create second incomplete Event with same organizer
@@ -27,13 +27,13 @@ Feature: Create incomplete  Event by organizer
       |username         |Ali Turabi                       |
       | event ID        | 2                               |
       | Name           | Ali Turabi's Event   |
-      | Description    | mpower bmw verssion    |
+      | Description    | cars event and explination about many thing about cars in generally   |
       | Start Date     | 2025-06-20                      |
       | End Date       | 2025-06-20                      |
       | Start Clock    | 8:00                           |
       | End Clock      | 9:00                           |
       | Attendee Count | 100                             |
-     | image_path       | string                        |
+     | image_path       | C:\Users\USER-M\Downloads\sm20121213_120309-IMG_2953.jpg                           |
 
     Then the event should be successfully added
 
@@ -45,13 +45,13 @@ Feature: Create incomplete  Event by organizer
       |username         |Ali Turabi                       |
       | event ID        | 3                               |
       | Name           | Ali Turabi's Event   |
-      | Description    | mpower bmw verssion    |
+      | Description    | cars event and explination about many thing about cars in generally   |
       | Start Date     | 2025-06-20                      |
       | End Date       | 2025-06-20                      |
       | Start Clock    | 10:00                           |
       | End Clock      | 11:00                           |
       | Attendee Count | 100                             |
-      | image_path       | string                        |
+      | image_path       | C:\Users\USER-M\Downloads\sm20121213_120309-IMG_2953.jpg                           |
     Then the event should be successfully added
 
   Scenario: UnSuccessfully Create fourth Event  for same organizer

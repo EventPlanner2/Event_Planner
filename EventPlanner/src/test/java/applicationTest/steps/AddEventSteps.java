@@ -5,6 +5,8 @@ import io.cucumber.java.en.Given;
 import io.cucumber.java.en.Then;
 import io.cucumber.java.en.When;
 
+import static org.junit.Assert.*;
+
 public class AddEventSteps {
     private App app;
     private String username;
@@ -43,110 +45,142 @@ public class AddEventSteps {
 
     @Given("the user is logged in with their account")
     public void theUserIsLoggedInWithTheirAccount() {
-        // Write code here that turns the phrase above into concrete actions
-        throw new io.cucumber.java.PendingException();
+        assertNotNull(app.loggedInUser);
     }
 
     @Given("the user is organizer")
     public void theUserIsOrganizer() {
-        // Write code here that turns the phrase above into concrete actions
-        throw new io.cucumber.java.PendingException();
+        assertTrue(app.isOrgnizer(app.loggedInUser.getUsername()));
     }
 
     @Given("the organizer wants to add a new event")
     public void theOrganizerWantsToAddANewEvent() {
-        // Write code here that turns the phrase above into concrete actions
-        throw new io.cucumber.java.PendingException();
+        username = "Ali Turabi";
+        eventId = 1;
+        name = "Ali Turabi's Event";
+        description = "cars event and explination about many thing about cars in generally";
+        startDate = "2024-03-15";
+        endDate = "2024-03-15";
+        startClock = "19:00";
+        endClock = "23:00";
+        attendeeCount = "50";
+        imagePath = "C:/Users/USER-M/Downloads/sm20121213_120309-IMG_2953.jpg";
+
     }
 
-    @Given("orginzer created less than {int} events")
+    @Given("orginzer created less than 4 events")
     public void orginzerCreatedLessThanEvents(Integer int1) {
-        // Write code here that turns the phrase above into concrete actions
-        throw new io.cucumber.java.PendingException();
+        assertTrue(app.addEventService.AddEventPerformed(username, eventId , name, description, startDate, endDate,
+                startClock, endClock, attendeeCount, imagePath));
     }
 
     @When("the organizer provides valid event details including:")
     public void theOrganizerProvidesValidEventDetailsIncluding(io.cucumber.datatable.DataTable dataTable) {
-        // Write code here that turns the phrase above into concrete actions
-        // For automatic transformation, change DataTable to one of
-        // E, List<E>, List<List<E>>, List<Map<K,V>>, Map<K,V> or
-        // Map<K, List<V>>. E,K,V must be a String, Integer, Float,
-        // Double, Byte, Short, Long, BigInteger or BigDecimal.
-        //
-        // For other transformations you can register a DataTableType.
-        throw new io.cucumber.java.PendingException();
+        assertTrue(app.addEventService.AddEventPerformed(username, eventId , name, description, startDate, endDate,
+                startClock, endClock, attendeeCount, imagePath));
     }
 
     @Then("the event should be successfully added")
     public void theEventShouldBeSuccessfullyAdded() {
-        // Write code here that turns the phrase above into concrete actions
-        throw new io.cucumber.java.PendingException();
+        assertTrue(app.addEventService.AddEventPerformed(username, eventId , name, description, startDate, endDate,
+                startClock, endClock, attendeeCount, imagePath));
     }
 
     @Given("the organizer wants to add another new event")
     public void theOrganizerWantsToAddAnotherNewEvent() {
-        // Write code here that turns the phrase above into concrete actions
-        throw new io.cucumber.java.PendingException();
+        username = "Ali Turabi";
+        eventId =2;
+        name = "Ali Turabi's Event";
+        description = "cars event and explination about many thing about cars in generally";
+        startDate = "2024-03-15";
+        endDate = "2024-03-15";
+        startClock = "19:00";
+        endClock = "23:00";
+        attendeeCount = "50";
+        imagePath = "C:/Users/USER-M/Downloads/sm20121213_120309-IMG_2953.jpg";
     }
 
     @Given("the organizer wants to add the fourth  new event")
     public void theOrganizerWantsToAddTheFourthNewEvent() {
-        // Write code here that turns the phrase above into concrete actions
-        throw new io.cucumber.java.PendingException();
+        username = "Ali Turabi";
+        eventId =4;
+        name = "Ali Turabi's Event";
+        description = "cars event and explination about many thing about cars in generally";
+        startDate = "2024-03-15";
+        endDate = "2024-03-15";
+        startClock = "19:00";
+        endClock = "23:00";
+        attendeeCount = "50";
+        imagePath = "C:/Users/USER-M/Downloads/sm20121213_120309-IMG_2953.jpg";
     }
 
-    @When("the user already created {int} events")
+    @When("the user already created 4 events")
     public void theUserAlreadyCreatedEvents(Integer int1) {
-        // Write code here that turns the phrase above into concrete actions
-        throw new io.cucumber.java.PendingException();
+        app.addEventService.AddEventPerformed(username, eventId , name, description, startDate, endDate,
+                startClock, endClock, attendeeCount, imagePath);
+        assertEquals("The organizer already created 3 events",app.addEventService.getMsg());
     }
 
     @Then("the event should be not added")
     public void theEventShouldBeNotAdded() {
-        // Write code here that turns the phrase above into concrete actions
-        throw new io.cucumber.java.PendingException();
+        app.addEventService.Addevent(username, eventId , name, description, startDate, endDate,
+                startClock, endClock, attendeeCount, imagePath);
+        assertEquals("The Event can't be created",app.addEventService.getMsg());
     }
 
     @Given("the user wants to create a new event")
     public void theUserWantsToCreateANewEvent() {
-        // Write code here that turns the phrase above into concrete actions
-        throw new io.cucumber.java.PendingException();
+        username = "Ali Turabi";
+        eventId =4;
+        name = "";
+        description = "cars event and explination about many thing about cars in generally";
+        startDate = "2024-03-15";
+        endDate = "2024-03-15";
+        startClock = "19:00";
+        endClock = "23:00";
+        attendeeCount = "50";
+        imagePath = "C:/Users/USER-M/Downloads/sm20121213_120309-IMG_2953.jpg";
     }
 
     @When("the user provides event details with missing name ID")
     public void theUserProvidesEventDetailsWithMissingNameID() {
-        // Write code here that turns the phrase above into concrete actions
-        throw new io.cucumber.java.PendingException();
+        app.addEventService.AddEventPerformed(username, eventId , name, description, startDate, endDate,
+                startClock, endClock, attendeeCount, imagePath);
+
     }
 
     @Then("the user should see an error message indicating {string}")
     public void theUserShouldSeeAnErrorMessageIndicating(String string) {
-        // Write code here that turns the phrase above into concrete actions
-        throw new io.cucumber.java.PendingException();
+        assertEquals("Missing name ID",app.addEventService.getMsg());
     }
 
     @When("the user provides event details with invalid name ID")
     public void theUserProvidesEventDetailsWithInvalidNameID() {
-        // Write code here that turns the phrase above into concrete actions
-        throw new io.cucumber.java.PendingException();
+        app.addEventService.AddEventPerformed(username, eventId , name, description, startDate, endDate,
+                startClock, endClock, attendeeCount, imagePath);
+        assertEquals("The name of Event must be at least 3 characters long",app.addEventService.getMsg());
     }
 
     @When("the user provides event details with missing username")
     public void theUserProvidesEventDetailsWithMissingUsername() {
-        // Write code here that turns the phrase above into concrete actions
-        throw new io.cucumber.java.PendingException();
+        app.addEventService.AddEventPerformed(username, eventId , name, description, startDate, endDate,
+                startClock, endClock, attendeeCount, imagePath);
+        assertEquals("Missing username",app.addEventService.getMsg());
     }
 
     @When("the user provides event details with invalid username")
     public void theUserProvidesEventDetailsWithInvalidUsername() {
-        // Write code here that turns the phrase above into concrete actions
-        throw new io.cucumber.java.PendingException();
+        app.addEventService.AddEventPerformed(username, eventId , name, description, startDate, endDate,
+                startClock, endClock, attendeeCount, imagePath);
+        assertEquals("The user is not an orgnizer",app.addEventService.getMsg());
+
     }
 
     @When("the user provides event details with missing name")
     public void theUserProvidesEventDetailsWithMissingName() {
-        // Write code here that turns the phrase above into concrete actions
-        throw new io.cucumber.java.PendingException();
+        app.addEventService.AddEventPerformed(username, eventId , name, description, startDate, endDate,
+                startClock, endClock, attendeeCount, imagePath);
+        assertEquals("The user is not an orgnizer",app.addEventService.getMsg());
     }
 
     @When("the user provides event details with invalid name")

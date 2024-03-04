@@ -51,14 +51,14 @@ public AddEvent addEventService;
         }
     }
 
-//    public boolean isOrgnizer(String user)
-//    {
-//
-//        Client c=Client.getClientFromData(user);
-//        if(c==null)
-//            return false;
-//        else return true;
-//    }
+   public boolean isOrgnizer(String user)
+   {
+
+       Client c=Client.getClientFromData(user);
+       if(c==null)
+           return false;
+       else return true;
+   }
 
 //public boolean canAddEvent(Client c){
 //        if (c.getNumberEvent()>=4)

@@ -70,4 +70,7 @@ public class SignUp {
     private void setMsg(String msg) {
         this.msg = msg;
     }
+
+
+
 }

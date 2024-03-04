@@ -7,10 +7,11 @@ import java.util.List;
 public class Client extends User{
 
     private boolean isOrganizer;
-
+    int numberEvent;
     public Client(String username, String password, String contactEmail, Character role,boolean isOrganizer) {
         super(username, password, contactEmail, role);
         this.isOrganizer = isOrganizer;
+        numberEvent=0;
     }
 
     public boolean isOrganizer() {
@@ -28,5 +29,13 @@ public class Client extends User{
         }
 
         return null;
+    }
+    public int getNumberEvent() {
+        return numberEvent;
+    }
+
+    // Setter method for numberEvent
+    public void setNumberEvent(int numberEvent) {
+        this.numberEvent = numberEvent;
     }
 }

@@ -9,11 +9,13 @@ public class User {
     private Character role;
 
 
+
     public User(String username, String password, String contactEmail, Character role) {
         this.username = username;
         this.password = password;
         this.contactEmail = contactEmail;
         this.role = role;
+
     }
 
     public String getContactEmail() {
@@ -47,4 +49,6 @@ public class User {
     public void setRole(Character role) {
         this.role = role;
     }
+
+
 }

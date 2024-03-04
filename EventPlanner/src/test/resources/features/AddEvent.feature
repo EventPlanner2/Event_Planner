@@ -6,7 +6,9 @@ Feature: Create incomplete  Event by organizer
 
   Scenario: Successfully Create incomplete Event
     Given the organizer wants to add a new event
+    And orginzer created less than 4 events
     When the organizer provides valid event details including:
+      |username         |Ali Turabi                       |
       | event ID        | 1                               |
       | Name           | Ali Turabi's Event               |
       | Description    | cars event                       |
@@ -20,7 +22,9 @@ Feature: Create incomplete  Event by organizer
 
   Scenario: Successfully Create second incomplete Event with same organizer
     Given the organizer wants to add another new event
+    And orginzer created less than 4 events
     When the organizer provides valid event details including:
+      |username         |Ali Turabi                       |
       | event ID        | 2                               |
       | Name           | Ali Turabi's Event   |
       | Description    | mpower bmw verssion    |
@@ -36,7 +40,9 @@ Feature: Create incomplete  Event by organizer
 
   Scenario: Successfully Create third incomplete Event with same organizer
     Given the organizer wants to add another new event
+    And orginzer created less than 4 events
     When the organizer provides valid event details including:
+      |username         |Ali Turabi                       |
       | event ID        | 3                               |
       | Name           | Ali Turabi's Event   |
       | Description    | mpower bmw verssion    |
@@ -50,7 +56,7 @@ Feature: Create incomplete  Event by organizer
 
   Scenario: UnSuccessfully Create fourth Event  for same organizer
     Given the organizer wants to add the fourth  new event
-    When the user have created three events befor and these events are not over
+    When the user already created 3 events
     Then the event should be not added
 
    # Missing or invalid name ID scenarios
@@ -65,16 +71,16 @@ Feature: Create incomplete  Event by organizer
     Then the user should see an error message indicating "invalid name ID"
 
 
- # Missing or invalid user ID scenarios
-  Scenario: Failed to Create Event with Missing User ID
+ # Missing or invalid username scenarios
+  Scenario: Failed to Create Event with Missing Username
     Given the user wants to create a new event
-    When the user provides event details with missing user ID
-    Then the user should see an error message indicating "missing user ID"
+    When the user provides event details with missing username
+    Then the user should see an error message indicating "missing username"
 
-  Scenario: Failed to Create Event with Invalid User ID
+  Scenario: Failed to Create Event with Invalid Username
     Given the user wants to create a new event
-    When the user provides event details with invalid user ID
-    Then the user should see an error message indicating "invalid user ID"
+    When the user provides event details with invalid username
+    Then the user should see an error message indicating "invalid username"
 
   # Missing or invalid name scenarios
   Scenario: Failed to Create Event with Missing Name

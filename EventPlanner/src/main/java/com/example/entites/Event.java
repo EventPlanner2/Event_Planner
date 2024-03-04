@@ -7,6 +7,7 @@ import java.util.ArrayList;
 
 public class Event {
 
+    String username;
     private int eventid;
     private String eventName;
     private String eventDescription;
@@ -20,8 +21,9 @@ public class Event {
     private int roomID;
     ArrayList<ServiceProvider> serviceEntity;
 
-    public Event(int id, String eventName, String eventDescription, LocalDate startDate, LocalDate endDate,
+    public Event(String username,int id, String eventName, String eventDescription, LocalDate startDate, LocalDate endDate,
                  LocalTime startClock, LocalTime endClock, int attendeeCount) {
+       this.username=username;
         this.eventid = id;
         this.eventName = eventName;
         this.eventDescription = eventDescription;
@@ -36,6 +38,14 @@ public class Event {
     }
 
     // Getters and setters
+    public String getUsername() {
+        return username;
+    }
+
+    // Setter method for username
+    public void setUsername(String username) {
+        this.username = username;
+    }
     public int getId() {
         return eventid;
     }

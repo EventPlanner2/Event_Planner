@@ -2,6 +2,7 @@ package com.example;
 
 import com.example.data.RoomData;
 import com.example.data.UserData;
+import com.example.entites.Client;
 import com.example.entites.Room;
 import com.example.entites.User;
 import com.example.services.*;
@@ -20,7 +21,7 @@ public class App {
     public SignUp signUpService;
     public AddRoom addRoomService;
     public SPAcc SPAccount;
-
+public AddEvent addEventService;
 
     public App()
     {
@@ -36,6 +37,7 @@ public class App {
         addRoomService = new AddRoom(rooms);
         SPAccount = new SPAcc();
         loginService.setSPAccObj(SPAccount);
+        addEventService=new AddEvent();
     }
 
 
@@ -49,7 +51,20 @@ public class App {
         }
     }
 
+//    public boolean isOrgnizer(String user)
+//    {
+//
+//        Client c=Client.getClientFromData(user);
+//        if(c==null)
+//            return false;
+//        else return true;
+//    }
 
-
-
+//public boolean canAddEvent(Client c){
+//        if (c.getNumberEvent()>=4)
+//            return false;
+//        else
+//            return true;
+//
+//}
 }

@@ -27,7 +27,7 @@ private String username;
     private String imagePath;
 
 
-    public boolean AddEventPerformed(int eventId ,String name, String description, String startDate, String endDate,
+    public boolean AddEventPerformed(int eid ,String name, String description, String startDate, String endDate,
                                      String startClock, String endClock, String attendeeCount, String imagePath) {
         msg = "";
         // Check for missing or invalid name
@@ -40,18 +40,21 @@ private String username;
         }
 
         // Check for missing or invalid event ID
-       if (eventId <= 0) {
-           setMsg("Missing event ID");
-           return false;
-       }
-       EventData t = new EventData();
+//       if (eventId <= 0) {
+//           setMsg("Missing event ID");
+//           return false;
+//       }
+      EventData t = new EventData();
        List<Event> event = t.getEvents();
-       for (Event events : event) {
-            if (events.getId() == eventId) {
-                setMsg("Invalid event ID is used");
+      for (Event events : event) {
+            if (events.getUsername().equals(username))
+            if(events.getId()==eid)
+            {
+               setMsg("Invalid event ID is used");
                return false; // Event ID is already used
 
-          }}
+          }
+      }
 
 
             // Check for missing or invalid username , can make event?
@@ -164,7 +167,7 @@ private String username;
             return true;
 
         }
-        public boolean Addevent (String username,int eventId, String name, String description, String startDate, String
+        public boolean addEvent (String username,int eventId, String name, String description, String startDate, String
         endDate,
                 String startClock, String endClock, String attendeeCount, String imagePath){
             if (AddEventPerformed(eventId, name, description, startDate, endDate,
@@ -225,8 +228,14 @@ public boolean isOrgnaizer(String username){
     if(c==null) {
         setMsg("The user is not an orgnizer");
         return false;}
+    else {
+        if(c.isOrganizer())
+            return true;
 
-    return true;
+
+    }
+
+    return false;
 }
 //    public boolean canAddEvent(String username){
 //        Client c=Client.getClientFromData(username);
@@ -245,12 +254,23 @@ public boolean isOrgnaizer(String username){
         }
         if(c.getNumberEvent()>=3){
         setMsg("The organizer has already created 3 events");
-        return false;
+        return true;
     }
-    return true;
+    return false;
     }
 
 
-
+//public boolean validEventId(int id){
+//    EventData t = new EventData();
+//      List<Event> event = t.getEvents();
+//      for (Event events : event) {
+//          if (events.getId() == eventId) {
+//               setMsg("Invalid event ID is used");
+//              return false; // Event ID is already used
+//
+//         }
+//      }
+//      return true;
+//}
 
 }

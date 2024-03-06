@@ -218,25 +218,20 @@ private String username;
     }
 
 
-public boolean isOrgnaizer(String username){
-//    if (username.isEmpty()) {
-//        setMsg("Missing username");
-//        return false;
-//    }
-
-    Client c=Client.getClientFromData(username);
-    if(c==null) {
-        setMsg("The user is not an orgnizer");
-        return false;}
-    else {
-        if(c.isOrganizer())
-            return true;
+    public boolean isOrgnaizer(String username){
+        Client c=Client.getClientFromData(username);
+        if(c==null) {
+            setMsg("The user is not an orgnizer");
+            return false;}
+        else {
+            if(c.isOrganizer())
+                return true;
 
 
+        }
+
+        return false;
     }
-
-    return false;
-}
 //    public boolean canAddEvent(String username){
 //        Client c=Client.getClientFromData(username);
 //        if (c.getNumberEvent() >= 3) {

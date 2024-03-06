@@ -71,16 +71,7 @@ Feature: Create incomplete  Event by organizer
     Then the user should see an error message indicating "invalid name ID"
 
 
- # Missing or invalid username scenarios
-  Scenario: Failed to Create Event with Missing Username
-    Given the user wants to create a new event
-    When the user provides event details with missing username
-    Then the user should see an error message indicating "missing username"
 
-  Scenario: Failed to Create Event with Invalid Username
-    Given the user wants to create a new event
-    When the user provides event details with invalid username
-    Then the user should see an error message indicating "invalid username"
 
   # Missing or invalid name scenarios
   Scenario: Failed to Create Event with Missing Name

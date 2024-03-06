@@ -246,17 +246,20 @@ public boolean isOrgnaizer(String username){
 //
 //        return true;
 //    }
-    public boolean canAddEvent(String username){
-        Client c=Client.getClientFromData(username);
+    public boolean canAddEvent(String userName){
+        Client c=Client.getClientFromData(userName);
         if(c==null) {
             setMsg("User DNE");
             return false;
-        }
-        if(c.getNumberEvent()>=3){
-        setMsg("The organizer has already created 3 events");
-        return true;
-    }
-    return false;
+        }else{
+           // c.setNumberEvent(0);
+if(c.getNumberEvent()==0)
+    return true;}
+//        if(c.getNumberEvent()==0){
+//        setMsg("The organizer has already created 3 events");
+//        return true;
+//    }
+   return false;
     }
 
 

@@ -50,12 +50,12 @@ public class AddEventSteps {
 
     @Given("the user is organizer")
     public void theUserIsOrganizer() {
-        assert true;// assertTrue(app.addEventService.isOrgnaizer(username));
+        assertTrue(app.addEventService.isOrgnaizer(username));
     }
 
     @Given("the organizer wants to add a new event")
     public void theOrganizerWantsToAddANewEvent() {
-        username = "";
+        username = "Ali Turabi";
         eventId = 11;
         name = "Ali Turabi's Event";
         description = "cars event and explination about many thing about cars in generally";
@@ -70,7 +70,7 @@ public class AddEventSteps {
 
     @Given("orginzer created less than {} events")
     public void orginzerCreatedLessThanEvents(Integer int1) {
-        assert true;//    assertTrue(app.addEventService.canAddEvent("Ali Turabi"));
+          assertTrue(app.addEventService.canAddEvent(username));
     }
 
     @When("the organizer provides valid event details including:")

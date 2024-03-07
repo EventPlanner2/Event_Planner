@@ -202,6 +202,31 @@ public class MainMenu {
     }
 
     public void addRoom() {
+        while (true) {
+            System.out.print("Please enter the name of the new room ");
+            String roomName = input.next();
+            System.out.print("Please enter the Capacity of the new room ");
+            String roomCapacity = input.next();
+            System.out.print("Please enter the cost per hour of the new room ");
+            String roomCost = input.next();
+            System.out.print("Please enter the description of the new room ");
+            String roomDes = input.next();
+            System.out.print("Please enter the Availability of the new room ");
+            String roomAvailability = input.next();
+            boolean flag = app.addRoomService.AddRoomPerformed(roomName, roomAvailability, roomCapacity, roomCost, roomDes);
+            if (flag) {
+                break;
+            } else {
+                System.out.println(app.addRoomService.getMsg());
+            }
+        }
+
+
+    }
+
+    public void Upgrade(){
+
+
 
     }
 
@@ -210,6 +235,7 @@ public class MainMenu {
     }
 
     public void complete() {
+
 
     }
 }

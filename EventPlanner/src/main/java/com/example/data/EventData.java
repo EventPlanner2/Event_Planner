@@ -38,7 +38,7 @@ public class EventData {
         events.add(e3);
     }
 
-    public List<Event> getEvents() {
+    public static List<Event> getEvents() {
         return events;
     }
 

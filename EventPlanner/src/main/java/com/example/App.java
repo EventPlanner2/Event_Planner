@@ -21,7 +21,7 @@ public class App {
     public SignUp signUpService;
     public AddRoom addRoomService;
     public SPAcc SPAccount;
-public AddEvent addEventService;
+    public AddEvent addEventService;
 
     public App()
     {
@@ -51,20 +51,5 @@ public AddEvent addEventService;
         }
     }
 
-   public boolean isOrgnizer(String user)
-   {
 
-       Client c=Client.getClientFromData(user);
-       if(c==null)
-           return false;
-       else return true;
-   }
-
-//public boolean canAddEvent(Client c){
-//        if (c.getNumberEvent()>=4)
-//            return false;
-//        else
-//            return true;
-//
-//}
 }

@@ -4,16 +4,10 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="b83c84ab-4b8d-45df-9a9e-d68f70b0baad" name="Changes" comment="Add Room">
+    <list default="true" id="b83c84ab-4b8d-45df-9a9e-d68f70b0baad" name="Changes" comment="Update for AddEvent Branch">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/App.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/App.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/data/EventData.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/data/EventData.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/data/UserData.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/data/UserData.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/Main.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/com/example/services/AddEvent.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/services/AddEvent.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/services/SignUp.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/services/SignUp.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/java/applicationTest/steps/AddEventSteps.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/applicationTest/steps/AddEventSteps.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/resources/features/AddEvent.feature" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/resources/features/AddEvent.feature" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/resources/features/SignUp.feature" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/resources/features/SignUp.feature" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -205,7 +199,23 @@
       <option name="project" value="LOCAL" />
       <updated>1709370826136</updated>
     </task>
-    <option name="localTasksCounter" value="3" />
+    <task id="LOCAL-00003" summary="Add Room">
+      <option name="closed" value="true" />
+      <created>1709845086382</created>
+      <option name="number" value="00003" />
+      <option name="presentableId" value="LOCAL-00003" />
+      <option name="project" value="LOCAL" />
+      <updated>1709845086382</updated>
+    </task>
+    <task id="LOCAL-00004" summary="Update for AddEvent Branch">
+      <option name="closed" value="true" />
+      <created>1709845124777</created>
+      <option name="number" value="00004" />
+      <option name="presentableId" value="LOCAL-00004" />
+      <option name="project" value="LOCAL" />
+      <updated>1709845124777</updated>
+    </task>
+    <option name="localTasksCounter" value="5" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -214,7 +224,8 @@
   <component name="VcsManagerConfiguration">
     <MESSAGE value="Upgrade Client to Orginizer" />
     <MESSAGE value="Add Room" />
-    <option name="LAST_COMMIT_MESSAGE" value="Add Room" />
+    <MESSAGE value="Update for AddEvent Branch" />
+    <option name="LAST_COMMIT_MESSAGE" value="Update for AddEvent Branch" />
   </component>
   <component name="XSLT-Support.FileAssociations.UIState">
     <expand />

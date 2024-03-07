@@ -57,6 +57,7 @@ public class SignUp {
         boolean flag = false;
         for (User u : users) {
             flag = (username.equals(u.getUsername()));
+            if(flag) return true;
         }
         return flag;
     }
@@ -65,6 +66,7 @@ public class SignUp {
         boolean flag = false;
         for (User u : users) {
             flag = (email.equalsIgnoreCase(u.getContactEmail()));
+            if(flag) return true;
         }
         return flag;
     }
@@ -97,4 +99,7 @@ public class SignUp {
     private void setMsg(String msg) {
         this.msg = msg;
     }
+
+
+
 }

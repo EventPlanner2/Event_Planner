@@ -4,6 +4,17 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
+    <list default="true" id="9fc2b4a3-4e80-4dc3-b513-a55cbae36512" name="Changes" comment="ali turabi ,added class : add data eventdata class">
+      <change afterPath="$PROJECT_DIR$/EventPlanner/src/main/java/com/example/services/AddEvent.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/EventPlanner/src/main/java/com/example/App.java" beforeDir="false" afterPath="$PROJECT_DIR$/EventPlanner/src/main/java/com/example/App.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/EventPlanner/src/main/java/com/example/data/EventData.java" beforeDir="false" afterPath="$PROJECT_DIR$/EventPlanner/src/main/java/com/example/data/EventData.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/EventPlanner/src/main/java/com/example/entites/Client.java" beforeDir="false" afterPath="$PROJECT_DIR$/EventPlanner/src/main/java/com/example/entites/Client.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/EventPlanner/src/main/java/com/example/entites/Event.java" beforeDir="false" afterPath="$PROJECT_DIR$/EventPlanner/src/main/java/com/example/entites/Event.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/EventPlanner/src/main/java/com/example/entites/User.java" beforeDir="false" afterPath="$PROJECT_DIR$/EventPlanner/src/main/java/com/example/entites/User.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/EventPlanner/src/main/java/com/example/services/SignUp.java" beforeDir="false" afterPath="$PROJECT_DIR$/EventPlanner/src/main/java/com/example/services/SignUp.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/EventPlanner/src/test/resources/features/AddEvent.feature" beforeDir="false" afterPath="$PROJECT_DIR$/EventPlanner/src/test/resources/features/AddEvent.feature" afterDir="false" />
+    </list>
+
     <list default="true" id="9fc2b4a3-4e80-4dc3-b513-a55cbae36512" name="Changes" comment="add DeleteEvent-feature file" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -25,6 +36,25 @@
     </option>
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
   </component>
+
+  <component name="GitHubPullRequestSearchHistory">{
+  &quot;lastFilter&quot;: {
+  }
+}</component>
+  <component name="GithubPullRequestsUISettings">
+    <option name="recentNewPullRequestHead">
+      <RepoCoordinatesHolder>
+        <option name="owner" value="amrbadran" />
+        <option name="repository" value="Event_Planner" />
+      </RepoCoordinatesHolder>
+    </option>
+    <option name="selectedUrlAndAccountId">
+      <UrlAndAccount>
+        <option name="accountId" value="173943d4-0144-4ac6-bcb2-ebd213d9966a" />
+        <option name="url" value="https://github.com/amrbadran/Event_Planner.git" />
+      </UrlAndAccount>
+    </option>
+  </component>
   <component name="MarkdownSettingsMigration">
     <option name="stateVersion" value="1" />
   </component>
@@ -42,11 +72,14 @@
   </component>
   <component name="PropertiesComponent"><![CDATA[{
   "keyToString": {
+
+    "JUnit.acceptanceTest.executor": "Run",
     "RunOnceActivity.OpenProjectViewOnStart": "true",
     "RunOnceActivity.ShowReadmeOnStart": "true",
     "SHARE_PROJECT_CONFIGURATION_FILES": "true",
     "git-widget-placeholder": "upgrading-MainMenu-Class",
     "last_opened_file_path": "C:/SoftwareProject/Event_Planner",
+    "node.js.selected.package.tslint": "(autodetect)",
     "project.structure.last.edited": "Modules",
     "project.structure.proportion": "0.0",
     "project.structure.side.proportion": "0.48505747"
@@ -124,7 +157,42 @@
       <option name="project" value="LOCAL" />
       <updated>1709477538444</updated>
     </task>
+    <task id="LOCAL-00005" summary="ali turabi ,added feature : add event">
+      <option name="closed" value="true" />
+      <created>1709402668061</created>
+      <option name="number" value="00005" />
+      <option name="presentableId" value="LOCAL-00005" />
+      <option name="project" value="LOCAL" />
+      <updated>1709402668061</updated>
+    </task>
+    <task id="LOCAL-00006" summary="ali turabi ,added feature : add event">
+      <option name="closed" value="true" />
+      <created>1709497224811</created>
+      <option name="number" value="00006" />
+      <option name="presentableId" value="LOCAL-00006" />
+      <option name="project" value="LOCAL" />
+      <updated>1709497224811</updated>
+    </task>
+    <task id="LOCAL-00007" summary="ali turabi ,added class : add event entity">
+      <option name="closed" value="true" />
+      <created>1709499067161</created>
+      <option name="number" value="00007" />
+      <option name="presentableId" value="LOCAL-00007" />
+      <option name="project" value="LOCAL" />
+      <updated>1709499067161</updated>
+    </task>
+    <task id="LOCAL-00008" summary="ali turabi ,added class : add data eventdata class">
+      <option name="closed" value="true" />
+      <created>1709500047647</created>
+      <option name="number" value="00008" />
+      <option name="presentableId" value="LOCAL-00008" />
+      <option name="project" value="LOCAL" />
+      <updated>1709500047647</updated>
+    </task>
+    <option name="localTasksCounter" value="9" />
+
     <option name="localTasksCounter" value="4" />
+
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -139,6 +207,15 @@
     </option>
   </component>
   <component name="VcsManagerConfiguration">
+    <MESSAGE value="ali turabi ,added feature : add event" />
+    <MESSAGE value="ali turabi ,added class : add event entity" />
+    <MESSAGE value="ali turabi ,added class : add data eventdata class" />
+    <option name="LAST_COMMIT_MESSAGE" value="ali turabi ,added class : add data eventdata class" />
+  </component>
+  <component name="com.intellij.coverage.CoverageDataManagerImpl">
+    <SUITE FILE_PATH="coverage/Event_Planner$acceptanceTest.ic" NAME="acceptanceTest Coverage Results" MODIFIED="1709402770636" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false">
+      <FILTER>applicationTest.*</FILTER>
+    </SUITE>
     <MESSAGE value="Delete event feature file ,needs testing" />
     <MESSAGE value="add DeleteEvent-feature file" />
     <MESSAGE value="MainMenu class for arranging Main class" />

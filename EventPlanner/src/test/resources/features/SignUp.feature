@@ -2,16 +2,16 @@ Feature: SignUp
 
   Scenario Outline: User SignUp
     Given the user is on the SignUp page
-    When the user provides available username "Amr"
-    And the user provides valid email format "Amr2003@gmail.com"
+    When the user provides available username <username>
+    And the user provides valid email format <email>
     And the user provides valid role <role>
     And the user provides strong password "Amr123456789"
     And hit the register button
     Then the user account is created successfully
   Examples:
-    |role|
-    |"Client"|
-    |"Service Provider"|
+    |username||email||role|
+    |"Amr2"||"Amr2@gmail.com"||"Client"|
+    |"Omar"||"Omar2004@gmail.com"||"Service Provider"|
 
 
   Scenario: SignUp with missing email
@@ -47,21 +47,21 @@ Feature: SignUp
   Scenario: SignUp with missing password
     Given the user is on the SignUp page
     When the user provides valid email format "Omar123@gmail.com"
-    And the user provides available username "Amr"
+    And the user provides available username "Amr22"
     And the user submits the SignUp form with missing password
     Then the system displays error messages for the missing fields "some fields are missing"
 
   Scenario: SignUp with weak password
     Given the user is on the SignUp page
     When the user provides valid email format "Omar123@gmail.com"
-    And the user provides available username "Amr"
+    And the user provides available username "Amr22"
     And the user provides a password that is too short "123"
     Then the system displays a weak password error message says "your password is weak"
 
   Scenario: SignUp with invalid role
     Given the user is on the SignUp page
     When the user provides valid email format "Omar123@gmail.com"
-    And the user provides available username "Amr"
+    And the user provides available username "Amr22"
     And the user provides strong password "Amr123456789"
     And the user provides an invalid role "Admin"
     Then the system displays an error message for the invalid role "you entered an invalid role"

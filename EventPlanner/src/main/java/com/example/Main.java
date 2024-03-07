@@ -1,6 +1,7 @@
 package com.example;
 
-
+import com.example.entites.Client;
+import com.example.services.AddEvent;
 import java.util.Scanner;
 
 public class Main {

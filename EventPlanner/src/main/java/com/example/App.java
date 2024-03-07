@@ -22,10 +22,10 @@ public class App {
     public AddRoom addRoomService;
     public SPAcc SPAccount;
     public AddEvent addEventService;
+    public SearchServiceProvider SearchSP;
 
     public App()
     {
-
         UserData ud = new UserData();
         users=ud.getUsers();
         loginService = new Login(users);
@@ -38,6 +38,8 @@ public class App {
         SPAccount = new SPAcc();
         loginService.setSPAccObj(SPAccount);
         addEventService=new AddEvent();
+        SearchSP = new SearchServiceProvider();
+
     }
 
 

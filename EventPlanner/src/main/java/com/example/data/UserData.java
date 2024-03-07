@@ -4,6 +4,7 @@ import com.example.entites.Admin;
 import com.example.entites.Client;
 import com.example.entites.ServiceProvider;
 import com.example.entites.User;
+import com.example.services.SPAcc;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -32,6 +33,8 @@ public class UserData {
         clients.add(u3);
         clients.add(u4);
         sps.add(u2);
+
+        UserData.completeSP("FactoryX","Nablus","Chairs Provider",50);
     }
 
     public List<User> getUsers(){

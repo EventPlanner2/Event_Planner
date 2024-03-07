@@ -203,6 +203,7 @@ public class MainMenu {
 
     public void addRoom() {
         while (true) {
+
             System.out.print("Please enter the name of the new room ");
             String roomName = input.next();
             System.out.print("Please enter the Capacity of the new room ");

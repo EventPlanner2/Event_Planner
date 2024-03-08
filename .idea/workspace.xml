@@ -5,17 +5,10 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="9fc2b4a3-4e80-4dc3-b513-a55cbae36512" name="Changes" comment="ali turabi ,added class : add data eventdata class">
-      <change afterPath="$PROJECT_DIR$/EventPlanner/src/main/java/com/example/services/AddEvent.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/EventPlanner/src/main/java/com/example/App.java" beforeDir="false" afterPath="$PROJECT_DIR$/EventPlanner/src/main/java/com/example/App.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/EventPlanner/src/main/java/com/example/data/EventData.java" beforeDir="false" afterPath="$PROJECT_DIR$/EventPlanner/src/main/java/com/example/data/EventData.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/EventPlanner/src/main/java/com/example/entites/Client.java" beforeDir="false" afterPath="$PROJECT_DIR$/EventPlanner/src/main/java/com/example/entites/Client.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/EventPlanner/src/main/java/com/example/entites/Event.java" beforeDir="false" afterPath="$PROJECT_DIR$/EventPlanner/src/main/java/com/example/entites/Event.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/EventPlanner/src/main/java/com/example/entites/User.java" beforeDir="false" afterPath="$PROJECT_DIR$/EventPlanner/src/main/java/com/example/entites/User.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/EventPlanner/src/main/java/com/example/services/SignUp.java" beforeDir="false" afterPath="$PROJECT_DIR$/EventPlanner/src/main/java/com/example/services/SignUp.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/EventPlanner/src/test/resources/features/AddEvent.feature" beforeDir="false" afterPath="$PROJECT_DIR$/EventPlanner/src/test/resources/features/AddEvent.feature" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/EventPlanner/src/main/java/com/example/MainMenu.java" beforeDir="false" afterPath="$PROJECT_DIR$/EventPlanner/src/main/java/com/example/MainMenu.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/EventPlanner/src/main/java/com/example/services/SPAcc.java" beforeDir="false" afterPath="$PROJECT_DIR$/EventPlanner/src/main/java/com/example/services/SPAcc.java" afterDir="false" />
     </list>
-
-    <list default="true" id="9fc2b4a3-4e80-4dc3-b513-a55cbae36512" name="Changes" comment="add DeleteEvent-feature file" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -31,12 +24,11 @@
   <component name="Git.Settings">
     <option name="RECENT_BRANCH_BY_REPOSITORY">
       <map>
-        <entry key="$PROJECT_DIR$" value="dev" />
+        <entry key="$PROJECT_DIR$" value="upgrading-MainMenu-Class" />
       </map>
     </option>
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
   </component>
-
   <component name="GitHubPullRequestSearchHistory">{
   &quot;lastFilter&quot;: {
   }
@@ -72,12 +64,11 @@
   </component>
   <component name="PropertiesComponent"><![CDATA[{
   "keyToString": {
-
     "JUnit.acceptanceTest.executor": "Run",
     "RunOnceActivity.OpenProjectViewOnStart": "true",
     "RunOnceActivity.ShowReadmeOnStart": "true",
     "SHARE_PROJECT_CONFIGURATION_FILES": "true",
-    "git-widget-placeholder": "upgrading-MainMenu-Class",
+    "git-widget-placeholder": "dev",
     "last_opened_file_path": "C:/SoftwareProject/Event_Planner",
     "node.js.selected.package.tslint": "(autodetect)",
     "project.structure.last.edited": "Modules",
@@ -189,10 +180,7 @@
       <option name="project" value="LOCAL" />
       <updated>1709500047647</updated>
     </task>
-    <option name="localTasksCounter" value="9" />
-
     <option name="localTasksCounter" value="4" />
-
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -212,13 +200,20 @@
     <MESSAGE value="ali turabi ,added class : add data eventdata class" />
     <option name="LAST_COMMIT_MESSAGE" value="ali turabi ,added class : add data eventdata class" />
   </component>
+  <component name="XDebuggerManager">
+    <breakpoint-manager>
+      <breakpoints>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/EventPlanner/src/main/java/com/example/Main.java</url>
+          <line>9</line>
+          <option name="timeStamp" value="11" />
+        </line-breakpoint>
+      </breakpoints>
+    </breakpoint-manager>
+  </component>
   <component name="com.intellij.coverage.CoverageDataManagerImpl">
     <SUITE FILE_PATH="coverage/Event_Planner$acceptanceTest.ic" NAME="acceptanceTest Coverage Results" MODIFIED="1709402770636" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false">
       <FILTER>applicationTest.*</FILTER>
     </SUITE>
-    <MESSAGE value="Delete event feature file ,needs testing" />
-    <MESSAGE value="add DeleteEvent-feature file" />
-    <MESSAGE value="MainMenu class for arranging Main class" />
-    <option name="LAST_COMMIT_MESSAGE" value="MainMenu class for arranging Main class" />
   </component>
 </project>

@@ -3,7 +3,6 @@ package com.example.services;
 import com.example.entites.ServiceProvider;
 import com.example.entites.User;
 
-import java.util.ArrayList;
 import java.util.List;
 
 public class Login {
@@ -17,24 +16,20 @@ public class Login {
         this.SPAccObj = SPAccObj;
     }
 
-    public Login(List<User> users)
-    {
+    public Login(List<User> users) {
         this.users = users;
         errorMessage = "";
     }
 
-    public User LoginPerformed(String username , String password)
-    {
-
-
-        if(username.isEmpty() || password.isEmpty()) {
+    public User LoginPerformed(String username, String password) {
+        if (username.isEmpty() || password.isEmpty()) {
             setErrorMessage("Login Failed");
             return null;
         }
 
-        for(User user : users) {
-            if(user.getUsername().equals(username) && user.getPassword().equals(password)) {
-                if(user.getRole() == 's'){
+        for (User user : users) {
+            if (user.getUsername().equals(username) && user.getPassword().equals(password)) {
+                if (user.getRole() == 's') {
                     ServiceProvider obj = ServiceProvider.getSPFromData(username);
                     SPAccObj.completeAccount = obj.isFirstLogin();
                     SPAccObj.setSP(obj);
@@ -49,8 +44,9 @@ public class Login {
     }
 
 
-
     private void setErrorMessage(String errorMessage) {
         this.errorMessage = errorMessage;
     }
+
+
 }

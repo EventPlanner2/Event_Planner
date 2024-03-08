@@ -2,6 +2,7 @@ package com.example;
 
 import com.example.data.RoomData;
 import com.example.data.UserData;
+import com.example.entites.Client;
 import com.example.entites.Room;
 import com.example.entites.User;
 import com.example.services.*;
@@ -20,12 +21,11 @@ public class App {
     public SignUp signUpService;
     public AddRoom addRoomService;
     public SPAcc SPAccount;
+    public AddEvent addEventService;
     public SearchServiceProvider SearchSP;
-
 
     public App()
     {
-
         UserData ud = new UserData();
         users=ud.getUsers();
         loginService = new Login(users);
@@ -37,7 +37,9 @@ public class App {
         addRoomService = new AddRoom(rooms);
         SPAccount = new SPAcc();
         loginService.setSPAccObj(SPAccount);
+        addEventService=new AddEvent();
         SearchSP = new SearchServiceProvider();
+
     }
 
 
@@ -50,8 +52,6 @@ public class App {
             return "Failed Logout";
         }
     }
-
-
 
 
 }

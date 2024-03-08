@@ -20,20 +20,18 @@ public class UserData {
         initializeData();
 
     }
-//hello
-
-
-//hello
     private static void initializeData(){
         // initial objects (could be replaced by database)
 
         User u1 = new User("Admin","123456","Admin@Gmail.com",'a'); // Admin
         ServiceProvider u2 = new ServiceProvider("FactoryX","FactoryX123","Factoryx@Gmail.com",'s'); // Service-provider
         Client u3 = new Client("Ahmad","Ahmad12345","Ahmad123@Gmail.com",'c',false); // Client
+        Client u4 = new Client("Ali Turabi","123456789","ali123@Gmail.com",'c',true); // Client
 
 
-        users.add(u1);users.add(u2);users.add(u3);
+        users.add(u1);users.add(u2);users.add(u3);users.add(u4);
         clients.add(u3);
+        clients.add(u4);
         sps.add(u2);
 
         UserData.completeSP("FactoryX","Nablus","Chairs Provider",50);

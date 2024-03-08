@@ -237,6 +237,7 @@ public class MainMenu {
         productPrice=input.next();
         System.out.print("Product Type : ");
         productType =input.next();
+        productType += " " + input.next();
 
         boolean flag = app.SPAccount.CompleteAccountPerform(location,productPrice,productType);
 

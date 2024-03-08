@@ -17,7 +17,7 @@ Feature: Create incomplete  Event by organizer
       | Start Clock    | 19:00                            |
       | End Clock      | 23:00                            |
       | Attendee Count | 50                               |
-      | image_path       |C:\Users\amr_b\IdeaProjects\Event_Planner\EventPlanner\src\main\resources\images|
+      | image_path       |57.png|
     Then the event should be successfully added
 
   Scenario: Successfully Create second incomplete Event with same organizer
@@ -33,7 +33,7 @@ Feature: Create incomplete  Event by organizer
       | Start Clock    | 08:00                            |
       | End Clock      | 09:00                            |
       | Attendee Count | 100                             |
-     | image_path       |C:\Users\amr_b\IdeaProjects\Event_Planner\EventPlanner\src\main\resources\images|
+     | image_path       |57.png|
 
     Then the event should be successfully added
 
@@ -51,7 +51,7 @@ Feature: Create incomplete  Event by organizer
       | Start Clock    | 10:00                           |
       | End Clock      | 11:00                           |
       | Attendee Count | 100                             |
-      | image_path       |C:\Users\amr_b\IdeaProjects\Event_Planner\EventPlanner\src\main\resources\images|
+      | image_path       |57.png|
     Then the event should be successfully added
 
   Scenario: UnSuccessfully Create fourth Event  for same organizer

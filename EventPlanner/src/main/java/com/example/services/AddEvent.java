@@ -1,5 +1,6 @@
 package com.example.services;
 
+import com.example.Main;
 import com.example.data.EventData;
 import com.example.data.UserData;
 import com.example.entites.Client;
@@ -114,11 +115,19 @@ public class AddEvent {
             setMsg("missing image path");
             return false;
         } else {
-            File imageFile = new File(imagePath);
-            if (!imageFile.exists()) {
+            try{
+                ClassLoader classLoader = Main.class.getClassLoader();
+                File imageFile = new File(classLoader.getResource(imagePath).getFile());
+                if (!imageFile.exists()) {
+                    setMsg("invalid image path");
+                    return false;
+                }
+            }
+            catch (NullPointerException e){
                 setMsg("invalid image path");
                 return false;
             }
+
         }
         if (isOrgnaizer(username)&&canAddEvent(username)) {
             Event event = new Event(username, EventData.getEvents().size(), name, description, LocalDate.parse(startDate),

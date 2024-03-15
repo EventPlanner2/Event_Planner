@@ -4,14 +4,18 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="b83c84ab-4b8d-45df-9a9e-d68f70b0baad" name="Changes" comment="Complete Service Provider Account">
-      <change beforePath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Checkout_at_3_3_2024_4_12_PM__Changes_.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Checkout_at_3_3_2024_4_12_PM__Changes_.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Checkout_at_3_3_2024_4_14_PM__Changes_.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Checkout_at_3_3_2024_4_14_PM__Changes_.xml" afterDir="false" />
+    <list default="true" id="b83c84ab-4b8d-45df-9a9e-d68f70b0baad" name="Changes" comment="First Submission">
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/example/services/DeleteUpdateEvent.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/test/java/applicationTest/steps/UpdateEventSteps.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/test/resources/features/UpdateEvent.feature" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Checkout_at_3_3_2024_4_14_PM_[Changes]/shelved.patch" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Checkout_at_3_3_2024_4_14_PM__Changes_.xml" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/App.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/App.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/data/EventData.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/data/EventData.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/com/example/services/AddEvent.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/services/AddEvent.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/images/57.png" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/57.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/resources/features/AddEvent.feature" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/resources/features/AddEvent.feature" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/resources/images/57.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/applicationTest/steps/DeleteEventSteps.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/applicationTest/steps/DeleteEventSteps.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/resources/features/DeleteEvent.feature" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/resources/features/DeleteEvent.feature" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -73,7 +77,7 @@
       <recent name="C:\Users\amr_b\IdeaProjects\Event_Planner\EventPlanner\src\main\resources" />
     </key>
   </component>
-  <component name="RunManager" selected="Cucumber Java.Feature: Login">
+  <component name="RunManager" selected="JUnit.acceptanceTest">
     <configuration name="Feature: Login" type="CucumberJavaRunConfigurationType" factoryName="Cucumber java" temporary="true" nameIsGenerated="true">
       <option name="CUCUMBER_CORE_VERSION" value="5" />
       <option name="FILE_PATH" value="$PROJECT_DIR$/src/test/resources/features/Login.feature" />
@@ -191,6 +195,8 @@
       <workItem from="1709296718207" duration="7956000" />
       <workItem from="1709363950032" duration="20245000" />
       <workItem from="1709465888826" duration="7828000" />
+      <workItem from="1709897714244" duration="150000" />
+      <workItem from="1710495564393" duration="10291000" />
     </task>
     <task id="LOCAL-00001" summary="Upgrade Client to Orginizer">
       <option name="closed" value="true" />
@@ -216,7 +222,15 @@
       <option name="project" value="LOCAL" />
       <updated>1709392090931</updated>
     </task>
-    <option name="localTasksCounter" value="4" />
+    <task id="LOCAL-00004" summary="First Submission">
+      <option name="closed" value="true" />
+      <created>1709897798416</created>
+      <option name="number" value="00004" />
+      <option name="presentableId" value="LOCAL-00004" />
+      <option name="project" value="LOCAL" />
+      <updated>1709897798416</updated>
+    </task>
+    <option name="localTasksCounter" value="5" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -226,7 +240,8 @@
     <MESSAGE value="Upgrade Client to Orginizer" />
     <MESSAGE value="Add Room" />
     <MESSAGE value="Complete Service Provider Account" />
-    <option name="LAST_COMMIT_MESSAGE" value="Complete Service Provider Account" />
+    <MESSAGE value="First Submission" />
+    <option name="LAST_COMMIT_MESSAGE" value="First Submission" />
   </component>
   <component name="XSLT-Support.FileAssociations.UIState">
     <expand />

@@ -1,14 +1,17 @@
 Feature: Delete Event
 
+  Background: organizer Login
+    Given the user is logged in with their account
+    And the user is organizer
   Scenario: User deletes an existing event by ID
-    Given there is an event with ID "123"
-    When the user deletes the event with ID "123"
-    Then the event with ID "123" should be deleted
+    And there is an event with ID "1"
+    When the user deletes the event with ID provided
+    Then the event should be deleted
 
   Scenario Outline: User tries to delete a non-existing event
-    Given there is no event with ID "<nonExistingId>"
-    When the user tries to delete the event with ID "<nonExistingId>"
-    Then the system should display an error message
+    And there is no event with ID "<nonExistingId>"
+    When the user deletes the event with ID provided
+    Then the system should display an error message "Non-Existing Event"
 
     Examples:
       | nonExistingId |
@@ -16,18 +19,6 @@ Feature: Delete Event
       | 789           |
 
   Scenario: User attempts to delete an event with an invalid ID
-    Given the user provides an invalid event ID
-    When the user tries to delete the event
-    Then the system should display an error message
-
-  Scenario Outline: User deletes an event with multiple occurrences
-    Given there is an event with ID "<eventID>" and multiple occurrences
-    When the user deletes the event with ID "<eventID>"
-    Then all occurrences of the event with ID "<eventID>" should be deleted
-
-
-    Examples:
-      | eventID |
-      | 101     |
-      | 202     |
-      | 303     |
+    And the user provides an invalid event ID "abc"
+    When the user deletes the event with ID provided
+    Then the system should display an error message "Invalid ID"

@@ -22,7 +22,9 @@ public class App {
     public AddRoom addRoomService;
     public SPAcc SPAccount;
     public AddEvent addEventService;
+    public DeleteUpdateEvent deleteUpdateEventService;
     public SearchServiceProvider SearchSP;
+
 
     public App()
     {
@@ -39,7 +41,7 @@ public class App {
         loginService.setSPAccObj(SPAccount);
         addEventService=new AddEvent();
         SearchSP = new SearchServiceProvider();
-
+        deleteUpdateEventService = new DeleteUpdateEvent(addEventService);
     }
 
 

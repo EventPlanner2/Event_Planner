@@ -10,6 +10,7 @@ import java.util.List;
 public class EventData {
 
     private static List<Event> events = new ArrayList<>();
+    public static int id_current = 4;
 
     public EventData() {
         initializeData();
@@ -44,6 +45,10 @@ public class EventData {
 
     public static void addEvent(Event event) {
         events.add(event);
+    }
+
+    public static int generateID(){
+        return id_current++;
     }
 
 

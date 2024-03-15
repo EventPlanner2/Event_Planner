@@ -130,7 +130,7 @@ public class AddEvent {
 
         }
         if (isOrgnaizer(username)&&canAddEvent(username)) {
-            Event event = new Event(username, EventData.getEvents().size(), name, description, LocalDate.parse(startDate),
+            Event event = new Event(username, EventData.getEvents().size()+1, name, description, LocalDate.parse(startDate),
                     LocalDate.parse(endDate), LocalTime.parse(startClock), LocalTime.parse(endClock),
                     Integer.parseInt(attendeeCount));
             event.setPathImage(imagePath);
@@ -174,6 +174,7 @@ public class AddEvent {
             setMsg("User DNE");
             return false;
         }else{
+            setMsg("User can't add Event");
             return c.getNumberEvent() < 3;
         }
     }

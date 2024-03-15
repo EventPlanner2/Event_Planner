@@ -8,54 +8,50 @@ import static org.junit.Assert.*;
 public class DeleteEventSteps {
 
 
-    App application =new App();
+    App app;
+    boolean flag;
+    String id;
+
+    public DeleteEventSteps(App app){
+        this.app = app;
+        flag = false;
+        id = "";
+    }
 
     @Given("there is an event with ID {string}")
     public void thereIsAnEventWithID(String string) {
-
+        id = string;
+        assertTrue(app.deleteUpdateEventService.DoesEventExists(Integer.parseInt(id)));
     }
-    @When("the user deletes the event with ID {string}")
-    public void theUserDeletesTheEventWithID(String string) {
-
+    @When("the user deletes the event with ID provided")
+    public void theUserDeletesTheEventWithID() {
+       flag = app.deleteUpdateEventService.DeleteEventPerform(this.id);
     }
-    @Then("the event with ID {string} should be deleted")
-    public void theEventWithIDShouldBeDeleted(String string) {
+    @Then("the event should be deleted")
+    public void theEventWithIDShouldBeDeleted() {
 
+        assertTrue(flag);
     }
 
     @Given("there is no event with ID {string}")
     public void thereIsNoEventWithID(String string) {
-
+        id = string;
+        assertFalse(app.deleteUpdateEventService.DoesEventExists(Integer.parseInt(id)));
     }
-    @When("the user tries to delete the event with ID {string}")
-    public void theUserTriesToDeleteTheEventWithID(String string) {
 
-    }
-    @Then("the system should display an error message")
-    public void theSystemShouldDisplayAnErrorMessage() {
-
+    @Then("the system should display an error message {string}")
+    public void theSystemShouldDisplayAnErrorMessage(String string) {
+        assertEquals(app.deleteUpdateEventService.msg,string);
     }
 
 
 
-    @Given("the user provides an invalid event ID")
-    public void theUserProvidesAnInvalidEventID() {
-
-    }
-    @When("the user tries to delete the event")
-    public void theUserTriesToDeleteTheEvent() {
-
+    @Given("the user provides an invalid event ID {string}")
+    public void theUserProvidesAnInvalidEventID(String string) {
+        id = string;
     }
 
 
-    @Given("there is an event with ID {string} and multiple occurrences")
-    public void thereIsAnEventWithIDAndMultipleOccurrences(String string) {
 
-    }
-
-    @Then("all occurrences of the event with ID {string} should be deleted")
-    public void allOccurrencesOfTheEventWithIDShouldBeDeleted(String string) {
-
-    }
 
 }

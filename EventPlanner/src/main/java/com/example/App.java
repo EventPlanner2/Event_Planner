@@ -25,6 +25,8 @@ public class App {
     public DeleteUpdateEvent deleteUpdateEventService;
     public SearchServiceProvider SearchSP;
 
+    public UpgradeClient upgradeClient;
+
 
     public App()
     {
@@ -42,6 +44,7 @@ public class App {
         addEventService=new AddEvent();
         SearchSP = new SearchServiceProvider();
         deleteUpdateEventService = new DeleteUpdateEvent(addEventService);
+        upgradeClient =new UpgradeClient(loggedInUser);
     }
 
 

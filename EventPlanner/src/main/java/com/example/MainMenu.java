@@ -63,17 +63,23 @@ public class MainMenu {
 
         switch (role) {
             case 'a':
-                System.out.println("/n You logged in as Admin");
+                System.out.println("╔════════════════════════╗\n" +
+                        "║ You logged in as Admin ║\n" +
+                        "╚════════════════════════╝");
                 Page("2.Add Room", user.getRole());
                 break;
 
             case 's':
-                System.out.println("/n You logged in as Serves Provider");
+                System.out.println("╔══════════════════════════════════╗\n" +
+                        "║ You logged in as Serves Provider ║\n" +
+                        "╚══════════════════════════════════╝");
                 Page("2.Complete", user.getRole());
                 break;
 
             case 'c':
-                System.out.println("/n You logged in as Clint");
+                System.out.println("╔════════════════════════╗\n" +
+                        "║ You logged in as Clint ║\n" +
+                        "╚════════════════════════╝");
                 Page("2.Upgrade", user.getRole());
                 break;
 
@@ -126,7 +132,7 @@ public class MainMenu {
                         upgrade();
                     }
                 }
-                    break;
+                break;
                 case "3":
                     searchServiceProvider();
                     break;
@@ -160,16 +166,15 @@ public class MainMenu {
 
     public void addRoom() {
         while (true) {
-
-            System.out.print("Please enter the name of the new room ");
+            System.out.print("Please enter the name of the new room : ");
             String roomName = input.next();
-            System.out.print("Please enter the Capacity of the new room ");
+            System.out.print("Please enter the Capacity of the new room : ");
             String roomCapacity = input.next();
-            System.out.print("Please enter the cost per hour of the new room ");
+            System.out.print("Please enter the cost per hour of the new room :");
             String roomCost = input.next();
-            System.out.print("Please enter the description of the new room ");
+            System.out.print("Please enter the description of the new room :");
             String roomDes = input.next();
-            System.out.print("Please enter the Availability of the new room ");
+            System.out.print("Please enter the Availability of the new room :");
             String roomAvailability = input.next();
             boolean flag = app.addRoomService.AddRoomPerformed(roomName, roomAvailability, roomCapacity, roomCost, roomDes);
             if (flag) {
@@ -178,12 +183,6 @@ public class MainMenu {
                 System.out.println(app.addRoomService.getMsg());
             }
         }
-
-
-    }
-
-    public void Upgrade(){
-
 
 
     }
@@ -229,29 +228,36 @@ public class MainMenu {
     }
 
     public void complete() {
-        String location,productPrice,productType;
-        System.out.println("To complete your account please enter your:");
-        System.out.print("Location : ");
-        location = input.next();
-        System.out.print("Product Price : ");
-        productPrice=input.next();
-        System.out.print("Product Type : ");
-        productType =input.next();
+        while (true) {
+            if (Back()) return;
+            String location, productPrice, productType;
+            System.out.println("To complete your account please enter your:");
+            System.out.print("Location : ");
+            location = input.next();
+            System.out.print("Product Price : ");
+            productPrice = input.next();
+            System.out.print("Product Type : ");
+            productType = input.next();
+            productType += " " + input.next();
 
-        boolean flag = app.SPAccount.CompleteAccountPerform(location,productPrice,productType);
+            boolean flag = app.SPAccount.CompleteAccountPerform(location, productPrice, productType);
 
-        if(flag){
-            System.out.println(app.SPAccount.getCompleteAccountMsg());
-            return;
-        }else{
-            System.out.println(app.SPAccount.getCompleteAccountMsg());
-            complete();
+            if (flag) {
+                System.out.println(app.SPAccount.getCompleteAccountMsg());
+                return;
+            } else {
+                System.out.println(app.SPAccount.getCompleteAccountMsg());
+            }
         }
     }
 
     public void upgrade() {
-
-
+        while (true) {
+            if (Back()) return;
+            app.upgradeClient.setLoggedInUser(user);
+            app.upgradeClient.UpgradeClientPerform();
+            System.out.println(app.upgradeClient.getMsg());
+        }
     }
 
     public void printCriteria(List<ServiceProvider> ServesProviders) {

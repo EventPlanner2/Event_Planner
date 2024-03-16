@@ -38,6 +38,16 @@ public class Event {
     }
 
     // Getters and setters
+
+
+    public boolean isComplete() {
+        return isComplete;
+    }
+
+    public void setComplete(boolean complete) {
+        isComplete = complete;
+    }
+
     public String getUsername() {
         return username;
     }

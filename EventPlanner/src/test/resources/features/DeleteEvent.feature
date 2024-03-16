@@ -4,7 +4,7 @@ Feature: Delete Event
     Given the user is logged in with their account
     And the user is organizer
   Scenario: User deletes an existing event by ID
-    And there is an event with ID "1"
+    And there is an event with ID "3"
     When the user deletes the event with ID provided
     Then the event should be deleted
 

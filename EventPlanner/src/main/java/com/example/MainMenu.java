@@ -230,6 +230,12 @@ public class MainMenu {
     public void complete() {
         while (true) {
             if (Back()) return;
+            if(ServiceProvider.getSPFromData(user.getUsername()).isFirstLogin()){
+                System.out.println(app.SPAccount.getCompleteAccountMsg());
+                return;
+            }
+
+
             String location, productPrice, productType;
             System.out.println("To complete your account please enter your:");
             System.out.print("Location : ");

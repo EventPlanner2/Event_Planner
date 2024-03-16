@@ -24,6 +24,7 @@ public class SPAcc {
             int price = Integer.parseInt(Price.substring(1));
             UserData.completeSP(SP.getUsername(), Location, Type, price);
             completeAccount = false;
+            setCompleteAccountMsg("Your Account is completed");
             return true;
         }
         catch (NumberFormatException e){

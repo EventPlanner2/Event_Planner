@@ -35,7 +35,7 @@ public class ReserveRoomSteps {
     public void allIncompleteEventsRelatedToTheOrganizerShouldBeDisplayed() {
         ArrayList <Event> arr = app.reserveRoomService.res_event;
         for(Event e : arr){
-            if(!e.getUsername().equals(app.loggedInUser.getUsername()))
+            if(!e.getUsername().equals(app.loggedInUser.getUsername()) || e.isComplete())
                 fail();
         }
 
@@ -53,13 +53,16 @@ public class ReserveRoomSteps {
     public void theOrganizerEntersEventIDAndRoomIDToReserve(String string, String string2) {
         flag = app.reserveRoomService.ReserveRoomPerform(string,string2);
     }
-    @Then("the room should be reserved for the event")
+    @Then("the room should be reserved for the event and the event become complete")
     public void theRoomShouldBeReservedForTheEvent() {
         assertTrue(flag);
     }
     @Then("a confirmation message should be displayed {string}")
     public void aConfirmationMessageShouldBeDisplayed(String string) {
-        assertEquals(app.reserveRoomService.msg,string);
+        if(app.reserveRoomService.msg.isEmpty())
+            assertEquals(app.reserveSPService.msg,string);
+        else
+            assertEquals(app.reserveRoomService.msg,string);
     }
 
 
@@ -69,7 +72,10 @@ public class ReserveRoomSteps {
     }
     @Then("an error message should be displayed indicating {string}")
     public void anErrorMessageShouldBeDisplayedIndicating(String string) {
-        assertEquals(app.reserveRoomService.msg,string);
+        if(app.reserveRoomService.msg.isEmpty())
+            assertEquals(app.reserveSPService.msg,string);
+        else
+            assertEquals(app.reserveRoomService.msg,string);
     }
 
 

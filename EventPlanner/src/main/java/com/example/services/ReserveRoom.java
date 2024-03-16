@@ -79,7 +79,7 @@ public class ReserveRoom {
     public void ChooseReserveRoom(){
 
         for(Event e : getEvents()){
-            if(e.getUsername().equals(loggedInUser.getUsername())){
+            if(e.getUsername().equals(loggedInUser.getUsername()) && !e.isComplete()){
                 res_event.add(e);
             }
         }

@@ -19,7 +19,7 @@ public class Event {
     private int attendeeCount;
     private boolean isComplete;
     private int roomID;
-    ArrayList<ServiceProvider> serviceEntity;
+    public ArrayList<ServiceProvider> serviceEntity;
 
     public Event(String username,int id, String eventName, String eventDescription, LocalDate startDate, LocalDate endDate,
                  LocalTime startClock, LocalTime endClock, int attendeeCount) {

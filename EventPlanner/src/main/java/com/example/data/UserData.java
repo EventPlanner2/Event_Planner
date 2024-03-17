@@ -27,12 +27,14 @@ public class UserData {
         ServiceProvider u2 = new ServiceProvider("FactoryX","FactoryX123","Factoryx@Gmail.com",'s'); // Service-provider
         Client u3 = new Client("Ahmad","Ahmad12345","Ahmad123@Gmail.com",'c',false); // Client
         Client u4 = new Client("Ali Turabi","123456789","ali123@Gmail.com",'c',true); // Client
+        ServiceProvider u5 = new ServiceProvider("Saif","Saif123","Saif321@Gmail.com",'s'); // Service-provider
 
 
-        users.add(u1);users.add(u2);users.add(u3);users.add(u4);
+        users.add(u1);users.add(u2);users.add(u3);users.add(u4);users.add(u5);
         clients.add(u3);
         clients.add(u4);
         sps.add(u2);
+        sps.add(u5);
 
         UserData.completeSP("FactoryX","Nablus","Chairs Provider",50);
     }

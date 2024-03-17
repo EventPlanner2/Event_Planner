@@ -1,6 +1,7 @@
 package com.example.entites;
 
 
+import com.example.data.RoomData;
 
 public class Room {
 
@@ -20,6 +21,13 @@ public class Room {
         this.Available = Available;
     }
 
+
+    public static Room getRoomFromData(int rid){
+        for(Room r : RoomData.getRooms()){
+            if(r.getId() == rid) return r;
+        }
+        return null;
+    }
     // Getters and setters
     public int getId() {
         return id;

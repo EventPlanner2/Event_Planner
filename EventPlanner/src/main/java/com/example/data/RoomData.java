@@ -8,14 +8,14 @@ import java.util.List;
 public class RoomData {
     private static List<Room> rooms = new ArrayList<>();
 
-    private static int id = 0;
+    private static int id = 1;
     public RoomData(){
         initializeData();
     }
 
     public void initializeData(){
 
-        addRoom("Room 1",40,150.0,"First room in system",true);
+        addRoom("Room 1",60,150.0,"First room in system",true);
 
     }
 
@@ -30,7 +30,7 @@ public class RoomData {
         return id++;
     }
 
-    public List<Room> getRooms() {
+    public static List<Room> getRooms() {
         return rooms;
     }
 }

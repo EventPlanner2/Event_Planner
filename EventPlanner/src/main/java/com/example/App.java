@@ -28,6 +28,8 @@ public class App {
     public ReserveSP reserveSPService;
     public BookEvent bookEventService;
 
+    public UpgradeClient upgradeClient;
+
 
     public App()
     {
@@ -45,10 +47,13 @@ public class App {
         addEventService=new AddEvent();
         SearchSP = new SearchServiceProvider();
         deleteUpdateEventService = new DeleteUpdateEvent(addEventService);
+      
         reserveRoomService = new ReserveRoom(loggedInUser);
         reserveSPService = new ReserveSP(loggedInUser);
         bookEventService = new BookEvent();
 
+
+        upgradeClient =new UpgradeClient(loggedInUser);
     }
 
 

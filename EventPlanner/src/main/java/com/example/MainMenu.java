@@ -8,7 +8,12 @@ import java.util.Scanner;
 
 public class MainMenu {
 
-    private final String WelcomeString = "Welcome To Study Planner";
+    private final String WelcomeString = "\n" +
+            " __      __     _                        _____       ___  _             _         ___  _                             \n" +
+            " \\ \\    / /___ | | __  ___  _ __   ___  |_   _|___  / __|| |_  _  _  __| | _  _  | _ \\| | __ _  _ _   _ _   ___  _ _ \n" +
+            "  \\ \\/\\/ // -_)| |/ _|/ _ \\| '  \\ / -_)   | | / _ \\ \\__ \\|  _|| || |/ _` || || | |  _/| |/ _` || ' \\ | ' \\ / -_)| '_|\n" +
+            "   \\_/\\_/ \\___||_|\\__|\\___/|_|_|_|\\___|   |_| \\___/ |___/ \\__| \\_,_|\\__,_| \\_, | |_|  |_|\\__,_||_||_||_||_|\\___||_|  \n" +
+            "                                                                           |__/                                      \n";
     App app = new App();
     public String username;
     public String password;
@@ -20,9 +25,11 @@ public class MainMenu {
     public void menu() {
         while (true) {
             System.out.println(WelcomeString);
-            System.out.println("1. log in");
-            System.out.println("2. Sign up");
-            System.out.println("X. Exit");
+            System.out.println(" +--------------------+\n" +
+                    " | 1. log in          |\n" +
+                    " | 2. Sign up         |\n" +
+                    " | X. Exit            |\n" +
+                    " +--------------------+");
             System.out.print("Enter your choose please : ");
             String choose = input.next();
             switch (choose) {
@@ -44,7 +51,6 @@ public class MainMenu {
 
     public void logIn() {
         char role = 'a';
-        boolean flag = false;
         while (true) {
             if (Back()) return;
             System.out.println("Please enter the username and the password :");
@@ -56,11 +62,13 @@ public class MainMenu {
             if (user == null) {
                 System.out.println(app.loginService.errorMessage);
             } else {
+                app.loggedInUser = user;
                 role = user.getRole();
                 break;
             }
         }
 
+        app.loggedInUser = user;
         switch (role) {
             case 'a':
                 System.out.println("╔════════════════════════╗\n" +
@@ -73,6 +81,7 @@ public class MainMenu {
                 System.out.println("╔══════════════════════════════════╗\n" +
                         "║ You logged in as Serves Provider ║\n" +
                         "╚══════════════════════════════════╝");
+                ServiceProvider.getSPFromData(username).setFirstLogin(true);
                 Page("2.Complete", user.getRole());
                 break;
 
@@ -125,6 +134,7 @@ public class MainMenu {
                     break;
                 case "2": {
                     if (role == 'a') {
+                        app.addRoomService.setLoggedInUser(user);
                         addRoom();
                     } else if (role == 's') {
                         complete();
@@ -166,6 +176,7 @@ public class MainMenu {
 
     public void addRoom() {
         while (true) {
+            if (Back()) return;
             System.out.print("Please enter the name of the new room : ");
             String roomName = input.next();
             System.out.print("Please enter the Capacity of the new room : ");
@@ -178,6 +189,7 @@ public class MainMenu {
             String roomAvailability = input.next();
             boolean flag = app.addRoomService.AddRoomPerformed(roomName, roomAvailability, roomCapacity, roomCost, roomDes);
             if (flag) {
+                System.out.println(app.addRoomService.getMsg());
                 break;
             } else {
                 System.out.println(app.addRoomService.getMsg());
@@ -189,7 +201,6 @@ public class MainMenu {
 
     public void searchServiceProvider() {
 
-        List<ServiceProvider> tmpArray = null;
         while (true) {
             if (Back()) return;
             System.out.println("Search based on : ");
@@ -201,18 +212,15 @@ public class MainMenu {
             switch (choose) {
                 case "1":
                     app.SearchSP.setSelectedCriteria("Location");
-                    tmpArray = app.SearchSP.SearchSPPerformed();
-                    printCriteria(tmpArray);
+                    searchCriteria("Location");
                     break;
                 case "2":
                     app.SearchSP.setSelectedCriteria("Type");
-                    tmpArray = app.SearchSP.SearchSPPerformed();
-                    printCriteria(tmpArray);
+                    searchCriteria("Type");
                     break;
                 case "3":
                     app.SearchSP.setSelectedCriteria("Price");
-                    tmpArray = app.SearchSP.SearchSPPerformed();
-                    printCriteria(tmpArray);
+                    searchCriteria("Price");
                     break;
 
                 case "":
@@ -230,12 +238,10 @@ public class MainMenu {
     public void complete() {
         while (true) {
             if (Back()) return;
-            if(ServiceProvider.getSPFromData(user.getUsername()).isFirstLogin()){
+            if (!ServiceProvider.getSPFromData(user.getUsername()).isFirstLogin()) {
                 System.out.println(app.SPAccount.getCompleteAccountMsg());
                 return;
             }
-
-
             String location, productPrice, productType;
             System.out.println("To complete your account please enter your:");
             System.out.print("Location : ");
@@ -250,6 +256,7 @@ public class MainMenu {
 
             if (flag) {
                 System.out.println(app.SPAccount.getCompleteAccountMsg());
+                ServiceProvider.getSPFromData(username).setFirstLogin(false);
                 return;
             } else {
                 System.out.println(app.SPAccount.getCompleteAccountMsg());
@@ -268,7 +275,29 @@ public class MainMenu {
 
     public void printCriteria(List<ServiceProvider> ServesProviders) {
         for (int i = 0; i < ServesProviders.size(); i++) {
-            System.out.println(i + ServesProviders.get(i).getUsername());
+            System.out.println(i + "." + ServesProviders.get(i).getUsername());
+        }
+    }
+
+    public void searchCriteria(String criteria) {
+        List<ServiceProvider> tmpArray = null;
+        if (criteria.equals("Location")) {
+            System.out.print("Please enter the name of the location to search :");
+            String location = input.next();
+            app.SearchSP.setLocation(location);
+            tmpArray = app.SearchSP.SearchSPPerformed();
+            printCriteria(tmpArray);
+        } else if (criteria.equals("Type")) {
+            System.out.print("Please enter the type of the serves provider : ");
+            String type = input.next();
+            type += " " + input.next();
+            app.SearchSP.setType(type);
+            printCriteria(app.SearchSP.SearchSPPerformed());
+        } else {
+            System.out.print("Please enter the price of the product : ");
+            String price = input.next();
+            app.SearchSP.setPrice(price);
+            printCriteria(app.SearchSP.SearchSPPerformed());
         }
     }
 

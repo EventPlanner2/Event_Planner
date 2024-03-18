@@ -26,6 +26,7 @@ public class App {
     public SearchServiceProvider SearchSP;
     public ReserveRoom reserveRoomService;
     public ReserveSP reserveSPService;
+    public BookEvent bookEventService;
 
 
     public App()
@@ -46,6 +47,7 @@ public class App {
         deleteUpdateEventService = new DeleteUpdateEvent(addEventService);
         reserveRoomService = new ReserveRoom(loggedInUser);
         reserveSPService = new ReserveSP(loggedInUser);
+        bookEventService = new BookEvent();
 
     }
 

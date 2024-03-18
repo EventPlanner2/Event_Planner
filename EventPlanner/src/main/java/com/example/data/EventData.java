@@ -19,7 +19,7 @@ public class EventData {
     private static void initializeData() {
         // Initialize event objects
         Event e1 = new Event("Ahmad",1, "Ali Turabi's Event", "cars event",
-                LocalDate.of(2024, 3, 15), LocalDate.of(2024, 3, 15),
+                LocalDate.of(2024, 3, 15), LocalDate.of(2024, 4, 15),
                 LocalTime.of(19, 0), LocalTime.of(23, 0), 50);
         e1.setPathImage("image_path1"); // Set image path for event 1
 

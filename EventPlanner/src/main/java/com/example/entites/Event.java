@@ -1,5 +1,6 @@
 package com.example.entites;
 
+import com.example.data.EventData;
 import com.example.entites.ServiceProvider;
 import java.time.LocalDate;
 import java.time.LocalTime;
@@ -35,6 +36,13 @@ public class Event {
         this.isComplete = false;
         this.roomID = -1;
         this.serviceEntity = new ArrayList<>();
+    }
+
+    public static Event getEventByID(int id){
+        for(Event e : EventData.getEvents()){
+            if(e.getId() == id) return e;
+        }
+        return null;
     }
 
     // Getters and setters

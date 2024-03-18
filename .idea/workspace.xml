@@ -4,10 +4,8 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="9fc2b4a3-4e80-4dc3-b513-a55cbae36512" name="Changes" comment="Upgrade clint done , Some decorations on the menu">
+    <list default="true" id="9fc2b4a3-4e80-4dc3-b513-a55cbae36512" name="Changes" comment="Complete ,Update,Add room,MainMenu Decoration">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/EventPlanner/src/main/java/com/example/MainMenu.java" beforeDir="false" afterPath="$PROJECT_DIR$/EventPlanner/src/main/java/com/example/MainMenu.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/EventPlanner/src/main/java/com/example/services/AddRoom.java" beforeDir="false" afterPath="$PROJECT_DIR$/EventPlanner/src/main/java/com/example/services/AddRoom.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -148,13 +146,13 @@
       <option name="project" value="LOCAL" />
       <updated>1709477538444</updated>
     </task>
-    <task id="LOCAL-00005" summary="ali turabi ,added feature : add event">
+    <task id="LOCAL-00005" summary="Complete ,Update,Add room,MainMenu Decoration">
       <option name="closed" value="true" />
-      <created>1709402668061</created>
+      <created>1710791419223</created>
       <option name="number" value="00005" />
       <option name="presentableId" value="LOCAL-00005" />
       <option name="project" value="LOCAL" />
-      <updated>1709402668061</updated>
+      <updated>1710791419223</updated>
     </task>
     <task id="LOCAL-00006" summary="ali turabi ,added feature : add event">
       <option name="closed" value="true" />
@@ -188,7 +186,7 @@
       <option name="project" value="LOCAL" />
       <updated>1710590862994</updated>
     </task>
-    <option name="localTasksCounter" value="5" />
+    <option name="localTasksCounter" value="6" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -207,7 +205,8 @@
     <MESSAGE value="ali turabi ,added class : add event entity" />
     <MESSAGE value="ali turabi ,added class : add data eventdata class" />
     <MESSAGE value="Upgrade clint done , Some decorations on the menu" />
-    <option name="LAST_COMMIT_MESSAGE" value="Upgrade clint done , Some decorations on the menu" />
+    <MESSAGE value="Complete ,Update,Add room,MainMenu Decoration" />
+    <option name="LAST_COMMIT_MESSAGE" value="Complete ,Update,Add room,MainMenu Decoration" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>

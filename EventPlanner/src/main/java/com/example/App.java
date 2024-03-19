@@ -28,12 +28,14 @@ public class App {
     public ReserveSP reserveSPService;
 
     public UpgradeClient upgradeClient;
+    public UserData ud;
+
 
 
     public App()
     {
-        UserData ud = new UserData();
-        users=ud.getUsers();
+        UserData.initializeData();
+        users=UserData.getUsers();
         loginService = new Login(users);
         loggedInUser = null;
         signUpService = new SignUp(users);

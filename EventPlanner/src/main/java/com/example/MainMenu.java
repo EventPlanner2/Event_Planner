@@ -1,8 +1,10 @@
 package com.example;
 
+import com.example.data.UserData;
 import com.example.entites.ServiceProvider;
 import com.example.entites.User;
 
+import java.util.ArrayList;
 import java.util.List;
 import java.util.Scanner;
 
@@ -33,7 +35,7 @@ public class MainMenu {
                     " | 2. Sign up         |\n" +
                     " | X. Exit            |\n" +
                     " +--------------------+");
-            System.out.print("Enter your choose please : ");
+            System.out.print("Enter your choice please : ");
             String choose = input.next();
             switch (choose) {
                 case "1":
@@ -126,9 +128,12 @@ public class MainMenu {
             System.out.println("1.Show account information ");
             System.out.println(specification);
             System.out.println("3.Search Serves Provider");
-            System.out.println("4.Log out");
+            System.out.println("4.Show upcoming events");
+            if(role == 'c'){
+                System.out.println("5.Enter organizer mode");
+            }
             System.out.println("X.Exit");
-            System.out.print("Enter your choose please : ");
+            System.out.print("Enter your choice please : ");
 
             String choose = input.next();
             switch (choose) {
@@ -150,7 +155,17 @@ public class MainMenu {
                     searchServiceProvider();
                     break;
                 case "4":
-                    return;
+                    showUpcomingEvents();
+                    break;
+                case "5":
+                    if(role == 'c'){
+                        if(!organizerPage()){
+                            return;
+                        };
+                    }else{
+                        break;
+                    }
+                    break;
                 case "X":
                     System.exit(0);
                 default:
@@ -210,7 +225,7 @@ public class MainMenu {
             System.out.println("1.Location ");
             System.out.println("2.Type ");
             System.out.println("3.Price");
-            System.out.print("Please enter your choose :");
+            System.out.print("Please enter your choice :");
             String choose = input.next();
             switch (choose) {
                 case "1":
@@ -236,6 +251,10 @@ public class MainMenu {
                     break;
             }
         }
+    }
+
+    public void showUpcomingEvents() {
+
     }
 
     public void complete() {
@@ -283,12 +302,13 @@ public class MainMenu {
     }
 
     public void searchCriteria(String criteria) {
-        List<ServiceProvider> tmpArray = null;
+        List<ServiceProvider> tmpArray = new ArrayList<>();
         if (criteria.equals("Location")) {
             System.out.print("Please enter the name of the location to search :");
             String location = input.next();
             app.SearchSP.setLocation(location);
-            tmpArray = app.SearchSP.SearchSPPerformed();
+            System.out.println(UserData.getSps().size() + "this is the size\n");
+            tmpArray.addAll(app.SearchSP.SearchSPPerformed());
             printCriteria(tmpArray);
         } else if (criteria.equals("Type")) {
             System.out.print("Please enter the type of the serves provider : ");
@@ -314,4 +334,78 @@ public class MainMenu {
         }
     }
 
+    public boolean organizerPage() {
+        if (Back()) return true;
+        if (!app.addEventService.isOrgnaizer(user.getUsername())) {
+            System.out.println(app.addEventService.getMsg());
+            return true;
+        }
+        while (true) {
+            System.out.println(".-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-.\n" +
+                    "|  1.Add Event                                  |\n" +
+                    "|  2.Update Event                               |\n" +
+                    "!  3.Delete Event                               !\n" +
+                    ":  4.Search for Service Provider                :\n" +
+                    ".  5.Reserve Room for an Event                  .\n" +
+                    ".  6.Reserve Service Provider for an Event      .\n" +
+                    ":  7.Show upcoming Events                       :\n" +
+                    "!  8.Log out                                    !\n" +
+                    "|  X.Exit                                       |\n" +
+                    "`-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-`");
+            System.out.print("Pleas enter your choice :");
+            String choice = input.next();
+
+            switch (choice) {
+                case "1":
+                    addEvent();
+                    break;
+                case "2":
+                    updateEvent();
+                    break;
+                case "3":
+                    deleteEvent();
+                    break;
+                case "4":
+                    searchServiceProvider();
+                    break;
+                case "5":
+                    reserveRoom();
+                    break;
+                case "6":
+                    reserveServiceProvider();
+                    break;
+                case "7":
+                    showUpcomingEvents();
+                    break;
+                case "8":
+                    return false;
+                case "X":
+                    System.exit(0);
+                default:
+                    break;
+            }
+
+        }
+
+    }
+
+    public void addEvent() {
+
+    }
+
+    public void updateEvent() {
+
+    }
+
+    public void deleteEvent() {
+
+    }
+
+    public void reserveRoom() {
+
+    }
+
+    public void reserveServiceProvider() {
+
+    }
 }

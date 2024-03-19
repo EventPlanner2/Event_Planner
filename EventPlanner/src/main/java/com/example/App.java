@@ -34,8 +34,8 @@ public class App {
 
     public App()
     {
-        UserData.initializeData();
-        users=UserData.getUsers();
+        ud=new UserData();
+        users=ud.getUsers();
         loginService = new Login(users);
         loggedInUser = null;
         signUpService = new SignUp(users);

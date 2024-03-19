@@ -337,7 +337,7 @@ public class MainMenu {
     public boolean organizerPage() {
         if (Back()) return true;
         if (!app.addEventService.isOrgnaizer(user.getUsername())) {
-            System.out.println(app.addEventService.getMsg());
+            System.out.println("You must be an Organizer");
             return true;
         }
         while (true) {
@@ -349,7 +349,8 @@ public class MainMenu {
                     ".  5.Reserve Room for an Event                  .\n" +
                     ".  6.Reserve Service Provider for an Event      .\n" +
                     ":  7.Show upcoming Events                       :\n" +
-                    "!  8.Log out                                    !\n" +
+                    "!  8.Show information account                   !\n" +
+                    "|  9.Log out                                    |\n" +
                     "|  X.Exit                                       |\n" +
                     "`-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-`");
             System.out.print("Pleas enter your choice :");
@@ -378,6 +379,9 @@ public class MainMenu {
                     showUpcomingEvents();
                     break;
                 case "8":
+                    accountInformation(user.getRole());
+                    break;
+                case "9":
                     return false;
                 case "X":
                     System.exit(0);

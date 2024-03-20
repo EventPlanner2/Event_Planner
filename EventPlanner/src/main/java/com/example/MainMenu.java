@@ -78,23 +78,23 @@ public class MainMenu {
         switch (role) {
             case 'a':
                 logger.info("╔════════════════════════╗\n" +
-                        "║ You logged in as Admin ║\n" +
-                        "╚════════════════════════╝");
+                        "      ║ You logged in as Admin ║\n" +
+                        "      ╚════════════════════════╝");
                 Page("2.Add Room", user.getRole());
                 break;
 
             case 's':
                 logger.info("╔══════════════════════════════════╗\n" +
-                        "║ You logged in as Serves Provider ║\n" +
-                        "╚══════════════════════════════════╝");
+                        "      ║ You logged in as Serves Provider ║\n" +
+                        "      ╚══════════════════════════════════╝");
                 ServiceProvider.getSPFromData(username).setFirstLogin(true);
                 Page("2.Complete", user.getRole());
                 break;
 
             case 'c':
                 logger.info("╔════════════════════════╗\n" +
-                        "║ You logged in as Clint ║\n" +
-                        "╚════════════════════════╝");
+                        "      ║ You logged in as Clint ║\n" +
+                        "      ╚════════════════════════╝");
                 Page("2.Upgrade", user.getRole());
                 break;
 
@@ -343,17 +343,17 @@ public class MainMenu {
         }
         while (true) {
             logger.info(".-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-.\n" +
-                    "|  1.Add Event                                  |\n" +
-                    "|  2.Update Event                               |\n" +
-                    "!  3.Delete Event                               !\n" +
-                    ":  4.Search for Service Provider                :\n" +
-                    ".  5.Reserve Room for an Event                  .\n" +
-                    ".  6.Reserve Service Provider for an Event      .\n" +
-                    ":  7.Show upcoming Events                       :\n" +
-                    "!  8.Show information account                   !\n" +
-                    "|  9.Log out                                    |\n" +
-                    "|  X.Exit                                       |\n" +
-                    "`-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-`");
+                    "      |  1.Add Event                                  |\n" +
+                    "      |  2.Update Event                               |\n" +
+                    "      !  3.Delete Event                               !\n" +
+                    "      :  4.Search for Service Provider                :\n" +
+                    "      .  5.Reserve Room for an Event                  .\n" +
+                    "      .  6.Reserve Service Provider for an Event      .\n" +
+                    "      :  7.Show upcoming Events                       :\n" +
+                    "      !  8.Show information account                   !\n" +
+                    "      |  9.Log out                                    |\n" +
+                    "      |  X.Exit                                       |\n" +
+                    "      `-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-`");
             logger.info("Pleas enter your choice :");
             String choice = input.next();
 

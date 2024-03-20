@@ -26,6 +26,7 @@ public class App {
     public SearchServiceProvider SearchSP;
     public ReserveRoom reserveRoomService;
     public ReserveSP reserveSPService;
+    public BookEvent bookEventService;
 
     public UpgradeClient upgradeClient;
     public UserData ud;
@@ -51,6 +52,7 @@ public class App {
       
         reserveRoomService = new ReserveRoom(loggedInUser);
         reserveSPService = new ReserveSP(loggedInUser);
+        bookEventService = new BookEvent();
 
 
         upgradeClient =new UpgradeClient(loggedInUser);

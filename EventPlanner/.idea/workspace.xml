@@ -4,17 +4,15 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="b83c84ab-4b8d-45df-9a9e-d68f70b0baad" name="Changes" comment="Reserve Room">
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/example/services/ReserveSP.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/test/java/applicationTest/steps/ReserveSPSteps.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/test/resources/features/ReserveSP.feature" afterDir="false" />
+    <list default="true" id="b83c84ab-4b8d-45df-9a9e-d68f70b0baad" name="Changes" comment="Reserve Service provider">
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/example/services/BookEvent.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/test/java/applicationTest/steps/BookEventSteps.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/test/resources/features/BookEvent.feature" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/com/example/App.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/App.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/data/UserData.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/data/UserData.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/data/EventData.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/data/EventData.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/entites/Client.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/entites/Client.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/com/example/entites/Event.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/entites/Event.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/services/ReserveRoom.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/services/ReserveRoom.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/java/applicationTest/steps/ReserveRoomSteps.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/applicationTest/steps/ReserveRoomSteps.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/resources/features/ReserveRoom.feature" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/resources/features/ReserveRoom.feature" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -45,32 +43,32 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent">{
-  &quot;keyToString&quot;: {
-    &quot;Application.Main.executor&quot;: &quot;Run&quot;,
-    &quot;Cucumber Java.Feature: Login.executor&quot;: &quot;Run&quot;,
-    &quot;Cucumber Java.Feature: Logout.executor&quot;: &quot;Run&quot;,
-    &quot;Cucumber Java.Feature: SignUp.executor&quot;: &quot;Run&quot;,
-    &quot;Cucumber Java.Feature: test.executor&quot;: &quot;Run&quot;,
-    &quot;JUnit.acceptanceTest.executor&quot;: &quot;Run&quot;,
-    &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,
-    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
-    &quot;dart.analysis.tool.window.visible&quot;: &quot;false&quot;,
-    &quot;git-widget-placeholder&quot;: &quot;dev&quot;,
-    &quot;kotlin-language-version-configured&quot;: &quot;true&quot;,
-    &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
-    &quot;node.js.detected.package.tslint&quot;: &quot;true&quot;,
-    &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,
-    &quot;node.js.selected.package.tslint&quot;: &quot;(autodetect)&quot;,
-    &quot;nodejs_package_manager_path&quot;: &quot;npm&quot;,
-    &quot;onboarding.tips.debug.path&quot;: &quot;C:/Users/amr_b/IdeaProjects/Event_Planner/EventPlanner/src/main/java/com/example/Main.java&quot;,
-    &quot;project.structure.last.edited&quot;: &quot;Project&quot;,
-    &quot;project.structure.proportion&quot;: &quot;0.0&quot;,
-    &quot;project.structure.side.proportion&quot;: &quot;0.0&quot;,
-    &quot;settings.editor.selected.configurable&quot;: &quot;editor.preferences.fonts.default&quot;,
-    &quot;vue.rearranger.settings.migration&quot;: &quot;true&quot;
+  <component name="PropertiesComponent"><![CDATA[{
+  "keyToString": {
+    "Application.Main.executor": "Run",
+    "Cucumber Java.Feature: Login.executor": "Run",
+    "Cucumber Java.Feature: Logout.executor": "Run",
+    "Cucumber Java.Feature: SignUp.executor": "Run",
+    "Cucumber Java.Feature: test.executor": "Run",
+    "JUnit.acceptanceTest.executor": "Run",
+    "RunOnceActivity.OpenProjectViewOnStart": "true",
+    "RunOnceActivity.ShowReadmeOnStart": "true",
+    "dart.analysis.tool.window.visible": "false",
+    "git-widget-placeholder": "dev",
+    "kotlin-language-version-configured": "true",
+    "node.js.detected.package.eslint": "true",
+    "node.js.detected.package.tslint": "true",
+    "node.js.selected.package.eslint": "(autodetect)",
+    "node.js.selected.package.tslint": "(autodetect)",
+    "nodejs_package_manager_path": "npm",
+    "onboarding.tips.debug.path": "C:/Users/amr_b/IdeaProjects/Event_Planner/EventPlanner/src/main/java/com/example/Main.java",
+    "project.structure.last.edited": "Project",
+    "project.structure.proportion": "0.0",
+    "project.structure.side.proportion": "0.0",
+    "settings.editor.selected.configurable": "editor.preferences.fonts.default",
+    "vue.rearranger.settings.migration": "true"
   }
-}</component>
+}]]></component>
   <component name="RecentsManager">
     <key name="MoveFile.RECENT_KEYS">
       <recent name="C:\Users\amr_b\IdeaProjects\Event_Planner\EventPlanner\src\main\resources" />
@@ -196,7 +194,8 @@
       <workItem from="1709465888826" duration="7828000" />
       <workItem from="1709897714244" duration="150000" />
       <workItem from="1710495564393" duration="13236000" />
-      <workItem from="1710579464649" duration="13103000" />
+      <workItem from="1710579464649" duration="17252000" />
+      <workItem from="1710757208283" duration="11797000" />
     </task>
     <task id="LOCAL-00001" summary="Upgrade Client to Orginizer">
       <option name="closed" value="true" />
@@ -246,7 +245,15 @@
       <option name="project" value="LOCAL" />
       <updated>1710585576844</updated>
     </task>
-    <option name="localTasksCounter" value="7" />
+    <task id="LOCAL-00007" summary="Reserve Service provider">
+      <option name="closed" value="true" />
+      <created>1710595660730</created>
+      <option name="number" value="00007" />
+      <option name="presentableId" value="LOCAL-00007" />
+      <option name="project" value="LOCAL" />
+      <updated>1710595660730</updated>
+    </task>
+    <option name="localTasksCounter" value="8" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -270,7 +277,8 @@
     <MESSAGE value="First Submission" />
     <MESSAGE value="Update + Delete (Event)" />
     <MESSAGE value="Reserve Room" />
-    <option name="LAST_COMMIT_MESSAGE" value="Reserve Room" />
+    <MESSAGE value="Reserve Service provider" />
+    <option name="LAST_COMMIT_MESSAGE" value="Reserve Service provider" />
   </component>
   <component name="XSLT-Support.FileAssociations.UIState">
     <expand />

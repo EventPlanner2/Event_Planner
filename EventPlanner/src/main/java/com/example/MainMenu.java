@@ -129,7 +129,7 @@ public class MainMenu {
             System.out.println(specification);
             System.out.println("3.Search Serves Provider");
             System.out.println("4.Show upcoming events");
-            if(role == 'c'){
+            if(role == 'c'){//log out , show all rooms ,
                 System.out.println("5.Enter organizer mode");
             }
             System.out.println("X.Exit");
@@ -155,13 +155,14 @@ public class MainMenu {
                     searchServiceProvider();
                     break;
                 case "4":
-                    showUpcomingEvents();
-                    break;
+                    return;
+                    //showUpcomingEvents();
+                   // break;
                 case "5":
                     if(role == 'c'){
                         if(!organizerPage()){
                             return;
-                        };
+                        }
                     }else{
                         break;
                     }
@@ -307,7 +308,6 @@ public class MainMenu {
             System.out.print("Please enter the name of the location to search :");
             String location = input.next();
             app.SearchSP.setLocation(location);
-            System.out.println(UserData.getSps().size() + "this is the size\n");
             tmpArray.addAll(app.SearchSP.SearchSPPerformed());
             printCriteria(tmpArray);
         } else if (criteria.equals("Type")) {

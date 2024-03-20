@@ -1,5 +1,6 @@
 package com.example;
 
+import com.example.data.EventData;
 import com.example.data.UserData;
 import com.example.entites.ServiceProvider;
 import com.example.entites.User;
@@ -7,8 +8,11 @@ import com.example.entites.User;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Scanner;
+import java.util.logging.Level;
+import java.util.logging.Logger;
 
 public class MainMenu {
+    Logger logs = Logger.getLogger(MainMenu.class.getName());
 
     private final String WelcomeString = "\n" +
             " __          __    _                                _______        _____  _               _          _____   _                                  \n" +
@@ -195,15 +199,16 @@ public class MainMenu {
     public void addRoom() {
         while (true) {
             if (Back()) return;
-            System.out.print("Please enter the name of the new room : ");
+            System.out.print("Please enter the information for the new room : ");
+            System.out.print("Room name : ");
             String roomName = input.next();
-            System.out.print("Please enter the Capacity of the new room : ");
+            System.out.print("Capacity : ");
             String roomCapacity = input.next();
-            System.out.print("Please enter the cost per hour of the new room :");
+            System.out.print("Cost per hour :");
             String roomCost = input.next();
-            System.out.print("Please enter the description of the new room :");
+            System.out.print("Description :");
             String roomDes = input.next();
-            System.out.print("Please enter the Availability of the new room :");
+            System.out.print("Availability :");
             String roomAvailability = input.next();
             boolean flag = app.addRoomService.AddRoomPerformed(roomName, roomAvailability, roomCapacity, roomCost, roomDes);
             if (flag) {
@@ -394,15 +399,90 @@ public class MainMenu {
     }
 
     public void addEvent() {
+        while (true) {
+            System.out.print("Please enter the user name : ");
+            String username = input.next();
+            System.out.print("Please enter the information for the new event : ");
+            System.out.print("Event name : ");
+            String eventName = input.next();
+            System.out.print("Description :");
+            String eventDes = input.next();
+            System.out.print("Start date : ");
+            String startDate = input.next();
+            System.out.print("End date : ");
+            String endDate = input.next();
+            System.out.print("Starting hour :");
+            String startHour = input.next();
+            System.out.print("End hour :");
+            String endHour = input.next();
+            System.out.print("Attendee count :");
+            String attendeeCount = input.next();
+            System.out.print("Image path :");
+            String imagePath = input.next();
+            boolean flag = app.addEventService.addEvent(username, EventData.getEvents().size() + 1, eventName, eventDes, startDate, endDate, startHour, endHour, attendeeCount, imagePath);
+            if (flag) {
+                System.out.println(app.addEventService.getMsg());
+                break;
+            } else {
+                System.out.println(app.addEventService.getMsg());
+            }
+        }
+
 
     }
 
     public void updateEvent() {
+        while (true) {
+            System.out.print("Please enter the user name : ");
+            String username= input.next();
+            System.out.print("Please enter the new information for your event : ");
+            System.out.print("Event name : ");
+            String eventName = input.next();
+            System.out.print("Event id : ");
+            String eventId = input.next();
+            System.out.print("Description :");
+            String eventDes = input.next();
+            System.out.print("Start date : ");
+            String startDate = input.next();
+            System.out.print("End date : ");
+            String endDate = input.next();
+            System.out.print("Starting hour :");
+            String startHour = input.next();
+            System.out.print("End hour :");
+            String endHour = input.next();
+            System.out.print("Attendee count :");
+            String attendeeCount = input.next();
+            System.out.print("Image path :");
+            String imagePath = input.next();
+            boolean flag = app.deleteUpdateEventService.UpdateEventPerform( eventId,username,eventName ,eventDes,startDate,endDate,startHour,endHour,attendeeCount,imagePath);
+            if (flag) {
+                System.out.println(app.deleteUpdateEventService.getMsg());
+                //Created getMsg in DeleteUpdateEvent
+                break;
+            } else {
+                System.out.println(app.deleteUpdateEventService.getMsg());
+            }
+        }
+
+
 
     }
 
     public void deleteEvent() {
+        while (true){
+        System.out.print("Please enter the ID of the event you want to delete : ");
+        String eventId=input.next();
+        boolean flag =app.deleteUpdateEventService.DeleteEventPerform(eventId);
+        if (flag) {
+            System.out.println(app.deleteUpdateEventService.getMsg());
+            //Created getMsg in DeleteUpdateEvent
+            break;
 
+         } else {
+            System.out.println(app.deleteUpdateEventService.getMsg());
+        }
+
+    }
     }
 
     public void reserveRoom() {

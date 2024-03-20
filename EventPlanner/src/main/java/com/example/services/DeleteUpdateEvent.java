@@ -8,8 +8,10 @@ import static com.example.data.EventData.getEvents;
 
 public class DeleteUpdateEvent {
 
-
     public String msg;
+    public String getMsg() {
+        return msg;
+    }
     public AddEvent addEvent;
 
     public DeleteUpdateEvent(AddEvent addEvent) {

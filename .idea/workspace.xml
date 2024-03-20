@@ -4,10 +4,13 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="9fc2b4a3-4e80-4dc3-b513-a55cbae36512" name="Changes" comment="Upgrade clint done , Some decorations on the menu">
+    <list default="true" id="9fc2b4a3-4e80-4dc3-b513-a55cbae36512" name="Changes" comment="Organizer mode">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/EventPlanner/src/main/java/com/example/App.java" beforeDir="false" afterPath="$PROJECT_DIR$/EventPlanner/src/main/java/com/example/App.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/EventPlanner/src/main/java/com/example/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/EventPlanner/src/main/java/com/example/Main.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/EventPlanner/src/main/java/com/example/MainMenu.java" beforeDir="false" afterPath="$PROJECT_DIR$/EventPlanner/src/main/java/com/example/MainMenu.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/EventPlanner/src/main/java/com/example/services/SPAcc.java" beforeDir="false" afterPath="$PROJECT_DIR$/EventPlanner/src/main/java/com/example/services/SPAcc.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/EventPlanner/src/main/java/com/example/data/UserData.java" beforeDir="false" afterPath="$PROJECT_DIR$/EventPlanner/src/main/java/com/example/data/UserData.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/EventPlanner/src/main/java/com/example/entites/Client.java" beforeDir="false" afterPath="$PROJECT_DIR$/EventPlanner/src/main/java/com/example/entites/Client.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -62,20 +65,20 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent">{
-  &quot;keyToString&quot;: {
-    &quot;JUnit.acceptanceTest.executor&quot;: &quot;Run&quot;,
-    &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,
-    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
-    &quot;SHARE_PROJECT_CONFIGURATION_FILES&quot;: &quot;true&quot;,
-    &quot;git-widget-placeholder&quot;: &quot;Mohamad-Main-Branch&quot;,
-    &quot;last_opened_file_path&quot;: &quot;C:/SoftwareProject/Event_Planner&quot;,
-    &quot;node.js.selected.package.tslint&quot;: &quot;(autodetect)&quot;,
-    &quot;project.structure.last.edited&quot;: &quot;Modules&quot;,
-    &quot;project.structure.proportion&quot;: &quot;0.0&quot;,
-    &quot;project.structure.side.proportion&quot;: &quot;0.48505747&quot;
+  <component name="PropertiesComponent"><![CDATA[{
+  "keyToString": {
+    "JUnit.acceptanceTest.executor": "Run",
+    "RunOnceActivity.OpenProjectViewOnStart": "true",
+    "RunOnceActivity.ShowReadmeOnStart": "true",
+    "SHARE_PROJECT_CONFIGURATION_FILES": "true",
+    "git-widget-placeholder": "Mohamad-Main-Branch",
+    "last_opened_file_path": "C:/SoftwareProject/Event_Planner",
+    "node.js.selected.package.tslint": "(autodetect)",
+    "project.structure.last.edited": "Project",
+    "project.structure.proportion": "0.0",
+    "project.structure.side.proportion": "0.48505747"
   }
-}</component>
+}]]></component>
   <component name="RunManager">
     <configuration name="acceptanceTest" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="EventPlanner" />
@@ -148,13 +151,13 @@
       <option name="project" value="LOCAL" />
       <updated>1709477538444</updated>
     </task>
-    <task id="LOCAL-00005" summary="ali turabi ,added feature : add event">
+    <task id="LOCAL-00005" summary="Complete ,Update,Add room,MainMenu Decoration">
       <option name="closed" value="true" />
-      <created>1709402668061</created>
+      <created>1710791419223</created>
       <option name="number" value="00005" />
       <option name="presentableId" value="LOCAL-00005" />
       <option name="project" value="LOCAL" />
-      <updated>1709402668061</updated>
+      <updated>1710791419223</updated>
     </task>
     <task id="LOCAL-00006" summary="ali turabi ,added feature : add event">
       <option name="closed" value="true" />
@@ -188,7 +191,7 @@
       <option name="project" value="LOCAL" />
       <updated>1710590862994</updated>
     </task>
-    <option name="localTasksCounter" value="5" />
+    <option name="localTasksCounter" value="6" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -207,18 +210,8 @@
     <MESSAGE value="ali turabi ,added class : add event entity" />
     <MESSAGE value="ali turabi ,added class : add data eventdata class" />
     <MESSAGE value="Upgrade clint done , Some decorations on the menu" />
-    <option name="LAST_COMMIT_MESSAGE" value="Upgrade clint done , Some decorations on the menu" />
-  </component>
-  <component name="XDebuggerManager">
-    <breakpoint-manager>
-      <breakpoints>
-        <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/EventPlanner/src/main/java/com/example/Main.java</url>
-          <line>9</line>
-          <option name="timeStamp" value="1" />
-        </line-breakpoint>
-      </breakpoints>
-    </breakpoint-manager>
+    <MESSAGE value="Complete ,Update,Add room,MainMenu Decoration" />
+    <option name="LAST_COMMIT_MESSAGE" value="Complete ,Update,Add room,MainMenu Decoration" />
   </component>
   <component name="com.intellij.coverage.CoverageDataManagerImpl">
     <SUITE FILE_PATH="coverage/Event_Planner$acceptanceTest.ic" NAME="acceptanceTest Coverage Results" MODIFIED="1709402770636" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false">

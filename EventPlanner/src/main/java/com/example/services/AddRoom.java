@@ -60,6 +60,7 @@ public class AddRoom {
             this.Description = Description;
 
             RoomData.addRoom(this.name, this.capacity, this.CostPerHour, this.Description, this.Available);
+            setMsg("The room has been added ");
             return true;
         }
         catch (NumberFormatException e){

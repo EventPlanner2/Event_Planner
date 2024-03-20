@@ -29,11 +29,13 @@ public class App {
     public BookEvent bookEventService;
 
     public UpgradeClient upgradeClient;
+    public UserData ud;
+
 
 
     public App()
     {
-        UserData ud = new UserData();
+        ud=new UserData();
         users=ud.getUsers();
         loginService = new Login(users);
         loggedInUser = null;

@@ -23,7 +23,6 @@ public class App {
     private BookEvent bookEventService;
     private UpgradeClient upgradeClient;
     private UserData ud;
-   private RoomData rd ;
 
 
 
@@ -35,9 +34,7 @@ public class App {
         loginService = new Login(users);
         loggedInUser = null;
         signUpService = new SignUp(users);
-
-         rd = new RoomData();
-        rooms = rd.getRooms();
+        rooms = RoomData.getRooms();
         addRoomService = new AddRoom(rooms);
         spAccount = new SPAcc();
         loginService.setSPAccObj(spAccount);

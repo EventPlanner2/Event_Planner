@@ -83,30 +83,37 @@ public class MainMenu {
         app.setLoggedInUser ( user );
         switch (role) {
             case 'a':
-                logger.info("╔════════════════════════╗\n" +
-                        "      ║ You logged in as Admin ║\n" +
-                        "      ╚════════════════════════╝");
+                logger.info("""
+                ╔════════════════════════╗
+                      ║ You logged in as Admin ║
+                      ╚════════════════════════╝
+                """);
                 Page("2.Add Room", user.getRole());
                 break;
 
             case 's':
-                logger.info("╔═══════════════════════════════════╗\n" +
-                        "      ║ You logged in as Service Provider ║\n" +
-                        "      ╚═══════════════════════════════════╝");
+                logger.info("""
+                ╔═══════════════════════════════════╗
+                      ║ You logged in as Service Provider ║
+                      ╚═══════════════════════════════════╝
+                """);
                 ServiceProvider.getSPFromData(username).setFirstLogin(true);
                 Page("2.Complete", user.getRole());
                 break;
 
             case 'c':
-                logger.info("╔════════════════════════╗\n" +
-                        "      ║ You logged in as Clint ║\n" +
-                        "      ╚════════════════════════╝");
+                logger.info("""
+                ╔════════════════════════╗
+                      ║ You logged in as Client ║
+                      ╚════════════════════════╝
+                """);
                 Page("2.Upgrade", user.getRole());
                 break;
 
             default:
                 break;
         }
+
     }
 
     public void signUp() {

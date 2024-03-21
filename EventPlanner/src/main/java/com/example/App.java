@@ -14,7 +14,7 @@ public class App {
     private String currentPage;
     private SignUp signUpService;
     private AddRoom addRoomService;
-    private SPAcc SPAccount;
+    private SPAcc spAccount;
     private AddEvent addEventService;
     private DeleteUpdateEvent deleteUpdateEventService;
     private SearchServiceProvider SearchSP;
@@ -39,8 +39,8 @@ public class App {
          rd = new RoomData();
         rooms = rd.getRooms();
         addRoomService = new AddRoom(rooms);
-        SPAccount = new SPAcc();
-        loginService.setSPAccObj(SPAccount);
+        spAccount = new SPAcc();
+        loginService.setSPAccObj(spAccount);
         addEventService=new AddEvent();
         SearchSP = new SearchServiceProvider();
         deleteUpdateEventService = new DeleteUpdateEvent(addEventService);
@@ -101,7 +101,7 @@ public class App {
     }
 
     public SPAcc getSPAccount() {
-        return SPAccount;
+        return spAccount;
     }
 
     public AddEvent getAddEventService() {

@@ -63,17 +63,17 @@ public class MainMenu {
             username = input.next();
             logger.info("Password :");
             password = input.next();
-            user = app.loginService.LoginPerformed(username, password);
+            user = app.getLoginService ().LoginPerformed(username, password);
             if (user == null) {
-                logger.info(app.loginService.errorMessage);
+                logger.info( app.getLoginService ().errorMessage);
             } else {
-                app.loggedInUser = user;
+                app.setLoggedInUser ( user );
                 role = user.getRole();
                 break;
             }
         }
 
-        app.loggedInUser = user;
+        app.setLoggedInUser ( user );
         switch (role) {
             case 'a':
                 logger.info("╔════════════════════════╗\n" +
@@ -113,11 +113,11 @@ public class MainMenu {
             String email = input.next();
             logger.info("Please enter your role :");
             String role = input.next();
-            boolean flag = app.signUpService.register(username, password, email, role);
+            boolean flag = app.getSignUpService ().register(username, password, email, role);
             if (flag) {
                 break;
             } else {
-                logger.info(app.signUpService.msg);
+                logger.info( app.getSignUpService ().msg);
             }
         }
     }
@@ -153,7 +153,7 @@ public class MainMenu {
                     break;
                 case "2": {
                     if (role == 'a') {
-                        app.addRoomService.setLoggedInUser(user);
+                        app.getAddRoomService ().setLoggedInUser(user);
                         addRoom();
                     } else if (role == 's') {
                         complete();
@@ -218,12 +218,12 @@ public class MainMenu {
             String roomDes = input.next();
             logger.info("Please enter the Availability of the new room :");
             String roomAvailability = input.next();
-            boolean flag = app.addRoomService.AddRoomPerformed(roomName, roomAvailability, roomCapacity, roomCost, roomDes);
+            boolean flag = app.getAddRoomService ().AddRoomPerformed(roomName, roomAvailability, roomCapacity, roomCost, roomDes);
             if (flag) {
-                logger.info(app.addRoomService.getMsg());
+                logger.info( app.getAddRoomService ().getMsg());
                 break;
             } else {
-                logger.info(app.addRoomService.getMsg());
+                logger.info( app.getAddRoomService ().getMsg());
             }
         }
 
@@ -243,25 +243,25 @@ public class MainMenu {
             String choose = input.next();
             switch (choose) {
                 case "1":
-                    app.SearchSP.setSelectedCriteria("Location");
+                    app.getSearchSP ().setSelectedCriteria("Location");
                     searchCriteria("Location");
                     break;
                 case "2":
-                    app.SearchSP.setSelectedCriteria("Type");
+                    app.getSearchSP ().setSelectedCriteria("Type");
                     searchCriteria("Type");
                     break;
                 case "3":
-                    app.SearchSP.setSelectedCriteria("Price");
+                    app.getSearchSP ().setSelectedCriteria("Price");
                     searchCriteria("Price");
                     break;
 
                 case "":
-                    app.SearchSP.setSelectedCriteria("");
-                    logger.info(app.SearchSP.getErrorMsg());
+                    app.getSearchSP ().setSelectedCriteria("");
+                    logger.info( app.getSearchSP ().getErrorMsg());
                     break;
                 default:
-                    app.SearchSP.setSelectedCriteria("a");
-                    logger.info(app.SearchSP.getErrorMsg());
+                    app.getSearchSP ().setSelectedCriteria("a");
+                    logger.info( app.getSearchSP ().getErrorMsg());
                     break;
             }
         }
@@ -275,7 +275,7 @@ public class MainMenu {
         while (true) {
             if (Back()) return;
             if (!ServiceProvider.getSPFromData(user.getUsername()).isFirstLogin()) {
-                logger.info(app.SPAccount.getCompleteAccountMsg());
+                logger.info( app.getSPAccount ().getCompleteAccountMsg());
                 return;
             }
             String location, productPrice, productType;
@@ -288,14 +288,14 @@ public class MainMenu {
             productType = input.next();
             productType += " " + input.next();
 
-            boolean flag = app.SPAccount.CompleteAccountPerform(location, productPrice, productType);
+            boolean flag = app.getSPAccount ().CompleteAccountPerform(location, productPrice, productType);
 
             if (flag) {
-                logger.info(app.SPAccount.getCompleteAccountMsg());
+                logger.info( app.getSPAccount ().getCompleteAccountMsg());
                 ServiceProvider.getSPFromData(username).setFirstLogin(false);
                 return;
             } else {
-                logger.info(app.SPAccount.getCompleteAccountMsg());
+                logger.info( app.getSPAccount ().getCompleteAccountMsg());
             }
         }
     }
@@ -303,9 +303,9 @@ public class MainMenu {
     public void upgrade() {
         while (true) {
             if (Back()) return;
-            app.upgradeClient.setLoggedInUser(user);
-            app.upgradeClient.UpgradeClientPerform();
-            logger.info(app.upgradeClient.getMsg());
+            app.getUpgradeClient ().setLoggedInUser(user);
+            app.getUpgradeClient ().UpgradeClientPerform();
+            logger.info( app.getUpgradeClient ().getMsg());
         }
     }
 
@@ -320,20 +320,20 @@ public class MainMenu {
         if (criteria.equals("Location")) {
             logger.info("Please enter the name of the location to search :");
             String location = input.next();
-            app.SearchSP.setLocation(location);
-            tmpArray.addAll(app.SearchSP.SearchSPPerformed());
+            app.getSearchSP ().setLocation(location);
+            tmpArray.addAll( app.getSearchSP ().SearchSPPerformed());
             printCriteria(tmpArray);
         } else if (criteria.equals("Type")) {
             logger.info("Please enter the type of the Service provider : ");
             String type = input.next();
             type += " " + input.next();
-            app.SearchSP.setType(type);
-            printCriteria(app.SearchSP.SearchSPPerformed());
+            app.getSearchSP ().setType(type);
+            printCriteria( app.getSearchSP ().SearchSPPerformed());
         } else {
             logger.info("Please enter the price of the product : ");
             String price = input.next();
-            app.SearchSP.setPrice(price);
-            printCriteria(app.SearchSP.SearchSPPerformed());
+            app.getSearchSP ().setPrice(price);
+            printCriteria( app.getSearchSP ().SearchSPPerformed());
         }
     }
 
@@ -349,7 +349,7 @@ public class MainMenu {
 
     public boolean organizerPage() {
         if (Back()) return true;
-        if (!app.addEventService.isOrgnaizer(user.getUsername())) {
+        if (!app.getAddEventService ().isOrgnaizer(user.getUsername())) {
             logger.info("You must be an Organizer");
             return true;
         }

@@ -26,23 +26,23 @@ public class ReserveRoomSteps {
     @When("they choose to Reserve Room")
     public void theyChooseToReserveRoom() {
 
-        app.reserveRoomService.setLoggedInUser(app.loggedInUser);
-        app.reserveRoomService.ChooseReserveRoom();
+        app.getReserveRoomService ().setLoggedInUser( app.getLoggedInUser () );
+        app.getReserveRoomService ().ChooseReserveRoom();
 
 
     }
     @Then("all incomplete events related to the organizer should be displayed")
     public void allIncompleteEventsRelatedToTheOrganizerShouldBeDisplayed() {
-        ArrayList <Event> arr = app.reserveRoomService.res_event;
+        ArrayList <Event> arr = app.getReserveRoomService ().res_event;
         for(Event e : arr){
-            if(!e.getUsername().equals(app.loggedInUser.getUsername()) || e.isComplete())
+            if(!e.getUsername().equals( app.getLoggedInUser ().getUsername()) || e.isComplete())
                 fail();
         }
 
     }
     @Then("all available rooms should be listed")
     public void allAvailableRoomsShouldBeListed() {
-        ArrayList <Room> arr = app.reserveRoomService.res_room;
+        ArrayList <Room> arr = app.getReserveRoomService ().res_room;
         for(Room r : arr){
             if(!r.isAvailable())
                 fail();
@@ -51,7 +51,7 @@ public class ReserveRoomSteps {
 
     @When("the organizer enters EventID {string} and RoomID {string} to reserve")
     public void theOrganizerEntersEventIDAndRoomIDToReserve(String string, String string2) {
-        flag = app.reserveRoomService.ReserveRoomPerform(string,string2);
+        flag = app.getReserveRoomService ().ReserveRoomPerform(string,string2);
     }
     @Then("the room should be reserved for the event and the event become complete")
     public void theRoomShouldBeReservedForTheEvent() {
@@ -59,29 +59,29 @@ public class ReserveRoomSteps {
     }
     @Then("a confirmation message should be displayed {string}")
     public void aConfirmationMessageShouldBeDisplayed(String string) {
-        if(app.reserveRoomService.msg.isEmpty())
-            assertEquals(app.reserveSPService.msg,string);
+        if( app.getReserveRoomService ().msg.isEmpty())
+            assertEquals( app.getReserveSPService ().msg,string);
         else
-            assertEquals(app.reserveRoomService.msg,string);
+            assertEquals( app.getReserveRoomService ().msg,string);
     }
 
 
     @When("the organizer enters an invalid EventID {string} and a valid RoomID {string}")
     public void theOrganizerEntersAnInvalidEventIDAndAValidRoomID(String string, String string2) {
-        flag = app.reserveRoomService.ReserveRoomPerform(string,string2);
+        flag = app.getReserveRoomService ().ReserveRoomPerform(string,string2);
     }
     @Then("an error message should be displayed indicating {string}")
     public void anErrorMessageShouldBeDisplayedIndicating(String string) {
-        if(app.reserveRoomService.msg.isEmpty())
-            assertEquals(app.reserveSPService.msg,string);
+        if( app.getReserveRoomService ().msg.isEmpty())
+            assertEquals( app.getReserveSPService ().msg,string);
         else
-            assertEquals(app.reserveRoomService.msg,string);
+            assertEquals( app.getReserveRoomService ().msg,string);
     }
 
 
     @When("the organizer enters a valid EventID {string} and an invalid RoomID {string}")
     public void theOrganizerEntersAValidEventIDAndAnInvalidRoomID(String string, String string2) {
-        flag = app.reserveRoomService.ReserveRoomPerform(string,string2);
+        flag = app.getReserveRoomService ().ReserveRoomPerform(string,string2);
     }
 
 

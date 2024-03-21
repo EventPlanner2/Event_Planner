@@ -7,6 +7,20 @@
     <list default="true" id="9fc2b4a3-4e80-4dc3-b513-a55cbae36512" name="Changes" comment="DeleteRoom feature steaaaaps and service">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/EventPlanner/src/main/java/com/example/App.java" beforeDir="false" afterPath="$PROJECT_DIR$/EventPlanner/src/main/java/com/example/App.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/EventPlanner/src/main/java/com/example/MainMenu.java" beforeDir="false" afterPath="$PROJECT_DIR$/EventPlanner/src/main/java/com/example/MainMenu.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/EventPlanner/src/test/java/applicationTest/steps/AddEventSteps.java" beforeDir="false" afterPath="$PROJECT_DIR$/EventPlanner/src/test/java/applicationTest/steps/AddEventSteps.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/EventPlanner/src/test/java/applicationTest/steps/AddRoomSteps.java" beforeDir="false" afterPath="$PROJECT_DIR$/EventPlanner/src/test/java/applicationTest/steps/AddRoomSteps.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/EventPlanner/src/test/java/applicationTest/steps/BookEventSteps.java" beforeDir="false" afterPath="$PROJECT_DIR$/EventPlanner/src/test/java/applicationTest/steps/BookEventSteps.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/EventPlanner/src/test/java/applicationTest/steps/CompleteSpAcc.java" beforeDir="false" afterPath="$PROJECT_DIR$/EventPlanner/src/test/java/applicationTest/steps/CompleteSpAcc.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/EventPlanner/src/test/java/applicationTest/steps/DeleteEventSteps.java" beforeDir="false" afterPath="$PROJECT_DIR$/EventPlanner/src/test/java/applicationTest/steps/DeleteEventSteps.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/EventPlanner/src/test/java/applicationTest/steps/ReserveRoomSteps.java" beforeDir="false" afterPath="$PROJECT_DIR$/EventPlanner/src/test/java/applicationTest/steps/ReserveRoomSteps.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/EventPlanner/src/test/java/applicationTest/steps/ReserveSPSteps.java" beforeDir="false" afterPath="$PROJECT_DIR$/EventPlanner/src/test/java/applicationTest/steps/ReserveSPSteps.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/EventPlanner/src/test/java/applicationTest/steps/SearchServiceProviderSteps.java" beforeDir="false" afterPath="$PROJECT_DIR$/EventPlanner/src/test/java/applicationTest/steps/SearchServiceProviderSteps.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/EventPlanner/src/test/java/applicationTest/steps/UpdateEventSteps.java" beforeDir="false" afterPath="$PROJECT_DIR$/EventPlanner/src/test/java/applicationTest/steps/UpdateEventSteps.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/EventPlanner/src/test/java/applicationTest/steps/loginSteps.java" beforeDir="false" afterPath="$PROJECT_DIR$/EventPlanner/src/test/java/applicationTest/steps/loginSteps.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/EventPlanner/src/test/java/applicationTest/steps/logoutSteps.java" beforeDir="false" afterPath="$PROJECT_DIR$/EventPlanner/src/test/java/applicationTest/steps/logoutSteps.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/EventPlanner/src/test/java/applicationTest/steps/signUpSteps.java" beforeDir="false" afterPath="$PROJECT_DIR$/EventPlanner/src/test/java/applicationTest/steps/signUpSteps.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/EventPlanner/src/test/java/applicationTest/steps/upgradeClientSteps.java" beforeDir="false" afterPath="$PROJECT_DIR$/EventPlanner/src/test/java/applicationTest/steps/upgradeClientSteps.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -50,7 +64,7 @@
     <option name="stateVersion" value="1" />
   </component>
   <component name="ProblemsViewState">
-    <option name="selectedTabId" value="CurrentFile" />
+    <option name="selectedTabId" value="ProjectErrors" />
   </component>
   <component name="ProjectColorInfo">{
   &quot;customColor&quot;: &quot;&quot;,
@@ -164,13 +178,13 @@
       <option name="project" value="LOCAL" />
       <updated>1711050597362</updated>
     </task>
-    <task id="LOCAL-00007" summary="ali turabi ,added class : add event entity">
+    <task id="LOCAL-00007" summary="DeleteRoom feature steaaaaps and service">
       <option name="closed" value="true" />
-      <created>1709499067161</created>
+      <created>1711058955191</created>
       <option name="number" value="00007" />
       <option name="presentableId" value="LOCAL-00007" />
       <option name="project" value="LOCAL" />
-      <updated>1709499067161</updated>
+      <updated>1711058955191</updated>
     </task>
     <task id="LOCAL-00008" summary="ali turabi ,added class : add data eventdata class">
       <option name="closed" value="true" />
@@ -188,7 +202,7 @@
       <option name="project" value="LOCAL" />
       <updated>1710590862994</updated>
     </task>
-    <option name="localTasksCounter" value="7" />
+    <option name="localTasksCounter" value="8" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">

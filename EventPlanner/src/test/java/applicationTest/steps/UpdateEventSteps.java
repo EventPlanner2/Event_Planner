@@ -56,7 +56,7 @@ public class UpdateEventSteps {
     }
     @When("the user updates the event with ID provided")
     public void theUserUpdatesTheEventWithIDProvided() {
-        flag = app.deleteUpdateEventService.UpdateEventPerform(id,username,name,description,startDate,endDate,startClock,endClock,attendeeCount,imagePath);
+        flag = app.getDeleteUpdateEventService ().UpdateEventPerform(id,username,name,description,startDate,endDate,startClock,endClock,attendeeCount,imagePath);
 
     }
 

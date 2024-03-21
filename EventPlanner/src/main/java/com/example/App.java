@@ -5,29 +5,25 @@ import com.example.data.UserData;
 import com.example.entites.Room;
 import com.example.entites.User;
 import com.example.services.*;
-
 import java.util.List;
-//bmw
 public class App {
-
-    public List<User> users;
-    public List<Room> rooms;
-    public Login loginService;
-    public User loggedInUser;
-    public String currentPage;
-    public SignUp signUpService;
-    public AddRoom addRoomService;
-    public SPAcc SPAccount;
-    public AddEvent addEventService;
-    public DeleteUpdateEvent deleteUpdateEventService;
-    public SearchServiceProvider SearchSP;
-    public ReserveRoom reserveRoomService;
-    public ReserveSP reserveSPService;
-    public BookEvent bookEventService;
-
-    public UpgradeClient upgradeClient;
-    public UserData ud;
-
+    private List<User> users;
+    private List<Room> rooms;
+    private Login loginService;
+    private User loggedInUser;
+    private String currentPage;
+    private SignUp signUpService;
+    private AddRoom addRoomService;
+    private SPAcc SPAccount;
+    private AddEvent addEventService;
+    private DeleteUpdateEvent deleteUpdateEventService;
+    private SearchServiceProvider SearchSP;
+    private ReserveRoom reserveRoomService;
+    private ReserveSP reserveSPService;
+    private BookEvent bookEventService;
+    private UpgradeClient upgradeClient;
+    private UserData ud;
+   private RoomData rd ;
 
 
 
@@ -40,7 +36,7 @@ public class App {
         loggedInUser = null;
         signUpService = new SignUp(users);
 
-        RoomData rd = new RoomData();
+         rd = new RoomData();
         rooms = rd.getRooms();
         addRoomService = new AddRoom(rooms);
         SPAccount = new SPAcc();
@@ -68,6 +64,76 @@ public class App {
             return "Failed Logout";
         }
     }
+    public List<User> getUsers() {
+        return users;
+    }
 
+    public List<Room> getRooms() {
+        return rooms;
+    }
+
+    public Login getLoginService() {
+        return loginService;
+    }
+
+    public User getLoggedInUser() {
+        return loggedInUser;
+    }
+
+    public void setLoggedInUser(User loggedInUser) {
+        this.loggedInUser = loggedInUser;
+    }
+
+    public String getCurrentPage() {
+        return currentPage;
+    }
+
+    public void setCurrentPage(String currentPage) {
+        this.currentPage = currentPage;
+    }
+
+    public SignUp getSignUpService() {
+        return signUpService;
+    }
+
+    public AddRoom getAddRoomService() {
+        return addRoomService;
+    }
+
+    public SPAcc getSPAccount() {
+        return SPAccount;
+    }
+
+    public AddEvent getAddEventService() {
+        return addEventService;
+    }
+
+    public DeleteUpdateEvent getDeleteUpdateEventService() {
+        return deleteUpdateEventService;
+    }
+
+    public SearchServiceProvider getSearchSP() {
+        return SearchSP;
+    }
+
+    public ReserveRoom getReserveRoomService() {
+        return reserveRoomService;
+    }
+
+    public ReserveSP getReserveSPService() {
+        return reserveSPService;
+    }
+
+    public BookEvent getBookEventService() {
+        return bookEventService;
+    }
+
+    public UpgradeClient getUpgradeClient() {
+        return upgradeClient;
+    }
+
+    public UserData getUserData() {
+        return ud;
+    }
 
 }

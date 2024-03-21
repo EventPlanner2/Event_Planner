@@ -29,15 +29,15 @@ public class BookEventSteps {
     }
     @Given("the client user is logged in with their account")
     public void theClientUserIsLoggedInWithTheirAccount() {
-        app.loggedInUser = app.loginService.LoginPerformed("Ahmad","Ahmad12345");
+        app.setLoggedInUser ( app.getLoginService ().LoginPerformed ( "Ahmad", "Ahmad12345" ) );
     }
     @Given("the user is a client")
     public void theUserIsAClient() {
-        assertEquals('c', (char) app.loggedInUser.getRole());
+        assertEquals('c', (char) app.getLoggedInUser ().getRole());
     }
     @When("the client choose to book an event")
     public void theClientChooseToBookAnEvent() {
-        res = app.bookEventService.chooseBookEvent();
+        res = app.getBookEventService ().chooseBookEvent();
     }
     @Then("the client should see a list of upcoming events")
     public void theClientShouldSeeAListOfUpcomingEvents() {
@@ -55,15 +55,15 @@ public class BookEventSteps {
     }
     @When("the client requests to book an event")
     public void theClientRequestsToBookAnEvent() {
-        flag = app.bookEventService.BookEventPerform(id,app.loggedInUser.getUsername());
+        flag = app.getBookEventService ().BookEventPerform(id, app.getLoggedInUser ().getUsername());
     }
     @Then("the client should see a confirmation message {string}")
     public void theClientShouldSeeAConfirmationMessage(String string) {
-        assertEquals(app.bookEventService.msg,string);
+        assertEquals( app.getBookEventService ().msg,string);
     }
     @Then("the client should receive an email confirming the booking")
     public void theClientShouldReceiveAnEmailConfirmingTheBooking() {
-        assertTrue(app.bookEventService.email_sent);
+        assertTrue( app.getBookEventService ().email_sent);
     }
 
     @When("the client enters an invalid event ID {string}")
@@ -72,7 +72,7 @@ public class BookEventSteps {
     }
     @Then("the client should see an error message {string}")
     public void theClientShouldSeeAnErrorMessage(String string) {
-        assertEquals(app.bookEventService.msg,string);
+        assertEquals( app.getBookEventService ().msg,string);
 
     }
 
@@ -90,13 +90,13 @@ public class BookEventSteps {
     }
     @Then("the client should see a message {string}")
     public void theClientShouldSeeAMessage(String string) {
-        assertEquals(app.bookEventService.msg,string);
+        assertEquals( app.getBookEventService ().msg,string);
         EventData.getEvents().addAll(tmp);
     }
     @When("the user logs in as a role not client")
     public void theUserLogsInAsARoleNotClient(){
         app.logoutPerform();
-        app.loggedInUser = app.loginService.LoginPerformed("Admin","123456");
+        app.setLoggedInUser ( app.getLoginService ().LoginPerformed ( "Admin", "123456" ) );
     }
 
 }

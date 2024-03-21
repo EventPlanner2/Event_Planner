@@ -43,25 +43,25 @@ public class AddEventSteps {
     @Given("the user is logged in with their account")
     public void theUserIsLoggedInWithTheirAccount()
     {
-         app.loggedInUser = app.loginService.LoginPerformed(username,password);
+         app.setLoggedInUser ( app.getLoginService ().LoginPerformed ( username, password ) );
 
     }
 
     @Given("the user is organizer")
     public void theUserIsOrganizer() {
-        assertTrue(app.addEventService.isOrgnaizer(username));
+        assertTrue( app.getAddEventService ().isOrgnaizer(username));
     }
 
     @Given("the organizer wants to add a new event")
     public void theOrganizerWantsToAddANewEvent() {
-        app.addEventService.AddingEvent = true;
+        app.getAddEventService ().AddingEvent = true;
 
     }
 
     @Given("orginzer created less than {} events")
     public void orginzerCreatedLessThanEvents(Integer int1) {
 
-        assertTrue(app.addEventService.canAddEvent(username));
+        assertTrue( app.getAddEventService ().canAddEvent(username));
     }
 
     @When("the organizer provides valid event details including:")
@@ -76,25 +76,25 @@ public class AddEventSteps {
         endClock = dataTable.cell(7,1);
         attendeeCount = dataTable.cell(8,1);
         imagePath = dataTable.cell(9,1);
-        isCreated=  app.addEventService.addEvent(username,eventId , name, description, startDate, endDate,
+        isCreated=  app.getAddEventService ().addEvent(username,eventId , name, description, startDate, endDate,
                 startClock, endClock, attendeeCount, imagePath);
     }
 
     @Then("the event should be successfully added")
     public void theEventShouldBeSuccessfullyAdded() {
-        assertEquals(app.addEventService.getMsg(),"The Event is created");
+        assertEquals( app.getAddEventService ().getMsg(),"The Event is created");
         assertTrue(isCreated);
     }
 
     @Given("the organizer wants to add another new event")
     public void theOrganizerWantsToAddAnotherNewEvent() {
-        app.addEventService.AddingEvent = true;
+        app.getAddEventService ().AddingEvent = true;
 
     }
 
     @Given("the organizer wants to add the fourth  new event")
     public void theOrganizerWantsToAddTheFourthNewEvent() {
-        app.addEventService.AddingEvent = true;
+        app.getAddEventService ().AddingEvent = true;
     }
 
     @When("the user already created {} events")
@@ -105,7 +105,7 @@ public class AddEventSteps {
     @When("the user choose to add event")
     public void theUserChooseToAddEvent(){
 
-        isCreated=  app.addEventService.addEvent(username,eventId , name, description, startDate, endDate,
+        isCreated=  app.getAddEventService ().addEvent(username,eventId , name, description, startDate, endDate,
                 startClock, endClock, attendeeCount, imagePath);
     }
     @Then("the event should be not added")
@@ -131,7 +131,7 @@ public class AddEventSteps {
 
     @Then("the user should see an error message indicating {string}")
     public void theUserShouldSeeAnErrorMessageIndicating(String string) {
-        assertEquals(app.addEventService.getMsg(),string);
+        assertEquals( app.getAddEventService ().getMsg(),string);
     }
 
 

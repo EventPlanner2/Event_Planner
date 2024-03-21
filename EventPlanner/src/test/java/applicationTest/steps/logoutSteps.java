@@ -15,8 +15,8 @@ public class logoutSteps {
 
     @Given("the user is logged in")
     public void the_user_is_logged_in() {
-        app.loggedInUser = app.loginService.LoginPerformed("Admin","123456");
-        assertNotNull(app.loggedInUser);
+        app.setLoggedInUser ( app.getLoginService ().LoginPerformed ( "Admin", "123456" ) );
+        assertNotNull( app.getLoggedInUser () );
     }
     @When("the user selects the option to log out")
     public void the_user_selects_the_option_to_log_out() {
@@ -29,7 +29,7 @@ public class logoutSteps {
 
     @When("the user selects the option to log out and encounters a logout issue happened")
     public void the_user_selects_the_option_to_log_out_and_encounters_an_issue() {
-        app.loggedInUser = null;
+        app.setLoggedInUser ( null );
         msg = app.logoutPerform();
 
     }

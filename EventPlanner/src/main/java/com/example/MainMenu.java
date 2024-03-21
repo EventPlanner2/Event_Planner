@@ -10,7 +10,7 @@ import java.util.logging.Logger;
 
 public class MainMenu {
     private static final Logger logger = Logger.getLogger(MainMenu.class.getName());
-    private final String welcomeString = """
+    private static final String welcomeString = """
         \n
          __          __    _                                _______        _____  _               _          _____   _                                  
          \\ \\        / /   | |                              |__   __|      / ____|| |             | |        |  __ \\ | |                                 
@@ -22,8 +22,8 @@ public class MainMenu {
                                                                                                   |___/                                              
         """;
     App app = new App();
-    public String username;
-    public String password;
+    private String username;
+    private String password;
     private User user;
 
 

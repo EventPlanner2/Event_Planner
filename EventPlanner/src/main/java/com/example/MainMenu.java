@@ -10,7 +10,7 @@ import java.util.logging.Logger;
 
 public class MainMenu {
     private static final Logger logger = Logger.getLogger(MainMenu.class.getName());
-    private final String WelcomeString = """
+    private final String welcomeString = """
         \n
          __          __    _                                _______        _____  _               _          _____   _                                  
          \\ \\        / /   | |                              |__   __|      / ____|| |             | |        |  __ \\ | |                                 
@@ -31,7 +31,7 @@ public class MainMenu {
 
     public void menu() {
         while (true) {
-            logger.info(WelcomeString);
+            logger.info(welcomeString);
             logger.info(" +--------------------+\n" +
                     "       | 1. log in          |\n" +
                     "       | 2. Sign up         |\n" +

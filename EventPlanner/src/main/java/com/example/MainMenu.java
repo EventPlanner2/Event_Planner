@@ -139,24 +139,7 @@ public class MainMenu {
 
     public void Page(String specification, char role) {
         while (true) {
-            String info = "1.Show account information \n" +
-                    "      " + specification + "\n" +
-                    "      3.Search Service Provider \n" +
-                    "      4.Show upcoming events \n";
-            if (role == 'c') {//log out , show all rooms ,INFO: 6 spaces"      "
-                info += "      5.Enter organizer mode \n";
-            } else if (role == 'a') {
-                info += "      5.Show all rooms \n" +
-                        "      6.Delete room \n";
-
-            }
-            if (role == 's') {
-                info += "      5.Log out \n";
-            } else {
-                info += "      7.Log out \n";
-            }
-            info += "      X.Exit";
-
+            String info = generateMenu(specification, role);
             logger.info(info);
             logger.info("Enter your choice please : ");
 
@@ -165,32 +148,16 @@ public class MainMenu {
                 case "1":
                     accountInformation(role);
                     break;
-                case "2": {
-                    if (role == 'a') {
-                        app.getAddRoomService ().setLoggedInUser(user);
-                        addRoom();
-                    } else if (role == 's') {
-                        complete();
-                    } else {
-                        upgrade();
-                    }
-                }
-                break;
+                case "2":
+                    handleChoiceTwo(role);
+                    break;
                 case "3":
                     searchServiceProvider();
                     break;
                 case "4":
                     return;
-                //showUpcomingEvents();
-                // break;
                 case "5":
-                    if (role == 'c') {
-                        if (!organizerPage()) {
-                            return;
-                        }
-                    } else {
-                        break;
-                    }
+                    handleChoiceFive(role);
                     break;
                 case "X":
                     System.exit(0);
@@ -199,6 +166,47 @@ public class MainMenu {
             }
         }
     }
+
+    private String generateMenu(String specification, char role) {
+        StringBuilder menu = new StringBuilder();
+        menu.append("1. Show account information\n")
+                .append("    ").append(specification).append("\n")
+                .append("3. Search Service Provider\n")
+                .append("4. Show upcoming events\n");
+        if (role == 'c') {
+            menu.append("5. Enter organizer mode\n");
+        } else if (role == 'a') {
+            menu.append("5. Show all rooms\n")
+                    .append("6. Delete room\n");
+        }
+        if (role == 's') {
+            menu.append("5. Log out\n");
+        } else {
+            menu.append("7. Log out\n");
+        }
+        menu.append("X. Exit");
+        return menu.toString();
+    }
+
+    private void handleChoiceTwo(char role) {
+        if (role == 'a') {
+            app.getAddRoomService().setLoggedInUser(user);
+            addRoom();
+        } else if (role == 's') {
+            complete();
+        } else {
+            upgrade();
+        }
+    }
+
+    private void handleChoiceFive(char role) {
+        if (role == 'c') {
+            if (!organizerPage()) {
+                return;
+            }
+        }
+    }
+
 
 
     public void accountInformation(char role) {
@@ -368,18 +376,21 @@ public class MainMenu {
             return true;
         }
         while (true) {
-            logger.info(".-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-.\n" +
-                    "      |  1.Add Event                                  |\n" +
-                    "      |  2.Update Event                               |\n" +
-                    "      !  3.Delete Event                               !\n" +
-                    "      :  4.Search for Service Provider                :\n" +
-                    "      .  5.Reserve Room for an Event                  .\n" +
-                    "      .  6.Reserve Service Provider for an Event      .\n" +
-                    "      :  7.Show upcoming Events                       :\n" +
-                    "      !  8.Show information account                   !\n" +
-                    "      |  9.Log out                                    |\n" +
-                    "      |  X.Exit                                       |\n" +
-                    "      `-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-`");
+            logger.info("""
+        .-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-.
+              |  1. Add Event                                  |
+              |  2. Update Event                               |
+              !  3. Delete Event                               !
+              :  4. Search for Service Provider                :
+              .  5. Reserve Room for an Event                  .
+              .  6. Reserve Service Provider for an Event      .
+              :  7. Show upcoming Events                       :
+              !  8. Show information account                   !
+              |  9. Log out                                    |
+              |  X. Exit                                       |
+              `-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-`
+        """);
+
             logger.info("Pleas enter your choice :");
             String choice = input.next();
 

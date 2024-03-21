@@ -10,8 +10,8 @@ import java.util.logging.Logger;
 
 public class MainMenu {
     private static final Logger logger = Logger.getLogger(MainMenu.class.getName());
-    private static final String welcomeString = """
-        \n
+    private static final String WELCOME_STRING = """
+      
          __          __    _                                _______        _____  _               _          _____   _                                  
          \\ \\        / /   | |                              |__   __|      / ____|| |             | |        |  __ \\ | |                                 
           \\ \\  /\\  / /___ | |  ___  ___   _ __ ___    ___     | |  ___   | (___  | |_  _   _   __| | _   _  | |__) || |  __ _  _ __   _ __    ___  _ __ 
@@ -31,7 +31,7 @@ public class MainMenu {
 
     public void menu() {
         while (true) {
-            logger.info(welcomeString);
+            logger.info(WELCOME_STRING);
             logger.info(" +--------------------+\n" +
                     "       | 1. log in          |\n" +
                     "       | 2. Sign up         |\n" +

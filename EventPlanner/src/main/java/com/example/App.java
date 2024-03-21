@@ -17,7 +17,7 @@ public class App {
     private SPAcc spAccount;
     private AddEvent addEventService;
     private DeleteUpdateEvent deleteUpdateEventService;
-    private SearchServiceProvider SearchSP;
+    private SearchServiceProvider searchSP;
     private ReserveRoom reserveRoomService;
     private ReserveSP reserveSPService;
     private BookEvent bookEventService;
@@ -42,7 +42,7 @@ public class App {
         spAccount = new SPAcc();
         loginService.setSPAccObj(spAccount);
         addEventService=new AddEvent();
-        SearchSP = new SearchServiceProvider();
+        searchSP = new SearchServiceProvider();
         deleteUpdateEventService = new DeleteUpdateEvent(addEventService);
       
         reserveRoomService = new ReserveRoom(loggedInUser);
@@ -113,7 +113,7 @@ public class App {
     }
 
     public SearchServiceProvider getSearchSP() {
-        return SearchSP;
+        return searchSP;
     }
 
     public ReserveRoom getReserveRoomService() {

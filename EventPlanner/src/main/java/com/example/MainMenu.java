@@ -30,7 +30,8 @@ public class MainMenu {
     Scanner input = new Scanner(System.in);
 
     public void menu() {
-        while (true) {
+        boolean isRunning = true;
+        while (isRunning) {
             logger.info(WELCOME_STRING);
             logger.info("""
             +--------------------+
@@ -49,11 +50,14 @@ public class MainMenu {
                     signUp();
                     break;
                 case "X":
-                    System.exit(0);
+                    isRunning = false; // Set isRunning to false to exit the loop
+                    break;
                 default:
+                    logger.info("Invalid choice. Please try again.");
                     break;
             }
         }
+
     }
 
     public void logIn() {

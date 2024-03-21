@@ -50,13 +50,14 @@ public class MainMenu {
                     signUp();
                     break;
                 case "X":
-                    isRunning = false; // Set isRunning to false to exit the loop
+                    isRunning = false; // Terminate the loop
                     break;
                 default:
                     logger.info("Invalid choice. Please try again.");
                     break;
             }
         }
+
 
     }
 

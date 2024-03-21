@@ -4,13 +4,11 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="9fc2b4a3-4e80-4dc3-b513-a55cbae36512" name="Changes" comment="Organizer mode">
+    <list default="true" id="9fc2b4a3-4e80-4dc3-b513-a55cbae36512" name="Changes" comment="DeleteRoom feature steps and service">
+      <change beforePath="$PROJECT_DIR$/.idea/compiler.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/compiler.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/EventPlanner/src/main/java/com/example/App.java" beforeDir="false" afterPath="$PROJECT_DIR$/EventPlanner/src/main/java/com/example/App.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/EventPlanner/src/main/java/com/example/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/EventPlanner/src/main/java/com/example/Main.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/EventPlanner/src/main/java/com/example/MainMenu.java" beforeDir="false" afterPath="$PROJECT_DIR$/EventPlanner/src/main/java/com/example/MainMenu.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/EventPlanner/src/main/java/com/example/data/UserData.java" beforeDir="false" afterPath="$PROJECT_DIR$/EventPlanner/src/main/java/com/example/data/UserData.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/EventPlanner/src/main/java/com/example/entites/Client.java" beforeDir="false" afterPath="$PROJECT_DIR$/EventPlanner/src/main/java/com/example/entites/Client.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -27,7 +25,7 @@
   <component name="Git.Settings">
     <option name="RECENT_BRANCH_BY_REPOSITORY">
       <map>
-        <entry key="$PROJECT_DIR$" value="main" />
+        <entry key="$PROJECT_DIR$" value="Mohamad-Main-Branch" />
       </map>
     </option>
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
@@ -45,7 +43,7 @@
     </option>
     <option name="selectedUrlAndAccountId">
       <UrlAndAccount>
-        <option name="accountId" value="173943d4-0144-4ac6-bcb2-ebd213d9966a" />
+        <option name="accountId" value="9fdeff8e-ea01-47cd-a4e8-1e22f464307a" />
         <option name="url" value="https://github.com/amrbadran/Event_Planner.git" />
       </UrlAndAccount>
     </option>
@@ -61,6 +59,7 @@
   &quot;associatedIndex&quot;: 4
 }</component>
   <component name="ProjectId" id="2d8eKep6lAMukfLULPASRlaBWFy" />
+  <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
   <component name="ProjectViewState">
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
@@ -71,12 +70,13 @@
     "RunOnceActivity.OpenProjectViewOnStart": "true",
     "RunOnceActivity.ShowReadmeOnStart": "true",
     "SHARE_PROJECT_CONFIGURATION_FILES": "true",
-    "git-widget-placeholder": "Mohamad-Main-Branch",
+    "git-widget-placeholder": "main",
     "last_opened_file_path": "C:/SoftwareProject/Event_Planner",
     "node.js.selected.package.tslint": "(autodetect)",
     "project.structure.last.edited": "Project",
     "project.structure.proportion": "0.0",
-    "project.structure.side.proportion": "0.48505747"
+    "project.structure.side.proportion": "0.48505747",
+    "settings.editor.selected.configurable": "reference.settingsdialog.IDE.editor.colors.Console Colors"
   }
 }]]></component>
   <component name="RunManager">
@@ -159,29 +159,29 @@
       <option name="project" value="LOCAL" />
       <updated>1710791419223</updated>
     </task>
-    <task id="LOCAL-00006" summary="ali turabi ,added feature : add event">
+    <task id="LOCAL-00006" summary="Logger instead of System.out.print">
       <option name="closed" value="true" />
-      <created>1709497224811</created>
+      <created>1710946771902</created>
       <option name="number" value="00006" />
       <option name="presentableId" value="LOCAL-00006" />
       <option name="project" value="LOCAL" />
-      <updated>1709497224811</updated>
+      <updated>1710946771902</updated>
     </task>
-    <task id="LOCAL-00007" summary="ali turabi ,added class : add event entity">
+    <task id="LOCAL-00007" summary="Logger instead of System.out.print">
       <option name="closed" value="true" />
-      <created>1709499067161</created>
+      <created>1710949740339</created>
       <option name="number" value="00007" />
       <option name="presentableId" value="LOCAL-00007" />
       <option name="project" value="LOCAL" />
-      <updated>1709499067161</updated>
+      <updated>1710949740339</updated>
     </task>
-    <task id="LOCAL-00008" summary="ali turabi ,added class : add data eventdata class">
+    <task id="LOCAL-00008" summary="DeleteRoom feature steps and service">
       <option name="closed" value="true" />
-      <created>1709500047647</created>
+      <created>1711032177500</created>
       <option name="number" value="00008" />
       <option name="presentableId" value="LOCAL-00008" />
       <option name="project" value="LOCAL" />
-      <updated>1709500047647</updated>
+      <updated>1711032177500</updated>
     </task>
     <task id="LOCAL-00004" summary="Upgrade clint done , Some decorations on the menu">
       <option name="closed" value="true" />
@@ -191,7 +191,7 @@
       <option name="project" value="LOCAL" />
       <updated>1710590862994</updated>
     </task>
-    <option name="localTasksCounter" value="6" />
+    <option name="localTasksCounter" value="9" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -211,7 +211,9 @@
     <MESSAGE value="ali turabi ,added class : add data eventdata class" />
     <MESSAGE value="Upgrade clint done , Some decorations on the menu" />
     <MESSAGE value="Complete ,Update,Add room,MainMenu Decoration" />
-    <option name="LAST_COMMIT_MESSAGE" value="Complete ,Update,Add room,MainMenu Decoration" />
+    <MESSAGE value="Logger instead of System.out.print" />
+    <MESSAGE value="DeleteRoom feature steps and service" />
+    <option name="LAST_COMMIT_MESSAGE" value="DeleteRoom feature steps and service" />
   </component>
   <component name="com.intellij.coverage.CoverageDataManagerImpl">
     <SUITE FILE_PATH="coverage/Event_Planner$acceptanceTest.ic" NAME="acceptanceTest Coverage Results" MODIFIED="1709402770636" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false">

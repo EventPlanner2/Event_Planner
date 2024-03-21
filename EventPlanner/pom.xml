@@ -35,6 +35,22 @@
 
 
     </dependencies>
+
+  <build>
+        <plugins>
+            <plugin>
+                <groupId>org.apache.maven.plugins</groupId>
+                <artifactId>maven-compiler-plugin</artifactId>
+                <version>3.8.0</version> <!-- Updated to version 3.8.0 -->
+                <configuration>
+                    <source>20</source>
+                    <target>20</target>
+                </configuration>
+            </plugin>
+        </plugins>
+    </build>
+
+         
   <properties>
   <sonar.organization>eventplanner2</sonar.organization>
   <sonar.host.url>https://sonarcloud.io</sonar.host.url>

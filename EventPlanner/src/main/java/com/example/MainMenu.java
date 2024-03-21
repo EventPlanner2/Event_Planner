@@ -1,6 +1,5 @@
 package com.example;
 
-import com.example.data.UserData;
 import com.example.entites.ServiceProvider;
 import com.example.entites.User;
 
@@ -84,9 +83,9 @@ public class MainMenu {
                 break;
 
             case 's':
-                logger.info("╔══════════════════════════════════╗\n" +
-                        "      ║ You logged in as Serves Provider ║\n" +
-                        "      ╚══════════════════════════════════╝");
+                logger.info("╔═══════════════════════════════════╗\n" +
+                        "      ║ You logged in as Service Provider ║\n" +
+                        "      ╚═══════════════════════════════════╝");
                 ServiceProvider.getSPFromData(username).setFirstLogin(true);
                 Page("2.Complete", user.getRole());
                 break;
@@ -126,14 +125,25 @@ public class MainMenu {
 
     public void Page(String specification, char role) {
         while (true) {
-            logger.info("1.Show account information ");
-            logger.info(specification);
-            logger.info("3.Search Serves Provider");
-            logger.info("4.Show upcoming events");
-            if(role == 'c'){//log out , show all rooms ,
-                logger.info("5.Enter organizer mode");
+            String info = "1.Show account information \n" +
+                    "      " + specification + "\n" +
+                    "      3.Search Service Provider \n" +
+                    "      4.Show upcoming events \n";
+            if (role == 'c') {//log out , show all rooms ,INFO: 6 spaces"      "
+                info += "      5.Enter organizer mode \n";
+            } else if (role == 'a') {
+                info += "      5.Show all rooms \n" +
+                        "      6.Delete room \n";
+
             }
-            logger.info("X.Exit");
+            if (role == 's') {
+                info += "      5.Log out \n";
+            } else {
+                info += "      7.Log out \n";
+            }
+            info += "      X.Exit";
+
+            logger.info(info);
             logger.info("Enter your choice please : ");
 
             String choose = input.next();
@@ -157,14 +167,14 @@ public class MainMenu {
                     break;
                 case "4":
                     return;
-                    //showUpcomingEvents();
-                   // break;
+                //showUpcomingEvents();
+                // break;
                 case "5":
-                    if(role == 'c'){
-                        if(!organizerPage()){
+                    if (role == 'c') {
+                        if (!organizerPage()) {
                             return;
                         }
-                    }else{
+                    } else {
                         break;
                     }
                     break;
@@ -179,16 +189,17 @@ public class MainMenu {
 
     public void accountInformation(char role) {
         while (true) {
-            logger.info("Username : " + user.getUsername());
-            logger.info("Password : " + user.getPassword());
-            logger.info("Email : " + user.getContactEmail());
+            String info = "Username : " + user.getUsername() + "\n" +
+                    "      Password : " + user.getPassword() + "\n" +
+                    "      Email : " + user.getContactEmail() + "\n";
             if (role == 'a')
-                logger.info("Role : Admin");
+                info += "      Role : Admin";
             else if (role == 's') {
-                logger.info("Role : Serves Provider");
+                info += "Role : Service Provider";
             } else {
-                logger.info("Role : Clint");
+                info += "Role : Clint";
             }
+            logger.info(info);
             if (Back())
                 return;
         }
@@ -297,9 +308,9 @@ public class MainMenu {
         }
     }
 
-    public void printCriteria(List<ServiceProvider> ServesProviders) {
-        for (int i = 0; i < ServesProviders.size(); i++) {
-            logger.info(i + "." + ServesProviders.get(i).getUsername());
+    public void printCriteria(List<ServiceProvider> ServiceProviders) {
+        for (int i = 0; i < ServiceProviders.size(); i++) {
+            logger.info(i + "." + ServiceProviders.get(i).getUsername());
         }
     }
 
@@ -312,7 +323,7 @@ public class MainMenu {
             tmpArray.addAll(app.SearchSP.SearchSPPerformed());
             printCriteria(tmpArray);
         } else if (criteria.equals("Type")) {
-            logger.info("Please enter the type of the serves provider : ");
+            logger.info("Please enter the type of the Service provider : ");
             String type = input.next();
             type += " " + input.next();
             app.SearchSP.setType(type);

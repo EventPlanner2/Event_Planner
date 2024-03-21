@@ -5,6 +5,9 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="9fc2b4a3-4e80-4dc3-b513-a55cbae36512" name="Changes" comment="Logger instead of System.out.print">
+      <change afterPath="$PROJECT_DIR$/EventPlanner/src/main/java/com/example/services/DeleteRoom.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/EventPlanner/src/test/java/applicationTest/steps/DeleteRoomSteps.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/EventPlanner/src/test/resources/features/DeleteRoom.feature" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/EventPlanner/src/main/java/com/example/MainMenu.java" beforeDir="false" afterPath="$PROJECT_DIR$/EventPlanner/src/main/java/com/example/MainMenu.java" afterDir="false" />
     </list>
@@ -164,13 +167,13 @@
       <option name="project" value="LOCAL" />
       <updated>1710946771902</updated>
     </task>
-    <task id="LOCAL-00007" summary="ali turabi ,added class : add event entity">
+    <task id="LOCAL-00007" summary="Logger instead of System.out.print">
       <option name="closed" value="true" />
-      <created>1709499067161</created>
+      <created>1710949740339</created>
       <option name="number" value="00007" />
       <option name="presentableId" value="LOCAL-00007" />
       <option name="project" value="LOCAL" />
-      <updated>1709499067161</updated>
+      <updated>1710949740339</updated>
     </task>
     <task id="LOCAL-00008" summary="ali turabi ,added class : add data eventdata class">
       <option name="closed" value="true" />
@@ -188,7 +191,7 @@
       <option name="project" value="LOCAL" />
       <updated>1710590862994</updated>
     </task>
-    <option name="localTasksCounter" value="7" />
+    <option name="localTasksCounter" value="8" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">

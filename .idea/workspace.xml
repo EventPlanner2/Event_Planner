@@ -6,9 +6,8 @@
   <component name="ChangeListManager">
     <list default="true" id="9fc2b4a3-4e80-4dc3-b513-a55cbae36512" name="Changes" comment="DeleteRoom feature steps and service">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/EventPlanner/src/main/java/com/example/App.java" beforeDir="false" afterPath="$PROJECT_DIR$/EventPlanner/src/main/java/com/example/App.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/EventPlanner/src/main/java/com/example/services/DeleteRoom.java" beforeDir="false" afterPath="$PROJECT_DIR$/EventPlanner/src/main/java/com/example/services/DeleteRoom.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/EventPlanner/src/test/java/applicationTest/steps/DeleteRoomSteps.java" beforeDir="false" afterPath="$PROJECT_DIR$/EventPlanner/src/test/java/applicationTest/steps/DeleteRoomSteps.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/EventPlanner/src/main/java/com/example/MainMenu.java" beforeDir="false" afterPath="$PROJECT_DIR$/EventPlanner/src/main/java/com/example/MainMenu.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/EventPlanner/src/test/resources/features/DeleteRoom.feature" beforeDir="false" afterPath="$PROJECT_DIR$/EventPlanner/src/test/resources/features/DeleteRoom.feature" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -78,7 +77,46 @@
     &quot;settings.editor.selected.configurable&quot;: &quot;reference.settingsdialog.IDE.editor.colors.Console Colors&quot;
   }
 }</component>
-  <component name="RunManager">
+  <component name="RunManager" selected="JUnit.acceptanceTest">
+    <configuration name="Feature: DeleteRoom" type="CucumberJavaRunConfigurationType" factoryName="Cucumber java" temporary="true" nameIsGenerated="true">
+      <option name="CUCUMBER_CORE_VERSION" value="5" />
+      <option name="FILE_PATH" value="$PROJECT_DIR$/EventPlanner/src/test/resources/features/DeleteRoom.feature" />
+      <option name="GLUE" value="applicationTest.steps" />
+      <option name="MAIN_CLASS_NAME" value="io.cucumber.core.cli.Main" />
+      <module name="EventPlanner" />
+      <option name="PROGRAM_PARAMETERS" value=" --plugin org.jetbrains.plugins.cucumber.java.run.CucumberJvm5SMFormatter" />
+      <option name="SUGGESTED_NAME" value="Feature: DeleteRoom" />
+      <option name="WORKING_DIRECTORY" value="$MODULE_WORKING_DIR$" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="io.cucumber.core.cli.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="Scenario: User deletes an existing room by ID" type="CucumberJavaRunConfigurationType" factoryName="Cucumber java" temporary="true" nameIsGenerated="true">
+      <option name="CUCUMBER_CORE_VERSION" value="5" />
+      <option name="FILE_PATH" value="$PROJECT_DIR$/EventPlanner/src/test/resources/features/DeleteRoom.feature" />
+      <option name="GLUE" value="applicationTest.steps" />
+      <option name="MAIN_CLASS_NAME" value="io.cucumber.core.cli.Main" />
+      <module name="EventPlanner" />
+      <option name="NAME_FILTER" value="^User deletes an existing room by ID$" />
+      <option name="PROGRAM_PARAMETERS" value=" --plugin org.jetbrains.plugins.cucumber.java.run.CucumberJvm5SMFormatter --name &quot;^User deletes an existing room by ID$&quot;" />
+      <option name="SUGGESTED_NAME" value="Scenario: User deletes an existing room by ID" />
+      <option name="WORKING_DIRECTORY" value="$MODULE_WORKING_DIR$" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="io.cucumber.core.cli.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
     <configuration name="acceptanceTest" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="EventPlanner" />
       <extension name="coverage">
@@ -110,8 +148,8 @@
     <recent_temporary>
       <list>
         <item itemvalue="JUnit.acceptanceTest" />
-        <item itemvalue="JUnit.acceptanceTest" />
-        <item itemvalue="JUnit.acceptanceTest" />
+        <item itemvalue="Cucumber Java.Feature: DeleteRoom" />
+        <item itemvalue="Cucumber Java.Scenario: User deletes an existing room by ID" />
         <item itemvalue="JUnit.acceptanceTest" />
         <item itemvalue="JUnit.acceptanceTest" />
       </list>

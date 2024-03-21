@@ -234,11 +234,12 @@ public class MainMenu {
 
         while (true) {
             if (Back()) return;
-            logger.info("Search based on : ");
-            logger.info("1.Location ");
-            logger.info("2.Type ");
-            logger.info("3.Price");
-            logger.info("Please enter your choice :");
+            String info = "Search based on : \n" +
+                    "      1.Location  \n" +
+                    "      2.Type \n" +
+                    "      3.Price \n" +
+                    "Please enter your choice :";
+            logger.info(info);
             String choose = input.next();
             switch (choose) {
                 case "1":

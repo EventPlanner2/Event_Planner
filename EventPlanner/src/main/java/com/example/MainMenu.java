@@ -1,15 +1,15 @@
 package com.example;
 
-import com.example.data.UserData;
 import com.example.entites.ServiceProvider;
 import com.example.entites.User;
 
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Scanner;
+import java.util.logging.Logger;
 
 public class MainMenu {
-
+    private static final Logger logger = Logger.getLogger(MainMenu.class.getName());
     private final String WelcomeString = "\n" +
             " __          __    _                                _______        _____  _               _          _____   _                                  \n" +
             " \\ \\        / /   | |                              |__   __|      / ____|| |             | |        |  __ \\ | |                                 \n" +
@@ -29,13 +29,13 @@ public class MainMenu {
 
     public void menu() {
         while (true) {
-            System.out.println(WelcomeString);
-            System.out.println(" +--------------------+\n" +
-                    " | 1. log in          |\n" +
-                    " | 2. Sign up         |\n" +
-                    " | X. Exit            |\n" +
-                    " +--------------------+");
-            System.out.print("Enter your choice please : ");
+            logger.info(WelcomeString);
+            logger.info(" +--------------------+\n" +
+                    "       | 1. log in          |\n" +
+                    "       | 2. Sign up         |\n" +
+                    "       | X. Exit            |\n" +
+                    "       +--------------------+");
+            logger.info("Enter your choice please : ");
             String choose = input.next();
             switch (choose) {
                 case "1":
@@ -58,14 +58,14 @@ public class MainMenu {
         char role = 'a';
         while (true) {
             if (Back()) return;
-            System.out.println("Please enter the username and the password :");
-            System.out.print("Username :");
+            logger.info("Please enter the username and the password :");
+            logger.info("Username :");
             username = input.next();
-            System.out.print("Password :");
+            logger.info("Password :");
             password = input.next();
             user = app.loginService.LoginPerformed(username, password);
             if (user == null) {
-                System.out.println(app.loginService.errorMessage);
+                logger.info(app.loginService.errorMessage);
             } else {
                 app.loggedInUser = user;
                 role = user.getRole();
@@ -76,24 +76,24 @@ public class MainMenu {
         app.loggedInUser = user;
         switch (role) {
             case 'a':
-                System.out.println("╔════════════════════════╗\n" +
-                        "║ You logged in as Admin ║\n" +
-                        "╚════════════════════════╝");
+                logger.info("╔════════════════════════╗\n" +
+                        "      ║ You logged in as Admin ║\n" +
+                        "      ╚════════════════════════╝");
                 Page("2.Add Room", user.getRole());
                 break;
 
             case 's':
-                System.out.println("╔══════════════════════════════════╗\n" +
-                        "║ You logged in as Serves Provider ║\n" +
-                        "╚══════════════════════════════════╝");
+                logger.info("╔═══════════════════════════════════╗\n" +
+                        "      ║ You logged in as Service Provider ║\n" +
+                        "      ╚═══════════════════════════════════╝");
                 ServiceProvider.getSPFromData(username).setFirstLogin(true);
                 Page("2.Complete", user.getRole());
                 break;
 
             case 'c':
-                System.out.println("╔════════════════════════╗\n" +
-                        "║ You logged in as Clint ║\n" +
-                        "╚════════════════════════╝");
+                logger.info("╔════════════════════════╗\n" +
+                        "      ║ You logged in as Clint ║\n" +
+                        "      ╚════════════════════════╝");
                 Page("2.Upgrade", user.getRole());
                 break;
 
@@ -105,19 +105,19 @@ public class MainMenu {
     public void signUp() {
         while (true) {
             if (Back()) return;
-            System.out.print("Please enter your username :");
+            logger.info("Please enter your username :");
             String username = input.next();
-            System.out.print("Please enter your password :");
+            logger.info("Please enter your password :");
             String password = input.next();
-            System.out.print("Please enter your email :");
+            logger.info("Please enter your email :");
             String email = input.next();
-            System.out.print("Please enter your role :");
+            logger.info("Please enter your role :");
             String role = input.next();
             boolean flag = app.signUpService.register(username, password, email, role);
             if (flag) {
                 break;
             } else {
-                System.out.println(app.signUpService.msg);
+                logger.info(app.signUpService.msg);
             }
         }
     }
@@ -125,15 +125,26 @@ public class MainMenu {
 
     public void Page(String specification, char role) {
         while (true) {
-            System.out.println("1.Show account information ");
-            System.out.println(specification);
-            System.out.println("3.Search Serves Provider");
-            System.out.println("4.Show upcoming events");
-            if(role == 'c'){
-                System.out.println("5.Enter organizer mode");
+            String info = "1.Show account information \n" +
+                    "      " + specification + "\n" +
+                    "      3.Search Service Provider \n" +
+                    "      4.Show upcoming events \n";
+            if (role == 'c') {//log out , show all rooms ,INFO: 6 spaces"      "
+                info += "      5.Enter organizer mode \n";
+            } else if (role == 'a') {
+                info += "      5.Show all rooms \n" +
+                        "      6.Delete room \n";
+
             }
-            System.out.println("X.Exit");
-            System.out.print("Enter your choice please : ");
+            if (role == 's') {
+                info += "      5.Log out \n";
+            } else {
+                info += "      7.Log out \n";
+            }
+            info += "      X.Exit";
+
+            logger.info(info);
+            logger.info("Enter your choice please : ");
 
             String choose = input.next();
             switch (choose) {
@@ -155,14 +166,15 @@ public class MainMenu {
                     searchServiceProvider();
                     break;
                 case "4":
-                    showUpcomingEvents();
-                    break;
+                    return;
+                //showUpcomingEvents();
+                // break;
                 case "5":
-                    if(role == 'c'){
-                        if(!organizerPage()){
+                    if (role == 'c') {
+                        if (!organizerPage()) {
                             return;
-                        };
-                    }else{
+                        }
+                    } else {
                         break;
                     }
                     break;
@@ -177,16 +189,17 @@ public class MainMenu {
 
     public void accountInformation(char role) {
         while (true) {
-            System.out.println("Username : " + user.getUsername());
-            System.out.println("Password : " + user.getPassword());
-            System.out.println("Email : " + user.getContactEmail());
+            String info = "Username : " + user.getUsername() + "\n" +
+                    "      Password : " + user.getPassword() + "\n" +
+                    "      Email : " + user.getContactEmail() + "\n";
             if (role == 'a')
-                System.out.println("Role : Admin");
+                info += "      Role : Admin";
             else if (role == 's') {
-                System.out.println("Role : Serves Provider");
+                info += "Role : Service Provider";
             } else {
-                System.out.println("Role : Clint");
+                info += "Role : Clint";
             }
+            logger.info(info);
             if (Back())
                 return;
         }
@@ -195,22 +208,22 @@ public class MainMenu {
     public void addRoom() {
         while (true) {
             if (Back()) return;
-            System.out.print("Please enter the name of the new room : ");
+            logger.info("Please enter the name of the new room : ");
             String roomName = input.next();
-            System.out.print("Please enter the Capacity of the new room : ");
+            logger.info("Please enter the Capacity of the new room : ");
             String roomCapacity = input.next();
-            System.out.print("Please enter the cost per hour of the new room :");
+            logger.info("Please enter the cost per hour of the new room :");
             String roomCost = input.next();
-            System.out.print("Please enter the description of the new room :");
+            logger.info("Please enter the description of the new room :");
             String roomDes = input.next();
-            System.out.print("Please enter the Availability of the new room :");
+            logger.info("Please enter the Availability of the new room :");
             String roomAvailability = input.next();
             boolean flag = app.addRoomService.AddRoomPerformed(roomName, roomAvailability, roomCapacity, roomCost, roomDes);
             if (flag) {
-                System.out.println(app.addRoomService.getMsg());
+                logger.info(app.addRoomService.getMsg());
                 break;
             } else {
-                System.out.println(app.addRoomService.getMsg());
+                logger.info(app.addRoomService.getMsg());
             }
         }
 
@@ -221,11 +234,12 @@ public class MainMenu {
 
         while (true) {
             if (Back()) return;
-            System.out.println("Search based on : ");
-            System.out.println("1.Location ");
-            System.out.println("2.Type ");
-            System.out.println("3.Price");
-            System.out.print("Please enter your choice :");
+            String info = "Search based on : \n" +
+                    "      1.Location  \n" +
+                    "      2.Type \n" +
+                    "      3.Price \n" +
+                    "Please enter your choice :";
+            logger.info(info);
             String choose = input.next();
             switch (choose) {
                 case "1":
@@ -243,11 +257,11 @@ public class MainMenu {
 
                 case "":
                     app.SearchSP.setSelectedCriteria("");
-                    System.out.println(app.SearchSP.getErrorMsg());
+                    logger.info(app.SearchSP.getErrorMsg());
                     break;
                 default:
                     app.SearchSP.setSelectedCriteria("a");
-                    System.out.println(app.SearchSP.getErrorMsg());
+                    logger.info(app.SearchSP.getErrorMsg());
                     break;
             }
         }
@@ -261,27 +275,27 @@ public class MainMenu {
         while (true) {
             if (Back()) return;
             if (!ServiceProvider.getSPFromData(user.getUsername()).isFirstLogin()) {
-                System.out.println(app.SPAccount.getCompleteAccountMsg());
+                logger.info(app.SPAccount.getCompleteAccountMsg());
                 return;
             }
             String location, productPrice, productType;
-            System.out.println("To complete your account please enter your:");
-            System.out.print("Location : ");
+            logger.info("To complete your account please enter your:");
+            logger.info("Location : ");
             location = input.next();
-            System.out.print("Product Price : ");
+            logger.info("Product Price : ");
             productPrice = input.next();
-            System.out.print("Product Type : ");
+            logger.info("Product Type : ");
             productType = input.next();
             productType += " " + input.next();
 
             boolean flag = app.SPAccount.CompleteAccountPerform(location, productPrice, productType);
 
             if (flag) {
-                System.out.println(app.SPAccount.getCompleteAccountMsg());
+                logger.info(app.SPAccount.getCompleteAccountMsg());
                 ServiceProvider.getSPFromData(username).setFirstLogin(false);
                 return;
             } else {
-                System.out.println(app.SPAccount.getCompleteAccountMsg());
+                logger.info(app.SPAccount.getCompleteAccountMsg());
             }
         }
     }
@@ -291,33 +305,32 @@ public class MainMenu {
             if (Back()) return;
             app.upgradeClient.setLoggedInUser(user);
             app.upgradeClient.UpgradeClientPerform();
-            System.out.println(app.upgradeClient.getMsg());
+            logger.info(app.upgradeClient.getMsg());
         }
     }
 
-    public void printCriteria(List<ServiceProvider> ServesProviders) {
-        for (int i = 0; i < ServesProviders.size(); i++) {
-            System.out.println(i + "." + ServesProviders.get(i).getUsername());
+    public void printCriteria(List<ServiceProvider> ServiceProviders) {
+        for (int i = 0; i < ServiceProviders.size(); i++) {
+            logger.info(i + "." + ServiceProviders.get(i).getUsername());
         }
     }
 
     public void searchCriteria(String criteria) {
         List<ServiceProvider> tmpArray = new ArrayList<>();
         if (criteria.equals("Location")) {
-            System.out.print("Please enter the name of the location to search :");
+            logger.info("Please enter the name of the location to search :");
             String location = input.next();
             app.SearchSP.setLocation(location);
-            System.out.println(UserData.getSps().size() + "this is the size\n");
             tmpArray.addAll(app.SearchSP.SearchSPPerformed());
             printCriteria(tmpArray);
         } else if (criteria.equals("Type")) {
-            System.out.print("Please enter the type of the serves provider : ");
+            logger.info("Please enter the type of the Service provider : ");
             String type = input.next();
             type += " " + input.next();
             app.SearchSP.setType(type);
             printCriteria(app.SearchSP.SearchSPPerformed());
         } else {
-            System.out.print("Please enter the price of the product : ");
+            logger.info("Please enter the price of the product : ");
             String price = input.next();
             app.SearchSP.setPrice(price);
             printCriteria(app.SearchSP.SearchSPPerformed());
@@ -325,7 +338,7 @@ public class MainMenu {
     }
 
     public boolean Back() {
-        System.out.print("Please Enter B if you want to go back otherwise enter anything : ");
+        logger.info("Please Enter B if you want to go back otherwise enter anything : ");
         String back = input.next();
         if (back.equals("B")) {
             return true;
@@ -337,23 +350,23 @@ public class MainMenu {
     public boolean organizerPage() {
         if (Back()) return true;
         if (!app.addEventService.isOrgnaizer(user.getUsername())) {
-            System.out.println("You must be an Organizer");
+            logger.info("You must be an Organizer");
             return true;
         }
         while (true) {
-            System.out.println(".-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-.\n" +
-                    "|  1.Add Event                                  |\n" +
-                    "|  2.Update Event                               |\n" +
-                    "!  3.Delete Event                               !\n" +
-                    ":  4.Search for Service Provider                :\n" +
-                    ".  5.Reserve Room for an Event                  .\n" +
-                    ".  6.Reserve Service Provider for an Event      .\n" +
-                    ":  7.Show upcoming Events                       :\n" +
-                    "!  8.Show information account                   !\n" +
-                    "|  9.Log out                                    |\n" +
-                    "|  X.Exit                                       |\n" +
-                    "`-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-`");
-            System.out.print("Pleas enter your choice :");
+            logger.info(".-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-.\n" +
+                    "      |  1.Add Event                                  |\n" +
+                    "      |  2.Update Event                               |\n" +
+                    "      !  3.Delete Event                               !\n" +
+                    "      :  4.Search for Service Provider                :\n" +
+                    "      .  5.Reserve Room for an Event                  .\n" +
+                    "      .  6.Reserve Service Provider for an Event      .\n" +
+                    "      :  7.Show upcoming Events                       :\n" +
+                    "      !  8.Show information account                   !\n" +
+                    "      |  9.Log out                                    |\n" +
+                    "      |  X.Exit                                       |\n" +
+                    "      `-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-`");
+            logger.info("Pleas enter your choice :");
             String choice = input.next();
 
             switch (choice) {

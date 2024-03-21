@@ -29,7 +29,6 @@ public class AddEvent {
     private int attendeeCount;
     private String imagePath;
 
-
     public boolean addEvent (String username,int eventId, String name, String description, String startDate, String
         endDate, String startClock, String endClock, String attendeeCount, String imagePath){
 

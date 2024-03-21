@@ -36,9 +36,15 @@
 
     </dependencies>
 
- <properties>
-    <maven.compiler.release>17</maven.compiler.release>
-  </properties>
+<properties>
+<!--   Set the Java version used by the compiler.   -->
+<!--   Setting to Java 8 will work, in most cases, for installed   -->
+<!--   Java versions >= 8.   -->
+<maven.compiler.source>8</maven.compiler.source>
+<maven.compiler.target>8</maven.compiler.target>
+<failOnMissingWebXml>false</failOnMissingWebXml>
+<project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
+</properties>
 
   <build>
     <pluginManagement>

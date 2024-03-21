@@ -9,6 +9,9 @@ import java.util.Scanner;
 import java.util.logging.Logger;
 
 public class MainMenu {
+    public static final String LOCATION_CRITERIA = "Location";
+    public static final String TYPE_CRITERIA = "Type";
+    public static final String PRICE_CRITERIA = "Price";
     private static final Logger logger = Logger.getLogger(MainMenu.class.getName());
     private static final String WELCOME_STRING = """
       
@@ -200,20 +203,22 @@ public class MainMenu {
     }
 
     private void handleChoiceFive(char role) {
-        if (role == 'c') {
-            if (!organizerPage()) {
-                return;
-            }
+        if (role == 'c' && !organizerPage()) {
+            return;
         }
     }
 
 
 
+
     public void accountInformation(char role) {
         while (true) {
-            String info = "Username : " + user.getUsername() + "\n" +
-                    "      Password : " + user.getPassword() + "\n" +
-                    "      Email : " + user.getContactEmail() + "\n";
+            String info = """
+        Username : """ + user.getUsername() + """
+              Password : """ + user.getPassword() + """
+              Email : """ + user.getContactEmail() + """
+        """;
+
             if (role == 'a')
                 info += "      Role : Admin";
             else if (role == 's') {
@@ -256,34 +261,36 @@ public class MainMenu {
 
         while (true) {
             if (Back()) return;
-            String info = "Search based on : \n" +
-                    "      1.Location  \n" +
-                    "      2.Type \n" +
-                    "      3.Price \n" +
-                    "Please enter your choice :";
+            String info = """
+        Search based on :
+              1. Location
+              2. Type
+              3. Price
+        Please enter your choice :
+        """;
+
             logger.info(info);
             String choose = input.next();
             switch (choose) {
                 case "1":
-                    app.getSearchSP ().setSelectedCriteria("Location");
-                    searchCriteria("Location");
+                    app.getSearchSP().setSelectedCriteria(LOCATION_CRITERIA);
+                    searchCriteria(LOCATION_CRITERIA);
                     break;
                 case "2":
-                    app.getSearchSP ().setSelectedCriteria("Type");
-                    searchCriteria("Type");
+                    app.getSearchSP().setSelectedCriteria(TYPE_CRITERIA);
+                    searchCriteria(TYPE_CRITERIA);
                     break;
                 case "3":
-                    app.getSearchSP ().setSelectedCriteria("Price");
-                    searchCriteria("Price");
+                    app.getSearchSP().setSelectedCriteria(PRICE_CRITERIA);
+                    searchCriteria(PRICE_CRITERIA);
                     break;
-
                 case "":
-                    app.getSearchSP ().setSelectedCriteria("");
-                    logger.info( app.getSearchSP ().getErrorMsg());
+                    app.getSearchSP().setSelectedCriteria("");
+                    logger.info(app.getSearchSP().getErrorMsg());
                     break;
                 default:
-                    app.getSearchSP ().setSelectedCriteria("a");
-                    logger.info( app.getSearchSP ().getErrorMsg());
+                    app.getSearchSP().setSelectedCriteria("a");
+                    logger.info(app.getSearchSP().getErrorMsg());
                     break;
             }
         }
@@ -331,9 +338,9 @@ public class MainMenu {
         }
     }
 
-    public void printCriteria(List<ServiceProvider> ServiceProviders) {
-        for (int i = 0; i < ServiceProviders.size(); i++) {
-            logger.info(i + "." + ServiceProviders.get(i).getUsername());
+    public void printCriteria(List<ServiceProvider> serviceProviders) {
+        for (int i = 0; i < serviceProviders.size(); i++) {
+            logger.info(i + "." + serviceProviders.get(i).getUsername());
         }
     }
 

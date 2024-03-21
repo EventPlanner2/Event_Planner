@@ -35,7 +35,6 @@ public class App {
         loginService = new Login(users);
         loggedInUser = null;
         signUpService = new SignUp(users);
-
          rd = new RoomData();// to initialize the data it the db
         rooms = RoomData.getRooms();
         addRoomService = new AddRoom(rooms);

@@ -32,22 +32,22 @@ public class MainMenu {
     public void menu() {
         while (true) {
             logger.info(WELCOME_STRING);
-            logger.info(" +--------------------+\n" +
-                    "       | 1. log in          |\n" +
-                    "       | 2. Sign up         |\n" +
-                    "       | X. Exit            |\n" +
-                    "       +--------------------+");
+            logger.info("""
+            +--------------------+
+            | 1. log in          |
+            | 2. Sign up         |
+            | X. Exit            |
+            +--------------------+
+            """);
             logger.info("Enter your choice please : ");
             String choose = input.next();
             switch (choose) {
                 case "1":
                     logIn();
                     break;
-
                 case "2":
                     signUp();
                     break;
-
                 case "X":
                     System.exit(0);
                 default:

@@ -176,7 +176,7 @@ public class MainMenu {
                 case "7":
                     showNotifications();
                 case "8":
-                    if (role == 'a') {
+                    if (role == 'a' || role == 'c') {
                         return;
                     }
                     break;
@@ -199,14 +199,16 @@ public class MainMenu {
             menu.append("5. Enter organizer mode\n");
         } else if (role == 'a') {
             menu.append("5. Show all rooms\n")
-                    .append("6. Delete room\n").append("7. Notifications\n");
+                    .append("6. Delete room\n")
+                    .append("7. Notifications\n")
+                    .append("8. Log out\n");
         }
         if (role == 's') {
             menu.append("5. Log out\n");
         } else if (role == 'c') {
-            menu.append("6. Book event\n");
-            menu.append("7. Cancel Booking\n");
-            menu.append("8. Log out\n");
+            menu.append("6. Book event\n")
+                    .append("7. Cancel Booking\n")
+                    .append("8. Log out\n");
         }
         menu.append("X. Exit");
         return menu.toString();
@@ -490,31 +492,31 @@ public class MainMenu {
 
     public void addEvent() {
         while (true) {
-            System.out.print("Please enter the user name : ");
+            logger.info("Please enter the user name : ");
             String username = input.next();
-            System.out.print("Please enter the information for the new event : ");
-            System.out.print("Event name : ");
+            logger.info("Please enter the information for the new event : ");
+            logger.info("Event name : ");
             String eventName = input.next();
-            System.out.print("Description :");
+            logger.info("Description :");
             String eventDes = input.next();
-            System.out.print("Start date : ");
+            logger.info("Start date : ");
             String startDate = input.next();
-            System.out.print("End date : ");
+            logger.info("End date : ");
             String endDate = input.next();
-            System.out.print("Starting hour :");
+            logger.info("Starting hour :");
             String startHour = input.next();
-            System.out.print("End hour :");
+            logger.info("End hour :");
             String endHour = input.next();
-            System.out.print("Attendee count :");
+            logger.info("Attendee count :");
             String attendeeCount = input.next();
-            System.out.print("Image path :");
+            logger.info("Image path :");
             String imagePath = input.next();
             boolean flag = app.getAddEventService().addEvent(username, EventData.getEvents().size() + 1, eventName, eventDes, startDate, endDate, startHour, endHour, attendeeCount, imagePath);
             if (flag) {
-                System.out.println(app.getAddEventService().getMsg());
+                logger.info(app.getAddEventService().getMsg());
                 break;
             } else {
-                System.out.println(app.getAddEventService().getMsg());
+                logger.info(app.getAddEventService().getMsg());
             }
         }
 
@@ -523,34 +525,35 @@ public class MainMenu {
 
     public void updateEvent() {
         while (true) {
-            System.out.print("Please enter the user name : ");
+            showUpcomingEvents();
+            logger.info("Please enter the user name : ");
             String username = input.next();
-            System.out.print("Please enter the new information for your event : ");
-            System.out.print("Event name : ");
+            logger.info("Please enter the new information for your event : ");
+            logger.info("Event name : ");
             String eventName = input.next();
-            System.out.print("Event id : ");
+            logger.info("Event id : ");
             String eventId = input.next();
-            System.out.print("Description :");
+            logger.info("Description :");
             String eventDes = input.next();
-            System.out.print("Start date : ");
+            logger.info("Start date : ");
             String startDate = input.next();
-            System.out.print("End date : ");
+            logger.info("End date : ");
             String endDate = input.next();
-            System.out.print("Starting hour :");
+            logger.info("Starting hour :");
             String startHour = input.next();
-            System.out.print("End hour :");
+            logger.info("End hour :");
             String endHour = input.next();
-            System.out.print("Attendee count :");
+            logger.info("Attendee count :");
             String attendeeCount = input.next();
-            System.out.print("Image path :");
+            logger.info("Image path :");
             String imagePath = input.next();
             boolean flag = app.getDeleteUpdateEventService().UpdateEventPerform(eventId, username, eventName, eventDes, startDate, endDate, startHour, endHour, attendeeCount, imagePath);
             if (flag) {
-                System.out.println(app.getDeleteUpdateEventService().getMsg());
+                logger.info(app.getDeleteUpdateEventService().getMsg());
                 //Created getMsg in DeleteUpdateEvent
                 break;
             } else {
-                System.out.println(app.getDeleteUpdateEventService().getMsg());
+                logger.info(app.getDeleteUpdateEventService().getMsg());
             }
         }
 
@@ -559,16 +562,17 @@ public class MainMenu {
 
     public void deleteEvent() {
         while (true) {
-            System.out.print("Please enter the ID of the event you want to delete : ");
+            showUpcomingEvents();
+            logger.info("Please enter the ID of the event you want to delete : ");
             String eventId = input.next();
             boolean flag = app.getDeleteUpdateEventService().DeleteEventPerform(eventId);
             if (flag) {
-                System.out.println(app.getDeleteUpdateEventService().getMsg());
+                logger.info(app.getDeleteUpdateEventService().getMsg());
                 //Created getMsg in DeleteUpdateEvent
                 break;
 
             } else {
-                System.out.println(app.getDeleteUpdateEventService().getMsg());
+                logger.info(app.getDeleteUpdateEventService().getMsg());
             }
 
         }

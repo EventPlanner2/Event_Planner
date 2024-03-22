@@ -1,10 +1,8 @@
 package com.example.services;
 
 import com.example.entites.Event;
-import com.example.entites.Room;
 import com.example.entites.ServiceProvider;
 import com.example.entites.User;
-import io.cucumber.java.bs.A;
 
 import java.util.ArrayList;
 

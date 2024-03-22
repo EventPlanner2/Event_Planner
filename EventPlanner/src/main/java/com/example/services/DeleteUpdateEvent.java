@@ -1,7 +1,5 @@
 package com.example.services;
 
-import com.example.data.EventData;
-import com.example.data.UserData;
 import com.example.entites.Client;
 import com.example.entites.Event;
 import static com.example.data.EventData.getEvents;

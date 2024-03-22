@@ -1,12 +1,9 @@
 package com.example.services;
 
-import com.example.data.EventData;
 import com.example.entites.Client;
 import com.example.entites.Event;
 
-import java.text.DateFormat;
 import java.time.LocalDate;
-import java.time.format.DateTimeFormatter;
 import java.util.ArrayList;
 import static com.example.data.EventData.getEvents;
 

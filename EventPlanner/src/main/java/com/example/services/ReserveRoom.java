@@ -1,7 +1,5 @@
 package com.example.services;
 
-import com.example.data.EventData;
-import com.example.data.RoomData;
 import com.example.entites.Event;
 import com.example.entites.Room;
 import com.example.entites.User;

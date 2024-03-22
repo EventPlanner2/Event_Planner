@@ -26,7 +26,7 @@ public class App {
    private RoomData rd ;
 
 
-    public UpgradeClient upgradeClient;
+    //public UpgradeClient upgradeClient;
     private Calender calenderService;
 
 

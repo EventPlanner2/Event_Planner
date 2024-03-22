@@ -60,14 +60,15 @@ public class AddEvent {
         EventData.addEvent(event);
         Client c = Client.getClientFromData(username);
         c.setNumberEvent(c.getNumberEvent() + 1);
+
+        String notification = LocalDate.now()+"| "+ "Event With Name "+name+" And StartDate "+startDate+" Has Been Added";
+        NotifcationData.addNotification(notification);
         return true;
+
     }
 
 
-         c.setNumberEvent(c.getNumberEvent() + 1);
 
-         String notification = LocalDate.now()+"| "+ "Event With Name "+name+" And StartDate "+startDate+" Has Been Added";
-         NotifcationData.addNotification(notification);
 
     public boolean nameVerification(String name) {
         if ( name.isEmpty()) {

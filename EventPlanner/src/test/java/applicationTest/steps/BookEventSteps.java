@@ -32,7 +32,7 @@ public class BookEventSteps {
       
          app.setLoggedInUser ( app.getLoginService ().LoginPerformed ( "Ali Turabi", "123456789" ) );
         //app.loggedInUser = app.loginService.LoginPerformed("Ali Turabi","123456789");
-        app.getCalenderService().setLoggedInUser(app.loggedInUser);
+        app.getCalenderService().setLoggedInUser(app.getLoggedInUser());
         
 
     }

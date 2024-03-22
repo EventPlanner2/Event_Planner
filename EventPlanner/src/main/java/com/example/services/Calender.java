@@ -27,7 +27,7 @@ public class Calender {
         boolean flagPast = pastOrFuture.equals("past");
         try {
             c1 = Client.getClientFromData(loggedInUser.getUsername());
-            for (Event e : c1.eventsBooked) {
+            for (Event e : c1.getEventsBooked()) {
                 if (e.getUsername().equals(loggedInUser.getUsername())) {
                     if (flagPast && e.getStartDate().isBefore(LocalDate.now())) {
                         resEvents.add(e);
@@ -48,7 +48,7 @@ public class Calender {
         try{
             c1 = Client.getClientFromData(loggedInUser.getUsername());
             int eventId = Integer.parseInt(id);
-            for(Event e : c1.eventsBooked){
+            for(Event e : c1.getEventsBooked()){
                 if(e.getId() == eventId) return e;
             }
             setMsg("This Event is not on the list");

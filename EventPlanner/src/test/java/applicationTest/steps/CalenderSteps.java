@@ -41,7 +41,7 @@ public class CalenderSteps {
     @Then("all events he booked will be shown with date,event name and id")
     public void allEventsHeBookedWillBeShownWithDateEventNameAndId() {
         for(Event e : app.getCalenderService().getResEvents()){
-            if(!e.getUsername().equals(app.loggedInUser.getUsername())){
+            if(!e.getUsername().equals(app.getLoggedInUser().getUsername())){
                 fail();
             }
         }

@@ -8,7 +8,7 @@ public class Client extends User {
 
     private boolean isOrganizer;
     private int numberEvent;
-    public List<Event> eventsBooked; // Use interface List instead of ArrayList
+    private List<Event> eventsBooked; // Use interface List instead of ArrayList
     public Client(String username, String password, String contactEmail, Character role, boolean isOrganizer) {
         super(username, password, contactEmail, role);
         this.isOrganizer = isOrganizer;
@@ -40,5 +40,13 @@ public class Client extends User {
     // Setter method for numberEvent
     public void setNumberEvent(int numberEvent) {
         this.numberEvent = numberEvent;
+    }
+
+    public List<Event> getEventsBooked() {
+        return eventsBooked;
+    }
+
+    public void setEventsBooked(List<Event> eventsBooked) {
+        this.eventsBooked = eventsBooked;
     }
 }

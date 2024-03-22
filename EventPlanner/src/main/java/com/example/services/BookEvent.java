@@ -29,13 +29,13 @@ public class BookEvent {
             String user = c1.getUsername();
 
             int eventid = Integer.parseInt(id);
-            for(Event e : c1.eventsBooked){
+            for(Event e : c1.getEventsBooked ()){
                 if(e.getId() == eventid){
                     msg = "You Have Already Booked this event";
                     return false;
                 }
             }
-            c1.eventsBooked.add(Event.getEventByID(eventid));
+            c1.getEventsBooked ().add(Event.getEventByID(eventid));
             msg = "You have successfully booked the event";
             email_sent = true;
             // email sending here (make a class called EmailSender and call the function Sendemail here)

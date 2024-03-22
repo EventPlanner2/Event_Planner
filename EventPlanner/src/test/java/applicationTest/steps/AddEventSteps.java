@@ -54,7 +54,7 @@ public class AddEventSteps {
 
     @Given("the organizer wants to add a new event")
     public void theOrganizerWantsToAddANewEvent() {
-        app.getAddEventService ().AddingEvent = true;
+        app.getAddEventService ().setAddingEvent ( true );
 
     }
 
@@ -88,13 +88,13 @@ public class AddEventSteps {
 
     @Given("the organizer wants to add another new event")
     public void theOrganizerWantsToAddAnotherNewEvent() {
-        app.getAddEventService ().AddingEvent = true;
+        app.getAddEventService ().setAddingEvent ( true );
 
     }
 
     @Given("the organizer wants to add the fourth  new event")
     public void theOrganizerWantsToAddTheFourthNewEvent() {
-        app.getAddEventService ().AddingEvent = true;
+        app.getAddEventService ().setAddingEvent ( true );
     }
 
     @When("the user already created {} events")

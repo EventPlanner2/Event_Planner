@@ -14,7 +14,7 @@ import java.time.format.DateTimeParseException;
 
 public class AddEvent {
 
-    public boolean AddingEvent;
+    private boolean AddingEvent;
     private String msg;
     private String username;
     private User loggedInUser;
@@ -176,4 +176,11 @@ public class AddEvent {
     }
 
 
+    public boolean isAddingEvent() {
+        return AddingEvent;
+    }
+
+    public void setAddingEvent(boolean addingEvent) {
+        AddingEvent = addingEvent;
+    }
 }

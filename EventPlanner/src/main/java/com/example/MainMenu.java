@@ -175,6 +175,7 @@ public class MainMenu {
                     break;
                 case "7":
                     showNotifications();
+                    break;
                 case "8":
                     if (role == 'a' || role == 'c') {
                         return;

@@ -2,6 +2,7 @@ package com.example.services;
 
 import com.example.entites.Client;
 import com.example.entites.Event;
+
 import static com.example.data.EventData.getEvents;
 
 public class DeleteUpdateEvent {
@@ -13,25 +14,24 @@ public class DeleteUpdateEvent {
 
     public DeleteUpdateEvent(AddEvent addEvent) {
         this.msg = "";
-        this.addEvent =addEvent;
+        this.addEvent = addEvent;
     }
 
-    public boolean UpdateEventPerform(String id,String username, String name, String description, String startDate, String
-            endDate, String startClock, String endClock, String attendeeCount, String imagePath){
+    public boolean UpdateEventPerform(String id, String username, String name, String description, String startDate, String
+            endDate, String startClock, String endClock, String attendeeCount, String imagePath) {
 
-        try{
+        try {
             int eventid = Integer.parseInt(id);
-            if(!DoesEventExists(eventid)){
+            if (!DoesEventExists(eventid)) {
                 msg = "Non-Existing Event";
                 return false;
             }
             boolean tmp = DeleteEventPerform(id);
 
-            boolean tmp2 = addEvent.addEvent(username,eventid,name,description,startDate,endDate,startClock,endClock,attendeeCount,imagePath);
+            boolean tmp2 = addEvent.addEvent(username, eventid, name, description, startDate, endDate, startClock, endClock, attendeeCount, imagePath);
             this.msg = addEvent.getMsg();
             return tmp && tmp2;
-        }
-        catch (NumberFormatException e){
+        } catch (NumberFormatException e) {
             msg = "Invalid ID";
             return false;
         }
@@ -39,7 +39,7 @@ public class DeleteUpdateEvent {
 
     }
 
-    public boolean DeleteEventPerform(String id_tmp){
+    public boolean DeleteEventPerform(String id_tmp) {
         try {
             int id = Integer.parseInt(id_tmp);
             if (!DoesEventExists(id)) {
@@ -51,22 +51,22 @@ public class DeleteUpdateEvent {
                     Client c = Client.getClientFromData(getEvents().get(i).getUsername());
                     c.setNumberEvent(c.getNumberEvent() - 1);
                     getEvents().remove(i);
-
+                    msg = "The Event with ID " + id_tmp + " has benn deleted";
                     return true;
                 }
             }
-        }
-        catch (NumberFormatException e){
+        } catch (NumberFormatException e) {
             msg = "Invalid ID";
             return false;
         }
 
         return false;
     }
-    public boolean DoesEventExists(int id){
 
-        for(Event e : getEvents()){
-            if(e.getId() == id) return true;
+    public boolean DoesEventExists(int id) {
+
+        for (Event e : getEvents()) {
+            if (e.getId() == id) return true;
         }
         return false;
 

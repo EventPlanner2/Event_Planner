@@ -340,31 +340,36 @@ public class MainMenu {
 
     public void printCriteria(List<ServiceProvider> serviceProviders) {
         for (int i = 0; i < serviceProviders.size(); i++) {
-            logger.info(i + "." + serviceProviders.get(i).getUsername());
+            logger.info(String.format("%d. %s", i, serviceProviders.get(i).getUsername()));
         }
     }
 
+
     public void searchCriteria(String criteria) {
         List<ServiceProvider> tmpArray = new ArrayList<>();
-        if (criteria.equals("Location")) {
-            logger.info("Please enter the name of the location to search :");
-            String location = input.next();
-            app.getSearchSP ().setLocation(location);
-            tmpArray.addAll( app.getSearchSP ().SearchSPPerformed());
-            printCriteria(tmpArray);
-        } else if (criteria.equals("Type")) {
-            logger.info("Please enter the type of the Service provider : ");
-            String type = input.next();
-            type += " " + input.next();
-            app.getSearchSP ().setType(type);
-            printCriteria( app.getSearchSP ().SearchSPPerformed());
-        } else {
-            logger.info("Please enter the price of the product : ");
-            String price = input.next();
-            app.getSearchSP ().setPrice(price);
-            printCriteria( app.getSearchSP ().SearchSPPerformed());
+        switch (criteria) {
+            case "Location":
+                logger.info("Please enter the name of the location to search :");
+                String location = input.next();
+                app.getSearchSP().setLocation(location);
+                tmpArray.addAll(app.getSearchSP().SearchSPPerformed());
+                printCriteria(tmpArray);
+                return;
+            case "Type":
+                logger.info("Please enter the type of the Service provider : ");
+                String type = input.next() + " " + input.next();
+                app.getSearchSP().setType(type);
+                printCriteria(app.getSearchSP().SearchSPPerformed());
+                return;
+            default:
+                logger.info("Please enter the price of the product : ");
+                String price = input.next();
+                app.getSearchSP().setPrice(price);
+                printCriteria(app.getSearchSP().SearchSPPerformed());
+                return;
         }
     }
+
 
     public boolean Back() {
         logger.info("Please Enter B if you want to go back otherwise enter anything : ");
@@ -431,8 +436,9 @@ public class MainMenu {
                 case "X":
                     System.exit(0);
                 default:
-                    break;
+                    throw new IllegalArgumentException("Invalid choice: " + choice);
             }
+
 
         }
 

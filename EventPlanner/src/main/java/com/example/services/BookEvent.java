@@ -1,11 +1,13 @@
 package com.example.services;
 
+import com.example.data.EventData;
 import com.example.entites.Client;
 import com.example.entites.Event;
 
 import java.time.LocalDate;
 import java.util.ArrayList;
 import static com.example.data.EventData.getEvents;
+import static com.example.data.RoomData.getRooms;
 
 public class BookEvent {
 
@@ -61,6 +63,33 @@ public class BookEvent {
 
 
     }
+
+    public boolean cancelBookEvent(String id,String username){
+
+        try {
+            int eventid = Integer.parseInt(id);
+            if(!Event.getEventByID(eventid).getStartDate().isAfter(LocalDate.now()))
+            {
+                setMsg("This Event has gone");
+                return false;
+            }
+            Client c1 = Client.getClientFromData(username);
+            for (int i = 0; i < c1.getEventsBooked().size(); i++) {
+                if (c1.getEventsBooked().get(i).getId() == eventid) {
+                    c1.getEventsBooked().remove(i);
+                    return true;
+                }
+            }
+        }
+        catch (NumberFormatException e){
+            setMsg("Invalid event id to cancel booking");
+        }
+        catch (NullPointerException e){
+            setMsg("Event or Client D.N.E");
+        }
+        return false;
+
+    }
     public ArrayList<Event> chooseBookEvent(){
 
         ArrayList<Event> res = new ArrayList<>();
@@ -75,6 +104,21 @@ public class BookEvent {
         return res;
     }
 
+    public ArrayList<Event> chooseCancelBookEvent(String username){
+
+        ArrayList<Event> res = new ArrayList<>();
+        LocalDate dateNow = LocalDate.now();
+
+        Client c1 = Client.getClientFromData(username);
+        for(Event e : c1.getEventsBooked()){
+            if(e.getStartDate().isAfter(dateNow)){
+                res.add(e);
+            }
+        }
+
+        return res;
+
+    }
 
     public boolean isEmail_sent() {
         return email_sent;

@@ -1,5 +1,6 @@
 package com.example.data;
 
+import com.example.entites.Client;
 import com.example.entites.Event;
 import com.example.entites.EventBuilder;
 
@@ -36,6 +37,8 @@ public class EventData {
         events.add(e1);
         events.add(e2);
         events.add(e3);
+
+        Client.getClientFromData("Ali Turabi").getEventsBooked().add(e1);
     }
 
     public static List<Event> getEvents() {

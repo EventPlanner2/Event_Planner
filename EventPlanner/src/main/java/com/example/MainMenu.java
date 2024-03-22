@@ -224,8 +224,7 @@ public class MainMenu {
         showAllRooms();
         logger.info("Please enter the id of the room to be deleted");
         String id=input.next();
-        app.deleteRoomService.deleteRoomPerformed(id);
-        logger.info(app.deleteRoomService.getMsg());
+
     }
 
     public void accountInformation(char role) {

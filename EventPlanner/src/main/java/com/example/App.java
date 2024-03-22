@@ -31,7 +31,7 @@ public class App {
     //public UpgradeClient upgradeClient;
     private Calender calenderService;
 
-    public DeleteRoom deleteRoomService;
+
 
 
 

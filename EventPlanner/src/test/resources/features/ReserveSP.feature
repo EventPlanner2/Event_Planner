@@ -8,6 +8,7 @@ Feature: Reserve Service Providers to Events
     When the organizer selects to reserve a service provider
     Then the system should display a list of events related to him
     And the system should list all registered service providers with complete account
+    And a notification will be added with all details
 
   Scenario: Organizer successfully reserves a service provider to an event
     When the organizer selects EventID "1" and ProviderName "FactoryX"

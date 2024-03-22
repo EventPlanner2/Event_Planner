@@ -1,13 +1,16 @@
 package com.example.services;
 
 import com.example.data.EventData;
+import com.example.data.NotifcationData;
 import com.example.data.RoomData;
+
 import com.example.entites.Event;
 import com.example.entites.Room;
 import com.example.entites.User;
 import static com.example.data.EventData.getEvents;
 import static com.example.data.RoomData.getRooms;
 
+import java.time.LocalDate;
 import java.util.ArrayList;
 
 public class ReserveRoom {
@@ -15,7 +18,7 @@ public class ReserveRoom {
     private User loggedInUser;
     public ArrayList<Event> res_event;
     public ArrayList<Room> res_room;
-    public String msg;
+    private String msg;
 
     public ReserveRoom(User loggedInUser){
         this.loggedInUser = loggedInUser;
@@ -26,6 +29,7 @@ public class ReserveRoom {
 
     public boolean ReserveRoomPerform(String eventID,String roomID){
         boolean flag = false;
+
         try{
 
             int eventid = Integer.parseInt(eventID);
@@ -34,6 +38,8 @@ public class ReserveRoom {
 
             for(Event e : getEvents()){
                 if(e.getId()==eventid){
+
+                    // need refactoring
                     if(e.getRoomID() == roomid){
                         msg = "the room is already reserved for the event";
                         return false;
@@ -50,10 +56,13 @@ public class ReserveRoom {
                         msg = "the room is lower capacity than attendance count";
                         return false;
                     }
+
                     e.setRoomID(roomid);
                     e.setComplete(true);
                     Room.getRoomFromData(roomid).setAvailable(false);
                     msg = "Room has been reserved";
+                    String notifcation = LocalDate.now().toString()+"| "+ "Room with name "+Room.getRoomFromData(roomid).getName()+" Has Been Reserved for Event "+e.getEventName();
+                    NotifcationData.addNotification(notifcation);
                     return true;
                 }
             }
@@ -98,5 +107,13 @@ public class ReserveRoom {
 
     public void setLoggedInUser(User loggedInUser) {
         this.loggedInUser = loggedInUser;
+    }
+
+    public String getMsg() {
+        return msg;
+    }
+
+    public void setMsg(String msg) {
+        this.msg = msg;
     }
 }

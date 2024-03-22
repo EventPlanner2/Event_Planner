@@ -2,7 +2,6 @@ package com.example.services;
 
 import com.example.data.UserData;
 import com.example.entites.ServiceProvider;
-import io.cucumber.java.bs.A;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -130,7 +129,7 @@ public class SearchServiceProvider {
     public List<ServiceProvider> SearchSPPrice(){
         tmpSps = new ArrayList<>();
         for(ServiceProvider s : UserData.getSps()){
-            if(s.getPrice() <= this.getPrice()){
+            if(s.getPrice() <= this.getPrice() && s.getPrice() > 0){
                 tmpSps.add(s);
             }
         }

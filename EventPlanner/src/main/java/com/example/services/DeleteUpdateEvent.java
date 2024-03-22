@@ -1,18 +1,15 @@
 package com.example.services;
 
-import com.example.data.EventData;
-import com.example.data.UserData;
 import com.example.entites.Client;
 import com.example.entites.Event;
 import static com.example.data.EventData.getEvents;
 
 public class DeleteUpdateEvent {
 
-    public String msg;
-    public String getMsg() {
-        return msg;
-    }
-    public AddEvent addEvent;
+
+    private String msg;
+    private AddEvent addEvent;
+
 
     public DeleteUpdateEvent(AddEvent addEvent) {
         this.msg = "";
@@ -75,4 +72,11 @@ public class DeleteUpdateEvent {
 
     }
 
+    public String getMsg() {
+        return msg;
+    }
+
+    public void setMsg(String msg) {
+        this.msg = msg;
+    }
 }

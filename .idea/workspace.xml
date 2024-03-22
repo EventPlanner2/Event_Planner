@@ -4,14 +4,7 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="9fc2b4a3-4e80-4dc3-b513-a55cbae36512" name="Changes" comment="Organizer mode">
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/EventPlanner/src/main/java/com/example/App.java" beforeDir="false" afterPath="$PROJECT_DIR$/EventPlanner/src/main/java/com/example/App.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/EventPlanner/src/main/java/com/example/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/EventPlanner/src/main/java/com/example/Main.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/EventPlanner/src/main/java/com/example/MainMenu.java" beforeDir="false" afterPath="$PROJECT_DIR$/EventPlanner/src/main/java/com/example/MainMenu.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/EventPlanner/src/main/java/com/example/data/UserData.java" beforeDir="false" afterPath="$PROJECT_DIR$/EventPlanner/src/main/java/com/example/data/UserData.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/EventPlanner/src/main/java/com/example/entites/Client.java" beforeDir="false" afterPath="$PROJECT_DIR$/EventPlanner/src/main/java/com/example/entites/Client.java" afterDir="false" />
-    </list>
+    <list default="true" id="9fc2b4a3-4e80-4dc3-b513-a55cbae36512" name="Changes" comment="admin page done" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -27,10 +20,11 @@
   <component name="Git.Settings">
     <option name="RECENT_BRANCH_BY_REPOSITORY">
       <map>
-        <entry key="$PROJECT_DIR$" value="main" />
+        <entry key="$PROJECT_DIR$" value="Modify-MainMenu" />
       </map>
     </option>
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+    <option name="UPDATE_TYPE" value="REBASE" />
   </component>
   <component name="GitHubPullRequestSearchHistory">{
   &quot;lastFilter&quot;: {
@@ -61,24 +55,28 @@
   &quot;associatedIndex&quot;: 4
 }</component>
   <component name="ProjectId" id="2d8eKep6lAMukfLULPASRlaBWFy" />
+  <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
   <component name="ProjectViewState">
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent"><![CDATA[{
-  "keyToString": {
-    "JUnit.acceptanceTest.executor": "Run",
-    "RunOnceActivity.OpenProjectViewOnStart": "true",
-    "RunOnceActivity.ShowReadmeOnStart": "true",
-    "SHARE_PROJECT_CONFIGURATION_FILES": "true",
-    "git-widget-placeholder": "Mohamad-Main-Branch",
-    "last_opened_file_path": "C:/SoftwareProject/Event_Planner",
-    "node.js.selected.package.tslint": "(autodetect)",
-    "project.structure.last.edited": "Project",
-    "project.structure.proportion": "0.0",
-    "project.structure.side.proportion": "0.48505747"
+  <component name="PropertiesComponent">{
+  &quot;keyToString&quot;: {
+    &quot;Application.Main.executor&quot;: &quot;Run&quot;,
+    &quot;JUnit.acceptanceTest.executor&quot;: &quot;Run&quot;,
+    &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
+    &quot;SHARE_PROJECT_CONFIGURATION_FILES&quot;: &quot;true&quot;,
+    &quot;git-widget-placeholder&quot;: &quot;main&quot;,
+    &quot;last_opened_file_path&quot;: &quot;C:/SoftwareProject/Event_Planner&quot;,
+    &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
+    &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,
+    &quot;node.js.selected.package.tslint&quot;: &quot;(autodetect)&quot;,
+    &quot;project.structure.last.edited&quot;: &quot;Project&quot;,
+    &quot;project.structure.proportion&quot;: &quot;0.0&quot;,
+    &quot;project.structure.side.proportion&quot;: &quot;0.48505747&quot;
   }
-}]]></component>
+}</component>
   <component name="RunManager">
     <configuration name="acceptanceTest" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="EventPlanner" />
@@ -117,6 +115,14 @@
         <item itemvalue="JUnit.acceptanceTest" />
       </list>
     </recent_temporary>
+  </component>
+  <component name="SharedIndexes">
+    <attachedChunks>
+      <set>
+        <option value="jdk-19.0.2-corretto-19.0.2-4caba194b151-48ba4555" />
+        <option value="jdk-21.0.2-openjdk-21.0.2-4caba194b151-4f524021" />
+      </set>
+    </attachedChunks>
   </component>
   <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
   <component name="TaskManager">
@@ -159,29 +165,29 @@
       <option name="project" value="LOCAL" />
       <updated>1710791419223</updated>
     </task>
-    <task id="LOCAL-00006" summary="ali turabi ,added feature : add event">
+    <task id="LOCAL-00006" summary="DeleteRoom feature steaaaaps and service">
       <option name="closed" value="true" />
-      <created>1709497224811</created>
+      <created>1711050597362</created>
       <option name="number" value="00006" />
       <option name="presentableId" value="LOCAL-00006" />
       <option name="project" value="LOCAL" />
-      <updated>1709497224811</updated>
+      <updated>1711050597362</updated>
     </task>
-    <task id="LOCAL-00007" summary="ali turabi ,added class : add event entity">
+    <task id="LOCAL-00007" summary="DeleteRoom feature steaaaaps and service">
       <option name="closed" value="true" />
-      <created>1709499067161</created>
+      <created>1711058955191</created>
       <option name="number" value="00007" />
       <option name="presentableId" value="LOCAL-00007" />
       <option name="project" value="LOCAL" />
-      <updated>1709499067161</updated>
+      <updated>1711058955191</updated>
     </task>
-    <task id="LOCAL-00008" summary="ali turabi ,added class : add data eventdata class">
+    <task id="LOCAL-00008" summary="DeleteRoom feature steaaaaps and service">
       <option name="closed" value="true" />
-      <created>1709500047647</created>
+      <created>1711060400176</created>
       <option name="number" value="00008" />
       <option name="presentableId" value="LOCAL-00008" />
       <option name="project" value="LOCAL" />
-      <updated>1709500047647</updated>
+      <updated>1711060400176</updated>
     </task>
     <task id="LOCAL-00004" summary="Upgrade clint done , Some decorations on the menu">
       <option name="closed" value="true" />
@@ -191,8 +197,235 @@
       <option name="project" value="LOCAL" />
       <updated>1710590862994</updated>
     </task>
-    <option name="localTasksCounter" value="6" />
+    <task id="LOCAL-00009" summary="DeleteRoom feature steaaaaps and service">
+      <option name="closed" value="true" />
+      <created>1711060826458</created>
+      <option name="number" value="00009" />
+      <option name="presentableId" value="LOCAL-00009" />
+      <option name="project" value="LOCAL" />
+      <updated>1711060826458</updated>
+    </task>
+    <task id="LOCAL-00010" summary="DeleteRoom feature steaaaaps and service">
+      <option name="closed" value="true" />
+      <created>1711060914031</created>
+      <option name="number" value="00010" />
+      <option name="presentableId" value="LOCAL-00010" />
+      <option name="project" value="LOCAL" />
+      <updated>1711060914031</updated>
+    </task>
+    <task id="LOCAL-00011" summary="DeleteRoom feature steaaaaps and service">
+      <option name="closed" value="true" />
+      <created>1711061312429</created>
+      <option name="number" value="00011" />
+      <option name="presentableId" value="LOCAL-00011" />
+      <option name="project" value="LOCAL" />
+      <updated>1711061312429</updated>
+    </task>
+    <task id="LOCAL-00012" summary="DeleteRoom feature steaaaaps and service">
+      <option name="closed" value="true" />
+      <created>1711062144789</created>
+      <option name="number" value="00012" />
+      <option name="presentableId" value="LOCAL-00012" />
+      <option name="project" value="LOCAL" />
+      <updated>1711062144789</updated>
+    </task>
+    <task id="LOCAL-00013" summary="DeleteRoom feature steaaaaps and service">
+      <option name="closed" value="true" />
+      <created>1711062219512</created>
+      <option name="number" value="00013" />
+      <option name="presentableId" value="LOCAL-00013" />
+      <option name="project" value="LOCAL" />
+      <updated>1711062219512</updated>
+    </task>
+    <task id="LOCAL-00014" summary="DeleteRoom feature steaaaaps and service">
+      <option name="closed" value="true" />
+      <created>1711063348641</created>
+      <option name="number" value="00014" />
+      <option name="presentableId" value="LOCAL-00014" />
+      <option name="project" value="LOCAL" />
+      <updated>1711063348641</updated>
+    </task>
+    <task id="LOCAL-00015" summary="DeleteRoom feature steaaaaps and service">
+      <option name="closed" value="true" />
+      <created>1711063576856</created>
+      <option name="number" value="00015" />
+      <option name="presentableId" value="LOCAL-00015" />
+      <option name="project" value="LOCAL" />
+      <updated>1711063576856</updated>
+    </task>
+    <task id="LOCAL-00016" summary="DeleteRoom feature steaaaaps and service">
+      <option name="closed" value="true" />
+      <created>1711063778089</created>
+      <option name="number" value="00016" />
+      <option name="presentableId" value="LOCAL-00016" />
+      <option name="project" value="LOCAL" />
+      <updated>1711063778089</updated>
+    </task>
+    <task id="LOCAL-00017" summary="DeleteRoom feature steaaaaps and service">
+      <option name="closed" value="true" />
+      <created>1711063960663</created>
+      <option name="number" value="00017" />
+      <option name="presentableId" value="LOCAL-00017" />
+      <option name="project" value="LOCAL" />
+      <updated>1711063960663</updated>
+    </task>
+    <task id="LOCAL-00018" summary="DeleteRoom feature steaaaaps and service">
+      <option name="closed" value="true" />
+      <created>1711064164340</created>
+      <option name="number" value="00018" />
+      <option name="presentableId" value="LOCAL-00018" />
+      <option name="project" value="LOCAL" />
+      <updated>1711064164340</updated>
+    </task>
+    <task id="LOCAL-00019" summary="DeleteRoom feature steaaaaps and service">
+      <option name="closed" value="true" />
+      <created>1711064263159</created>
+      <option name="number" value="00019" />
+      <option name="presentableId" value="LOCAL-00019" />
+      <option name="project" value="LOCAL" />
+      <updated>1711064263159</updated>
+    </task>
+    <task id="LOCAL-00020" summary="DeleteRoom feature steaaaaps and service">
+      <option name="closed" value="true" />
+      <created>1711064527804</created>
+      <option name="number" value="00020" />
+      <option name="presentableId" value="LOCAL-00020" />
+      <option name="project" value="LOCAL" />
+      <updated>1711064527804</updated>
+    </task>
+    <task id="LOCAL-00021" summary="DeleteRoom feature steaaaaps and service">
+      <option name="closed" value="true" />
+      <created>1711064991161</created>
+      <option name="number" value="00021" />
+      <option name="presentableId" value="LOCAL-00021" />
+      <option name="project" value="LOCAL" />
+      <updated>1711064991161</updated>
+    </task>
+    <task id="LOCAL-00022" summary="DeleteRoom feature steaaaaps and service">
+      <option name="closed" value="true" />
+      <created>1711065595785</created>
+      <option name="number" value="00022" />
+      <option name="presentableId" value="LOCAL-00022" />
+      <option name="project" value="LOCAL" />
+      <updated>1711065595785</updated>
+    </task>
+    <task id="LOCAL-00023" summary="DeleteRoom feature steaaaaps and service">
+      <option name="closed" value="true" />
+      <created>1711065971343</created>
+      <option name="number" value="00023" />
+      <option name="presentableId" value="LOCAL-00023" />
+      <option name="project" value="LOCAL" />
+      <updated>1711065971343</updated>
+    </task>
+    <task id="LOCAL-00024" summary="DeleteRoom feature steaaaaps and service">
+      <option name="closed" value="true" />
+      <created>1711066612518</created>
+      <option name="number" value="00024" />
+      <option name="presentableId" value="LOCAL-00024" />
+      <option name="project" value="LOCAL" />
+      <updated>1711066612518</updated>
+    </task>
+    <task id="LOCAL-00025" summary="DeleteRoom feature steaaaaps and service">
+      <option name="closed" value="true" />
+      <created>1711066852900</created>
+      <option name="number" value="00025" />
+      <option name="presentableId" value="LOCAL-00025" />
+      <option name="project" value="LOCAL" />
+      <updated>1711066852900</updated>
+    </task>
+    <task id="LOCAL-00026" summary="DeleteRoom feature steaaaaps and service">
+      <option name="closed" value="true" />
+      <created>1711067335684</created>
+      <option name="number" value="00026" />
+      <option name="presentableId" value="LOCAL-00026" />
+      <option name="project" value="LOCAL" />
+      <updated>1711067335684</updated>
+    </task>
+    <task id="LOCAL-00027" summary="DeleteRoom feature steaaaaps and service">
+      <option name="closed" value="true" />
+      <created>1711071786557</created>
+      <option name="number" value="00027" />
+      <option name="presentableId" value="LOCAL-00027" />
+      <option name="project" value="LOCAL" />
+      <updated>1711071786557</updated>
+    </task>
+    <task id="LOCAL-00028" summary="DeleteRoom feature steaaaaps and service">
+      <option name="closed" value="true" />
+      <created>1711072066048</created>
+      <option name="number" value="00028" />
+      <option name="presentableId" value="LOCAL-00028" />
+      <option name="project" value="LOCAL" />
+      <updated>1711072066048</updated>
+    </task>
+    <task id="LOCAL-00029" summary="DeleteRoom feature steaaaaps and service">
+      <option name="closed" value="true" />
+      <created>1711072137571</created>
+      <option name="number" value="00029" />
+      <option name="presentableId" value="LOCAL-00029" />
+      <option name="project" value="LOCAL" />
+      <updated>1711072137571</updated>
+    </task>
+    <task id="LOCAL-00030" summary="DeleteRoom feature steaaaaps and service">
+      <option name="closed" value="true" />
+      <created>1711074273018</created>
+      <option name="number" value="00030" />
+      <option name="presentableId" value="LOCAL-00030" />
+      <option name="project" value="LOCAL" />
+      <updated>1711074273018</updated>
+    </task>
+    <task id="LOCAL-00031" summary="DeleteRoom feature steaaaaps and service">
+      <option name="closed" value="true" />
+      <created>1711074984064</created>
+      <option name="number" value="00031" />
+      <option name="presentableId" value="LOCAL-00031" />
+      <option name="project" value="LOCAL" />
+      <updated>1711074984064</updated>
+    </task>
+    <task id="LOCAL-00032" summary="DeleteRoom feature steaaaaps and service">
+      <option name="closed" value="true" />
+      <created>1711075762715</created>
+      <option name="number" value="00032" />
+      <option name="presentableId" value="LOCAL-00032" />
+      <option name="project" value="LOCAL" />
+      <updated>1711075762715</updated>
+    </task>
+    <task id="LOCAL-00033" summary="DeleteRoom feature steaaaaps and service">
+      <option name="closed" value="true" />
+      <created>1711075865834</created>
+      <option name="number" value="00033" />
+      <option name="presentableId" value="LOCAL-00033" />
+      <option name="project" value="LOCAL" />
+      <updated>1711075865834</updated>
+    </task>
+    <task id="LOCAL-00034" summary="DeleteRoom feature steaaaaps and service">
+      <option name="closed" value="true" />
+      <created>1711076343568</created>
+      <option name="number" value="00034" />
+      <option name="presentableId" value="LOCAL-00034" />
+      <option name="project" value="LOCAL" />
+      <updated>1711076343568</updated>
+    </task>
+    <task id="LOCAL-00035" summary="DeleteRoom feature steaaaaps and service">
+      <option name="closed" value="true" />
+      <created>1711076434435</created>
+      <option name="number" value="00035" />
+      <option name="presentableId" value="LOCAL-00035" />
+      <option name="project" value="LOCAL" />
+      <updated>1711076434435</updated>
+    </task>
+    <task id="LOCAL-00036" summary="admin page done">
+      <option name="closed" value="true" />
+      <created>1711125579523</created>
+      <option name="number" value="00036" />
+      <option name="presentableId" value="LOCAL-00036" />
+      <option name="project" value="LOCAL" />
+      <updated>1711125579523</updated>
+    </task>
+    <option name="localTasksCounter" value="37" />
     <servers />
+  </component>
+  <component name="TypeScriptGeneratedFilesManager">
+    <option name="version" value="3" />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
     <option name="TAB_STATES">
@@ -211,7 +444,9 @@
     <MESSAGE value="ali turabi ,added class : add data eventdata class" />
     <MESSAGE value="Upgrade clint done , Some decorations on the menu" />
     <MESSAGE value="Complete ,Update,Add room,MainMenu Decoration" />
-    <option name="LAST_COMMIT_MESSAGE" value="Complete ,Update,Add room,MainMenu Decoration" />
+    <MESSAGE value="DeleteRoom feature steaaaaps and service" />
+    <MESSAGE value="admin page done" />
+    <option name="LAST_COMMIT_MESSAGE" value="admin page done" />
   </component>
   <component name="com.intellij.coverage.CoverageDataManagerImpl">
     <SUITE FILE_PATH="coverage/Event_Planner$acceptanceTest.ic" NAME="acceptanceTest Coverage Results" MODIFIED="1709402770636" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false">

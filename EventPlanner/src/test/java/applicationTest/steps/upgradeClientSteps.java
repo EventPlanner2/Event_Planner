@@ -14,22 +14,22 @@ public class upgradeClientSteps {
     // dependency injection
     public upgradeClientSteps(App app){
         this.app = app;
-        this.service = new UpgradeClient(app.loggedInUser);
+        this.service = new UpgradeClient( app.getLoggedInUser () );
     }
     @Given("the user is logged in as a client")
     public void theUserIsLoggedInAsAClient() {
-        app.loggedInUser = app.loginService.LoginPerformed("Ahmad","Ahmad12345");
-        assertEquals('c', (char) app.loggedInUser.getRole());
+        app.setLoggedInUser ( app.getLoginService ().LoginPerformed ( "Ahmad", "Ahmad12345" ) );
+        assertEquals('c', (char) app.getLoggedInUser ().getRole());
     }
     @When("the user selects Upgrade your account from the menu")
     public void theUserSelectsUpgradeYourAccountFromTheMenu() {
-        service.setLoggedInUser(app.loggedInUser);
+        service.setLoggedInUser( app.getLoggedInUser () );
         service.UpgradeClientPerform();
     }
     @Then("the account should be successfully upgraded to organizer status")
     public void theAccountShouldBeSuccessfullyUpgradedToOrganizerStatus() {
         try {
-            boolean f = Client.getClientFromData(app.loggedInUser.getUsername()).isOrganizer();
+            boolean f = Client.getClientFromData( app.getLoggedInUser ().getUsername()).isOrganizer();
             assertTrue(f);
         }
         catch (NullPointerException e){
@@ -50,7 +50,7 @@ public class upgradeClientSteps {
     @Then("the account should remain as a client")
     public void theAccountShouldRemainAsAClient() {
         try {
-            boolean f = Client.getClientFromData(app.loggedInUser.getUsername()).isOrganizer();
+            boolean f = Client.getClientFromData( app.getLoggedInUser ().getUsername()).isOrganizer();
             assertFalse(f);
         }
         catch (NullPointerException e){
@@ -61,7 +61,7 @@ public class upgradeClientSteps {
 
     @Given("the user is not logged in")
     public void theUserIsNotLoggedIn() {
-        app.loggedInUser = null;
+        app.setLoggedInUser ( null );
     }
 
     @Then("the system should prompt the user to log in first {string}")
@@ -71,13 +71,13 @@ public class upgradeClientSteps {
 
     @Given("the user is logged in as an organizer")
     public void theUserIsLoggedInAsAnOrganizer() {
-        app.loggedInUser = app.loginService.LoginPerformed("Ahmad","Ahmad12345");
+        app.setLoggedInUser ( app.getLoginService ().LoginPerformed ( "Ahmad", "Ahmad12345" ) );
     }
 
 
     @Given("the user is logged in as a {string} with {string} with {string} with {string}")
     public void theUserIsLoggedInAsAWithWithWith(String string, String string2, String username, String pass) {
-        app.loggedInUser = app.loginService.LoginPerformed(username,pass);
+        app.setLoggedInUser ( app.getLoginService ().LoginPerformed ( username, pass ) );
     }
 
     @Then("the system should inform the user with invalid role {string}")

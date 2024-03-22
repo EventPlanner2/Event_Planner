@@ -1,11 +1,15 @@
 package com.example.services;
 
-import com.example.entites.Event;
-import com.example.entites.Room;
-import com.example.entites.ServiceProvider;
-import com.example.entites.User;
+
+import com.example.data.NotifcationData;
+import com.example.entites.*;
 import io.cucumber.java.bs.A;
 
+import com.example.entites.Event;
+import com.example.entites.ServiceProvider;
+import com.example.entites.User;
+
+import java.time.LocalDate;
 import java.util.ArrayList;
 
 import static com.example.data.EventData.getEvents;
@@ -17,7 +21,7 @@ public class ReserveSP {
 
     public ArrayList<Event> res_event;
     public ArrayList<ServiceProvider> res_sps;
-    public String msg;
+    private String msg;
 
     public ReserveSP(User loggedInUser) {
         this.loggedInUser = loggedInUser;
@@ -48,6 +52,8 @@ public class ReserveSP {
                 if (e.getId() == eventid) {
                     e.serviceEntity.add(sp);
                     msg = "Service Provider has been reserved";
+                    String notification = LocalDate.now()+"| "+ "Service Provider "+sp.getUsername()+" Has Been Reserved For Event "+e.getEventName();
+                    NotifcationData.addNotification(notification);
                     return true;
                 }
             }
@@ -82,4 +88,11 @@ public class ReserveSP {
 
     }
 
+    public String getMsg() {
+        return msg;
+    }
+
+    public void setMsg(String msg) {
+        this.msg = msg;
+    }
 }

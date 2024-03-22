@@ -5,9 +5,9 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="9fc2b4a3-4e80-4dc3-b513-a55cbae36512" name="Changes" comment="DeleteRoom feature steaaaaps and service">
-      <change afterPath="$PROJECT_DIR$/EventPlanner/src/main/java/com/example/services/DeleteRoom.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/EventPlanner/src/test/java/applicationTest/steps/DeleteRoomSteps.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/EventPlanner/src/test/resources/features/DeleteRoom.feature" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/EventPlanner/src/main/java/com/example/services/DeleteRoom.java" beforeDir="false" afterPath="$PROJECT_DIR$/EventPlanner/src/main/java/com/example/services/DeleteRoom.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/EventPlanner/src/test/java/applicationTest/steps/DeleteRoomSteps.java" beforeDir="false" afterPath="$PROJECT_DIR$/EventPlanner/src/test/java/applicationTest/steps/DeleteRoomSteps.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/EventPlanner/src/test/resources/features/DeleteRoom.feature" beforeDir="false" afterPath="$PROJECT_DIR$/EventPlanner/src/test/resources/features/DeleteRoom.feature" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />

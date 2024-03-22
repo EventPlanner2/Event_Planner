@@ -29,6 +29,8 @@ public class App {
     //public UpgradeClient upgradeClient;
     private Calender calenderService;
 
+    public DeleteRoom deleteRoomService;
+
 
 
     public App()
@@ -55,6 +57,8 @@ public class App {
         upgradeClient =new UpgradeClient(loggedInUser);
 
         calenderService = new Calender(loggedInUser);
+
+        deleteRoomService=new DeleteRoom();
 
     }
 

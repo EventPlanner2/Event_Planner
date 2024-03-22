@@ -10,6 +10,7 @@ public class DeleteUpdateEvent {
     private String msg;
     private AddEvent addEvent;
 
+
     public DeleteUpdateEvent(AddEvent addEvent) {
         this.msg = "";
         this.addEvent =addEvent;

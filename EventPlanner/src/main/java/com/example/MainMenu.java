@@ -1,5 +1,7 @@
 package com.example;
 
+import com.example.data.EventData;
+import com.example.data.UserData;
 import com.example.data.RoomData;
 import com.example.entites.Event;
 import com.example.entites.Room;
@@ -261,6 +263,7 @@ public class MainMenu {
             logger.info("Please enter the description of the new room :");
             String roomDes = input.next();
             logger.info("Please enter the Availability of the new room :");
+          
             String roomAvailability = input.next();
             boolean flag = app.getAddRoomService().AddRoomPerformed(roomName, roomAvailability, roomCapacity, roomCost, roomDes);
             if (flag) {
@@ -471,15 +474,90 @@ public class MainMenu {
     }
 
     public void addEvent() {
+        while (true) {
+            System.out.print("Please enter the user name : ");
+            String username = input.next();
+            System.out.print("Please enter the information for the new event : ");
+            System.out.print("Event name : ");
+            String eventName = input.next();
+            System.out.print("Description :");
+            String eventDes = input.next();
+            System.out.print("Start date : ");
+            String startDate = input.next();
+            System.out.print("End date : ");
+            String endDate = input.next();
+            System.out.print("Starting hour :");
+            String startHour = input.next();
+            System.out.print("End hour :");
+            String endHour = input.next();
+            System.out.print("Attendee count :");
+            String attendeeCount = input.next();
+            System.out.print("Image path :");
+            String imagePath = input.next();
+            boolean flag = app.addEventService.addEvent(username, EventData.getEvents().size() + 1, eventName, eventDes, startDate, endDate, startHour, endHour, attendeeCount, imagePath);
+            if (flag) {
+                System.out.println(app.addEventService.getMsg());
+                break;
+            } else {
+                System.out.println(app.addEventService.getMsg());
+            }
+        }
+
 
     }
 
     public void updateEvent() {
+        while (true) {
+            System.out.print("Please enter the user name : ");
+            String username= input.next();
+            System.out.print("Please enter the new information for your event : ");
+            System.out.print("Event name : ");
+            String eventName = input.next();
+            System.out.print("Event id : ");
+            String eventId = input.next();
+            System.out.print("Description :");
+            String eventDes = input.next();
+            System.out.print("Start date : ");
+            String startDate = input.next();
+            System.out.print("End date : ");
+            String endDate = input.next();
+            System.out.print("Starting hour :");
+            String startHour = input.next();
+            System.out.print("End hour :");
+            String endHour = input.next();
+            System.out.print("Attendee count :");
+            String attendeeCount = input.next();
+            System.out.print("Image path :");
+            String imagePath = input.next();
+            boolean flag = app.deleteUpdateEventService.UpdateEventPerform( eventId,username,eventName ,eventDes,startDate,endDate,startHour,endHour,attendeeCount,imagePath);
+            if (flag) {
+                System.out.println(app.deleteUpdateEventService.getMsg());
+                //Created getMsg in DeleteUpdateEvent
+                break;
+            } else {
+                System.out.println(app.deleteUpdateEventService.getMsg());
+            }
+        }
+
+
 
     }
 
     public void deleteEvent() {
+        while (true){
+        System.out.print("Please enter the ID of the event you want to delete : ");
+        String eventId=input.next();
+        boolean flag =app.deleteUpdateEventService.DeleteEventPerform(eventId);
+        if (flag) {
+            System.out.println(app.deleteUpdateEventService.getMsg());
+            //Created getMsg in DeleteUpdateEvent
+            break;
 
+         } else {
+            System.out.println(app.deleteUpdateEventService.getMsg());
+        }
+
+    }
     }
 
     public void reserveRoom() {

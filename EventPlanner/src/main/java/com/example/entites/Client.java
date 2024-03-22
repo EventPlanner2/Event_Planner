@@ -1,24 +1,20 @@
 package com.example.entites;
 
 import com.example.data.UserData;
-import io.cucumber.java.bs.A;
-
 import java.util.ArrayList;
 import java.util.List;
 
-public class Client extends User{
-  
+public class Client extends User {
+
     private boolean isOrganizer;
     private int numberEvent;
-    public ArrayList<Event> eventsBooked;
-    public Client(String username, String password, String contactEmail, Character role,boolean isOrganizer) {
+    public List<Event> eventsBooked; // Use interface List instead of ArrayList
+    public Client(String username, String password, String contactEmail, Character role, boolean isOrganizer) {
         super(username, password, contactEmail, role);
         this.isOrganizer = isOrganizer;
-        this.numberEvent=0;
-        eventsBooked = new ArrayList<>();
-
+        this.numberEvent = 0;
+        eventsBooked = new ArrayList<>(); // Initialize as ArrayList
     }
-
 
     public boolean isOrganizer() {
         return isOrganizer;
@@ -28,15 +24,15 @@ public class Client extends User{
         isOrganizer = organizer;
     }
 
-    public static Client getClientFromData(String username){
+    public static Client getClientFromData(String username) {
         List<Client> clients = UserData.getClients();
-        for(Client c : clients){
-            if(c.getUsername().equals(username))
+        for (Client c : clients) {
+            if (c.getUsername().equals(username))
                 return c;
         }
-
         return null;
     }
+
     public int getNumberEvent() {
         return numberEvent;
     }

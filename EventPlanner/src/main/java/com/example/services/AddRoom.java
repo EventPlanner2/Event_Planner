@@ -3,7 +3,6 @@ package com.example.services;
 import com.example.data.NotifcationData;
 import com.example.data.RoomData;
 import com.example.entites.*;
-import io.cucumber.java.hu.De;
 
 import java.math.BigDecimal;
 import java.time.LocalDate;
@@ -64,6 +63,7 @@ public class AddRoom {
             RoomData.addRoom(this.name, this.capacity, this.CostPerHour, this.Description, this.Available);
             String notification = LocalDate.now()+"| "+ "Added Room With Name "+this.name+" And Capacity "+this.capacity+" And CostPerHour "+this.CostPerHour;
             NotifcationData.addNotification(notification);
+            setMsg("The room has been added ");
             return true;
         }
         catch (NumberFormatException e){

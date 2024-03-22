@@ -1,13 +1,12 @@
 package com.example.entites;
 
 import com.example.data.EventData;
-import com.example.entites.ServiceProvider;
 import java.time.LocalDate;
 import java.time.LocalTime;
 import java.util.ArrayList;
+import java.util.List;
 
 public class Event {
-
     String username;
     private int eventid;
     private String eventName;
@@ -20,7 +19,7 @@ public class Event {
     private int attendeeCount;
     private boolean isComplete;
     private int roomID;
-    public ArrayList<ServiceProvider> serviceEntity;
+    public List<ServiceProvider> serviceEntity;
 
     public Event(String username,int id, String eventName, String eventDescription, LocalDate startDate, LocalDate endDate,
                  LocalTime startClock, LocalTime endClock, int attendeeCount) {
@@ -140,7 +139,7 @@ public class Event {
         this.serviceEntity = services;
     }
 
-    public ArrayList<ServiceProvider> getServices() {
+    public List<ServiceProvider> getServices() {
         return serviceEntity;
     }
 

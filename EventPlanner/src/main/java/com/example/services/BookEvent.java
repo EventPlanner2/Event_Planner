@@ -1,20 +1,17 @@
 package com.example.services;
 
-import com.example.data.EventData;
 import com.example.entites.Client;
 import com.example.entites.Event;
 
-import java.text.DateFormat;
 import java.time.LocalDate;
-import java.time.format.DateTimeFormatter;
 import java.util.ArrayList;
 import static com.example.data.EventData.getEvents;
 
 public class BookEvent {
 
 
-    public String msg;
-    public boolean email_sent;
+    private String msg;
+    private boolean email_sent;
 
     public BookEvent(){
         msg = "";
@@ -29,17 +26,20 @@ public class BookEvent {
             String user = c1.getUsername();
 
             int eventid = Integer.parseInt(id);
-            for(Event e : c1.eventsBooked){
+            for(Event e : c1.getEventsBooked ()){
                 if(e.getId() == eventid){
                     msg = "You Have Already Booked this event";
                     return false;
                 }
             }
+
             if(Event.getEventByID(eventid).getStartDate().isBefore(LocalDate.now())){
                 msg = "You Can't Book Event not from List.";
                 return false;
             }
-            c1.eventsBooked.add(Event.getEventByID(eventid));
+          
+            //c1.eventsBooked.add(Event.getEventByID(eventid));
+            c1.getEventsBooked ().add(Event.getEventByID(eventid));
             msg = "You have successfully booked the event";
             email_sent = true;
             // email sending here (make a class called EmailSender and call the function Sendemail here)
@@ -76,4 +76,19 @@ public class BookEvent {
     }
 
 
+    public boolean isEmail_sent() {
+        return email_sent;
+    }
+
+    public void setEmail_sent(boolean email_sent) {
+        this.email_sent = email_sent;
+    }
+
+    public String getMsg() {
+        return msg;
+    }
+
+    public void setMsg(String msg) {
+        this.msg = msg;
+    }
 }

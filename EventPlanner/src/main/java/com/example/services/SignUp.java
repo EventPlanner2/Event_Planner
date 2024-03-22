@@ -9,7 +9,7 @@ public class SignUp {
 
     private final List<User> users;
 
-    public String msg = "";
+    private String msg = "";
 
     public SignUp(List<User> users) {
         this.users = users;
@@ -101,5 +101,7 @@ public class SignUp {
     }
 
 
-
+    public String getMsg() {
+        return msg;
+    }
 }

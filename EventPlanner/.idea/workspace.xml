@@ -4,15 +4,9 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="b83c84ab-4b8d-45df-9a9e-d68f70b0baad" name="Changes" comment="fix bugs after merge">
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/example/services/DeleteRoom.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/test/java/applicationTest/steps/DeleteRoomSteps.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/test/resources/features/DeleteRoom.feature" afterDir="false" />
+    <list default="true" id="b83c84ab-4b8d-45df-9a9e-d68f70b0baad" name="Changes" comment="Delete Room">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/App.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/App.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/data/RoomData.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/data/RoomData.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/services/AddEvent.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/services/AddEvent.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/services/ReserveRoom.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/services/ReserveRoom.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/services/SearchServiceProvider.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/services/SearchServiceProvider.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -262,7 +256,15 @@
       <option name="project" value="LOCAL" />
       <updated>1711112839847</updated>
     </task>
-    <option name="localTasksCounter" value="9" />
+    <task id="LOCAL-00009" summary="Delete Room">
+      <option name="closed" value="true" />
+      <created>1711118962801</created>
+      <option name="number" value="00009" />
+      <option name="presentableId" value="LOCAL-00009" />
+      <option name="project" value="LOCAL" />
+      <updated>1711118962801</updated>
+    </task>
+    <option name="localTasksCounter" value="10" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -288,7 +290,8 @@
     <MESSAGE value="Reserve Room" />
     <MESSAGE value="Reserve Service provider" />
     <MESSAGE value="fix bugs after merge" />
-    <option name="LAST_COMMIT_MESSAGE" value="fix bugs after merge" />
+    <MESSAGE value="Delete Room" />
+    <option name="LAST_COMMIT_MESSAGE" value="Delete Room" />
   </component>
   <component name="XSLT-Support.FileAssociations.UIState">
     <expand />

@@ -8,6 +8,7 @@ Feature: Delete Event
     When the user deletes the event with ID provided
     Then the event should be deleted
 
+
   Scenario Outline: User tries to delete a non-existing event
     And there is no event with ID "<nonExistingId>"
     When the user deletes the event with ID provided

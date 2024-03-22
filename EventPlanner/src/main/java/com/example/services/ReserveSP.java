@@ -1,11 +1,10 @@
 package com.example.services;
 
-import com.example.entites.Event;
-import com.example.entites.Room;
-import com.example.entites.ServiceProvider;
-import com.example.entites.User;
+import com.example.data.NotifcationData;
+import com.example.entites.*;
 import io.cucumber.java.bs.A;
 
+import java.time.LocalDate;
 import java.util.ArrayList;
 
 import static com.example.data.EventData.getEvents;
@@ -48,6 +47,8 @@ public class ReserveSP {
                 if (e.getId() == eventid) {
                     e.serviceEntity.add(sp);
                     msg = "Service Provider has been reserved";
+                    String notification = LocalDate.now()+"| "+ "Service Provider "+sp.getUsername()+" Has Been Reserved For Event "+e.getEventName();
+                    NotifcationData.addNotification(notification);
                     return true;
                 }
             }

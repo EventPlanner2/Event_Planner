@@ -12,7 +12,7 @@ Feature: Book Event
     Then the client should see a list of upcoming events
 
   Scenario: Book an event successfully
-    When the client chooses an event by its ID "1"
+    When the client chooses an event by its ID "2"
     And the client requests to book an event
     Then the client should see a confirmation message "You have successfully booked the event"
     And the client should receive an email confirming the booking
@@ -28,7 +28,7 @@ Feature: Book Event
     Then the client should see an error message "Invalid event ID"
 
   Scenario: Book an event that is already fully booked by the client
-    When the client chooses an event by its ID "1"
+    When the client chooses an event by its ID "2"
     And the client requests to book an event
     Then the client should see an error message "You Have Already Booked this event"
 
@@ -42,5 +42,12 @@ Feature: Book Event
     Given there are no upcoming events
     When the client requests to book an event
     Then the client should see a message "There are no upcoming events to book."
+
+  Scenario: Book an event that is not upcoming
+    When the client chooses an event by its ID "1"
+    And the client requests to book an event
+    Then the client should see a message "You Can't Book Event not from List."
+
+
 
 

@@ -29,7 +29,8 @@ public class BookEventSteps {
     }
     @Given("the client user is logged in with their account")
     public void theClientUserIsLoggedInWithTheirAccount() {
-        app.loggedInUser = app.loginService.LoginPerformed("Ahmad","Ahmad12345");
+        app.loggedInUser = app.loginService.LoginPerformed("Ali Turabi","123456789");
+        app.getCalenderService().setLoggedInUser(app.loggedInUser);
     }
     @Given("the user is a client")
     public void theUserIsAClient() {

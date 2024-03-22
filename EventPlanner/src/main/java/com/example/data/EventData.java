@@ -1,6 +1,8 @@
 package com.example.data;
 
 import com.example.entites.Event;
+import com.example.entites.EventBuilder;
+
 import java.time.LocalDate;
 import java.time.LocalTime;
 import java.util.ArrayList;
@@ -21,19 +23,13 @@ public class EventData {
 
     private  void initializeData() {
         // Initialize event objects
-        Event e1 = new Event(CREATOR_NAME, 1, "Ali Turabi's Event", "cars event",
-                LocalDate.of(2024, 3, 15), LocalDate.of(2024, 4, 15),
-                LocalTime.of(19, 0), LocalTime.of(23, 0), 50);
+        Event e1 = new EventBuilder ().setUsername ( CREATOR_NAME ).setId ( 1 ).setEventName ( "Ali Turabi's Event" ).setEventDescription ( "cars event" ).setStartDate ( LocalDate.of ( 2024, 3, 15 ) ).setEndDate ( LocalDate.of ( 2024, 4, 15 ) ).setStartClock ( LocalTime.of ( 19, 0 ) ).setEndClock ( LocalTime.of ( 23, 0 ) ).setAttendeeCount ( 50 ).createEvent ();
         e1.setPathImage("image_path1"); // Set image path for event 1
 
-        Event e2 = new Event(CREATOR_NAME, 2, "Ali Turabi's Event", "mpower bmw version",
-                LocalDate.of(2025, 6, 20), LocalDate.of(2025, 6, 20),
-                LocalTime.of(8, 0), LocalTime.of(9, 0), 100);
+        Event e2 = new EventBuilder ().setUsername ( CREATOR_NAME ).setId ( 2 ).setEventName ( "Ali Turabi's Event" ).setEventDescription ( "mpower bmw version" ).setStartDate ( LocalDate.of ( 2025, 6, 20 ) ).setEndDate ( LocalDate.of ( 2025, 6, 20 ) ).setStartClock ( LocalTime.of ( 8, 0 ) ).setEndClock ( LocalTime.of ( 9, 0 ) ).setAttendeeCount ( 100 ).createEvent ();
         e2.setPathImage("image_path2"); // Set image path for event 2
 
-        Event e3 = new Event(CREATOR_NAME, 3, "Ali Turabi's Event", "mpower bmw version",
-                LocalDate.of(2025, 6, 20), LocalDate.of(2025, 6, 20),
-                LocalTime.of(10, 0), LocalTime.of(11, 0), 100);
+        Event e3 = new EventBuilder ().setUsername ( CREATOR_NAME ).setId ( 3 ).setEventName ( "Ali Turabi's Event" ).setEventDescription ( "mpower bmw version" ).setStartDate ( LocalDate.of ( 2025, 6, 20 ) ).setEndDate ( LocalDate.of ( 2025, 6, 20 ) ).setStartClock ( LocalTime.of ( 10, 0 ) ).setEndClock ( LocalTime.of ( 11, 0 ) ).setAttendeeCount ( 100 ).createEvent ();
         e3.setPathImage("image_path3"); // Set image path for event 3
 
         // Add events to the list

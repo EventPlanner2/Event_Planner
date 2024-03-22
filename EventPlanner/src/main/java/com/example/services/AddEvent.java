@@ -2,16 +2,15 @@ package com.example.services;
 
 import com.example.Main;
 import com.example.data.EventData;
-import com.example.data.UserData;
 import com.example.entites.Client;
 import com.example.entites.Event;
+import com.example.entites.EventBuilder;
 import com.example.entites.User;
 
 import java.io.File;
 import java.time.LocalDate;
 import java.time.LocalTime;
 import java.time.format.DateTimeParseException;
-import java.util.List;
 
 public class AddEvent {
 
@@ -129,9 +128,7 @@ public class AddEvent {
 
         }
         if (isOrgnaizer(username)&&canAddEvent(username)) {
-            Event event = new Event(username, EventData.getEvents().size()+1, name, description, LocalDate.parse(startDate),
-                    LocalDate.parse(endDate), LocalTime.parse(startClock), LocalTime.parse(endClock),
-                    Integer.parseInt(attendeeCount));
+            Event event = new EventBuilder ().setUsername ( username ).setId ( EventData.getEvents ().size () + 1 ).setEventName ( name ).setEventDescription ( description ).setStartDate ( LocalDate.parse ( startDate ) ).setEndDate ( LocalDate.parse ( endDate ) ).setStartClock ( LocalTime.parse ( startClock ) ).setEndClock ( LocalTime.parse ( endClock ) ).setAttendeeCount ( Integer.parseInt ( attendeeCount ) ).createEvent ();
             event.setPathImage(imagePath);
             msg = "";
             setMsg("The Event is created");

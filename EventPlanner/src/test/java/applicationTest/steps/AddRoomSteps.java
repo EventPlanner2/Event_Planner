@@ -1,6 +1,7 @@
 package applicationTest.steps;
 
 import com.example.App;
+import com.example.data.NotifcationData;
 import com.example.entites.User;
 import io.cucumber.datatable.DataTable;
 import io.cucumber.java.en.*;
@@ -75,7 +76,10 @@ public class AddRoomSteps {
         theAdministratorAddsARoomWithTheFollowingDetails(dataTable);
     }
 
-
+    @Then("a notification will be added with all details")
+    public void aNotificationWillBeAddedWithAllDetails() {
+        assertEquals(NotifcationData.oldSize+1,NotifcationData.getNotifcations().size());
+    }
 
 
 }

@@ -32,6 +32,13 @@ public class BookEvent {
                     return false;
                 }
             }
+
+            if(Event.getEventByID(eventid).getStartDate().isBefore(LocalDate.now())){
+                msg = "You Can't Book Event not from List.";
+                return false;
+            }
+          
+            //c1.eventsBooked.add(Event.getEventByID(eventid));
             c1.getEventsBooked ().add(Event.getEventByID(eventid));
             msg = "You have successfully booked the event";
             email_sent = true;

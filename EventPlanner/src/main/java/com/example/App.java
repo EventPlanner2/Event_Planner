@@ -26,6 +26,9 @@ public class App {
    private RoomData rd ;
 
 
+    //public UpgradeClient upgradeClient;
+    private Calender calenderService;
+
 
 
     public App()
@@ -51,8 +54,17 @@ public class App {
 
         upgradeClient =new UpgradeClient(loggedInUser);
 
+        calenderService = new Calender(loggedInUser);
+
     }
 
+    public Calender getCalenderService() {
+        return calenderService;
+    }
+
+    public void setCalenderService(Calender calenderService) {
+        this.calenderService = calenderService;
+    }
 
     public String logoutPerform(){
         if(loggedInUser != null) {

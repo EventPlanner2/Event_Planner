@@ -2,6 +2,9 @@ package com.example.services;
 
 import com.example.Main;
 import com.example.data.EventData;
+
+import com.example.data.NotifcationData;
+import com.example.data.UserData;
 import com.example.entites.Client;
 import com.example.entites.Event;
 import com.example.entites.EventBuilder;
@@ -57,8 +60,15 @@ public class AddEvent {
         EventData.addEvent(event);
         Client c = Client.getClientFromData(username);
         c.setNumberEvent(c.getNumberEvent() + 1);
+
+        String notification = LocalDate.now()+"| "+ "Event With Name "+name+" And StartDate "+startDate+" Has Been Added";
+        NotifcationData.addNotification(notification);
         return true;
+
     }
+
+
+
 
     public boolean nameVerification(String name) {
         if ( name.isEmpty()) {

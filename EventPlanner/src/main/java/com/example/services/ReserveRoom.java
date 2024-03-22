@@ -1,11 +1,16 @@
 package com.example.services;
 
+import com.example.data.EventData;
+import com.example.data.NotifcationData;
+import com.example.data.RoomData;
+
 import com.example.entites.Event;
 import com.example.entites.Room;
 import com.example.entites.User;
 import static com.example.data.EventData.getEvents;
 import static com.example.data.RoomData.getRooms;
 
+import java.time.LocalDate;
 import java.util.ArrayList;
 
 public class ReserveRoom {
@@ -52,6 +57,8 @@ public class ReserveRoom {
                     e.setComplete(true);
                     Room.getRoomFromData(roomid).setAvailable(false);
                     msg = "Room has been reserved";
+                    String notifcation = LocalDate.now().toString()+"| "+ "Room with name "+Room.getRoomFromData(roomid).getName()+" Has Been Reserved for Event "+e.getEventName();
+                    NotifcationData.addNotification(notifcation);
                     return true;
                 }
             }

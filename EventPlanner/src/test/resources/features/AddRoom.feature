@@ -10,6 +10,7 @@ Feature: AddRoom
       | Name           | Availability | Capacity | Cost Per Hour | Description                    |
       | Conference Rm  | Available    | 50       | $100          | A spacious conference room     |
     Then the room should be added successfully to the system
+    And a notification will be added with all details
 
   Scenario: Attempt to add a room with a duplicate name
     Given a room with the name "Room 1" already exists

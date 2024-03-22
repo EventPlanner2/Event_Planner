@@ -19,6 +19,7 @@ Feature: Create incomplete  Event by organizer
       | Attendee Count | 50                               |
       | image_path       |57.png|
     Then the event should be successfully added
+    And a notification will be added with all details
 
   Scenario: Successfully Create second incomplete Event with same organizer
     Given the organizer wants to add another new event
@@ -36,6 +37,7 @@ Feature: Create incomplete  Event by organizer
      | image_path       |57.png|
 
     Then the event should be successfully added
+    And a notification will be added with all details
 
 
   Scenario: Successfully Create third incomplete Event with same organizer
@@ -53,6 +55,7 @@ Feature: Create incomplete  Event by organizer
       | Attendee Count | 100                             |
       | image_path       |57.png|
     Then the event should be successfully added
+    And a notification will be added with all details
 
   Scenario: UnSuccessfully Create fourth Event  for same organizer
     Given the organizer wants to add the fourth  new event

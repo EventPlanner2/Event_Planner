@@ -13,6 +13,7 @@ Feature: Room Reservation for Incomplete Events
     When the organizer enters EventID "1" and RoomID "1" to reserve
     Then the room should be reserved for the event and the event become complete
     And a confirmation message should be displayed "Room has been reserved"
+    And a notification will be added with all details
 
   Scenario: Attempting to reserve a room with invalid event ID
     When the organizer enters an invalid EventID "E999" and a valid RoomID "1"

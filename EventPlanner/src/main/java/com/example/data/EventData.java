@@ -13,7 +13,7 @@ public class EventData {
     private static final String CREATOR_NAME = "Ahmad";
 
 
-    private static List<Event> events = new ArrayList<>();
+    private static final List<Event> events = new ArrayList<>();
     private static int ID_CURRENT = 4;
 
     // Private constructor to prevent direct instantiation
@@ -46,7 +46,5 @@ public class EventData {
         events.add(event);
     }
 
-    public static int generateID() {
-        return ID_CURRENT++;
-    }
+
 }

@@ -1,7 +1,6 @@
 package applicationTest.steps;
 
 import com.example.App;
-import com.example.entites.User;
 import io.cucumber.java.en.*;
 import static org.junit.Assert.*;
 

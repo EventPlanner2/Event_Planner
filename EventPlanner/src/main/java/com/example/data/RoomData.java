@@ -6,7 +6,7 @@ import java.util.ArrayList;
 import java.util.List;
 
 public class RoomData {
-    private static List<Room> rooms = new ArrayList<>();
+    private static final List<Room> rooms = new ArrayList<>();
 
     private static int id = 1;
     public RoomData(){

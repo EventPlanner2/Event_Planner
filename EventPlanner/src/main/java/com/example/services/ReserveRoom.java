@@ -38,6 +38,8 @@ public class ReserveRoom {
 
             for(Event e : getEvents()){
                 if(e.getId()==eventid){
+
+                    // need refactoring
                     if(e.getRoomID() == roomid){
                         msg = "the room is already reserved for the event";
                         return false;
@@ -54,6 +56,7 @@ public class ReserveRoom {
                         msg = "the room is lower capacity than attendance count";
                         return false;
                     }
+
                     e.setRoomID(roomid);
                     e.setComplete(true);
                     Room.getRoomFromData(roomid).setAvailable(false);

@@ -1,51 +1,48 @@
 package com.example.services;
-
-import com.example.data.RoomData;
+import com.example.entites.Client;
 import com.example.entites.Room;
 
+import static com.example.data.EventData.getEvents;
+import static com.example.data.RoomData.getRooms;
 public class DeleteRoom {
 
-    public String msg;
+    String msg;
+    public boolean DeleteRoomPerform(String id){
 
-    public DeleteRoom() {
-        this.msg = "";
-    }
-
-    public boolean deleteRoomPerformed(String id_tmp) {
         try {
-            int id = Integer.parseInt(id_tmp);
-            if (!doesRoomExists(id)) {
-                setMsg("The room Dose not Exists");
+            int roomid = Integer.parseInt(id);
+            if(!DoesRoomExists(roomid)){
+
+                setMsg("Non-Existing Room");
                 return false;
             }
-            for (int i = 0; i < RoomData.getRooms().size(); i++) {
-                if (RoomData.getRooms().get(i).getId() == id) {
-                    setMsg("The Room with " + id + " has been Deleted");
-                    RoomData.getRooms().remove(i);
+            for (int i = 0; i < getRooms().size(); i++) {
+                if (getRooms().get(i).getId() == roomid) {
+
+                    getRooms().remove(i);
+                    setMsg("Room Has Been " + id + " Deleted");
                     return true;
                 }
             }
-        } catch (NumberFormatException e) {
-            setMsg("Invalid ID");
-            return false;
+        }
+        catch (NumberFormatException e){
+            setMsg("Invalid Room ID");
         }
         return false;
     }
-
-    public boolean doesRoomExists(int id) {
-        for (Room r : RoomData.getRooms()) {
-            if (r.getId() == id) {
-                return true;
-            }
-        }
-        return false;
-    }
-
-    private void setMsg(String msg) {
-        this.msg = msg;
+    public boolean DoesRoomExists(int id){
+       for(Room r : getRooms()){
+           if(r.getId() == id) return true;
+       }
+       return false;
     }
 
     public String getMsg() {
-        return this.msg;
+        return msg;
     }
+
+    public void setMsg(String msg) {
+        this.msg = msg;
+    }
+
 }

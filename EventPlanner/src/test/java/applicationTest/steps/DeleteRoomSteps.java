@@ -1,52 +1,50 @@
 package applicationTest.steps;
 
 import com.example.App;
+import com.example.data.RoomData;
 import com.example.entites.User;
 import io.cucumber.java.en.*;
 import static org.junit.Assert.*;
-
-
 public class DeleteRoomSteps {
 
     App app;
-
-    boolean flag;
-
-    String id;
-
-
-    public DeleteRoomSteps(App app) {
+    private boolean flag;
+    private String id;
+    private int old_size;
+    public DeleteRoomSteps(App app){
         this.app = app;
-        id = "";
         flag = false;
+        id = "";
     }
-
-    @Given("there is an room with ID {string}")
-    public void there_is_an_room_with_id(String string) {
-        assertTrue(app.deleteRoomService.doesRoomExists(222));
+    @Given("there is a room with ID {string}")
+    public void thereIsARoomWithID(String string) {
+        id = string;
+        assertTrue(app.getDeleteRoomService().DoesRoomExists(Integer.parseInt(string)));
     }
-
-    @When("the user deletes the room with ID provided")
-    public void the_user_deletes_the_room_with_id_provided() {
-
+    @When("the admin deletes the room with ID provided")
+    public void theAdminDeletesTheRoomWithIDProvided() {
+        old_size = RoomData.getRooms().size();
+        flag = app.getDeleteRoomService().DeleteRoomPerform(id);
     }
-
     @Then("the room should be deleted")
-    public void the_room_should_be_deleted() {
-        assertTrue(flag);
+    public void theRoomShouldBeDeleted() {
+        assertEquals(old_size-1,RoomData.getRooms().size());
     }
+
 
     @Given("there is no room with ID {string}")
-    public void there_is_no_room_with_id(String string) {
-        // Write code here that turns the phrase above into concrete actions
-        throw new io.cucumber.java.PendingException();
+    public void thereIsNoRoomWithID(String string) {
+        id = string;
+        assertFalse(app.getDeleteRoomService().DoesRoomExists(Integer.parseInt(string)));
+    }
+    @Then("the system should display an error message room {string}")
+    public void theSystemShouldDisplayAnErrorMessageRoom(String string) {
+       assertEquals(app.getDeleteRoomService().getMsg(),string);
     }
 
-    @Given("the user provides an invalid room ID {string}")
-    public void the_user_provides_an_invalid_room_id(String string) {
-        // Write code here that turns the phrase above into concrete actions
-        throw new io.cucumber.java.PendingException();
+
+    @Given("the admin provides an invalid room ID {string}")
+    public void theAdminProvidesAnInvalidRoomID(String string) {
+        id = string;
     }
-
-
 }

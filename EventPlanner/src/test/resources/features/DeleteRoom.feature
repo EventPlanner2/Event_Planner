@@ -1,25 +1,22 @@
 Feature: Delete Room
 
   Background: Admin Login
-    Given the user is logged in with their account
-    And the user is admin
+    Given the system administrator is logged in
 
-  Scenario: User deletes an existing room by ID
-    And there is an room with ID "3"
-    When the user deletes the room with ID provided
+  Scenario: Admin deletes an existing Room by ID
+    And there is a room with ID "4"
+    When the admin deletes the room with ID provided
     Then the room should be deleted
 
-  Scenario Outline: User tries to delete a non-existing room
-    And there is no room with ID "<nonExistingId>"
-    When the user deletes the room with ID provided
-    Then the system should display an error message "Non-Existing room"
 
-    Examples:
-      | nonExistingId |
-      | 456           |
-      | 789           |
+  Scenario: Admin tries to delete a non-existing room
+    And there is no room with ID "458"
+    When the admin deletes the room with ID provided
+    Then the system should display an error message room "Non-Existing Room"
 
-  Scenario: User attempts to delete an room with an invalid ID
-    And the user provides an invalid room ID "abc"
-    When the user deletes the room with ID provided
-    Then the system should display an error message "Invalid ID"
+
+  Scenario: Admin attempts to delete a room with an invalid ID
+    And the admin provides an invalid room ID "R11"
+    When the admin deletes the room with ID provided
+    Then the system should display an error message room "Invalid Room ID"
+

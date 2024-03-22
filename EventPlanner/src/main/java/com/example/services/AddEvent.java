@@ -17,30 +17,21 @@ public class AddEvent {
     private boolean AddingEvent;
     private String msg;
     private String username;
+    private User loggedInUser;
+    private int eventId;
+    private String eventName;
+    private String eventDescription;
+    private LocalDate startDate;
+    private LocalDate endDate;
+    private LocalTime startClock;
+    private LocalTime endClock;
+    private int attendeeCount;
+    private String imagePath;
 
-    public boolean addEvent(String username, int eventId, String name, String description, String startDate, String
-            endDate, String startClock, String endClock, String attendeeCount, String imagePath) {
+    public boolean addEvent (String username,int eventId, String name, String description, String startDate, String
+            endDate, String startClock, String endClock, String attendeeCount, String imagePath){
 
-        if (!validateName(name) || !validateDescription(description) || !validateDate(startDate, "start date") ||
-                !validateDate(endDate, "end date") || !validateTime(startClock, "start clock") ||
-                !validateTime(endClock, "end clock") || !validateAttendeeCount(attendeeCount) ||
-                !validateImagePath(imagePath) || !isOrgnaizer(username) || !canAddEvent(username)) {
-            return false;
-        }
 
-        Event event = buildEvent(username, eventId, name, description, startDate, endDate, startClock, endClock, attendeeCount, imagePath);
-        if (event == null) {
-            return false;
-        }
-
-        msg = "The Event is created";
-        EventData.addEvent(event);
-        Client c = Client.getClientFromData(username);
-        c.setNumberEvent(c.getNumberEvent() + 1);
-        return true;
-    }
-
-    private boolean validateName(String name) {
         if (name.isEmpty()) {
             setMsg("missing name");
             return false;
@@ -49,10 +40,6 @@ public class AddEvent {
             setMsg("invalid name");
             return false;
         }
-        return true;
-    }
-
-    private boolean validateDescription(String description) {
         if (description.isEmpty()) {
             setMsg("missing description");
             return false;
@@ -61,108 +48,97 @@ public class AddEvent {
             setMsg("invalid description");
             return false;
         }
-        return true;
-    }
-
-    private boolean validateDate(String date, String fieldName) {
-        if (date.isEmpty()) {
-            setMsg("missing " + fieldName);
+        if (startDate.isEmpty()) {
+            setMsg("missing start date");
             return false;
         }
-        try {
-            LocalDate.parse(date);
-            return true;
-        } catch (DateTimeParseException e) {
-            setMsg("invalid " + fieldName);
+        else {
+            try {
+                LocalDate.parse(startDate); // Attempt to parse start clock
+            } catch (DateTimeParseException e) {
+                setMsg("invalid start date");
+                return false;
+            }
+        }
+        if (endDate.isEmpty()) {
+            setMsg("missing end date");
             return false;
         }
-    }
-
-    private boolean validateTime(String time, String fieldName) {
-        if (time.isEmpty()) {
-            setMsg("missing " + fieldName);
-            return false;
+        else {
+            try {
+                LocalDate.parse(endDate); // Attempt to parse end clock
+            } catch (DateTimeParseException e) {
+                setMsg("invalid end date");
+                return false;
+            }
         }
-        try {
-            LocalTime.parse(time);
-            return true;
-        } catch (DateTimeParseException e) {
-            setMsg("invalid " + fieldName);
+        if (startClock.isEmpty()) {
+            setMsg("missing start clock");
             return false;
+        }else {
+            try {
+                LocalTime.parse(startClock); // Attempt to parse start clock
+            } catch (DateTimeParseException e) {
+                setMsg("invalid start clock");
+                return false;
+            }
         }
-    }
-
-    private boolean validateAttendeeCount(String attendeeCount) {
+        if (endClock.isEmpty()) {
+            setMsg("missing end clock");
+            return false;
+        }else {
+            try {
+                LocalTime.parse(endClock); // Attempt to parse start clock
+            } catch (DateTimeParseException e) {
+                setMsg("invalid end clock");
+                return false;
+            }
+        }
         if (attendeeCount.isEmpty()) {
             setMsg("missing attendee count");
             return false;
-        }
-        try {
-            int count = Integer.parseInt(attendeeCount);
-            if (count <= 0) {
+        } else {
+            try {
+                int count = Integer.parseInt(attendeeCount); // Attempt to parse attendee count
+                if (count <= 0) {
+                    setMsg("invalid attendee count");
+                    return false;
+                }
+            } catch (NumberFormatException e) {
                 setMsg("invalid attendee count");
                 return false;
             }
-            return true;
-        } catch (NumberFormatException e) {
-            setMsg("invalid attendee count");
-            return false;
         }
-    }
-
-    private boolean validateImagePath(String imagePath) {
         if (imagePath.isEmpty()) {
             setMsg("missing image path");
             return false;
-        }
-        try {
-            ClassLoader classLoader = Main.class.getClassLoader();
-            File imageFile = new File(classLoader.getResource(imagePath).getFile());
-            if (!imageFile.exists()) {
+        } else {
+            try{
+                ClassLoader classLoader = Main.class.getClassLoader();
+                File imageFile = new File(classLoader.getResource(imagePath).getFile());
+                if (!imageFile.exists()) {
+                    setMsg("invalid image path");
+                    return false;
+                }
+            }
+            catch (NullPointerException e){
                 setMsg("invalid image path");
                 return false;
             }
-            return true;
-        } catch (NullPointerException e) {
-            setMsg("invalid image path");
-            return false;
-        }
-    }
 
-    private Event buildEvent(String username, int eventId, String name, String description, String startDate, String
-            endDate, String startClock, String endClock, String attendeeCount, String imagePath) {
-        try {
-            Event event = new EventBuilder().setUsername(username).setId(eventId).setEventName(name).setEventDescription(description)
-                    .setStartDate(LocalDate.parse(startDate)).setEndDate(LocalDate.parse(endDate))
-                    .setStartClock(LocalTime.parse(startClock)).setEndClock(LocalTime.parse(endClock))
-                    .setAttendeeCount(Integer.parseInt(attendeeCount)).createEvent();
+        }
+        if (isOrgnaizer(username)&&canAddEvent(username)) {
+            Event event = new EventBuilder ().setUsername ( username ).setId ( EventData.getEvents ().size () + 1 ).setEventName ( name ).setEventDescription ( description ).setStartDate ( LocalDate.parse ( startDate ) ).setEndDate ( LocalDate.parse ( endDate ) ).setStartClock ( LocalTime.parse ( startClock ) ).setEndClock ( LocalTime.parse ( endClock ) ).setAttendeeCount ( Integer.parseInt ( attendeeCount ) ).createEvent ();
             event.setPathImage(imagePath);
-            return event;
-        } catch (DateTimeParseException | NumberFormatException e) {
-            setMsg("Invalid input format");
-            return null;
-        }
-    }
+            msg = "";
+            setMsg("The Event is created");
+            EventData.addEvent(event);
+            Client c = Client.getClientFromData(username);
 
-    public boolean isOrgnaizer(String username) {
-        Client c = Client.getClientFromData(username);
-        if (c == null) {
-            setMsg("The user is not an organizer");
-            return false;
-        } else {
-            return c.isOrganizer();
+            c.setNumberEvent(c.getNumberEvent() + 1);
+            return true;
         }
-    }
-
-    public boolean canAddEvent(String userName) {
-        Client c = Client.getClientFromData(userName);
-        if (c == null) {
-            setMsg("User DNE");
-            return false;
-        } else {
-            setMsg("User can't add Event");
-            return c.getNumberEvent() < 3;
-        }
+        return false;
     }
 
     public String getMsg() {
@@ -170,8 +146,35 @@ public class AddEvent {
     }
 
     public void setMsg(String msg) {
-        this.msg = msg;
+        this.msg =  msg;
     }
+
+    public boolean isOrgnaizer(String username){
+        Client c=Client.getClientFromData(username);
+        if(c==null) {
+            setMsg("The user is not an orgnizer");
+            return false;}
+        else {
+            if(c.isOrganizer())
+                return true;
+
+
+        }
+
+        return false;
+    }
+
+    public boolean canAddEvent(String userName){
+        Client c=Client.getClientFromData(userName);
+        if(c==null) {
+            setMsg("User DNE");
+            return false;
+        }else{
+            setMsg("User can't add Event");
+            return c.getNumberEvent() < 3;
+        }
+    }
+
 
     public boolean isAddingEvent() {
         return AddingEvent;

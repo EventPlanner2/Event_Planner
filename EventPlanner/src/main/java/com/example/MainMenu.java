@@ -75,7 +75,7 @@ public class MainMenu {
             password = input.next();
             user = app.getLoginService ().LoginPerformed(username, password);
             if (user == null) {
-                logger.info( app.getLoginService ().errorMessage);
+                logger.info( app.getLoginService ().getErrorMessage () );
             } else {
                 app.setLoggedInUser ( user );
                 role = user.getRole();

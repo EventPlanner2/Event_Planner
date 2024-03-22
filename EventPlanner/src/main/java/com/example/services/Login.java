@@ -9,7 +9,7 @@ public class Login {
 
     private final List<User> users;
 
-    public String errorMessage;
+    private String errorMessage;
     private SPAcc SPAccObj;
 
     public void setSPAccObj(SPAcc SPAccObj) {
@@ -49,4 +49,7 @@ public class Login {
     }
 
 
+    public String getErrorMessage() {
+        return errorMessage;
+    }
 }

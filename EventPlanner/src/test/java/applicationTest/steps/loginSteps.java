@@ -83,6 +83,6 @@ public class loginSteps {
     }
     @Then("the user should see an error message {string}")
     public void the_user_should_see_an_error_message(String msg) {
-        assertEquals( app.getLoginService ().errorMessage,msg);
+        assertEquals( app.getLoginService ().getErrorMessage (),msg);
     }
 }

@@ -8,7 +8,7 @@ public class DeleteUpdateEvent {
 
 
     private String msg;
-    public AddEvent addEvent;
+    private AddEvent addEvent;
 
     public DeleteUpdateEvent(AddEvent addEvent) {
         this.msg = "";

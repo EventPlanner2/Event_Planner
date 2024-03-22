@@ -507,12 +507,12 @@ public class MainMenu {
             String attendeeCount = input.next();
             System.out.print("Image path :");
             String imagePath = input.next();
-            boolean flag = app.addEventService.addEvent(username, EventData.getEvents().size() + 1, eventName, eventDes, startDate, endDate, startHour, endHour, attendeeCount, imagePath);
+            boolean flag = app.getAddEventService().addEvent(username, EventData.getEvents().size() + 1, eventName, eventDes, startDate, endDate, startHour, endHour, attendeeCount, imagePath);
             if (flag) {
-                System.out.println(app.addEventService.getMsg());
+                System.out.println(app.getAddEventService().getMsg());
                 break;
             } else {
-                System.out.println(app.addEventService.getMsg());
+                System.out.println(app.getAddEventService().getMsg());
             }
         }
 
@@ -542,13 +542,13 @@ public class MainMenu {
             String attendeeCount = input.next();
             System.out.print("Image path :");
             String imagePath = input.next();
-            boolean flag = app.deleteUpdateEventService.UpdateEventPerform( eventId,username,eventName ,eventDes,startDate,endDate,startHour,endHour,attendeeCount,imagePath);
+            boolean flag = app.getDeleteUpdateEventService().UpdateEventPerform( eventId,username,eventName ,eventDes,startDate,endDate,startHour,endHour,attendeeCount,imagePath);
             if (flag) {
-                System.out.println(app.deleteUpdateEventService.getMsg());
+                System.out.println(app.getDeleteUpdateEventService().getMsg());
                 //Created getMsg in DeleteUpdateEvent
                 break;
             } else {
-                System.out.println(app.deleteUpdateEventService.getMsg());
+                System.out.println(app.getDeleteUpdateEventService().getMsg());
             }
         }
 
@@ -560,14 +560,14 @@ public class MainMenu {
         while (true){
         System.out.print("Please enter the ID of the event you want to delete : ");
         String eventId=input.next();
-        boolean flag =app.deleteUpdateEventService.DeleteEventPerform(eventId);
+        boolean flag =app.getDeleteUpdateEventService().DeleteEventPerform(eventId);
         if (flag) {
-            System.out.println(app.deleteUpdateEventService.getMsg());
+            System.out.println(app.getDeleteUpdateEventService().getMsg());
             //Created getMsg in DeleteUpdateEvent
             break;
 
          } else {
-            System.out.println(app.deleteUpdateEventService.getMsg());
+            System.out.println(app.getDeleteUpdateEventService().getMsg());
         }
 
     }

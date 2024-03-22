@@ -7,7 +7,7 @@ import static com.example.data.EventData.getEvents;
 public class DeleteUpdateEvent {
 
 
-    public String msg;
+    private String msg;
     public AddEvent addEvent;
 
     public DeleteUpdateEvent(AddEvent addEvent) {
@@ -71,4 +71,11 @@ public class DeleteUpdateEvent {
 
     }
 
+    public String getMsg() {
+        return msg;
+    }
+
+    public void setMsg(String msg) {
+        this.msg = msg;
+    }
 }

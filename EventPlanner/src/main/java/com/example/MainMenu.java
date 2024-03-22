@@ -134,7 +134,7 @@ public class MainMenu {
             if (flag) {
                 break;
             } else {
-                logger.info( app.getSignUpService ().msg);
+                logger.info( app.getSignUpService ().getMsg () );
             }
         }
     }

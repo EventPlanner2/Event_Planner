@@ -59,10 +59,10 @@ public class ReserveRoomSteps {
     }
     @Then("a confirmation message should be displayed {string}")
     public void aConfirmationMessageShouldBeDisplayed(String string) {
-        if( app.getReserveRoomService ().msg.isEmpty())
-            assertEquals( app.getReserveSPService ().msg,string);
+        if( app.getReserveRoomService ().getMsg ().isEmpty())
+            assertEquals( app.getReserveSPService ().getMsg (),string);
         else
-            assertEquals( app.getReserveRoomService ().msg,string);
+            assertEquals( app.getReserveRoomService ().getMsg (),string);
     }
 
 
@@ -72,10 +72,10 @@ public class ReserveRoomSteps {
     }
     @Then("an error message should be displayed indicating {string}")
     public void anErrorMessageShouldBeDisplayedIndicating(String string) {
-        if( app.getReserveRoomService ().msg.isEmpty())
-            assertEquals( app.getReserveSPService ().msg,string);
+        if( app.getReserveRoomService ().getMsg ().isEmpty())
+            assertEquals( app.getReserveSPService ().getMsg (),string);
         else
-            assertEquals( app.getReserveRoomService ().msg,string);
+            assertEquals( app.getReserveRoomService ().getMsg (),string);
     }
 
 

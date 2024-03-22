@@ -32,8 +32,101 @@ public class AddEvent {
         endDate, String startClock, String endClock, String attendeeCount, String imagePath){
 
 
-        if ( extracted ( name, description, startDate, endDate, startClock, endClock, attendeeCount, imagePath ) )
+        if (name.isEmpty()) {
+            setMsg("missing name");
             return false;
+        }
+        if (name.length() < 3) {
+            setMsg("invalid name");
+            return false;
+        }
+        if (description.isEmpty()) {
+            setMsg("missing description");
+            return false;
+        }
+        if (description.length() < 20) {
+            setMsg("invalid description");
+            return false;
+        }
+        if (startDate.isEmpty()) {
+            setMsg("missing start date");
+            return false;
+        }
+        else {
+           try {
+               LocalDate.parse(startDate); // Attempt to parse start clock
+           } catch (DateTimeParseException e) {
+              setMsg("invalid start date");
+              return false;
+           }
+        }
+        if (endDate.isEmpty()) {
+            setMsg("missing end date");
+            return false;
+        }
+        else {
+            try {
+                LocalDate.parse(endDate); // Attempt to parse end clock
+            } catch (DateTimeParseException e) {
+                setMsg("invalid end date");
+                return false;
+            }
+        }
+        if (startClock.isEmpty()) {
+            setMsg("missing start clock");
+            return false;
+        }else {
+            try {
+                LocalTime.parse(startClock); // Attempt to parse start clock
+            } catch (DateTimeParseException e) {
+                setMsg("invalid start clock");
+                return false;
+            }
+        }
+        if (endClock.isEmpty()) {
+            setMsg("missing end clock");
+            return false;
+        }else {
+            try {
+                LocalTime.parse(endClock); // Attempt to parse start clock
+            } catch (DateTimeParseException e) {
+                setMsg("invalid end clock");
+                return false;
+            }
+        }
+        if (attendeeCount.isEmpty()) {
+            setMsg("missing attendee count");
+            return false;
+        } else {
+            try {
+                int count = Integer.parseInt(attendeeCount); // Attempt to parse attendee count
+                if (count <= 0) {
+                    setMsg("invalid attendee count");
+                    return false;
+                }
+            } catch (NumberFormatException e) {
+                setMsg("invalid attendee count");
+                return false;
+            }
+        }
+        if (imagePath.isEmpty()) {
+            setMsg("missing image path");
+            return false;
+        } else {
+            try{
+                ClassLoader classLoader = Main.class.getClassLoader();
+                File imageFile = new File(classLoader.getResource(imagePath).getFile());
+                if (!imageFile.exists()) {
+                    setMsg("invalid image path");
+                    return false;
+                }
+            }
+            catch (NullPointerException e){
+                setMsg("invalid image path");
+                return false;
+            }
+
+        }
         if (isOrgnaizer(username)&&canAddEvent(username)) {
             Event event = new EventBuilder ().setUsername ( username ).setId ( EventData.getEvents ().size () + 1 ).setEventName ( name ).setEventDescription ( description ).setStartDate ( LocalDate.parse ( startDate ) ).setEndDate ( LocalDate.parse ( endDate ) ).setStartClock ( LocalTime.parse ( startClock ) ).setEndClock ( LocalTime.parse ( endClock ) ).setAttendeeCount ( Integer.parseInt ( attendeeCount ) ).createEvent ();
             event.setPathImage(imagePath);
@@ -44,105 +137,6 @@ public class AddEvent {
 
             c.setNumberEvent(c.getNumberEvent() + 1);
             return true;
-        }
-        return false;
-    }
-
-    private boolean extracted(String name, String description, String startDate, String endDate, String startClock, String endClock, String attendeeCount, String imagePath) {
-        if ( name.isEmpty()) {
-            setMsg("missing name");
-            return true;
-        }
-        if ( name.length() < 3) {
-            setMsg("invalid name");
-            return true;
-        }
-        if ( description.isEmpty()) {
-            setMsg("missing description");
-            return true;
-        }
-        if ( description.length() < 20) {
-            setMsg("invalid description");
-            return true;
-        }
-        if ( startDate.isEmpty()) {
-            setMsg("missing start date");
-            return true;
-        }
-        else {
-           try {
-               LocalDate.parse( startDate ); // Attempt to parse start clock
-           } catch (DateTimeParseException e) {
-              setMsg("invalid start date");
-               return true;
-           }
-        }
-        if ( endDate.isEmpty()) {
-            setMsg("missing end date");
-            return true;
-        }
-        else {
-            try {
-                LocalDate.parse( endDate ); // Attempt to parse end clock
-            } catch (DateTimeParseException e) {
-                setMsg("invalid end date");
-                return true;
-            }
-        }
-        if ( startClock.isEmpty()) {
-            setMsg("missing start clock");
-            return true;
-        }else {
-            try {
-                LocalTime.parse( startClock ); // Attempt to parse start clock
-            } catch (DateTimeParseException e) {
-                setMsg("invalid start clock");
-                return true;
-            }
-        }
-        if ( endClock.isEmpty()) {
-            setMsg("missing end clock");
-            return true;
-        }else {
-            try {
-                LocalTime.parse( endClock ); // Attempt to parse start clock
-            } catch (DateTimeParseException e) {
-                setMsg("invalid end clock");
-                return true;
-            }
-        }
-        if ( attendeeCount.isEmpty()) {
-            setMsg("missing attendee count");
-            return true;
-        } else {
-            try {
-                int count = Integer.parseInt( attendeeCount ); // Attempt to parse attendee count
-                if (count <= 0) {
-                    setMsg("invalid attendee count");
-                    return true;
-                }
-            } catch (NumberFormatException e) {
-                setMsg("invalid attendee count");
-                return true;
-            }
-        }
-        if ( imagePath.isEmpty()) {
-            setMsg("missing image path");
-            return true;
-        } else {
-            try{
-                ClassLoader classLoader = Main.class.getClassLoader();
-                File imageFile = new File(classLoader.getResource( imagePath ).getFile());
-                if (!imageFile.exists()) {
-                    setMsg("invalid image path");
-                    return true;
-                }
-            }
-            catch (NullPointerException e){
-                setMsg("invalid image path");
-                return true;
-            }
-
         }
         return false;
     }

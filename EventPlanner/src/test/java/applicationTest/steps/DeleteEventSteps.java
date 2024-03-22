@@ -41,7 +41,7 @@ public class DeleteEventSteps {
 
     @Then("the system should display an error message {string}")
     public void theSystemShouldDisplayAnErrorMessage(String string) {
-        assertEquals( app.getDeleteUpdateEventService ().msg,string);
+        assertEquals( app.getDeleteUpdateEventService ().getMsg (),string);
     }
 
 

@@ -13,7 +13,7 @@ public class ReserveRoom {
     private User loggedInUser;
     public ArrayList<Event> res_event;
     public ArrayList<Room> res_room;
-    public String msg;
+    private String msg;
 
     public ReserveRoom(User loggedInUser){
         this.loggedInUser = loggedInUser;
@@ -96,5 +96,13 @@ public class ReserveRoom {
 
     public void setLoggedInUser(User loggedInUser) {
         this.loggedInUser = loggedInUser;
+    }
+
+    public String getMsg() {
+        return msg;
+    }
+
+    public void setMsg(String msg) {
+        this.msg = msg;
     }
 }

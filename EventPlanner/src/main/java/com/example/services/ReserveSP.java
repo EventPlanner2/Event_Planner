@@ -15,7 +15,7 @@ public class ReserveSP {
 
     public ArrayList<Event> res_event;
     public ArrayList<ServiceProvider> res_sps;
-    public String msg;
+    private String msg;
 
     public ReserveSP(User loggedInUser) {
         this.loggedInUser = loggedInUser;
@@ -80,4 +80,11 @@ public class ReserveSP {
 
     }
 
+    public String getMsg() {
+        return msg;
+    }
+
+    public void setMsg(String msg) {
+        this.msg = msg;
+    }
 }

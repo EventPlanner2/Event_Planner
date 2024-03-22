@@ -70,7 +70,7 @@ public class signUpSteps {
     public void the_system_displays_an_existing_contact_email_error_message(String string) {
 
         assertFalse(flag_is_created);
-        assertEquals( app.getSignUpService ().msg,string);
+        assertEquals( app.getSignUpService ().getMsg (),string);
 
     }
 
@@ -84,7 +84,7 @@ public class signUpSteps {
     @Then("the system displays an invalid email format error message {string}")
     public void the_system_displays_an_invalid_email_format_error_message(String string) {
         assertFalse(flag_is_created);
-        assertEquals( app.getSignUpService ().msg,string);
+        assertEquals( app.getSignUpService ().getMsg (),string);
     }
 
     @When("the user submits the SignUp form with missing email")
@@ -116,7 +116,7 @@ public class signUpSteps {
     @Then("the system displays an error message for the existing username {string}")
     public void the_system_displays_an_error_message_for_the_existing_username(String string) {
         assertFalse(flag_is_created);
-        assertEquals( app.getSignUpService ().msg,string);
+        assertEquals( app.getSignUpService ().getMsg (),string);
     }
 
 
@@ -125,7 +125,7 @@ public class signUpSteps {
     @Then("the system displays error messages for the missing fields {string}")
     public void the_system_displays_error_messages_for_the_missing_fields(String string) {
         assertFalse(flag_is_created);
-        assertEquals( app.getSignUpService ().msg,string);
+        assertEquals( app.getSignUpService ().getMsg (),string);
     }
 
 
@@ -139,7 +139,7 @@ public class signUpSteps {
     @Then("the system displays a weak password error message says {string}")
     public void the_system_displays_a_weak_password_error_message_says(String string) {
         assertFalse(flag_is_created);
-        assertEquals( app.getSignUpService ().msg,string);
+        assertEquals( app.getSignUpService ().getMsg (),string);
     }
 
 
@@ -153,7 +153,7 @@ public class signUpSteps {
     @Then("the system displays an error message for the invalid role {string}")
     public void the_system_displays_an_error_message_for_the_invalid_role(String string) {
         assertFalse(flag_is_created);
-        assertEquals( app.getSignUpService ().msg,string);
+        assertEquals( app.getSignUpService ().getMsg (),string);
     }
 
 

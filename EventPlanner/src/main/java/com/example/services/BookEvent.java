@@ -10,8 +10,8 @@ import static com.example.data.EventData.getEvents;
 public class BookEvent {
 
 
-    public String msg;
-    public boolean email_sent;
+    private String msg;
+    private boolean email_sent;
 
     public BookEvent(){
         msg = "";
@@ -69,4 +69,19 @@ public class BookEvent {
     }
 
 
+    public boolean isEmail_sent() {
+        return email_sent;
+    }
+
+    public void setEmail_sent(boolean email_sent) {
+        this.email_sent = email_sent;
+    }
+
+    public String getMsg() {
+        return msg;
+    }
+
+    public void setMsg(String msg) {
+        this.msg = msg;
+    }
 }

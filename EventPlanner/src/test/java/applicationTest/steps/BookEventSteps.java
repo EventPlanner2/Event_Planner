@@ -59,11 +59,11 @@ public class BookEventSteps {
     }
     @Then("the client should see a confirmation message {string}")
     public void theClientShouldSeeAConfirmationMessage(String string) {
-        assertEquals( app.getBookEventService ().msg,string);
+        assertEquals( app.getBookEventService ().getMsg (),string);
     }
     @Then("the client should receive an email confirming the booking")
     public void theClientShouldReceiveAnEmailConfirmingTheBooking() {
-        assertTrue( app.getBookEventService ().email_sent);
+        assertTrue( app.getBookEventService ().isEmail_sent () );
     }
 
     @When("the client enters an invalid event ID {string}")
@@ -72,7 +72,7 @@ public class BookEventSteps {
     }
     @Then("the client should see an error message {string}")
     public void theClientShouldSeeAnErrorMessage(String string) {
-        assertEquals( app.getBookEventService ().msg,string);
+        assertEquals( app.getBookEventService ().getMsg (),string);
 
     }
 
@@ -90,7 +90,7 @@ public class BookEventSteps {
     }
     @Then("the client should see a message {string}")
     public void theClientShouldSeeAMessage(String string) {
-        assertEquals( app.getBookEventService ().msg,string);
+        assertEquals( app.getBookEventService ().getMsg (),string);
         EventData.getEvents().addAll(tmp);
     }
     @When("the user logs in as a role not client")

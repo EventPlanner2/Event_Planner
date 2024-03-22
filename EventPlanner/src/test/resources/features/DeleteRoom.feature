@@ -19,3 +19,4 @@ Feature: Delete Room
     And the admin provides an invalid room ID "R11"
     When the admin deletes the room with ID provided
     Then the system should display an error message room "Invalid Room ID"
+

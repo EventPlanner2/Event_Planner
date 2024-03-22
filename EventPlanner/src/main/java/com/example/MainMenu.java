@@ -2,11 +2,9 @@ package com.example;
 
 import com.example.data.EventData;
 import com.example.data.UserData;
+import com.example.data.NotifcationData;
 import com.example.data.RoomData;
-import com.example.entites.Event;
-import com.example.entites.Room;
-import com.example.entites.ServiceProvider;
-import com.example.entites.User;
+import com.example.entites.*;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -172,10 +170,17 @@ public class MainMenu {
                     }
                     break;
                 case "6":
-                    deleteRoom();
+                    if (role == 'a') {
+                        deleteRoom();
+                    }
                     break;
                 case "7":
-                    return;
+                    showNotifications();
+                case "8":
+                    if (role == 'a') {
+                        return;
+                    }
+                    break;
                 case "X":
                     System.exit(0);
                 default:
@@ -194,12 +199,14 @@ public class MainMenu {
             menu.append("5. Enter organizer mode\n");
         } else if (role == 'a') {
             menu.append("5. Show all rooms\n")
-                    .append("6. Delete room\n");
+                    .append("6. Delete room\n").append("7. Notifications");
         }
         if (role == 's') {
             menu.append("5. Log out\n");
-        } else {
-            menu.append("7. Log out\n");
+        } else if(role == 'c') {
+            menu.append("6. Book event\n");
+            menu.append("7. Cancel Booking\n");
+            menu.append("8. Log out\n");
         }
         menu.append("X. Exit");
         return menu.toString();
@@ -219,6 +226,8 @@ public class MainMenu {
     private void handleChoiceFive(char role) {
         if (role == 'a') {
             showAllRooms();
+        }else if(role == 'c'){
+            organizerPage();
         }
     }
 
@@ -228,6 +237,10 @@ public class MainMenu {
         String id = input.next();
         app.getDeleteRoomService().DeleteRoomPerform(id);
         logger.info(app.getDeleteRoomService().getMsg());
+    }
+
+    public void showNotifications(){
+
     }
 
     public void accountInformation(char role) {
@@ -263,7 +276,7 @@ public class MainMenu {
             logger.info("Please enter the description of the new room :");
             String roomDes = input.next();
             logger.info("Please enter the Availability of the new room :");
-          
+
             String roomAvailability = input.next();
             boolean flag = app.getAddRoomService().AddRoomPerformed(roomName, roomAvailability, roomCapacity, roomCost, roomDes);
             if (flag) {
@@ -561,7 +574,14 @@ public class MainMenu {
     }
 
     public void reserveRoom() {
-
+        logger.info("Please enter the id of the event to reserve a room for it :");
+        showUpcomingEvents();
+        String event =input.next();
+        logger.info("Please enter the id of the room :");
+        showAllRooms();
+        String room =input.next();
+        app.getReserveRoomService().ReserveRoomPerform(event,room);
+        logger.info(app.getReserveRoomService().getMsg());
     }
 
     public void reserveServiceProvider() {

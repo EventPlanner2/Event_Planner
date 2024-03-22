@@ -1,5 +1,6 @@
 package com.example;
 import com.example.data.EventData;
+import com.example.data.NotifcationData;
 import com.example.data.RoomData;
 import com.example.data.UserData;
 import com.example.entites.Room;
@@ -30,6 +31,8 @@ public class App {
 
     //public UpgradeClient upgradeClient;
     private Calender calenderService;
+
+    private NotifcationData notifcationData;
 
 
 

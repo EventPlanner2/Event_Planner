@@ -2,7 +2,7 @@ package com.example;
 
 public class Main {
     public static void main(String[] args) {
-      //  MainMenu mainMenu = new MainMenu();
-        //mainMenu.menu();
+        MainMenu mainMenu = new MainMenu();
+        mainMenu.menu();
     }
 }

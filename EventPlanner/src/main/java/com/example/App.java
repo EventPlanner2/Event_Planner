@@ -1,5 +1,5 @@
 package com.example;
-
+import com.example.data.EventData;
 import com.example.data.RoomData;
 import com.example.data.UserData;
 import com.example.entites.Room;
@@ -23,9 +23,10 @@ public class App {
     private BookEvent bookEventService;
     private UpgradeClient upgradeClient;
     private UserData ud;
-   private RoomData rd ;
-   private DeleteRoom deleteRoomService;
+    private RoomData rd;
+    private DeleteRoom deleteRoomService;
 
+    private EventData ed;
 
     //public UpgradeClient upgradeClient;
     private Calender calenderService;
@@ -41,7 +42,7 @@ public class App {
         loginService = new Login(users);
         loggedInUser = null;
         signUpService = new SignUp(users);
-         rd = new RoomData();// to initialize the data it the db
+        rd = new RoomData();// to initialize the data it the db
         rooms = RoomData.getRooms();
         addRoomService = new AddRoom(rooms);
         spAccount = new SPAcc();
@@ -54,11 +55,11 @@ public class App {
         reserveSPService = new ReserveSP(loggedInUser);
         bookEventService = new BookEvent();
 
-
-        upgradeClient =new UpgradeClient(loggedInUser);
+        ed =new EventData();
+        upgradeClient = new UpgradeClient(loggedInUser);
 
         calenderService = new Calender(loggedInUser);
-        deleteRoomService = new DeleteRoom();
+
 
         deleteRoomService=new DeleteRoom();
 

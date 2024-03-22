@@ -1,4 +1,5 @@
 package com.example.services;
+import com.example.data.EventData;
 import com.example.entites.Client;
 import com.example.entites.Event;
 import com.example.entites.User;
@@ -63,7 +64,7 @@ public class Calender {
 
     public ArrayList<Event> showUpcomingEvents(){
         ArrayList <Event> resTmp = new ArrayList<>();
-        for(Event e : getEvents()){
+        for(Event e : EventData.getEvents()){
             if(e.getStartDate().isAfter(LocalDate.now())){
                 resTmp.add(e);
             }

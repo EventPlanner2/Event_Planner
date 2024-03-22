@@ -18,7 +18,7 @@ public class EventData {
     private static int ID_CURRENT = 4;
 
     // Private constructor to prevent direct instantiation
-    private EventData() {
+    public EventData() {
         initializeData();
     }
 

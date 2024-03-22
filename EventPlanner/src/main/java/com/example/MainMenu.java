@@ -1,5 +1,8 @@
 package com.example;
 
+import com.example.data.RoomData;
+import com.example.entites.Event;
+import com.example.entites.Room;
 import com.example.entites.ServiceProvider;
 import com.example.entites.User;
 
@@ -14,16 +17,16 @@ public class MainMenu {
     public static final String PRICE_CRITERIA = "Price";
     private static final Logger logger = Logger.getLogger(MainMenu.class.getName());
     private static final String WELCOME_STRING = """
-      
-         __          __    _                                _______        _____  _               _          _____   _                                  
-         \\ \\        / /   | |                              |__   __|      / ____|| |             | |        |  __ \\ | |                                 
-          \\ \\  /\\  / /___ | |  ___  ___   _ __ ___    ___     | |  ___   | (___  | |_  _   _   __| | _   _  | |__) || |  __ _  _ __   _ __    ___  _ __ 
-           \\ \\/  \\/ // _ \\| | / __|/ _ \\ | '_ ` _ \\  / _ \\    | | / _ \\   \\___ \\ | __|| | | | / _` || | | | |  ___/ | | / _` || '_ \\ | '_ \\  / _ \\| '__|
-            \\  /\\  /|  __/| || (__| (_) || | | | | ||  __/    | || (_) |  ____) || |_ | |_| || (_| || |_| | | |     | || (_| || | | || | | ||  __/| |   
-             \\/  \\/  \\___||_| \\___|\\___/ |_| |_| |_| \\___|    |_| \\___/  |_____/  \\__| \\__,_| \\__,_| \\__, | |_|     |_| \\__,_||_| |_||_| |_| \\___||_|   
-                                                                                                   __/ |                                             
-                                                                                                  |___/                                              
-        """;
+                  
+             __          __    _                                _______        _____  _               _          _____   _                                  
+             \\ \\        / /   | |                              |__   __|      / ____|| |             | |        |  __ \\ | |                                 
+              \\ \\  /\\  / /___ | |  ___  ___   _ __ ___    ___     | |  ___   | (___  | |_  _   _   __| | _   _  | |__) || |  __ _  _ __   _ __    ___  _ __ 
+               \\ \\/  \\/ // _ \\| | / __|/ _ \\ | '_ ` _ \\  / _ \\    | | / _ \\   \\___ \\ | __|| | | | / _` || | | | |  ___/ | | / _` || '_ \\ | '_ \\  / _ \\| '__|
+                \\  /\\  /|  __/| || (__| (_) || | | | | ||  __/    | || (_) |  ____) || |_ | |_| || (_| || |_| | | |     | || (_| || | | || | | ||  __/| |   
+                 \\/  \\/  \\___||_| \\___|\\___/ |_| |_| |_| \\___|    |_| \\___/  |_____/  \\__| \\__,_| \\__,_| \\__, | |_|     |_| \\__,_||_| |_||_| |_| \\___||_|   
+                                                                                                       __/ |                                             
+                                                                                                      |___/                                              
+            """;
     App app = new App();
     private String username;
     private String password;
@@ -37,12 +40,12 @@ public class MainMenu {
         while (isRunning) {
             logger.info(WELCOME_STRING);
             logger.info("""
-            +--------------------+
-            | 1. log in          |
-            | 2. Sign up         |
-            | X. Exit            |
-            +--------------------+
-            """);
+                    +--------------------+
+                    | 1. log in          |
+                    | 2. Sign up         |
+                    | X. Exit            |
+                    +--------------------+
+                    """);
             logger.info("Enter your choice please : ");
             String choose = input.next();
             switch (choose) {
@@ -73,43 +76,43 @@ public class MainMenu {
             username = input.next();
             logger.info("Password :");
             password = input.next();
-            user = app.getLoginService ().LoginPerformed(username, password);
+            user = app.getLoginService().LoginPerformed(username, password);
             if (user == null) {
-                logger.info( app.getLoginService ().getErrorMessage () );
+                logger.info(app.getLoginService().getErrorMessage());
             } else {
-                app.setLoggedInUser ( user );
+                app.setLoggedInUser(user);
                 role = user.getRole();
                 break;
             }
         }
 
-        app.setLoggedInUser ( user );
+        app.setLoggedInUser(user);
         switch (role) {
             case 'a':
                 logger.info("""
-                ╔════════════════════════╗
-                      ║ You logged in as Admin ║
-                      ╚════════════════════════╝
-                """);
+                        ╔════════════════════════╗
+                              ║ You logged in as Admin ║
+                              ╚════════════════════════╝
+                        """);
                 Page("2.Add Room", user.getRole());
                 break;
 
             case 's':
                 logger.info("""
-                ╔═══════════════════════════════════╗
-                      ║ You logged in as Service Provider ║
-                      ╚═══════════════════════════════════╝
-                """);
+                        ╔═══════════════════════════════════╗
+                              ║ You logged in as Service Provider ║
+                              ╚═══════════════════════════════════╝
+                        """);
                 ServiceProvider.getSPFromData(username).setFirstLogin(true);
                 Page("2.Complete", user.getRole());
                 break;
 
             case 'c':
                 logger.info("""
-                ╔════════════════════════╗
-                      ║ You logged in as Client ║
-                      ╚════════════════════════╝
-                """);
+                        ╔════════════════════════╗
+                              ║ You logged in as Client║
+                              ╚════════════════════════╝
+                        """);
                 Page("2.Upgrade", user.getRole());
                 break;
 
@@ -130,11 +133,11 @@ public class MainMenu {
             String email = input.next();
             logger.info("Please enter your role :");
             String role = input.next();
-            boolean flag = app.getSignUpService ().register(username, password, email, role);
+            boolean flag = app.getSignUpService().register(username, password, email, role);
             if (flag) {
                 break;
             } else {
-                logger.info( app.getSignUpService ().getMsg () );
+                logger.info(app.getSignUpService().getMsg());
             }
         }
     }
@@ -158,10 +161,19 @@ public class MainMenu {
                     searchServiceProvider();
                     break;
                 case "4":
-                    return;
+                    showUpcomingEvents();
+                    break;
                 case "5":
                     handleChoiceFive(role);
+                    if(role == 's'){
+                        return;
+                    }
                     break;
+                case "6":
+                    deleteRoom();
+                    break;
+                case "7":
+                    return;
                 case "X":
                     System.exit(0);
                 default:
@@ -203,21 +215,26 @@ public class MainMenu {
     }
 
     private void handleChoiceFive(char role) {
-        if (role == 'c' && !organizerPage()) {
-            return;
+        if(role == 'a'){
+            showAllRooms();
         }
     }
 
-
-
+    public void deleteRoom (){
+        showAllRooms();
+        logger.info("Please enter the id of the room to be deleted");
+        String id=input.next();
+        app.deleteRoomService.deleteRoomPerformed(id);
+        logger.info(app.deleteRoomService.getMsg());
+    }
 
     public void accountInformation(char role) {
         while (true) {
             String info = """
-        Username : """ + user.getUsername() + """
-              Password : """ + user.getPassword() + """
-              Email : """ + user.getContactEmail() + """
-        """;
+                    Username : """ + user.getUsername() + """
+                    Password : """ + user.getPassword() + """
+                    Email : """ + user.getContactEmail() + """
+                    """;
 
             if (role == 'a')
                 info += "      Role : Admin";
@@ -245,12 +262,12 @@ public class MainMenu {
             String roomDes = input.next();
             logger.info("Please enter the Availability of the new room :");
             String roomAvailability = input.next();
-            boolean flag = app.getAddRoomService ().AddRoomPerformed(roomName, roomAvailability, roomCapacity, roomCost, roomDes);
+            boolean flag = app.getAddRoomService().AddRoomPerformed(roomName, roomAvailability, roomCapacity, roomCost, roomDes);
             if (flag) {
-                logger.info( app.getAddRoomService ().getMsg());
+                logger.info(app.getAddRoomService().getMsg());
                 break;
             } else {
-                logger.info( app.getAddRoomService ().getMsg());
+                logger.info(app.getAddRoomService().getMsg());
             }
         }
 
@@ -262,12 +279,12 @@ public class MainMenu {
         while (true) {
             if (Back()) return;
             String info = """
-        Search based on :
-              1. Location
-              2. Type
-              3. Price
-        Please enter your choice :
-        """;
+                    Search based on :
+                          1. Location
+                          2. Type
+                          3. Price
+                    Please enter your choice :
+                    """;
 
             logger.info(info);
             String choose = input.next();
@@ -297,6 +314,15 @@ public class MainMenu {
     }
 
     public void showUpcomingEvents() {
+        for (Event e : app.getCalenderService().showUpcomingEvents()) {
+            logger.info(e.getId() + " " + e.getEventName() + " " + e.getEventDescription() + " " + e.getStartDate() + " " + e.getEndDate() + " " + e.getStartClock() + " " + e.getEndClock() + " " + e.getAttendeeCount());
+        }
+    }
+
+    public void showAllRooms (){
+        for (Room r : RoomData.getRooms()){
+            logger.info(r.getId() + " " + r.getName() + " " + r.getCapacity() + " " + r.getCostPerHour() + " " + r.getDescription() + " " + r.isAvailable());
+        }
 
     }
 
@@ -304,7 +330,7 @@ public class MainMenu {
         while (true) {
             if (Back()) return;
             if (!ServiceProvider.getSPFromData(user.getUsername()).isFirstLogin()) {
-                logger.info( app.getSPAccount ().getCompleteAccountMsg());
+                logger.info(app.getSPAccount().getCompleteAccountMsg());
                 return;
             }
             String location, productPrice, productType;
@@ -317,14 +343,14 @@ public class MainMenu {
             productType = input.next();
             productType += " " + input.next();
 
-            boolean flag = app.getSPAccount ().CompleteAccountPerform(location, productPrice, productType);
+            boolean flag = app.getSPAccount().CompleteAccountPerform(location, productPrice, productType);
 
             if (flag) {
-                logger.info( app.getSPAccount ().getCompleteAccountMsg());
+                logger.info(app.getSPAccount().getCompleteAccountMsg());
                 ServiceProvider.getSPFromData(username).setFirstLogin(false);
                 return;
             } else {
-                logger.info( app.getSPAccount ().getCompleteAccountMsg());
+                logger.info(app.getSPAccount().getCompleteAccountMsg());
             }
         }
     }
@@ -332,9 +358,9 @@ public class MainMenu {
     public void upgrade() {
         while (true) {
             if (Back()) return;
-            app.getUpgradeClient ().setLoggedInUser(user);
-            app.getUpgradeClient ().UpgradeClientPerform();
-            logger.info( app.getUpgradeClient ().getMsg());
+            app.getUpgradeClient().setLoggedInUser(user);
+            app.getUpgradeClient().UpgradeClientPerform();
+            logger.info(app.getUpgradeClient().getMsg());
         }
     }
 
@@ -383,25 +409,25 @@ public class MainMenu {
 
     public boolean organizerPage() {
         if (Back()) return true;
-        if (!app.getAddEventService ().isOrgnaizer(user.getUsername())) {
+        if (!app.getAddEventService().isOrgnaizer(user.getUsername())) {
             logger.info("You must be an Organizer");
             return true;
         }
         while (true) {
             logger.info("""
-        .-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-.
-              |  1. Add Event                                  |
-              |  2. Update Event                               |
-              !  3. Delete Event                               !
-              :  4. Search for Service Provider                :
-              .  5. Reserve Room for an Event                  .
-              .  6. Reserve Service Provider for an Event      .
-              :  7. Show upcoming Events                       :
-              !  8. Show information account                   !
-              |  9. Log out                                    |
-              |  X. Exit                                       |
-              `-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-`
-        """);
+                    .-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-.
+                          |  1. Add Event                                  |
+                          |  2. Update Event                               |
+                          !  3. Delete Event                               !
+                          :  4. Search for Service Provider                :
+                          .  5. Reserve Room for an Event                  .
+                          .  6. Reserve Service Provider for an Event      .
+                          :  7. Show upcoming Events                       :
+                          !  8. Show information account                   !
+                          |  9. Log out                                    |
+                          |  X. Exit                                       |
+                          `-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-`
+                    """);
 
             logger.info("Pleas enter your choice :");
             String choice = input.next();

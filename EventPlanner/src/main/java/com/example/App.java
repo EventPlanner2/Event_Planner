@@ -31,7 +31,7 @@ public class App {
     public UpgradeClient upgradeClient;
     public UserData ud;
 
-
+    public DeleteRoom deleteRoomService;
 
 
 
@@ -58,6 +58,7 @@ public class App {
 
 
         upgradeClient =new UpgradeClient(loggedInUser);
+        deleteRoomService =new DeleteRoom();
 
     }
 

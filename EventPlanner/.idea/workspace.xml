@@ -4,13 +4,13 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="b83c84ab-4b8d-45df-9a9e-d68f70b0baad" name="Changes" comment="minor update on search sp">
-      <change afterPath="$PROJECT_DIR$/src/test/java/applicationTest/steps/CancelBookEventSteps.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/test/resources/features/CancelBookEvent.feature" afterDir="false" />
+    <list default="true" id="b83c84ab-4b8d-45df-9a9e-d68f70b0baad" name="Changes" comment="Cancel Booking Event">
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/example/services/EmailSender.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/data/EventData.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/data/EventData.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/pom.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/data/UserData.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/data/UserData.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/com/example/services/BookEvent.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/services/BookEvent.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/resources/features/BookEvent.feature" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/resources/features/BookEvent.feature" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/applicationTest/steps/BookEventSteps.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/applicationTest/steps/BookEventSteps.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -195,6 +195,7 @@
       <workItem from="1710579464649" duration="17252000" />
       <workItem from="1710757208283" duration="11797000" />
       <workItem from="1711100796027" duration="5635000" />
+      <workItem from="1711132366590" duration="3680000" />
     </task>
     <task id="LOCAL-00001" summary="Upgrade Client to Orginizer">
       <option name="closed" value="true" />
@@ -276,7 +277,15 @@
       <option name="project" value="LOCAL" />
       <updated>1711119604041</updated>
     </task>
-    <option name="localTasksCounter" value="11" />
+    <task id="LOCAL-00011" summary="Cancel Booking Event">
+      <option name="closed" value="true" />
+      <created>1711125207752</created>
+      <option name="number" value="00011" />
+      <option name="presentableId" value="LOCAL-00011" />
+      <option name="project" value="LOCAL" />
+      <updated>1711125207752</updated>
+    </task>
+    <option name="localTasksCounter" value="12" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -304,7 +313,8 @@
     <MESSAGE value="fix bugs after merge" />
     <MESSAGE value="Delete Room" />
     <MESSAGE value="minor update on search sp" />
-    <option name="LAST_COMMIT_MESSAGE" value="minor update on search sp" />
+    <MESSAGE value="Cancel Booking Event" />
+    <option name="LAST_COMMIT_MESSAGE" value="Cancel Booking Event" />
   </component>
   <component name="XSLT-Support.FileAssociations.UIState">
     <expand />

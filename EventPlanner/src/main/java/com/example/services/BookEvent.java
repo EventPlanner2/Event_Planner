@@ -42,10 +42,13 @@ public class BookEvent {
           
             //c1.eventsBooked.add(Event.getEventByID(eventid));
             c1.getEventsBooked ().add(Event.getEventByID(eventid));
+
+            // email sending here (make a class called EmailSender and call the function Sendemail here)
+            String content = "Hi "+c1.getUsername()+"\n"+"You Have Registered to come to the "+Event.getEventByID(eventid).getEventName()+" Event";
+
+            new EmailSender().sendEmail(c1.getContactEmail(),"Book Confirmation",content);
             msg = "You have successfully booked the event";
             email_sent = true;
-            // email sending here (make a class called EmailSender and call the function Sendemail here)
-
             return true;
         }
         catch (NumberFormatException e){

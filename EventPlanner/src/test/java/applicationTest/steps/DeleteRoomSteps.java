@@ -1,4 +1,5 @@
 package applicationTest.steps;
+
 import com.example.App;
 import com.example.data.RoomData;
 import com.example.entites.User;
@@ -46,5 +47,4 @@ public class DeleteRoomSteps {
     public void theAdminProvidesAnInvalidRoomID(String string) {
         id = string;
     }
-
 }

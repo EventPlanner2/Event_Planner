@@ -24,6 +24,7 @@ public class App {
     private UpgradeClient upgradeClient;
     private UserData ud;
    private RoomData rd ;
+   private DeleteRoom deleteRoomService;
 
 
     //public UpgradeClient upgradeClient;
@@ -55,7 +56,16 @@ public class App {
         upgradeClient =new UpgradeClient(loggedInUser);
 
         calenderService = new Calender(loggedInUser);
+        deleteRoomService = new DeleteRoom();
 
+    }
+
+    public DeleteRoom getDeleteRoomService() {
+        return deleteRoomService;
+    }
+
+    public void setDeleteRoomService(DeleteRoom deleteRoomService) {
+        this.deleteRoomService = deleteRoomService;
     }
 
     public Calender getCalenderService() {

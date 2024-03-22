@@ -4,14 +4,15 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="b83c84ab-4b8d-45df-9a9e-d68f70b0baad" name="Changes" comment="Reserve Service provider">
-      <change beforePath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Checkout_at_3_3_2024_4_12_PM__Changes_.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Checkout_at_3_3_2024_4_12_PM__Changes_.xml" afterDir="false" />
+    <list default="true" id="b83c84ab-4b8d-45df-9a9e-d68f70b0baad" name="Changes" comment="fix bugs after merge">
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/example/services/DeleteRoom.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/test/java/applicationTest/steps/DeleteRoomSteps.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/test/resources/features/DeleteRoom.feature" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/com/example/App.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/App.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/data/RoomData.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/data/RoomData.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/com/example/services/AddEvent.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/services/AddEvent.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/services/Calender.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/services/Calender.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/java/applicationTest/steps/BookEventSteps.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/applicationTest/steps/BookEventSteps.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/java/applicationTest/steps/CalenderSteps.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/applicationTest/steps/CalenderSteps.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/services/ReserveRoom.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/services/ReserveRoom.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -253,7 +254,15 @@
       <option name="project" value="LOCAL" />
       <updated>1710595660730</updated>
     </task>
-    <option name="localTasksCounter" value="8" />
+    <task id="LOCAL-00008" summary="fix bugs after merge">
+      <option name="closed" value="true" />
+      <created>1711112839847</created>
+      <option name="number" value="00008" />
+      <option name="presentableId" value="LOCAL-00008" />
+      <option name="project" value="LOCAL" />
+      <updated>1711112839847</updated>
+    </task>
+    <option name="localTasksCounter" value="9" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -278,7 +287,8 @@
     <MESSAGE value="Update + Delete (Event)" />
     <MESSAGE value="Reserve Room" />
     <MESSAGE value="Reserve Service provider" />
-    <option name="LAST_COMMIT_MESSAGE" value="Reserve Service provider" />
+    <MESSAGE value="fix bugs after merge" />
+    <option name="LAST_COMMIT_MESSAGE" value="fix bugs after merge" />
   </component>
   <component name="XSLT-Support.FileAssociations.UIState">
     <expand />

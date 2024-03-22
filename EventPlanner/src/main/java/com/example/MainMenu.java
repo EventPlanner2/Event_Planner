@@ -1,7 +1,6 @@
 package com.example;
 
 import com.example.data.EventData;
-import com.example.data.UserData;
 import com.example.data.NotifcationData;
 import com.example.data.RoomData;
 import com.example.entites.*;
@@ -39,7 +38,7 @@ public class MainMenu {
         boolean isRunning = true;
         while (isRunning) {
             logger.info(WELCOME_STRING);
-            logger.info("""
+            logger.info("\n" + """
                     +--------------------+
                     | 1. log in          |
                     | 2. Sign up         |
@@ -94,7 +93,7 @@ public class MainMenu {
                               ║ You logged in as Admin ║
                               ╚════════════════════════╝
                         """);
-                Page("2.Add Room", user.getRole());
+                Page("2. Add Room", user.getRole());
                 break;
 
             case 's':
@@ -104,7 +103,7 @@ public class MainMenu {
                               ╚═══════════════════════════════════╝
                         """);
                 ServiceProvider.getSPFromData(username).setFirstLogin(true);
-                Page("2.Complete", user.getRole());
+                Page("2. Complete", user.getRole());
                 break;
 
             case 'c':
@@ -113,7 +112,7 @@ public class MainMenu {
                               ║ You logged in as Client║
                               ╚════════════════════════╝
                         """);
-                Page("2.Upgrade", user.getRole());
+                Page("2. Upgrade", user.getRole());
                 break;
 
             default:
@@ -191,19 +190,20 @@ public class MainMenu {
 
     private String generateMenu(String specification, char role) {
         StringBuilder menu = new StringBuilder();
-        menu.append("1. Show account information\n")
-                .append("    ").append(specification).append("\n")
+        menu.append("\n")
+                .append("1. Show account information\n")
+                .append(specification).append("\n")
                 .append("3. Search Service Provider\n")
                 .append("4. Show upcoming events\n");
         if (role == 'c') {
             menu.append("5. Enter organizer mode\n");
         } else if (role == 'a') {
             menu.append("5. Show all rooms\n")
-                    .append("6. Delete room\n").append("7. Notifications");
+                    .append("6. Delete room\n").append("7. Notifications\n");
         }
         if (role == 's') {
             menu.append("5. Log out\n");
-        } else if(role == 'c') {
+        } else if (role == 'c') {
             menu.append("6. Book event\n");
             menu.append("7. Cancel Booking\n");
             menu.append("8. Log out\n");
@@ -226,7 +226,7 @@ public class MainMenu {
     private void handleChoiceFive(char role) {
         if (role == 'a') {
             showAllRooms();
-        }else if(role == 'c'){
+        } else if (role == 'c') {
             organizerPage();
         }
     }
@@ -239,8 +239,10 @@ public class MainMenu {
         logger.info(app.getDeleteRoomService().getMsg());
     }
 
-    public void showNotifications(){
-
+    public void showNotifications() {
+        for (Notification n : NotifcationData.getNotifcations()) {
+            logger.info(n.getId() + n.getMsg());
+        }
     }
 
     public void accountInformation(char role) {
@@ -522,7 +524,7 @@ public class MainMenu {
     public void updateEvent() {
         while (true) {
             System.out.print("Please enter the user name : ");
-            String username= input.next();
+            String username = input.next();
             System.out.print("Please enter the new information for your event : ");
             System.out.print("Event name : ");
             String eventName = input.next();
@@ -542,7 +544,7 @@ public class MainMenu {
             String attendeeCount = input.next();
             System.out.print("Image path :");
             String imagePath = input.next();
-            boolean flag = app.getDeleteUpdateEventService().UpdateEventPerform( eventId,username,eventName ,eventDes,startDate,endDate,startHour,endHour,attendeeCount,imagePath);
+            boolean flag = app.getDeleteUpdateEventService().UpdateEventPerform(eventId, username, eventName, eventDes, startDate, endDate, startHour, endHour, attendeeCount, imagePath);
             if (flag) {
                 System.out.println(app.getDeleteUpdateEventService().getMsg());
                 //Created getMsg in DeleteUpdateEvent
@@ -553,34 +555,33 @@ public class MainMenu {
         }
 
 
-
     }
 
     public void deleteEvent() {
-        while (true){
-        System.out.print("Please enter the ID of the event you want to delete : ");
-        String eventId=input.next();
-        boolean flag =app.getDeleteUpdateEventService().DeleteEventPerform(eventId);
-        if (flag) {
-            System.out.println(app.getDeleteUpdateEventService().getMsg());
-            //Created getMsg in DeleteUpdateEvent
-            break;
+        while (true) {
+            System.out.print("Please enter the ID of the event you want to delete : ");
+            String eventId = input.next();
+            boolean flag = app.getDeleteUpdateEventService().DeleteEventPerform(eventId);
+            if (flag) {
+                System.out.println(app.getDeleteUpdateEventService().getMsg());
+                //Created getMsg in DeleteUpdateEvent
+                break;
 
-         } else {
-            System.out.println(app.getDeleteUpdateEventService().getMsg());
+            } else {
+                System.out.println(app.getDeleteUpdateEventService().getMsg());
+            }
+
         }
-
-    }
     }
 
     public void reserveRoom() {
         logger.info("Please enter the id of the event to reserve a room for it :");
         showUpcomingEvents();
-        String event =input.next();
+        String event = input.next();
         logger.info("Please enter the id of the room :");
         showAllRooms();
-        String room =input.next();
-        app.getReserveRoomService().ReserveRoomPerform(event,room);
+        String room = input.next();
+        app.getReserveRoomService().ReserveRoomPerform(event, room);
         logger.info(app.getReserveRoomService().getMsg());
     }
 

@@ -165,7 +165,7 @@ public class MainMenu {
                     break;
                 case "5":
                     handleChoiceFive(role);
-                    if(role == 's'){
+                    if (role == 's') {
                         return;
                     }
                     break;
@@ -215,16 +215,17 @@ public class MainMenu {
     }
 
     private void handleChoiceFive(char role) {
-        if(role == 'a'){
+        if (role == 'a') {
             showAllRooms();
         }
     }
 
-    public void deleteRoom (){
+    public void deleteRoom() {
         showAllRooms();
         logger.info("Please enter the id of the room to be deleted");
-        String id=input.next();
-
+        String id = input.next();
+        app.getDeleteRoomService().DeleteRoomPerform(id);
+        logger.info(app.getDeleteRoomService().getMsg());
     }
 
     public void accountInformation(char role) {
@@ -318,8 +319,8 @@ public class MainMenu {
         }
     }
 
-    public void showAllRooms (){
-        for (Room r : RoomData.getRooms()){
+    public void showAllRooms() {
+        for (Room r : RoomData.getRooms()) {
             logger.info(r.getId() + " " + r.getName() + " " + r.getCapacity() + " " + r.getCostPerHour() + " " + r.getDescription() + " " + r.isAvailable());
         }
 

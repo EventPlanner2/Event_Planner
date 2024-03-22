@@ -20,7 +20,7 @@ public class DeleteRoom {
                 if (getRooms().get(i).getId() == roomid) {
 
                     getRooms().remove(i);
-                    setMsg("Room Has Been " + id + " Deleted");
+                    setMsg("Room with ID " + id + "Has Been Deleted");
                     return true;
                 }
             }

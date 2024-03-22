@@ -4,15 +4,7 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="9fc2b4a3-4e80-4dc3-b513-a55cbae36512" name="Changes" comment="DeleteRoom feature steaaaaps and service">
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/EventPlanner/src/main/java/com/example/App.java" beforeDir="false" afterPath="$PROJECT_DIR$/EventPlanner/src/main/java/com/example/App.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/EventPlanner/src/main/java/com/example/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/EventPlanner/src/main/java/com/example/Main.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/EventPlanner/src/main/java/com/example/MainMenu.java" beforeDir="false" afterPath="$PROJECT_DIR$/EventPlanner/src/main/java/com/example/MainMenu.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/EventPlanner/src/main/java/com/example/data/EventData.java" beforeDir="false" afterPath="$PROJECT_DIR$/EventPlanner/src/main/java/com/example/data/EventData.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/EventPlanner/src/main/java/com/example/services/Calender.java" beforeDir="false" afterPath="$PROJECT_DIR$/EventPlanner/src/main/java/com/example/services/Calender.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/EventPlanner/src/main/java/com/example/services/DeleteRoom.java" beforeDir="false" afterPath="$PROJECT_DIR$/EventPlanner/src/main/java/com/example/services/DeleteRoom.java" afterDir="false" />
-    </list>
+    <list default="true" id="9fc2b4a3-4e80-4dc3-b513-a55cbae36512" name="Changes" comment="admin page done" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -32,6 +24,7 @@
       </map>
     </option>
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+    <option name="UPDATE_TYPE" value="REBASE" />
   </component>
   <component name="GitHubPullRequestSearchHistory">{
   &quot;lastFilter&quot;: {
@@ -67,23 +60,23 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent"><![CDATA[{
-  "keyToString": {
-    "Application.Main.executor": "Run",
-    "JUnit.acceptanceTest.executor": "Run",
-    "RunOnceActivity.OpenProjectViewOnStart": "true",
-    "RunOnceActivity.ShowReadmeOnStart": "true",
-    "SHARE_PROJECT_CONFIGURATION_FILES": "true",
-    "git-widget-placeholder": "main",
-    "last_opened_file_path": "C:/SoftwareProject/Event_Planner",
-    "node.js.detected.package.eslint": "true",
-    "node.js.selected.package.eslint": "(autodetect)",
-    "node.js.selected.package.tslint": "(autodetect)",
-    "project.structure.last.edited": "Project",
-    "project.structure.proportion": "0.0",
-    "project.structure.side.proportion": "0.48505747"
+  <component name="PropertiesComponent">{
+  &quot;keyToString&quot;: {
+    &quot;Application.Main.executor&quot;: &quot;Run&quot;,
+    &quot;JUnit.acceptanceTest.executor&quot;: &quot;Run&quot;,
+    &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
+    &quot;SHARE_PROJECT_CONFIGURATION_FILES&quot;: &quot;true&quot;,
+    &quot;git-widget-placeholder&quot;: &quot;main&quot;,
+    &quot;last_opened_file_path&quot;: &quot;C:/SoftwareProject/Event_Planner&quot;,
+    &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
+    &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,
+    &quot;node.js.selected.package.tslint&quot;: &quot;(autodetect)&quot;,
+    &quot;project.structure.last.edited&quot;: &quot;Project&quot;,
+    &quot;project.structure.proportion&quot;: &quot;0.0&quot;,
+    &quot;project.structure.side.proportion&quot;: &quot;0.48505747&quot;
   }
-}]]></component>
+}</component>
   <component name="RunManager">
     <configuration name="acceptanceTest" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="EventPlanner" />
@@ -420,7 +413,15 @@
       <option name="project" value="LOCAL" />
       <updated>1711076434435</updated>
     </task>
-    <option name="localTasksCounter" value="36" />
+    <task id="LOCAL-00036" summary="admin page done">
+      <option name="closed" value="true" />
+      <created>1711125579523</created>
+      <option name="number" value="00036" />
+      <option name="presentableId" value="LOCAL-00036" />
+      <option name="project" value="LOCAL" />
+      <updated>1711125579523</updated>
+    </task>
+    <option name="localTasksCounter" value="37" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -444,7 +445,8 @@
     <MESSAGE value="Upgrade clint done , Some decorations on the menu" />
     <MESSAGE value="Complete ,Update,Add room,MainMenu Decoration" />
     <MESSAGE value="DeleteRoom feature steaaaaps and service" />
-    <option name="LAST_COMMIT_MESSAGE" value="DeleteRoom feature steaaaaps and service" />
+    <MESSAGE value="admin page done" />
+    <option name="LAST_COMMIT_MESSAGE" value="admin page done" />
   </component>
   <component name="com.intellij.coverage.CoverageDataManagerImpl">
     <SUITE FILE_PATH="coverage/Event_Planner$acceptanceTest.ic" NAME="acceptanceTest Coverage Results" MODIFIED="1709402770636" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false">

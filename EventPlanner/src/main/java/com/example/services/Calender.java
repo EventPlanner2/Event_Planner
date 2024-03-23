@@ -59,7 +59,10 @@ public class Calender {
             setMsg("Invalid event id to show");
             return null;
         }
-
+        catch (NullPointerException e){
+            //do nothing
+        }
+        return null;
     }
 
     public ArrayList<Event> showUpcomingEvents(){

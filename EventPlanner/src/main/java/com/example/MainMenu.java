@@ -86,6 +86,7 @@ public class MainMenu {
         }
 
         app.setLoggedInUser(user);
+        app.getCalenderService().setLoggedInUser(user);
         switch (role) {
             case 'a':
                 logger.info("""
@@ -163,7 +164,9 @@ public class MainMenu {
                     showUpcomingEvents();
                     break;
                 case "5":
-                    handleChoiceFive(role);
+                    if (handleChoiceFive(role)) {
+                        return;
+                    }
                     if (role == 's') {
                         return;
                     }
@@ -171,16 +174,32 @@ public class MainMenu {
                 case "6":
                     if (role == 'a') {
                         deleteRoom();
+                    } else if (role == 'c') {
+                        bookEvent();
                     }
                     break;
                 case "7":
-                    showNotifications();
-                    break;
-                case "8":
-                    if (role == 'a' || role == 'c') {
-                        return;
+                    if (role == 'a') {
+                        showNotifications();
+                    } else if (role == 'c') {
+                        cancelBookEvent();
                     }
                     break;
+                case "8":
+                    if (role == 'a') {
+                        return;
+                    } else if (role == 'c') {
+                        showEventDetails();
+                    }
+                    break;
+                case "9":
+                    if (role == 'c') {
+                        yourEvents();
+                    }
+                case "10":
+                    if (role == 'c') {
+                    return;
+                    }
                 case "X":
                     System.exit(0);
                 default:
@@ -209,7 +228,9 @@ public class MainMenu {
         } else if (role == 'c') {
             menu.append("6. Book event\n")
                     .append("7. Cancel Booking\n")
-                    .append("8. Log out\n");
+                    .append("8. Show Event Details\n")
+                    .append("9. Your Events\n")
+                    .append("10. Log out\n");
         }
         menu.append("X. Exit");
         return menu.toString();
@@ -226,12 +247,15 @@ public class MainMenu {
         }
     }
 
-    private void handleChoiceFive(char role) {
+    private boolean handleChoiceFive(char role) {
         if (role == 'a') {
             showAllRooms();
         } else if (role == 'c') {
-            organizerPage();
+            if (!organizerPage()) {
+                return true;
+            }
         }
+        return false;
     }
 
     public void deleteRoom() {
@@ -242,10 +266,38 @@ public class MainMenu {
         logger.info(app.getDeleteRoomService().getMsg());
     }
 
+    public void bookEvent() {
+        String eventID = bookList("book", app.getBookEventService().chooseBookEvent());
+        app.getBookEventService().BookEventPerform(eventID, user.getUsername());
+        logger.info(app.getBookEventService().getMsg());
+    }
+
+    public String bookList(String cancel, ArrayList<Event> arrayList) {
+        StringBuilder listEvent = new StringBuilder();
+        listEvent.append("\n");
+        if (arrayList.isEmpty()) {
+            logger.info("There is no Events to " + cancel);
+            return null;
+        }
+        for (Event e : arrayList) {
+            listEvent.append("ID : " + e.getId() + "\tEvent Name :" + e.getEventName() + "\tEvent Date : " + e.getStartDate() + "\n");
+        }
+        logger.info(listEvent.toString());
+        logger.info("Please enter the ID of the event you want to " + cancel);
+        String eventID = input.next();
+        return eventID;
+    }
+
     public void showNotifications() {
         for (Notification n : NotifcationData.getNotifcations()) {
             logger.info(n.getId() + n.getMsg());
         }
+    }
+
+    public void cancelBookEvent() {
+        String eventID = bookList("cancel", app.getBookEventService().chooseCancelBookEvent(user.getUsername()));
+        app.getBookEventService().cancelBookEvent(eventID, user.getUsername());
+        logger.info(app.getBookEventService().getMsg());
     }
 
     public void accountInformation(char role) {
@@ -280,9 +332,16 @@ public class MainMenu {
             String roomCost = input.next();
             logger.info("Please enter the description of the new room :");
             String roomDes = input.next();
-            logger.info("Please enter the Availability of the new room :");
-
+            logger.info("Please enter Yes or No to determine the Availability of the room");
             String roomAvailability = input.next();
+            if (roomAvailability.equalsIgnoreCase("yes")) {
+                roomAvailability = "Available";
+            } else if (roomAvailability.equalsIgnoreCase("no")) {
+                roomAvailability = "not";
+            } else {
+                logger.info("Invalid choice");
+                break;
+            }
             boolean flag = app.getAddRoomService().AddRoomPerformed(roomName, roomAvailability, roomCapacity, roomCost, roomDes);
             if (flag) {
                 logger.info(app.getAddRoomService().getMsg());
@@ -341,9 +400,15 @@ public class MainMenu {
     }
 
     public void showAllRooms() {
+        StringBuilder stringBuilder = new StringBuilder("\n");
         for (Room r : RoomData.getRooms()) {
-            logger.info(r.getId() + " " + r.getName() + " " + r.getCapacity() + " " + r.getCostPerHour() + " " + r.getDescription() + " " + r.isAvailable());
+            stringBuilder.append("ID : " + r.getId() + "\tName : " + r.getName() + "\tCapacity : " + r.getCapacity() + "\tCost Per Hour : " + r.getCostPerHour() + "\tDescription : " + r.getDescription());
+            if (r.isAvailable()) {
+                stringBuilder.append("\tAvailability : Available");
+            }
+            stringBuilder.append("\n");
         }
+        logger.info(stringBuilder.toString());
 
     }
 
@@ -354,6 +419,13 @@ public class MainMenu {
                 logger.info(app.getSPAccount().getCompleteAccountMsg());
                 return;
             }
+//            for(ServiceProvider s : UserData.getSps()){
+//                if(s.getUsername().equals(user.getUsername())){
+//                    if(s.isFirstLogin()){
+//                        logger.info(app.getSPAccount().getCompleteAccountMsg());
+//                    }
+//                }
+//            }
             String location, productPrice, productType;
             logger.info("To complete your account please enter your:");
             logger.info("Location : ");
@@ -387,7 +459,8 @@ public class MainMenu {
 
     public void printCriteria(List<ServiceProvider> serviceProviders) {
         for (int i = 0; i < serviceProviders.size(); i++) {
-            logger.info(String.format("%d. %s", i, serviceProviders.get(i).getUsername()));
+            if (!serviceProviders.get(i).isFirstLogin())
+                logger.info(String.format("%d. %s", i, serviceProviders.get(i).getUsername()));
         }
     }
 
@@ -580,10 +653,10 @@ public class MainMenu {
     }
 
     public void reserveRoom() {
-        logger.info("Please enter the id of the event to reserve a room for it :");
+        logger.info("Please enter the ID of the event to reserve a room for it :");
         showUpcomingEvents();
         String event = input.next();
-        logger.info("Please enter the id of the room :");
+        logger.info("Please enter the ID of the room :");
         showAllRooms();
         String room = input.next();
         app.getReserveRoomService().ReserveRoomPerform(event, room);
@@ -591,6 +664,50 @@ public class MainMenu {
     }
 
     public void reserveServiceProvider() {
+        logger.info("Please enter the ID of the event to reserve a Service Provider for it :");
+        showUpcomingEvents();
+        String event = input.next();
+        logger.info("Please enter the ID of the Service Provider :");
+        app.getSearchSP().setSelectedCriteria("price");
+        app.getSearchSP().setPrice("1000");
+        printCriteria(app.getSearchSP().SearchSPPerformed());
+        String SP = input.next();
+        app.getReserveSPService().ReserveSPPerform(event, SP);
+        logger.info(app.getReserveSPService().getMsg());
+    }
 
+    public void showEventDetails() {
+        logger.info("Please Enter the ID of the Event : ");
+        String id = input.next();
+        Event e = app.getCalenderService().showEventDetails(id);
+        logger.info(app.getCalenderService().getMsg());
+        if(e==null)return;
+        StringBuilder stringBuilder = new StringBuilder();
+        stringBuilder.append(e.getId() + " " + e.getEventName() + " " + e.getEventDescription() + " " + e.getStartDate() + " " + e.getEndDate() + " " + e.getStartClock() + " " + e.getEndClock() + " " + e.getAttendeeCount());
+        logger.info(stringBuilder.toString());
+    }
+
+    public void yourEvents() {
+        logger.info("Please enter 1 (Past) or 2 (Future) to show your events :");
+        String pastOrFuture = input.next();
+        app.getCalenderService().clearCalenderEvents();
+        if (pastOrFuture.equals("1")) {
+            app.getCalenderService().calenderPerform("past");
+        } else if (pastOrFuture.equals("2")) {
+            app.getCalenderService().calenderPerform("future");
+        } else {
+            logger.info("Invalid choice");
+            return;
+        }
+        printEvents();
+    }
+
+    public void printEvents() {
+        StringBuilder stringBuilder;
+        stringBuilder = new StringBuilder();
+        for (Event e : app.getCalenderService().getResEvents()) {
+            stringBuilder.append(e.getId() + " " + e.getEventName() + " " + e.getEventDescription() + " " + e.getStartDate() + " " + e.getEndDate() + " " + e.getStartClock() + " " + e.getEndClock() + " " + e.getAttendeeCount() + "\n");
+        }
+        logger.info(stringBuilder.toString());
     }
 }

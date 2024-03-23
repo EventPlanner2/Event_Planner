@@ -80,6 +80,7 @@ public class BookEvent {
             for (int i = 0; i < c1.getEventsBooked().size(); i++) {
                 if (c1.getEventsBooked().get(i).getId() == eventid) {
                     c1.getEventsBooked().remove(i);
+                    setMsg("You have successfully canceled an Booking Event");
                     return true;
                 }
             }

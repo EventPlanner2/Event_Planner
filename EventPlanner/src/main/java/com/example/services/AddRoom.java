@@ -56,7 +56,7 @@ public class AddRoom {
                 return false;
             }
             tmp_flag = true;
-            this.CostPerHour = new BigDecimal(CostPerHour.substring(1)).doubleValue();
+            this.CostPerHour = new BigDecimal(CostPerHour.substring(2)).doubleValue();
 
             this.Description = Description;
 

@@ -40,6 +40,7 @@ public class UserData {
         sps.add(u5);
 
         UserData.completeSP("FactoryX", "Nablus", "Chairs Provider", 50);
+        u2.setFirstLogin(false);
     }
 
     public List<User> getUsers() {

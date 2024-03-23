@@ -2,14 +2,13 @@ package com.example.entites;
 
 import com.example.data.UserData;
 
-import java.util.List;
-
-public class ServiceProvider extends User{
+public class ServiceProvider extends User {
 
     private boolean firstLogin;
     private String type;
     private String Location;
     private int price;
+
     public ServiceProvider(String username, String password, String contactEmail, Character role) {
         super(username, password, contactEmail, role);
         firstLogin = true;
@@ -18,10 +17,9 @@ public class ServiceProvider extends User{
         price = 0;
     }
 
-    public static ServiceProvider getSPFromData(String username){
-        List<ServiceProvider> sps = UserData.getSps();
-        for(ServiceProvider s : sps){
-            if(s.getUsername().equals(username)) return s;
+    public static ServiceProvider getSPFromData(String username) {
+        for (ServiceProvider s : UserData.getSps()) {
+            if (s.getUsername().equals(username)) return s;
         }
 
         return null;

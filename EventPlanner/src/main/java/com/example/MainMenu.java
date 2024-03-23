@@ -198,7 +198,7 @@ public class MainMenu {
                     }
                 case "10":
                     if (role == 'c') {
-                    return;
+                        return;
                     }
                 case "X":
                     System.exit(0);
@@ -415,8 +415,8 @@ public class MainMenu {
     public void complete() {
         while (true) {
             if (Back()) return;
-            if (!ServiceProvider.getSPFromData(user.getUsername()).isFirstLogin()) {
-                logger.info(app.getSPAccount().getCompleteAccountMsg());
+            if (!ServiceProvider.getSPFromData(app.getLoggedInUser().getUsername()).isFirstLogin()) {
+                logger.info("Your Account is completed");
                 return;
             }
 //            for(ServiceProvider s : UserData.getSps()){
@@ -566,8 +566,6 @@ public class MainMenu {
 
     public void addEvent() {
         while (true) {
-            logger.info("Please enter the user name : ");
-            String username = input.next();
             logger.info("Please enter the information for the new event : ");
             logger.info("Event name : ");
             String eventName = input.next();
@@ -585,7 +583,7 @@ public class MainMenu {
             String attendeeCount = input.next();
             logger.info("Image path :");
             String imagePath = input.next();
-            boolean flag = app.getAddEventService().addEvent(username, EventData.getEvents().size() + 1, eventName, eventDes, startDate, endDate, startHour, endHour, attendeeCount, imagePath);
+            boolean flag = app.getAddEventService().addEvent(user.getUsername(), EventData.getEvents().size() + 1, eventName, eventDes, startDate, endDate, startHour, endHour, attendeeCount, imagePath);
             if (flag) {
                 logger.info(app.getAddEventService().getMsg());
                 break;
@@ -600,8 +598,6 @@ public class MainMenu {
     public void updateEvent() {
         while (true) {
             showUpcomingEvents();
-            logger.info("Please enter the user name : ");
-            String username = input.next();
             logger.info("Please enter the new information for your event : ");
             logger.info("Event name : ");
             String eventName = input.next();
@@ -621,7 +617,7 @@ public class MainMenu {
             String attendeeCount = input.next();
             logger.info("Image path :");
             String imagePath = input.next();
-            boolean flag = app.getDeleteUpdateEventService().UpdateEventPerform(eventId, username, eventName, eventDes, startDate, endDate, startHour, endHour, attendeeCount, imagePath);
+            boolean flag = app.getDeleteUpdateEventService().UpdateEventPerform(eventId, user.getUsername(), eventName, eventDes, startDate, endDate, startHour, endHour, attendeeCount, imagePath);
             if (flag) {
                 logger.info(app.getDeleteUpdateEventService().getMsg());
                 //Created getMsg in DeleteUpdateEvent
@@ -681,7 +677,7 @@ public class MainMenu {
         String id = input.next();
         Event e = app.getCalenderService().showEventDetails(id);
         logger.info(app.getCalenderService().getMsg());
-        if(e==null)return;
+        if (e == null) return;
         StringBuilder stringBuilder = new StringBuilder();
         stringBuilder.append(e.getId() + " " + e.getEventName() + " " + e.getEventDescription() + " " + e.getStartDate() + " " + e.getEndDate() + " " + e.getStartClock() + " " + e.getEndClock() + " " + e.getAttendeeCount());
         logger.info(stringBuilder.toString());

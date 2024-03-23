@@ -28,7 +28,7 @@ public class UserData {
         Client u4 = new Client("Ali Turabi", "123456789", "badran.amr2003@gmail.com", 'c', true); // Client
         ServiceProvider u5 = new ServiceProvider("Saif", "Saif123", "Saif321@Gmail.com", 's'); // Service-provider
 
-
+        u2.setFirstLogin(false);
         users.add(u1);
         users.add(u2);
         users.add(u3);
@@ -40,7 +40,6 @@ public class UserData {
         sps.add(u5);
 
         UserData.completeSP("FactoryX", "Nablus", "Chairs Provider", 50);
-        u2.setFirstLogin(false);
     }
 
     public List<User> getUsers() {

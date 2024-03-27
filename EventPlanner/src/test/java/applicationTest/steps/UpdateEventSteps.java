@@ -21,12 +21,13 @@ public class UpdateEventSteps {
     private String attendeeCount;
     private String imagePath;
     boolean flag;
-    public UpdateEventSteps(App app){
+
+    public UpdateEventSteps(App app) {
         this.app = app;
-        this.id ="";
+        this.id = "";
         this.username = "Ali Turabi";
         this.password = "123456789";
-        this.eventId =0;
+        this.eventId = 0;
         this.name = "";
         this.description = "";
         this.startDate = "";
@@ -56,7 +57,7 @@ public class UpdateEventSteps {
     }
     @When("the user updates the event with ID provided")
     public void theUserUpdatesTheEventWithIDProvided() {
-        flag = app.getDeleteUpdateEventService ().UpdateEventPerform(id,username,name,description,startDate,endDate,startClock,endClock,attendeeCount,imagePath);
+        flag = app.getDeleteUpdateEventService().UpdateEventPerform(id,username,name,description,startDate,endDate,startClock,endClock,attendeeCount,imagePath);
 
     }
 

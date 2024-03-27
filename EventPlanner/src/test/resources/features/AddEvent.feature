@@ -9,7 +9,7 @@ Feature: Create incomplete  Event by organizer
     And orginzer created less than 4 events
     When the organizer provides valid event details including:
       |username         |Ali Turabi                       |
-      | event ID        | 1                               |
+      | event ID        | 4                               |
       | Name           | Ali Turabi's Event               |
       | Description    | cars event and explination about many thing about cars in generally                      |
       | Start Date     | 2024-03-15                       |
@@ -26,7 +26,7 @@ Feature: Create incomplete  Event by organizer
     And orginzer created less than 4 events
     When the organizer provides valid event details including:
       |username        |Ali Turabi                       |
-      | event ID       | 2                               |
+      | event ID       | 5                               |
       | Name           | Ali Turabi's Event   |
       | Description    | cars event and explination about many thing about cars in generally   |
       | Start Date     | 2025-06-20                      |
@@ -45,7 +45,7 @@ Feature: Create incomplete  Event by organizer
     And orginzer created less than 4 events
     When the organizer provides valid event details including:
       |username         |Ali Turabi                       |
-      | event ID        | 3                               |
+      | event ID        | 6                               |
       | Name           | Ali Turabi's Event   |
       | Description    | cars event and explination about many thing about cars in generally   |
       | Start Date     | 2025-06-20                      |

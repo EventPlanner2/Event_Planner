@@ -112,8 +112,10 @@ public class AddEvent {
             setMsg("User DNE");
             return false;
         }else{
-            setMsg("User can't add Event");
-            return c.getNumberEvent() < 3;
+            if (c.getNumberEvent() >= 3){
+                setMsg("User can't add Event");
+            }
+            return c.getNumberEvent() <= 3;
         }
     }
 

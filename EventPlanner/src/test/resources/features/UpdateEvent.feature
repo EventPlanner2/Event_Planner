@@ -20,6 +20,7 @@ Feature: Update Event
     And the user updates the event with ID provided
     Then the event should be updated
 
+
   Scenario Outline: User tries to update a non-existing event
     Given there is no event with ID "<nonExistingId>"
     When the user enters an id to update "<nonExistingId>"

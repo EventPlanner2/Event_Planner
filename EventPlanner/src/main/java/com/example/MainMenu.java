@@ -196,6 +196,7 @@ public class MainMenu {
                     if (role == 'c') {
                         yourEvents();
                     }
+                    break;
                 case "10":
                     if (role == 'c') {
                         return;

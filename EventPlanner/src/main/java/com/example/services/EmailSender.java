@@ -52,7 +52,7 @@ public class EmailSender {
             return true;
 
         } catch (MessagingException e) {
-            e.printStackTrace();
+            // do nothing
         }
         return false;
     }

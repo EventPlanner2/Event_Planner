@@ -15,11 +15,11 @@ public class SignUp {
         this.users = users;
     }
 
-    private static final String empty = "some fields are missing";
+    private static final String someMissingFields = "some fields are missing";
 
     public boolean register(String username, String password, String email, String role) {
         if (email.isEmpty()) {
-            setMsg(empty);
+            setMsg(someMissingFields);
             return false;
         }
         if (email_existed(email)) {
@@ -31,7 +31,7 @@ public class SignUp {
             return false;
         }
         if (username.isEmpty()) {
-            setMsg(empty);
+            setMsg(someMissingFields);
             return false;
         }
         if (username_existed(username)) {
@@ -39,7 +39,7 @@ public class SignUp {
             return false;
         }
         if (password.isEmpty()) {
-            setMsg(empty);
+            setMsg(someMissingFields);
             return false;
         }
         if (password.length() < 8) {

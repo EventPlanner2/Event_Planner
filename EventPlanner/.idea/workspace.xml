@@ -4,22 +4,9 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="b83c84ab-4b8d-45df-9a9e-d68f70b0baad" name="Changes" comment="fix test cases">
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/example/entites/DateEvent.java" afterDir="false" />
+    <list default="true" id="b83c84ab-4b8d-45df-9a9e-d68f70b0baad" name="Changes" comment="refactor medium bad smells">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/App.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/App.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/MainMenu.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/MainMenu.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/data/EventData.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/data/EventData.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/data/NotifcationData.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/data/NotifcationData.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/entites/Event.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/entites/Event.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/entites/EventBuilder.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/entites/EventBuilder.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/services/AddEvent.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/services/AddEvent.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/services/BookEvent.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/services/BookEvent.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/services/Calender.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/services/Calender.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/services/DeleteUpdateEvent.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/services/DeleteUpdateEvent.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/com/example/services/EmailSender.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/services/EmailSender.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/java/applicationTest/steps/AddEventSteps.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/applicationTest/steps/AddEventSteps.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/java/applicationTest/steps/UpdateEventSteps.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/applicationTest/steps/UpdateEventSteps.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -193,7 +180,7 @@
       <workItem from="1711132366590" duration="3680000" />
       <workItem from="1711312746309" duration="1465000" />
       <workItem from="1711566273041" duration="4447000" />
-      <workItem from="1711648762444" duration="3946000" />
+      <workItem from="1711648762444" duration="4720000" />
     </task>
     <task id="LOCAL-00001" summary="Upgrade Client to Orginizer">
       <option name="closed" value="true" />
@@ -291,7 +278,15 @@
       <option name="project" value="LOCAL" />
       <updated>1711568245918</updated>
     </task>
-    <option name="localTasksCounter" value="13" />
+    <task id="LOCAL-00013" summary="refactor medium bad smells">
+      <option name="closed" value="true" />
+      <created>1711652782584</created>
+      <option name="number" value="00013" />
+      <option name="presentableId" value="LOCAL-00013" />
+      <option name="project" value="LOCAL" />
+      <updated>1711652782584</updated>
+    </task>
+    <option name="localTasksCounter" value="14" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -321,7 +316,8 @@
     <MESSAGE value="minor update on search sp" />
     <MESSAGE value="Cancel Booking Event" />
     <MESSAGE value="fix test cases" />
-    <option name="LAST_COMMIT_MESSAGE" value="fix test cases" />
+    <MESSAGE value="refactor medium bad smells" />
+    <option name="LAST_COMMIT_MESSAGE" value="refactor medium bad smells" />
   </component>
   <component name="XSLT-Support.FileAssociations.UIState">
     <expand />

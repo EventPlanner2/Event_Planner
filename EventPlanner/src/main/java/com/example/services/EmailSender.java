@@ -1,5 +1,7 @@
 package com.example.services;
 
+import com.example.data.Config;
+
 import java.util.*;
 import javax.mail.*;
 import javax.mail.internet.*;
@@ -11,8 +13,8 @@ public class EmailSender {
     private Properties props;
 
     public EmailSender() {
-        this.senderEmail = "studyplanner38@outlook.com";
-        this.password = "studyplanner123456*";
+        this.senderEmail = Config.email;
+        this.password = Config.password;
 
 
         props = new Properties();

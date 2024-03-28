@@ -4,11 +4,9 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="9fc2b4a3-4e80-4dc3-b513-a55cbae36512" name="Changes" comment="some fixes on the menu needs refactoring">
+    <list default="true" id="9fc2b4a3-4e80-4dc3-b513-a55cbae36512" name="Changes" comment="admin page done">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/EventPlanner/src/main/java/com/example/MainMenu.java" beforeDir="false" afterPath="$PROJECT_DIR$/EventPlanner/src/main/java/com/example/MainMenu.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/EventPlanner/src/main/java/com/example/data/UserData.java" beforeDir="false" afterPath="$PROJECT_DIR$/EventPlanner/src/main/java/com/example/data/UserData.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/EventPlanner/src/main/java/com/example/entites/ServiceProvider.java" beforeDir="false" afterPath="$PROJECT_DIR$/EventPlanner/src/main/java/com/example/entites/ServiceProvider.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -73,14 +71,16 @@
     "RunOnceActivity.ShowReadmeOnStart": "true",
     "SHARE_PROJECT_CONFIGURATION_FILES": "true",
     "git-widget-placeholder": "main",
+    "kotlin-language-version-configured": "true",
     "last_opened_file_path": "C:/SoftwareProject/Event_Planner",
     "node.js.detected.package.eslint": "true",
     "node.js.selected.package.eslint": "(autodetect)",
     "node.js.selected.package.tslint": "(autodetect)",
+    "nodejs_package_manager_path": "npm",
     "project.structure.last.edited": "Project",
     "project.structure.proportion": "0.0",
     "project.structure.side.proportion": "0.48505747",
-    "settings.editor.selected.configurable": "debugger.stepping"
+    "vue.rearranger.settings.migration": "true"
   }
 }]]></component>
   <component name="RunManager">
@@ -138,6 +138,7 @@
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1709394069522</updated>
+      <workItem from="1711635888460" duration="92000" />
     </task>
     <task id="LOCAL-00001" summary="Delete event feature file ,needs testing">
       <option name="closed" value="true" />
@@ -427,71 +428,7 @@
       <option name="project" value="LOCAL" />
       <updated>1711125579523</updated>
     </task>
-    <task id="LOCAL-00037" summary="admin page done">
-      <option name="closed" value="true" />
-      <created>1711126150270</created>
-      <option name="number" value="00037" />
-      <option name="presentableId" value="LOCAL-00037" />
-      <option name="project" value="LOCAL" />
-      <updated>1711126150270</updated>
-    </task>
-    <task id="LOCAL-00038" summary="admin page done">
-      <option name="closed" value="true" />
-      <created>1711126355462</created>
-      <option name="number" value="00038" />
-      <option name="presentableId" value="LOCAL-00038" />
-      <option name="project" value="LOCAL" />
-      <updated>1711126355462</updated>
-    </task>
-    <task id="LOCAL-00039" summary="some changes on the MainMenu">
-      <option name="closed" value="true" />
-      <created>1711137661242</created>
-      <option name="number" value="00039" />
-      <option name="presentableId" value="LOCAL-00039" />
-      <option name="project" value="LOCAL" />
-      <updated>1711137661242</updated>
-    </task>
-    <task id="LOCAL-00040" summary="some changes on the MainMenu">
-      <option name="closed" value="true" />
-      <created>1711137976383</created>
-      <option name="number" value="00040" />
-      <option name="presentableId" value="LOCAL-00040" />
-      <option name="project" value="LOCAL" />
-      <updated>1711137976383</updated>
-    </task>
-    <task id="LOCAL-00041" summary="some changes on the MainMenu">
-      <option name="closed" value="true" />
-      <created>1711143725475</created>
-      <option name="number" value="00041" />
-      <option name="presentableId" value="LOCAL-00041" />
-      <option name="project" value="LOCAL" />
-      <updated>1711143725475</updated>
-    </task>
-    <task id="LOCAL-00042" summary="fixing some bugs in organizer page">
-      <option name="closed" value="true" />
-      <created>1711145636523</created>
-      <option name="number" value="00042" />
-      <option name="presentableId" value="LOCAL-00042" />
-      <option name="project" value="LOCAL" />
-      <updated>1711145636523</updated>
-    </task>
-    <task id="LOCAL-00043" summary="fixing some bugs in organizer page">
-      <option name="closed" value="true" />
-      <created>1711146219865</created>
-      <option name="number" value="00043" />
-      <option name="presentableId" value="LOCAL-00043" />
-      <option name="project" value="LOCAL" />
-      <updated>1711146219865</updated>
-    </task>
-    <task id="LOCAL-00044" summary="some fixes on the menu needs refactoring">
-      <option name="closed" value="true" />
-      <created>1711207859737</created>
-      <option name="number" value="00044" />
-      <option name="presentableId" value="LOCAL-00044" />
-      <option name="project" value="LOCAL" />
-      <updated>1711207859737</updated>
-    </task>
-    <option name="localTasksCounter" value="45" />
+    <option name="localTasksCounter" value="37" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -516,21 +453,7 @@
     <MESSAGE value="Complete ,Update,Add room,MainMenu Decoration" />
     <MESSAGE value="DeleteRoom feature steaaaaps and service" />
     <MESSAGE value="admin page done" />
-    <MESSAGE value="some changes on the MainMenu" />
-    <MESSAGE value="fixing some bugs in organizer page" />
-    <MESSAGE value="some fixes on the menu needs refactoring" />
-    <option name="LAST_COMMIT_MESSAGE" value="some fixes on the menu needs refactoring" />
-  </component>
-  <component name="XDebuggerManager">
-    <breakpoint-manager>
-      <breakpoints>
-        <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/EventPlanner/src/main/java/com/example/Main.java</url>
-          <line>7</line>
-          <option name="timeStamp" value="5" />
-        </line-breakpoint>
-      </breakpoints>
-    </breakpoint-manager>
+    <option name="LAST_COMMIT_MESSAGE" value="admin page done" />
   </component>
   <component name="com.intellij.coverage.CoverageDataManagerImpl">
     <SUITE FILE_PATH="coverage/Event_Planner$acceptanceTest.ic" NAME="acceptanceTest Coverage Results" MODIFIED="1709402770636" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false">

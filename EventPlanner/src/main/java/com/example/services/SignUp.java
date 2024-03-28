@@ -15,9 +15,11 @@ public class SignUp {
         this.users = users;
     }
 
+    private static final String empty = "some fields are missing";
+
     public boolean register(String username, String password, String email, String role) {
         if (email.isEmpty()) {
-            setMsg("some fields are missing");
+            setMsg(empty);
             return false;
         }
         if (email_existed(email)) {
@@ -29,7 +31,7 @@ public class SignUp {
             return false;
         }
         if (username.isEmpty()) {
-            setMsg("some fields are missing");
+            setMsg(empty);
             return false;
         }
         if (username_existed(username)) {
@@ -37,7 +39,7 @@ public class SignUp {
             return false;
         }
         if (password.isEmpty()) {
-            setMsg("some fields are missing");
+            setMsg(empty);
             return false;
         }
         if (password.length() < 8) {
@@ -57,7 +59,7 @@ public class SignUp {
         boolean flag = false;
         for (User u : users) {
             flag = (username.equals(u.getUsername()));
-            if(flag) return true;
+            if (flag) return true;
         }
         return flag;
     }
@@ -66,7 +68,7 @@ public class SignUp {
         boolean flag = false;
         for (User u : users) {
             flag = (email.equalsIgnoreCase(u.getContactEmail()));
-            if(flag) return true;
+            if (flag) return true;
         }
         return flag;
     }

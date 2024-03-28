@@ -7,6 +7,10 @@ import java.util.ArrayList;
 public class NotifcationData {
     private static ArrayList<Notification> notifcations = new ArrayList<>();
 
+    private NotifcationData() {
+
+    }
+
     private static int ID = 1;
     public static int oldSize;
     public static ArrayList<Notification> getNotifcations() {

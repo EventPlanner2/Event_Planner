@@ -26,15 +26,18 @@ public class Calender {
 
     public boolean calenderPerform(String pastOrFuture){
         boolean flagPast = pastOrFuture.equals("past");
+        boolean past = false;
+        boolean future = false;
         try {
             c1 = Client.getClientFromData(loggedInUser.getUsername());
             for (Event e : c1.getEventsBooked()) {
                 if (e.getUsername().equals(loggedInUser.getUsername())) {
                     if (flagPast && e.getStartDate().isBefore(LocalDate.now())) {
-                        resEvents.add(e);
+                        past = true;
                     } else if (!flagPast && e.getStartDate().isAfter(LocalDate.now())) {
-                        resEvents.add(e);
+                        future = true;
                     }
+                    if(past || future) resEvents.add(e);
                 }
             }
         }

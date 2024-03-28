@@ -1,5 +1,6 @@
 package applicationTest.steps;
 import com.example.App;
+import com.example.entites.DateEvent;
 import com.example.entites.User;
 import io.cucumber.datatable.DataTable;
 import io.cucumber.java.en.*;
@@ -57,7 +58,8 @@ public class UpdateEventSteps {
     }
     @When("the user updates the event with ID provided")
     public void theUserUpdatesTheEventWithIDProvided() {
-        flag = app.getDeleteUpdateEventService().UpdateEventPerform(id,username,name,description,startDate,endDate,startClock,endClock,attendeeCount,imagePath);
+        DateEvent dateEvent = new DateEvent(startDate,endDate,startClock,endClock);
+        flag = app.getDeleteUpdateEventService().UpdateEventPerform(id,username,name,description,dateEvent,attendeeCount,imagePath);
 
     }
 

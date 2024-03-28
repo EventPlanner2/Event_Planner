@@ -5,10 +5,7 @@ import com.example.data.EventData;
 
 import com.example.data.NotifcationData;
 import com.example.data.UserData;
-import com.example.entites.Client;
-import com.example.entites.Event;
-import com.example.entites.EventBuilder;
-import com.example.entites.User;
+import com.example.entites.*;
 
 import java.io.File;
 import java.time.LocalDate;
@@ -32,8 +29,7 @@ public class AddEvent {
     private String imagePath;
 
 
-    public boolean addEvent(String username, int eventId, String name, String description, String startDate, String
-            endDate, String startClock, String endClock, String attendeeCount, String imagePath) {
+    public boolean addEvent(String username, int eventId, String name, String description, DateEvent dateEvent, String attendeeCount, String imagePath) {
 
         if (nameVerification(name)) return false;
         if (description.isEmpty()) {
@@ -44,15 +40,15 @@ public class AddEvent {
             setMsg("invalid description");
             return false;
         }
-        if (!validateDate(startDate, "start date")) return false;
-        if (!validateDate(endDate, "end date")) return false;
-        if (!validateTime(startClock, "start clock")) return false;
-        if (!validateTime(endClock, "end clock")) return false;
+        if (!validateDate(dateEvent.getStartDate(), "start date")) return false;
+        if (!validateDate(dateEvent.getEndDate(), "end date")) return false;
+        if (!validateTime(dateEvent.getStartClock(), "start clock")) return false;
+        if (!validateTime(dateEvent.getEndClock(), "end clock")) return false;
         if (!validateAttendeeCount(attendeeCount)) return false;
         if (!validateImagePath(imagePath)) return false;
         if (!isOrgnaizer(username) || !canAddEvent(username)) return false;
 
-        Event event = createEvent(username, eventId, name, description, startDate, endDate, startClock, endClock, attendeeCount, imagePath);
+        Event event = createEvent(username, eventId, name, description, dateEvent, attendeeCount, imagePath);
         if (event == null) {
             return false;
         }
@@ -192,13 +188,12 @@ public class AddEvent {
         }
     }
 
-    private Event createEvent(String username, int eventId, String name, String description, String startDate, String
-            endDate, String startClock, String endClock, String attendeeCount, String imagePath) {
+    private Event createEvent(String username, int eventId, String name, String description, DateEvent dateEvent, String attendeeCount, String imagePath) {
         try {
             return new EventBuilder().setUsername(username).setId(eventId).setEventName(name).setEventDescription(description)
-                    .setStartDate(LocalDate.parse(startDate)).setEndDate(LocalDate.parse(endDate))
-                    .setStartClock(LocalTime.parse(startClock)).setEndClock(LocalTime.parse(endClock))
-                    .setAttendeeCount(Integer.parseInt(attendeeCount)).createEvent();
+                    .setStartDate(LocalDate.parse(dateEvent.getStartDate())).setEndDate(LocalDate.parse(dateEvent.getEndDate()))
+                    .setStartClock(LocalTime.parse(dateEvent.getStartClock())).setEndClock(LocalTime.parse(dateEvent.getEndClock()))
+                    .setAttendeeCount(Integer.parseInt(attendeeCount)).setImagePath(imagePath).createEvent();
         } catch (DateTimeParseException | NumberFormatException e) {
             setMsg("Invalid input format");
             return null;

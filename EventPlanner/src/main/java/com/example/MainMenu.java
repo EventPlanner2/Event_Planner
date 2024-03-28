@@ -5,6 +5,8 @@ import com.example.data.NotifcationData;
 import com.example.data.RoomData;
 import com.example.entites.*;
 
+import java.time.LocalDate;
+import java.time.LocalTime;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Scanner;
@@ -584,7 +586,9 @@ public class MainMenu {
             String attendeeCount = input.next();
             logger.info("Image path :");
             String imagePath = input.next();
-            boolean flag = app.getAddEventService().addEvent(user.getUsername(), EventData.getEvents().size() + 1, eventName, eventDes, startDate, endDate, startHour, endHour, attendeeCount, imagePath);
+
+            DateEvent dateEvent = new DateEvent(startDate,endDate,startHour,endHour);
+            boolean flag = app.getAddEventService().addEvent(user.getUsername(), EventData.getEvents().size() + 1, eventName, eventDes, dateEvent, attendeeCount, imagePath);
             if (flag) {
                 logger.info(app.getAddEventService().getMsg());
                 break;
@@ -618,7 +622,8 @@ public class MainMenu {
             String attendeeCount = input.next();
             logger.info("Image path :");
             String imagePath = input.next();
-            boolean flag = app.getDeleteUpdateEventService().UpdateEventPerform(eventId, user.getUsername(), eventName, eventDes, startDate, endDate, startHour, endHour, attendeeCount, imagePath);
+            DateEvent dateEvent = new DateEvent(startDate,endDate,startHour,endHour);
+            boolean flag = app.getDeleteUpdateEventService().UpdateEventPerform(eventId, user.getUsername(), eventName, eventDes, dateEvent, attendeeCount, imagePath);
             if (flag) {
                 logger.info(app.getDeleteUpdateEventService().getMsg());
                 //Created getMsg in DeleteUpdateEvent

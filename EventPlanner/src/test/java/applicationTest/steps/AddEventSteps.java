@@ -2,9 +2,12 @@ package applicationTest.steps;
 
 import com.example.App;
 import com.example.entites.Client;
+import com.example.entites.DateEvent;
 import io.cucumber.java.en.Given;
 import io.cucumber.java.en.Then;
 import io.cucumber.java.en.When;
+
+import java.util.Date;
 
 import static org.junit.Assert.*;
 
@@ -76,13 +79,14 @@ public class AddEventSteps {
         endClock = dataTable.cell(7,1);
         attendeeCount = dataTable.cell(8,1);
         imagePath = dataTable.cell(9,1);
-        isCreated=  app.getAddEventService ().addEvent(username,eventId , name, description, startDate, endDate,
-                startClock, endClock, attendeeCount, imagePath);
+
+        DateEvent dateEvent = new DateEvent(startDate,endDate,startClock,endClock);
+        isCreated=  app.getAddEventService ().addEvent(username,eventId , name, description, dateEvent, attendeeCount, imagePath);
     }
 
     @Then("the event should be successfully added")
     public void theEventShouldBeSuccessfullyAdded() {
-        assertEquals( app.getAddEventService ().getMsg(),"The Event is created");
+        assertEquals( "The Event is created",app.getAddEventService ().getMsg());
         assertTrue(isCreated);
     }
 
@@ -105,8 +109,8 @@ public class AddEventSteps {
     @When("the user choose to add event")
     public void theUserChooseToAddEvent(){
 
-        isCreated=  app.getAddEventService ().addEvent(username,eventId , name, description, startDate, endDate,
-                startClock, endClock, attendeeCount, imagePath);
+        DateEvent dateEvent = new DateEvent(startDate,endDate,startClock,endClock);
+        isCreated=  app.getAddEventService ().addEvent(username,eventId , name, description, dateEvent, attendeeCount, imagePath);
     }
     @Then("the event should be not added")
     public void theEventShouldBeNotAdded() {

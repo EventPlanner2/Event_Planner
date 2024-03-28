@@ -21,20 +21,20 @@ public class Event {
     private int roomID;
     public List<ServiceProvider> serviceEntity;
 
-    public Event(String username,int id, String eventName, String eventDescription, LocalDate startDate, LocalDate endDate,
-                 LocalTime startClock, LocalTime endClock, int attendeeCount) {
+    public Event(String username,int id, String eventName, String eventDescription, DateEvent dateEvent, int attendeeCount,String pathImage) {
        this.username=username;
         this.eventid = id;
         this.eventName = eventName;
         this.eventDescription = eventDescription;
-        this.startDate = startDate;
-        this.endDate = endDate;
-        this.startClock = startClock;
-        this.endClock = endClock;
+        this.startDate = LocalDate.parse(dateEvent.getStartDate());
+        this.endDate = LocalDate.parse(dateEvent.getEndDate());
+        this.startClock = LocalTime.parse(dateEvent.getStartClock());
+        this.endClock = LocalTime.parse(dateEvent.getEndClock());
         this.attendeeCount = attendeeCount;
         this.isComplete = false;
         this.roomID = -1;
         this.serviceEntity = new ArrayList<>();
+        this.pathImage = pathImage;
     }
 
     public static Event getEventByID(int id){

@@ -29,7 +29,6 @@ public class App {
 
     private EventData ed;
 
-    //public UpgradeClient upgradeClient;
     private Calender calenderService;
 
     private NotifcationData notifcationData;
@@ -45,7 +44,7 @@ public class App {
         loginService = new Login(users);
         loggedInUser = null;
         signUpService = new SignUp(users);
-        rd = new RoomData();// to initialize the data it the db
+        rd = new RoomData();
         rooms = RoomData.getRooms();
         addRoomService = new AddRoom(rooms);
         spAccount = new SPAcc();

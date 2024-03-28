@@ -1,6 +1,7 @@
 package com.example.services;
 
 import com.example.entites.Client;
+import com.example.entites.DateEvent;
 import com.example.entites.Event;
 
 import static com.example.data.EventData.getEvents;
@@ -17,8 +18,7 @@ public class DeleteUpdateEvent {
         this.addEvent = addEvent;
     }
 
-    public boolean UpdateEventPerform(String id, String username, String name, String description, String startDate, String
-            endDate, String startClock, String endClock, String attendeeCount, String imagePath) {
+    public boolean UpdateEventPerform(String id, String username, String name, String description, DateEvent dateEvent , String attendeeCount, String imagePath) {
 
         try {
             int eventid = Integer.parseInt(id);
@@ -28,7 +28,9 @@ public class DeleteUpdateEvent {
             }
             boolean tmp = DeleteEventPerform(id);
 
-            boolean tmp2 = addEvent.addEvent(username, eventid, name, description, startDate, endDate, startClock, endClock, attendeeCount, imagePath);
+
+            boolean tmp2 = addEvent.addEvent(username, eventid, name, description,
+                    dateEvent, attendeeCount, imagePath);
             this.msg = addEvent.getMsg();
             return tmp && tmp2;
         } catch (NumberFormatException e) {

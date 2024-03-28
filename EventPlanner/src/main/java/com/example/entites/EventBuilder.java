@@ -13,6 +13,7 @@ public class EventBuilder {
     private LocalTime startClock;
     private LocalTime endClock;
     private int attendeeCount;
+    private String imagePath;
 
     public EventBuilder setUsername(String username) {
         this.username = username;
@@ -60,6 +61,21 @@ public class EventBuilder {
     }
 
     public Event createEvent() {
-        return new Event ( username, id, eventName, eventDescription, startDate, endDate, startClock, endClock, attendeeCount );
+        DateEvent dateEvent = new DateEvent(
+                startDate.toString(),
+                endDate.toString(),
+                startClock.toString(),
+                endClock.toString()
+        );
+        return new Event ( username, id, eventName, eventDescription, dateEvent, attendeeCount,imagePath);
+    }
+
+    public String getImagePath() {
+        return imagePath;
+    }
+
+    public EventBuilder setImagePath(String imagePath) {
+        this.imagePath = imagePath;
+        return this;
     }
 }

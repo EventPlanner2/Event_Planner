@@ -17,28 +17,27 @@ public class EventData {
     private static final List<Event> events = new ArrayList<>();
     private static int ID_CURRENT = 4;
 
-    // Private constructor to prevent direct instantiation
     public EventData() {
         initializeData();
     }
 
     private  void initializeData() {
-        // Initialize event objects
+
         Event e1 = new EventBuilder ().setUsername ( CREATOR_NAME ).setId ( 1 ).setEventName ( EVENT_NAME ).setEventDescription ( "cars event" ).setStartDate ( LocalDate.of ( 2024, 3, 15 ) ).setEndDate ( LocalDate.of ( 2024, 4, 15 ) ).setStartClock ( LocalTime.of ( 19, 0 ) ).setEndClock ( LocalTime.of ( 23, 0 ) ).setAttendeeCount ( 50 ).createEvent ();
-        e1.setPathImage("image_path1"); // Set image path for event 1
+        e1.setPathImage("image_path1");
 
         Event e2 = new EventBuilder ().setUsername ( CREATOR_NAME ).setId ( 2 ).setEventName ( EVENT_NAME ).setEventDescription ( "mpo wer bmw version" ).setStartDate ( LocalDate.of ( 2025, 6, 20 ) ).setEndDate ( LocalDate.of ( 2025, 6, 20 ) ).setStartClock ( LocalTime.of ( 8, 0 ) ).setEndClock ( LocalTime.of ( 9, 0 ) ).setAttendeeCount ( 70 ).createEvent ();
-        e2.setPathImage("image_path2"); // Set image path for event 2
+        e2.setPathImage("image_path2");
 
         Event e3 = new EventBuilder ().setUsername ( CREATOR_NAME ).setId ( 3 ).setEventName ( EVENT_NAME ).setEventDescription ( "mpower bmw version" ).setStartDate ( LocalDate.of ( 2025, 6, 20 ) ).setEndDate ( LocalDate.of ( 2025, 6, 20 ) ).setStartClock ( LocalTime.of ( 10, 0 ) ).setEndClock ( LocalTime.of ( 11, 0 ) ).setAttendeeCount ( 100 ).createEvent ();
-        e3.setPathImage("image_path3"); // Set image path for event 3
+        e3.setPathImage("image_path3");
 
-        // Add events to the list
+
         events.add(e1);
         events.add(e2);
         events.add(e3);
 
-        //Client.getClientFromData("Ali Turabi").getEventsBooked().add(e1);
+
     }
 
     public static List<Event> getEvents() {

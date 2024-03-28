@@ -27,64 +27,66 @@ public class ReserveRoom {
         msg = "";
     }
 
-    public boolean ReserveRoomPerform(String eventID,String roomID){
-        boolean flag = false;
+    public boolean ReserveRoomPerform(String eventID, String roomID) {
+        boolean flag =false;
+        try {
+            int eventId = Integer.parseInt(eventID);
+            flag =true;
+            int roomId = Integer.parseInt(roomID);
 
-        try{
-
-            int eventid = Integer.parseInt(eventID);
-            flag = true;
-            int roomid = Integer.parseInt(roomID);
-
-            for(Event e : getEvents()){
-                if(e.getId()==eventid){
-
-                    // need refactoring
-                    if(e.getRoomID() == roomid){
-                        msg = "the room is already reserved for the event";
-                        return false;
-                    }
-                    if(e.getRoomID() != -1){
-                        msg = "the event is already has a room";
-                        return false;
-                    }
-                    if(!Room.getRoomFromData(roomid).isAvailable()){
-                        msg = "the room is already reserved for another event";
-                        return false;
-                    }
-                    if(e.getAttendeeCount() > Room.getRoomFromData(roomid).getCapacity()){
-                        msg = "the room is lower capacity than attendance count";
+            for (Event e : getEvents()) {
+                if (e.getId() == eventId) {
+                    if (!validateRoomReservation(e, roomId)) {
                         return false;
                     }
 
-                    e.setRoomID(roomid);
-                    e.setComplete(true);
-                    Room.getRoomFromData(roomid).setAvailable(false);
-                    msg = "Room has been reserved";
-                    String notifcation = LocalDate.now().toString()+"| "+ "Room with name "+Room.getRoomFromData(roomid).getName()+" Has Been Reserved for Event "+e.getEventName();
-                    NotifcationData.addNotification(notifcation);
+                    reserveRoom(e, roomId);
                     return true;
                 }
             }
+
+            msg = "the event ID is invalid";
+            return false;
+        } catch (NumberFormatException e) {
+            msg = "the " + (flag ? "room" : "event") + " ID is invalid";
+            return false;
+        } catch (NullPointerException e) {
             msg = "the event ID is invalid";
             return false;
         }
-        catch (NumberFormatException e){
-            if(flag){
-                msg = "the room ID is invalid";
-            }
-            else{
-                msg = "the event ID is invalid";
-            }
-
-            return false;
-        }
-        catch (NullPointerException e){
-            msg = "the room ID is invalid";
-            return false;
-        }
-
     }
+
+    private boolean validateRoomReservation(Event event, int roomId) {
+        if (event.getRoomID() == roomId) {
+            msg = "the room is already reserved for the event";
+            return false;
+        }
+        if (event.getRoomID() != -1) {
+            msg = "the event is already has a room";
+            return false;
+        }
+        if (!Room.getRoomFromData(roomId).isAvailable()) {
+            msg = "the room is already reserved for another event";
+            return false;
+        }
+        if (event.getAttendeeCount() > Room.getRoomFromData(roomId).getCapacity()) {
+            msg = "the room is lower capacity than attendance count";
+            return false;
+        }
+        return true;
+    }
+
+    private void reserveRoom(Event event, int roomId) {
+        event.setRoomID(roomId);
+        event.setComplete(true);
+        Room.getRoomFromData(roomId).setAvailable(false);
+        msg = "Room has been reserved";
+        String notification = LocalDate.now().toString() + "| " +
+                "Room with name " + Room.getRoomFromData(roomId).getName() +
+                " has been reserved for Event " + event.getEventName();
+        NotifcationData.addNotification(notification);
+    }
+
     public void ChooseReserveRoom(){
 
         for(Event e : getEvents()){

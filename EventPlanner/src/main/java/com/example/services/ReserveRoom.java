@@ -17,14 +17,14 @@ import java.util.List;
 public class ReserveRoom {
 
     private User loggedInUser;
-    private List<Event> res_event;
-    private List<Room> res_room;
+    private List<Event> resEvent;
+    private List<Room> resRoom;
     private String msg;
 
     public ReserveRoom(User loggedInUser){
         this.loggedInUser = loggedInUser;
-        res_room = new ArrayList<>();
-        res_event = new ArrayList<>();
+        resRoom = new ArrayList<>();
+        resEvent = new ArrayList<>();
         msg = "";
     }
 
@@ -92,13 +92,13 @@ public class ReserveRoom {
 
         for(Event e : getEvents()){
             if(e.getUsername().equals(loggedInUser.getUsername()) && !e.isComplete()){
-                res_event.add(e);
+                resEvent.add(e);
             }
         }
 
         for(Room r : getRooms()){
             if(r.isAvailable()){
-                res_room.add(r);
+                resRoom.add(r);
             }
         }
 
@@ -124,21 +124,21 @@ public class ReserveRoom {
 
     // Getter method for res_event
     public List<Event> getResEvent() {
-        return res_event;
+        return resEvent;
     }
 
     // Setter method for res_event
     public void setResEvent(List<Event> res_event) {
-        this.res_event = res_event;
+        this.resEvent = res_event;
     }
     // Getter method for res_room
     public List<Room> getResRoom() {
-        return res_room;
+        return resRoom;
     }
 
     // Setter method for res_room
     public void setResRoom(List<Room> res_room) {
-        this.res_room = res_room;
+        this.resRoom = res_room;
     }
 
 }

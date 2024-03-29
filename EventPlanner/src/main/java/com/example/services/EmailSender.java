@@ -13,8 +13,8 @@ public class EmailSender {
     private Properties props;
 
     public EmailSender() {
-        this.senderEmail = Config.email;
-        this.password = Config.password;
+        this.senderEmail = Config.Email;
+        this.password = Config.Password;
 
 
         props = new Properties();

@@ -146,9 +146,7 @@ public class Event {
         this.serviceEntity = services;
     }
 
-    public List<ServiceProvider> getServices() {
-        return serviceEntity;
-    }
+
 
     public void setPathImage(String pathImage) {
         this.pathImage = pathImage;

@@ -6,12 +6,14 @@ import com.example.entites.Event;
 
 import java.time.LocalDate;
 import java.util.ArrayList;
+import java.util.List;
+
 import static com.example.data.EventData.getEvents;
 
 
 public class BookEvent {
 
-
+    private String temporayUser;
     private String msg;
     private boolean emailSent;
 
@@ -19,14 +21,14 @@ public class BookEvent {
         msg = "";
     }
     public boolean bookEventPerform(String id,String userName){
-        String user;
+
         if(getEvents().isEmpty()){
             msg = "There are no upcoming events to book.";
             return false;
         }
         try{
             Client c1 = Client.getClientFromData(userName);
-             user = c1.getUsername();
+            temporayUser = c1.getUsername();
 
             int eventid = Integer.parseInt(id);
             for(Event e : c1.getEventsBooked ()){
@@ -94,36 +96,31 @@ public class BookEvent {
         return false;
 
     }
-    public ArrayList<Event> chooseBookEvent(){
-
-        ArrayList<Event> res = new ArrayList<>();
+    public List<Event> chooseBookEvent() {
+        List<Event> res = new ArrayList<>();
         LocalDate dateNow = LocalDate.now();
 
-        for(Event e : getEvents()){
-            if(e.getStartDate().isAfter(dateNow)){
+        for (Event e : getEvents()) {
+            if (e.getStartDate().isAfter(dateNow)) {
                 res.add(e);
             }
         }
 
         return res;
     }
-
-    public ArrayList<Event> chooseCancelBookEvent(String userName){
-
-        ArrayList<Event> res = new ArrayList<>();
+    public List<Event> chooseCancelBookEvent(String userName) {
+        List<Event> res = new ArrayList<>();
         LocalDate dateNow = LocalDate.now();
 
         Client c1 = Client.getClientFromData(userName);
-        for(Event e : c1.getEventsBooked()){
-            if(e.getStartDate().isAfter(dateNow)){
+        for (Event e : c1.getEventsBooked()) {
+            if (e.getStartDate().isAfter(dateNow)) {
                 res.add(e);
             }
         }
 
         return res;
-
     }
-
     public boolean isEmailSent() {
         return emailSent;
     }

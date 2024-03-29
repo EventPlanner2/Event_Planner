@@ -21,11 +21,11 @@ public class DeleteEventSteps {
     @Given("there is an event with ID {string}")
     public void thereIsAnEventWithID(String string) {
         id = string;
-        assertTrue( app.getDeleteUpdateEventService ().DoesEventExists(Integer.parseInt(id)));
+        assertTrue( app.getDeleteUpdateEventService ().doesEventExists(Integer.parseInt(id)));
     }
     @When("the user deletes the event with ID provided")
     public void theUserDeletesTheEventWithID() {
-       flag = app.getDeleteUpdateEventService ().DeleteEventPerform(this.id);
+       flag = app.getDeleteUpdateEventService ().deleteEventPerform(this.id);
     }
     @Then("the event should be deleted")
     public void theEventWithIDShouldBeDeleted() {
@@ -36,7 +36,7 @@ public class DeleteEventSteps {
     @Given("there is no event with ID {string}")
     public void thereIsNoEventWithID(String string) {
         id = string;
-        assertFalse( app.getDeleteUpdateEventService ().DoesEventExists(Integer.parseInt(id)));
+        assertFalse( app.getDeleteUpdateEventService ().doesEventExists(Integer.parseInt(id)));
     }
 
     @Then("the system should display an error message {string}")

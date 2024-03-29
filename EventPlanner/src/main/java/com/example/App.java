@@ -48,7 +48,7 @@ public class App {
         rooms = RoomData.getRooms();
         addRoomService = new AddRoom(rooms);
         spAccount = new SPAcc();
-        loginService.setSPAccObj(spAccount);
+        loginService.setSpAccObj(spAccount);
         addEventService=new AddEvent();
         searchSP = new SearchServiceProvider();
         deleteUpdateEventService = new DeleteUpdateEvent(addEventService);

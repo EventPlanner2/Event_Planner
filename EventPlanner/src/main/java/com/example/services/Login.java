@@ -10,10 +10,10 @@ public class Login {
     private final List<User> users;
 
     private String errorMessage;
-    private SPAcc SPAccObj;
+    private SPAcc spAccObj;
 
-    public void setSPAccObj(SPAcc SPAccObj) {
-        this.SPAccObj = SPAccObj;
+    public void setSpAccObj(SPAcc spAccObj) {
+        this.spAccObj = spAccObj;
     }
 
     public Login(List<User> users) {
@@ -31,8 +31,8 @@ public class Login {
             if (user.getUsername().equals(username) && user.getPassword().equals(password)) {
                 if (user.getRole() == 's') {
                     ServiceProvider obj = ServiceProvider.getSPFromData(username);
-                    SPAccObj.setCompleteAccount ( obj.isFirstLogin () );
-                    SPAccObj.setSP(obj);
+                    spAccObj.setCompleteAccount ( obj.isFirstLogin () );
+                    spAccObj.setSP(obj);
                 }
                 return user;
             }
@@ -51,5 +51,5 @@ public class Login {
 
     public String getErrorMessage() {
         return errorMessage;
-}
+    }
 }

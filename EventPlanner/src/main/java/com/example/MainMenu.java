@@ -623,7 +623,7 @@ public class MainMenu {
             logger.info("Image path :");
             String imagePath = input.next();
             DateEvent dateEvent = new DateEvent(startDate,endDate,startHour,endHour);
-            boolean flag = app.getDeleteUpdateEventService().UpdateEventPerform(eventId, user.getUsername(), eventName, eventDes, dateEvent, attendeeCount, imagePath);
+            boolean flag = app.getDeleteUpdateEventService().updateEventPerform(eventId, user.getUsername(), eventName, eventDes, dateEvent, attendeeCount, imagePath);
             if (flag) {
                 logger.info(app.getDeleteUpdateEventService().getMsg());
                 //Created getMsg in DeleteUpdateEvent
@@ -641,7 +641,7 @@ public class MainMenu {
             showUpcomingEvents();
             logger.info("Please enter the ID of the event you want to delete : ");
             String eventId = input.next();
-            boolean flag = app.getDeleteUpdateEventService().DeleteEventPerform(eventId);
+            boolean flag = app.getDeleteUpdateEventService().deleteEventPerform(eventId);
             if (flag) {
                 logger.info(app.getDeleteUpdateEventService().getMsg());
                 //Created getMsg in DeleteUpdateEvent

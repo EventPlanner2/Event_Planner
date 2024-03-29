@@ -18,15 +18,15 @@ public class DeleteUpdateEvent {
         this.addEvent = addEvent;
     }
 
-    public boolean UpdateEventPerform(String id, String username, String name, String description, DateEvent dateEvent , String attendeeCount, String imagePath) {
+    public boolean updateEventPerform(String id, String username, String name, String description, DateEvent dateEvent , String attendeeCount, String imagePath) {
 
         try {
             int eventid = Integer.parseInt(id);
-            if (!DoesEventExists(eventid)) {
+            if (!doesEventExists(eventid)) {
                 msg = "Non-Existing Event";
                 return false;
             }
-            boolean tmp = DeleteEventPerform(id);
+            boolean tmp = deleteEventPerform(id);
 
 
             boolean tmp2 = addEvent.addEvent(username, eventid, name, description,
@@ -41,10 +41,10 @@ public class DeleteUpdateEvent {
 
     }
 
-    public boolean DeleteEventPerform(String id_tmp) {
+    public boolean deleteEventPerform(String idTmp) {
         try {
-            int id = Integer.parseInt(id_tmp);
-            if (!DoesEventExists(id)) {
+            int id = Integer.parseInt(idTmp);
+            if (!doesEventExists(id)) {
                 msg = "Non-Existing Event";
                 return false;
             }
@@ -53,7 +53,7 @@ public class DeleteUpdateEvent {
                     Client c = Client.getClientFromData(getEvents().get(i).getUsername());
                     c.setNumberEvent(c.getNumberEvent() - 1);
                     getEvents().remove(i);
-                    msg = "The Event with ID " + id_tmp + " has benn deleted";
+                    msg = "The Event with ID " + idTmp + " has benn deleted";
                     return true;
                 }
             }
@@ -65,7 +65,7 @@ public class DeleteUpdateEvent {
         return false;
     }
 
-    public boolean DoesEventExists(int id) {
+    public boolean doesEventExists(int id) {
 
         for (Event e : getEvents()) {
             if (e.getId() == id) return true;
@@ -79,6 +79,6 @@ public class DeleteUpdateEvent {
     }
 
     public void setMsg(String msg) {
-        this.msg = msg;
-    }
+        this.msg=msg;
+}
 }

@@ -59,7 +59,7 @@ public class UpdateEventSteps {
     @When("the user updates the event with ID provided")
     public void theUserUpdatesTheEventWithIDProvided() {
         DateEvent dateEvent = new DateEvent(startDate,endDate,startClock,endClock);
-        flag = app.getDeleteUpdateEventService().UpdateEventPerform(id,username,name,description,dateEvent,attendeeCount,imagePath);
+        flag = app.getDeleteUpdateEventService().updateEventPerform(id,username,name,description,dateEvent,attendeeCount,imagePath);
 
     }
 

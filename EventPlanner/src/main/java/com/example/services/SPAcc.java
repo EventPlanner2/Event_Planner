@@ -15,13 +15,13 @@ public class SPAcc {
     private static String[] acceptedLocations = {"Nablus","Ramallah","Hebron","Jericho"};
     private static String[] acceptedTypes = {"Tables Provider","Chairs Provider"};
 
-    public boolean CompleteAccountPerform(String location , String price , String type){
+    public boolean completeAccountPerform(String location , String price , String type){
 
         if(!findLocation(location)){setCompleteAccountMsg("invalid location");return false;}
         if(!findType(type)){setCompleteAccountMsg("invalid type of service");return false;}
         try {
-            int price_1 = Integer.parseInt(price.substring(1));
-            UserData.completeSP(sP.getUsername(), location, type, price_1);
+            int priceInt1 = Integer.parseInt(price.substring(1));
+            UserData.completeSP(sP.getUsername(), location, type, priceInt1);
             completeAccount = false;
             setCompleteAccountMsg("Your Account is completed");
             return true;
@@ -33,15 +33,15 @@ public class SPAcc {
     }
 
 
-    protected boolean findLocation(String Location){
+    protected boolean findLocation(String location){
         for(String s : acceptedLocations){
-            if(s.equals(Location)) return true;
+            if(s.equals(location)) return true;
         }
         return false;
     }
-    protected boolean findType(String Type){
+    protected boolean findType(String type){
         for(String s : acceptedTypes){
-            if(s.equals(Type)) return true;
+            if(s.equals(type)) return true;
         }
         return false;
     }
@@ -57,8 +57,8 @@ public class SPAcc {
         return sP;
     }
 
-    public void setSP(ServiceProvider SP) {
-        this.sP = SP;
+    public void setSP(ServiceProvider sp) {
+        this.sP = sp;
     }
 
     public boolean isCompleteAccount() {

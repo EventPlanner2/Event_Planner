@@ -47,7 +47,7 @@ public class CompleteSpAcc {
         this.location = location;
         this.price= price;
         this.type = type;
-        flag_completeAcc = app.getSPAccount ().CompleteAccountPerform(this.location,this.price,this.type);
+        flag_completeAcc = app.getSPAccount ().completeAccountPerform(this.location,this.price,this.type);
     }
     @Then("the system should save the information")
     public void theSystemShouldSaveTheInformation() {
@@ -64,7 +64,7 @@ public class CompleteSpAcc {
         this.type = "Chairs Provider";
         this.location =string;
         this.price ="$99";
-        flag_completeAcc = app.getSPAccount ().CompleteAccountPerform(this.location,this.price,this.type);
+        flag_completeAcc = app.getSPAccount ().completeAccountPerform(this.location,this.price,this.type);
     }
 
     @When("he selects invalid type of service provider {string}")
@@ -72,7 +72,7 @@ public class CompleteSpAcc {
         this.type = string;
         this.location ="Nablus";
         this.price ="$99";
-        flag_completeAcc = app.getSPAccount ().CompleteAccountPerform(this.location,this.price,this.type);
+        flag_completeAcc = app.getSPAccount ().completeAccountPerform(this.location,this.price,this.type);
     }
 
 
@@ -82,7 +82,7 @@ public class CompleteSpAcc {
         this.type = "Chairs Provider";
         this.location ="Nablus";
         this.price =string;
-        flag_completeAcc = app.getSPAccount ().CompleteAccountPerform(this.location,this.price,this.type);
+        flag_completeAcc = app.getSPAccount ().completeAccountPerform(this.location,this.price,this.type);
     }
     @Then("the system should display error messages {string}")
     public void theSystemShouldDisplayErrorMessages(String string) {

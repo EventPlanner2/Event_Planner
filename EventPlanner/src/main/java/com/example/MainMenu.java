@@ -439,7 +439,7 @@ public class MainMenu {
             productType = input.next();
             productType += " " + input.next();
 
-            boolean flag = app.getSPAccount().CompleteAccountPerform(location, productPrice, productType);
+            boolean flag = app.getSPAccount().completeAccountPerform(location, productPrice, productType);
 
             if (flag) {
                 logger.info(app.getSPAccount().getCompleteAccountMsg());

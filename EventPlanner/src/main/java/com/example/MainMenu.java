@@ -475,20 +475,20 @@ public class MainMenu {
                 logger.info("Please enter the name of the location to search :");
                 String location = input.next();
                 app.getSearchSP().setLocation(location);
-                tmpArray.addAll(app.getSearchSP().SearchSPPerformed());
+                tmpArray.addAll(app.getSearchSP().searchSPPerformed());
                 printCriteria(tmpArray);
                 return;
             case "Type":
                 logger.info("Please enter the type of the Service provider : ");
                 String type = input.next() + " " + input.next();
                 app.getSearchSP().setType(type);
-                printCriteria(app.getSearchSP().SearchSPPerformed());
+                printCriteria(app.getSearchSP().searchSPPerformed());
                 return;
             default:
                 logger.info("Please enter the price of the product : ");
                 String price = input.next();
                 app.getSearchSP().setPrice(price);
-                printCriteria(app.getSearchSP().SearchSPPerformed());
+                printCriteria(app.getSearchSP().searchSPPerformed());
                 return;
         }
     }
@@ -672,7 +672,7 @@ public class MainMenu {
         logger.info("Please enter the ID of the Service Provider :");
         app.getSearchSP().setSelectedCriteria("price");
         app.getSearchSP().setPrice("1000");
-        printCriteria(app.getSearchSP().SearchSPPerformed());
+        printCriteria(app.getSearchSP().searchSPPerformed());
         String SP = input.next();
         app.getReserveSPService().reserveSPPerform(event, SP);
         logger.info(app.getReserveSPService().getMsg());

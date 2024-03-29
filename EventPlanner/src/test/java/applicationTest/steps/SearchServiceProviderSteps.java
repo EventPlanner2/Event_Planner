@@ -24,7 +24,7 @@ public class SearchServiceProviderSteps {
     @Given("the user has selected to search a service provider")
     public void theUserHasSelectedToSearchAServiceProvider() {
 
-        app.getSearchSP ().isSelected = true;
+        app.getSearchSP ().setSelected ( true );
 
     }
     @When("the user selects location as the search criteria")
@@ -42,7 +42,7 @@ public class SearchServiceProviderSteps {
     @When("the user has pressed to search")
     public void theUserHasPressedToSearch() {
         if(checkSPS != null)checkSPS.clear();
-        checkSPS = app.getSearchSP ().SearchSPPerformed();
+        checkSPS = app.getSearchSP ().searchSPPerformed();
 
     }
     @Then("the application should display a list of service providers in specified location")

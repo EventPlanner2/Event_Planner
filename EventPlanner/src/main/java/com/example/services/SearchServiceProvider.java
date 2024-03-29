@@ -8,7 +8,7 @@ import java.util.List;
 
 public class SearchServiceProvider {
 
-    public boolean isSelected;
+    private boolean isSelected;
 
     private String selectedCriteria;
 
@@ -17,7 +17,7 @@ public class SearchServiceProvider {
     private int price;
 
     private String errorMsg;
-    private SPAcc SPAccService;
+    private SPAcc spAccService;
 
     private List<ServiceProvider> tmpSps;
     public SearchServiceProvider() {
@@ -26,7 +26,7 @@ public class SearchServiceProvider {
         this.location = "";
         this.type ="";
         this.errorMsg = "";
-        SPAccService = new SPAcc();
+        spAccService = new SPAcc();
         tmpSps = new ArrayList<>();
     }
 
@@ -35,7 +35,7 @@ public class SearchServiceProvider {
     }
 
     public void setLocation(String location) {
-        if(!SPAccService.findLocation(location)){setErrorMsg("invalid location !");return;}
+        if(!spAccService.findLocation(location)){setErrorMsg("invalid location !");return;}
         this.location = location;
     }
 
@@ -44,7 +44,7 @@ public class SearchServiceProvider {
     }
 
     public void setType(String type) {
-        if(!SPAccService.findType(type)){setErrorMsg("invalid type !");return;}
+        if(!spAccService.findType(type)){setErrorMsg("invalid type !");return;}
         this.type = type;
     }
 
@@ -76,7 +76,7 @@ public class SearchServiceProvider {
         }
         else{
             setErrorMsg("the user must select an existed criteria");
-            return;
+
         }
 
     }
@@ -91,22 +91,22 @@ public class SearchServiceProvider {
         this.errorMsg = errorMsg;
     }
 
-    public List<ServiceProvider> SearchSPPerformed(){
+    public List<ServiceProvider> searchSPPerformed(){
 
 
        if(this.selectedCriteria.equalsIgnoreCase("location")){
-            return SearchSPLocation();
+            return searchSPLocation();
         }
         else if(this.selectedCriteria.equalsIgnoreCase("type")){
-            return SearchSPType();
+            return searchSPType();
         }
         else if(this.selectedCriteria.equalsIgnoreCase("price")){
-            return SearchSPPrice();
+            return searchSPPrice();
         }
         return tmpSps;
 
     }
-    public List<ServiceProvider> SearchSPLocation(){
+    public List<ServiceProvider> searchSPLocation(){
         tmpSps = new ArrayList<>();
         for(ServiceProvider s : UserData.getSps()){
             if(s.getLocation().equals(location)){
@@ -116,7 +116,7 @@ public class SearchServiceProvider {
         return tmpSps;
 
     }
-    public List<ServiceProvider> SearchSPType(){
+    public List<ServiceProvider> searchSPType(){
         tmpSps = new ArrayList<>();
         for(ServiceProvider s : UserData.getSps()){
             if(s.getType().equals(type)){
@@ -126,7 +126,7 @@ public class SearchServiceProvider {
         return tmpSps;
 
     }
-    public List<ServiceProvider> SearchSPPrice(){
+    public List<ServiceProvider> searchSPPrice(){
         tmpSps = new ArrayList<>();
         for(ServiceProvider s : UserData.getSps()){
             if(s.getPrice() <= this.getPrice() && s.getPrice() > 0){
@@ -138,4 +138,11 @@ public class SearchServiceProvider {
     }
 
 
+    public boolean isSelected() {
+        return isSelected;
+    }
+
+    public void setSelected(boolean selected) {
+        isSelected = selected;
+    }
 }

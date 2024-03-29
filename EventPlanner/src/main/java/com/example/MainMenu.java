@@ -271,7 +271,7 @@ public class MainMenu {
 
     public void bookEvent() {
         String eventID = bookList("book", app.getBookEventService().chooseBookEvent());
-        app.getBookEventService().BookEventPerform(eventID, user.getUsername());
+        app.getBookEventService().bookEventPerform(eventID, user.getUsername());
         logger.info(app.getBookEventService().getMsg());
     }
 

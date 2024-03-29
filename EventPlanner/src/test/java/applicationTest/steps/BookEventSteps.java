@@ -60,7 +60,7 @@ public class BookEventSteps {
     }
     @When("the client requests to book an event")
     public void theClientRequestsToBookAnEvent() {
-        flag = app.getBookEventService().BookEventPerform(id, app.getLoggedInUser ().getUsername());
+        flag = app.getBookEventService().bookEventPerform(id, app.getLoggedInUser ().getUsername());
     }
     @Then("the client should see a confirmation message {string}")
     public void theClientShouldSeeAConfirmationMessage(String string) {

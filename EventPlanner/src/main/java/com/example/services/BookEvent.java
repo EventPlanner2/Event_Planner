@@ -1,31 +1,32 @@
 package com.example.services;
 
-import com.example.data.EventData;
+
 import com.example.entites.Client;
 import com.example.entites.Event;
 
 import java.time.LocalDate;
 import java.util.ArrayList;
 import static com.example.data.EventData.getEvents;
-import static com.example.data.RoomData.getRooms;
+
 
 public class BookEvent {
 
 
     private String msg;
-    private boolean email_sent;
+    private boolean emailSent;
 
     public BookEvent(){
         msg = "";
     }
-    public boolean BookEventPerform(String id,String username){
+    public boolean bookEventPerform(String id,String username){
+        String user;
         if(getEvents().isEmpty()){
             msg = "There are no upcoming events to book.";
             return false;
         }
         try{
             Client c1 = Client.getClientFromData(username);
-            String user = c1.getUsername();
+             user = c1.getUsername();
 
             int eventid = Integer.parseInt(id);
             for(Event e : c1.getEventsBooked ()){
@@ -47,7 +48,7 @@ public class BookEvent {
 
             new EmailSender().sendEmail(c1.getContactEmail(),"Book Confirmation",content);
             msg = "You have successfully booked the event";
-            email_sent = true;
+            emailSent = true;
             return true;
         }
         catch (NumberFormatException e){
@@ -124,11 +125,11 @@ public class BookEvent {
     }
 
     public boolean isEmail_sent() {
-        return email_sent;
+        return emailSent;
     }
 
     public void setEmail_sent(boolean email_sent) {
-        this.email_sent = email_sent;
+        this.emailSent = email_sent;
     }
 
     public String getMsg() {

@@ -17,7 +17,7 @@ import static org.junit.Assert.*;
 public class BookEventSteps {
 
     App app;
-    ArrayList<Event> res;
+    List<Event> res;
     String id;
     boolean flag;
     List<Event> tmp;

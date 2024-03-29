@@ -7,21 +7,21 @@ import com.example.entites.ServiceProvider;
 public class SPAcc {
     // Service Provider Account
 
-    public boolean completeAccount;
+    private boolean completeAccount;
 
-    private ServiceProvider SP;
+    private ServiceProvider sP;
 
     private String completeAccountMsg;
-    public static String[] AcceptedLocations = {"Nablus","Ramallah","Hebron","Jericho"};
-    public static String[] AcceptedTypes = {"Tables Provider","Chairs Provider"};
+    private static String[] acceptedLocations = {"Nablus","Ramallah","Hebron","Jericho"};
+    private static String[] acceptedTypes = {"Tables Provider","Chairs Provider"};
 
-    public boolean CompleteAccountPerform(String Location , String Price , String Type){
+    public boolean CompleteAccountPerform(String location , String price , String type){
 
-        if(!findLocation(Location)){setCompleteAccountMsg("invalid location");return false;}
-        if(!findType(Type)){setCompleteAccountMsg("invalid type of service");return false;}
+        if(!findLocation(location)){setCompleteAccountMsg("invalid location");return false;}
+        if(!findType(type)){setCompleteAccountMsg("invalid type of service");return false;}
         try {
-            int price = Integer.parseInt(Price.substring(1));
-            UserData.completeSP(SP.getUsername(), Location, Type, price);
+            int price_1 = Integer.parseInt(price.substring(1));
+            UserData.completeSP(sP.getUsername(), location, type, price_1);
             completeAccount = false;
             setCompleteAccountMsg("Your Account is completed");
             return true;
@@ -34,13 +34,13 @@ public class SPAcc {
 
 
     protected boolean findLocation(String Location){
-        for(String s : AcceptedLocations){
+        for(String s : acceptedLocations){
             if(s.equals(Location)) return true;
         }
         return false;
     }
     protected boolean findType(String Type){
-        for(String s : AcceptedTypes){
+        for(String s : acceptedTypes){
             if(s.equals(Type)) return true;
         }
         return false;
@@ -54,10 +54,18 @@ public class SPAcc {
     }
 
     public ServiceProvider getSP() {
-        return SP;
+        return sP;
     }
 
     public void setSP(ServiceProvider SP) {
-        this.SP = SP;
+        this.sP = SP;
+    }
+
+    public boolean isCompleteAccount() {
+        return completeAccount;
+    }
+
+    public void setCompleteAccount(boolean completeAccount) {
+        this.completeAccount = completeAccount;
     }
 }

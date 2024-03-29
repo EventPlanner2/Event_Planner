@@ -31,7 +31,7 @@ public class Login {
             if (user.getUsername().equals(username) && user.getPassword().equals(password)) {
                 if (user.getRole() == 's') {
                     ServiceProvider obj = ServiceProvider.getSPFromData(username);
-                    SPAccObj.completeAccount = obj.isFirstLogin();
+                    SPAccObj.setCompleteAccount ( obj.isFirstLogin () );
                     SPAccObj.setSP(obj);
                 }
                 return user;

@@ -35,7 +35,7 @@ public class CompleteSpAcc {
     }
     @Then("the system should prompt him to complete his account details \\(location,type,price)")
     public void theSystemShouldPromptHimToCompleteHisAccountDetailsLocationTypePrice() {
-        assertTrue( app.getSPAccount ().completeAccount);
+        assertTrue( app.getSPAccount ().isCompleteAccount () );
     }
 
     @Given("the service provider has logged in")

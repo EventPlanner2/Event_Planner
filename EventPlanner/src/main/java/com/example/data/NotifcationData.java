@@ -13,7 +13,7 @@ public class NotifcationData {
     }
 
     private static int id = 1;
-    public static int oldSize;
+    private static int oldSize;
     public static List<Notification> getNotifcations() {
         return notifcations;
     }
@@ -23,5 +23,13 @@ public class NotifcationData {
     }
     private static int getID(){
         return id++;
+    }
+
+    public static int getOldSize() {
+        return oldSize;
+    }
+
+    public static void setOldSize(int oldSize) {
+        NotifcationData.oldSize = oldSize;
     }
 }

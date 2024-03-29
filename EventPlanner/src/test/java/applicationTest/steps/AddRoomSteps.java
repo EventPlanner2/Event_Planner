@@ -78,7 +78,7 @@ public class AddRoomSteps {
 
     @Then("a notification will be added with all details")
     public void aNotificationWillBeAddedWithAllDetails() {
-        assertEquals(NotifcationData.oldSize+1,NotifcationData.getNotifcations().size());
+        assertEquals( NotifcationData.getOldSize () +1,NotifcationData.getNotifcations().size());
     }
 
 

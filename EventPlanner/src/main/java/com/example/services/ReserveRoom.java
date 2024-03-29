@@ -1,18 +1,16 @@
 package com.example.services;
 
-
 import com.example.data.NotifcationData;
-
-
 import com.example.entites.Event;
 import com.example.entites.Room;
 import com.example.entites.User;
-import static com.example.data.EventData.getEvents;
-import static com.example.data.RoomData.getRooms;
 
 import java.time.LocalDate;
 import java.util.ArrayList;
 import java.util.List;
+
+import static com.example.data.EventData.getEvents;
+import static com.example.data.RoomData.getRooms;
 
 public class ReserveRoom {
 
@@ -21,18 +19,18 @@ public class ReserveRoom {
     private List<Room> resRoom;
     private String msg;
 
-    public ReserveRoom(User loggedInUser){
+    public ReserveRoom(User loggedInUser) {
         this.loggedInUser = loggedInUser;
         resRoom = new ArrayList<>();
         resEvent = new ArrayList<>();
         msg = "";
     }
 
-    public boolean ReserveRoomPerform(String eventID, String roomID) {
-        boolean flag =false;
+    public boolean reserveRoomPerform(String eventID, String roomID) {
+        boolean flag = false;
         try {
             int eventId = Integer.parseInt(eventID);
-            flag =true;
+            flag = true;
             int roomId = Integer.parseInt(roomID);
 
             for (Event e : getEvents()) {
@@ -88,20 +86,18 @@ public class ReserveRoom {
         NotifcationData.addNotification(notification);
     }
 
-    public void ChooseReserveRoom(){
-
-        for(Event e : getEvents()){
-            if(e.getUsername().equals(loggedInUser.getUsername()) && !e.isComplete()){
+    public void chooseReserveRoom() {
+        for (Event e : getEvents()) {
+            if (e.getUsername().equals(loggedInUser.getUsername()) && !e.isComplete()) {
                 resEvent.add(e);
             }
         }
 
-        for(Room r : getRooms()){
-            if(r.isAvailable()){
+        for (Room r : getRooms()) {
+            if (r.isAvailable()) {
                 resRoom.add(r);
             }
         }
-
     }
 
     public User getLoggedInUser() {
@@ -120,25 +116,23 @@ public class ReserveRoom {
         this.msg = msg;
     }
 
-
-
-    // Getter method for res_event
+    // Getter method for resEvent
     public List<Event> getResEvent() {
         return resEvent;
     }
 
-    // Setter method for res_event
-    public void setResEvent(List<Event> res_event) {
-        this.resEvent = res_event;
+    // Setter method for resEvent
+    public void setResEvent(List<Event> resEvent) {
+        this.resEvent = resEvent;
     }
-    // Getter method for res_room
+
+    // Getter method for resRoom
     public List<Room> getResRoom() {
         return resRoom;
     }
 
-    // Setter method for res_room
-    public void setResRoom(List<Room> res_room) {
-        this.resRoom = res_room;
+    // Setter method for resRoom
+    public void setResRoom(List<Room> resRoom) {
+        this.resRoom = resRoom;
     }
-
 }

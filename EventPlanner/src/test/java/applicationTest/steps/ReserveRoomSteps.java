@@ -28,7 +28,7 @@ public class ReserveRoomSteps {
     public void theyChooseToReserveRoom() {
 
         app.getReserveRoomService ().setLoggedInUser( app.getLoggedInUser () );
-        app.getReserveRoomService ().ChooseReserveRoom();
+        app.getReserveRoomService ().chooseReserveRoom();
 
 
     }
@@ -52,7 +52,7 @@ public class ReserveRoomSteps {
 
     @When("the organizer enters EventID {string} and RoomID {string} to reserve")
     public void theOrganizerEntersEventIDAndRoomIDToReserve(String string, String string2) {
-        flag = app.getReserveRoomService ().ReserveRoomPerform(string,string2);
+        flag = app.getReserveRoomService ().reserveRoomPerform(string,string2);
     }
     @Then("the room should be reserved for the event and the event become complete")
     public void theRoomShouldBeReservedForTheEvent() {
@@ -69,7 +69,7 @@ public class ReserveRoomSteps {
 
     @When("the organizer enters an invalid EventID {string} and a valid RoomID {string}")
     public void theOrganizerEntersAnInvalidEventIDAndAValidRoomID(String string, String string2) {
-        flag = app.getReserveRoomService ().ReserveRoomPerform(string,string2);
+        flag = app.getReserveRoomService ().reserveRoomPerform(string,string2);
     }
     @Then("an error message should be displayed indicating {string}")
     public void anErrorMessageShouldBeDisplayedIndicating(String string) {
@@ -82,7 +82,7 @@ public class ReserveRoomSteps {
 
     @When("the organizer enters a valid EventID {string} and an invalid RoomID {string}")
     public void theOrganizerEntersAValidEventIDAndAnInvalidRoomID(String string, String string2) {
-        flag = app.getReserveRoomService ().ReserveRoomPerform(string,string2);
+        flag = app.getReserveRoomService ().reserveRoomPerform(string,string2);
     }
 
 

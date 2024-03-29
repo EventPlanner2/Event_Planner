@@ -661,7 +661,7 @@ public class MainMenu {
         logger.info("Please enter the ID of the room :");
         showAllRooms();
         String room = input.next();
-        app.getReserveRoomService().ReserveRoomPerform(event, room);
+        app.getReserveRoomService().reserveRoomPerform(event, room);
         logger.info(app.getReserveRoomService().getMsg());
     }
 

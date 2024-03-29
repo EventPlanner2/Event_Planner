@@ -9,6 +9,7 @@ import io.cucumber.datatable.DataTable;
 import io.cucumber.java.en.*;
 
 import java.util.ArrayList;
+import java.util.List;
 import java.util.Objects;
 
 import static org.junit.Assert.*;
@@ -33,7 +34,7 @@ public class ReserveRoomSteps {
     }
     @Then("all incomplete events related to the organizer should be displayed")
     public void allIncompleteEventsRelatedToTheOrganizerShouldBeDisplayed() {
-        ArrayList <Event> arr = app.getReserveRoomService ().res_event;
+        List<Event> arr = app.getReserveRoomService ().getResEvent();
         for(Event e : arr){
             if(!e.getUsername().equals( app.getLoggedInUser ().getUsername()) || e.isComplete())
                 fail();
@@ -42,7 +43,7 @@ public class ReserveRoomSteps {
     }
     @Then("all available rooms should be listed")
     public void allAvailableRoomsShouldBeListed() {
-        ArrayList <Room> arr = app.getReserveRoomService ().res_room;
+        List <Room> arr = app.getReserveRoomService ().getResRoom();
         for(Room r : arr){
             if(!r.isAvailable())
                 fail();

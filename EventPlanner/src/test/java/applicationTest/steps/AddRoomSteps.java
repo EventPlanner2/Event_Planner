@@ -40,7 +40,7 @@ public class AddRoomSteps {
         Description = dataTable.cell(1,4) == null ? "" : dataTable.cell(1,4);
 
         old_size = app.getRooms ().size();
-        result = app.getAddRoomService ().AddRoomPerformed(Name,Available,Capacity,CostPerHour,Description);
+        result = app.getAddRoomService ().addRoomPerformed(Name,Available,Capacity,CostPerHour,Description);
 
     }
     @Then("the room should be added successfully to the system")
@@ -53,7 +53,7 @@ public class AddRoomSteps {
     @Given("a room with the name {string} already exists")
     public void aRoomWithTheNameAlreadyExists(String string) {
         Name = string;
-        assertTrue( app.getAddRoomService ().IsRoomExisted(string));
+        assertTrue( app.getAddRoomService ().isRoomExisted(string));
     }
     @When("the administrator adds a room with the same name")
     public void theAdministratorAddsARoomWithTheSameName(DataTable dataTable) {

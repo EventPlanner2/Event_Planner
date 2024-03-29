@@ -345,7 +345,7 @@ public class MainMenu {
                 logger.info("Invalid choice");
                 break;
             }
-            boolean flag = app.getAddRoomService().AddRoomPerformed(roomName, roomAvailability, roomCapacity, roomCost, roomDes);
+            boolean flag = app.getAddRoomService().addRoomPerformed(roomName, roomAvailability, roomCapacity, roomCost, roomDes);
             if (flag) {
                 logger.info(app.getAddRoomService().getMsg());
                 break;

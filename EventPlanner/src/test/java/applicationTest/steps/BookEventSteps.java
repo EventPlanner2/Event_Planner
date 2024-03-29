@@ -68,7 +68,7 @@ public class BookEventSteps {
     }
     @Then("the client should receive an email confirming the booking")
     public void theClientShouldReceiveAnEmailConfirmingTheBooking() {
-        assertTrue( app.getBookEventService ().isEmail_sent () );
+        assertTrue( app.getBookEventService ().isEmailSent () );
     }
 
     @When("the client enters an invalid event ID {string}")

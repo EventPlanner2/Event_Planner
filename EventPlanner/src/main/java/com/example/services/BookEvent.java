@@ -18,14 +18,14 @@ public class BookEvent {
     public BookEvent(){
         msg = "";
     }
-    public boolean bookEventPerform(String id,String username){
+    public boolean bookEventPerform(String id,String userName){
         String user;
         if(getEvents().isEmpty()){
             msg = "There are no upcoming events to book.";
             return false;
         }
         try{
-            Client c1 = Client.getClientFromData(username);
+            Client c1 = Client.getClientFromData(userName);
              user = c1.getUsername();
 
             int eventid = Integer.parseInt(id);
@@ -67,7 +67,7 @@ public class BookEvent {
 
     }
 
-    public boolean cancelBookEvent(String id,String username){
+    public boolean cancelBookEvent(String id,String userName){
 
         try {
             int eventid = Integer.parseInt(id);
@@ -76,7 +76,7 @@ public class BookEvent {
                 setMsg("This Event has gone");
                 return false;
             }
-            Client c1 = Client.getClientFromData(username);
+            Client c1 = Client.getClientFromData(userName);
             for (int i = 0; i < c1.getEventsBooked().size(); i++) {
                 if (c1.getEventsBooked().get(i).getId() == eventid) {
                     c1.getEventsBooked().remove(i);
@@ -108,12 +108,12 @@ public class BookEvent {
         return res;
     }
 
-    public ArrayList<Event> chooseCancelBookEvent(String username){
+    public ArrayList<Event> chooseCancelBookEvent(String userName){
 
         ArrayList<Event> res = new ArrayList<>();
         LocalDate dateNow = LocalDate.now();
 
-        Client c1 = Client.getClientFromData(username);
+        Client c1 = Client.getClientFromData(userName);
         for(Event e : c1.getEventsBooked()){
             if(e.getStartDate().isAfter(dateNow)){
                 res.add(e);
@@ -124,12 +124,12 @@ public class BookEvent {
 
     }
 
-    public boolean isEmail_sent() {
+    public boolean isEmailSent() {
         return emailSent;
     }
 
-    public void setEmail_sent(boolean email_sent) {
-        this.emailSent = email_sent;
+    public void setEmailSent(boolean emailSent) {
+        this.emailSent = emailSent;
     }
 
     public String getMsg() {

@@ -2,7 +2,9 @@ package com.example.data;
 
 public class Config {
 
-    public static String email = "";
-    public static String password = "";
+    final public static String email = "";
+    final public static String password = "";
 
+    public Config() {
+    }
 }

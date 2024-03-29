@@ -32,7 +32,7 @@ public class ReserveSPSteps {
     @Then("the system should display a list of events related to him")
     public void theSystemShouldDisplayAListOfEventsRelatedToHim() {
 
-        List<Event> arr = app.getReserveSPService ().getRes_event ();
+        List<Event> arr = app.getReserveSPService ().getResEvent ();
         for(Event e : arr){
             if(!e.getUsername().equals( app.getLoggedInUser ().getUsername()))
                 fail();
@@ -41,7 +41,7 @@ public class ReserveSPSteps {
     }
     @Then("the system should list all registered service providers with complete account")
     public void theSystemShouldListAllRegisteredServiceProviders() {
-        List<ServiceProvider> arr = app.getReserveSPService().getRes_Sps();
+        List<ServiceProvider> arr = app.getReserveSPService().getResSps();
         for(ServiceProvider sp : arr){
             if(sp.isFirstLogin())
                 fail();

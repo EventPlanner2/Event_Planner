@@ -4,9 +4,9 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="9fc2b4a3-4e80-4dc3-b513-a55cbae36512" name="Changes" comment="admin page done">
+    <list default="true" id="9fc2b4a3-4e80-4dc3-b513-a55cbae36512" name="Changes" comment="push test to ignore main">
+      <change afterPath="$PROJECT_DIR$/EventPlanner/src/main/java/com/example/data/Config.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/EventPlanner/src/main/java/com/example/data/Config.java" beforeDir="false" afterPath="$PROJECT_DIR$/EventPlanner/src/main/java/com/example/data/Config.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -42,8 +42,8 @@
     </option>
     <option name="selectedUrlAndAccountId">
       <UrlAndAccount>
-        <option name="accountId" value="173943d4-0144-4ac6-bcb2-ebd213d9966a" />
-        <option name="url" value="https://github.com/amrbadran/Event_Planner.git" />
+        <option name="accountId" value="a106474c-5a54-4114-a68f-d6030b6ffffd" />
+        <option name="url" value="https://github.com/EventPlanner2/Event_Planner.git" />
       </UrlAndAccount>
     </option>
   </component>
@@ -436,7 +436,15 @@
       <option name="project" value="LOCAL" />
       <updated>1711635991117</updated>
     </task>
-    <option name="localTasksCounter" value="38" />
+    <task id="LOCAL-00038" summary="push test to ignore main">
+      <option name="closed" value="true" />
+      <created>1711739824737</created>
+      <option name="number" value="00038" />
+      <option name="presentableId" value="LOCAL-00038" />
+      <option name="project" value="LOCAL" />
+      <updated>1711739824737</updated>
+    </task>
+    <option name="localTasksCounter" value="39" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -461,7 +469,8 @@
     <MESSAGE value="Complete ,Update,Add room,MainMenu Decoration" />
     <MESSAGE value="DeleteRoom feature steaaaaps and service" />
     <MESSAGE value="admin page done" />
-    <option name="LAST_COMMIT_MESSAGE" value="admin page done" />
+    <MESSAGE value="push test to ignore main" />
+    <option name="LAST_COMMIT_MESSAGE" value="push test to ignore main" />
   </component>
   <component name="com.intellij.coverage.CoverageDataManagerImpl">
     <SUITE FILE_PATH="coverage/Event_Planner$acceptanceTest.ic" NAME="acceptanceTest Coverage Results" MODIFIED="1709402770636" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false">

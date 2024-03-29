@@ -101,15 +101,15 @@ public class ReserveSP {
     }
 
     // Setter method for res_event
-    public void setResEvent(List<Event> res_event) {
-        this.resEvent = res_event;
+    public void setResEvent(List<Event> resEvent) {
+        this.resEvent = resEvent;
     }
 
     public List<ServiceProvider> getResSps() {
         return resSps;
     }
 
-    public void setResSps(List<ServiceProvider> res_Sps) {
-        this.resSps = res_Sps;
+    public void setResSps(List<ServiceProvider> resSps) {
+        this.resSps = resSps;
     }
 }

@@ -29,7 +29,7 @@ public class loginSteps {
     @When("the user logs in with valid credentials")
     public void the_user_logs_in_with_valid_credentials() {
 
-        app.setLoggedInUser ( app.getLoginService ().LoginPerformed ( username, password ) );
+        app.setLoggedInUser ( app.getLoginService ().loginPerformed ( username, password ) );
     }
     @Then("the user should be logged in successfully")
     public void the_user_should_be_logged_in_successfully() {
@@ -43,7 +43,7 @@ public class loginSteps {
     }
     @When("the user logs in with invalid password")
     public void the_user_logs_in_with_invalid_password() {
-        app.setLoggedInUser ( app.getLoginService ().LoginPerformed ( username, password ) );
+        app.setLoggedInUser ( app.getLoginService ().loginPerformed ( username, password ) );
         assertNull( app.getLoggedInUser () );
     }
 
@@ -54,7 +54,7 @@ public class loginSteps {
     }
     @When("the user logs in with invalid username")
     public void the_user_logs_in_with_invalid_username() {
-        app.setLoggedInUser ( app.getLoginService ().LoginPerformed ( username, password ) );
+        app.setLoggedInUser ( app.getLoginService ().loginPerformed ( username, password ) );
         assertNull( app.getLoggedInUser () );
     }
 
@@ -66,7 +66,7 @@ public class loginSteps {
     }
     @When("the user logs in with both invalid username and password")
     public void the_user_logs_in_with_both_invalid_username_and_password() {
-        app.setLoggedInUser ( app.getLoginService ().LoginPerformed ( username, password ) );
+        app.setLoggedInUser ( app.getLoginService ().loginPerformed ( username, password ) );
         assertNull( app.getLoggedInUser () );
     }
 
@@ -77,7 +77,7 @@ public class loginSteps {
     }
     @When("the user tries to log in with empty credentials")
     public void the_user_tries_to_log_in_with_empty_credentials() {
-        app.setLoggedInUser ( app.getLoginService ().LoginPerformed ( username, password ) );
+        app.setLoggedInUser ( app.getLoginService ().loginPerformed ( username, password ) );
         assertNull( app.getLoggedInUser () );
     }
     @Then("the user should see an error message {string}")

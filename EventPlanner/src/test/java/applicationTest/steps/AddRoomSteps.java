@@ -28,7 +28,7 @@ public class AddRoomSteps {
 
     @Given("the system administrator is logged in")
     public void theSystemAdministratorIsLoggedIn() {
-       app.setLoggedInUser ( app.getLoginService ().LoginPerformed ( "Admin", "123456" ) );
+       app.setLoggedInUser ( app.getLoginService ().loginPerformed ( "Admin", "123456" ) );
        app.getAddRoomService ().setLoggedInUser( app.getLoggedInUser () );
     }
     @When("the administrator adds a room with the following details:")
@@ -68,7 +68,7 @@ public class AddRoomSteps {
 
     @Given("a Service Provider user is logged in with {string} and {string}")
     public void aServiceProviderUserIsLoggedInWithAnd(String string, String string2) {
-        app.setLoggedInUser ( app.getLoginService ().LoginPerformed ( string, string2 ) );
+        app.setLoggedInUser ( app.getLoginService ().loginPerformed ( string, string2 ) );
         app.getAddRoomService ().setLoggedInUser( app.getLoggedInUser () );
     }
     @When("the user tries to add a room")

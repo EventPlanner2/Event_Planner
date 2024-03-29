@@ -61,12 +61,12 @@ public class UserData {
         users.add(obj);
     }
 
-    public static void completeSP(String username, String Location, String type, int price) {
+    public static void completeSP(String username, String location, String type, int price) {
         for (ServiceProvider sp : sps) {
             if (sp.getUsername().equals(username)) {
                 sp.setType(type);
                 sp.setPrice(price);
-                sp.setLocation(Location);
+                sp.setLocation(location);
                 sp.setFirstLogin(false);
             }
         }
@@ -78,5 +78,6 @@ public class UserData {
 
     public static List<Client> getClients() {
         return clients;
-    }
+}
+
 }

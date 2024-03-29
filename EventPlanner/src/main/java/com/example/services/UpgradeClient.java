@@ -13,7 +13,7 @@ public class UpgradeClient {
         this.loggedInUser = loggedInUser;
     }
 
-    public void UpgradeClientPerform(){
+    public void upgradeClientPerform(){
         if(loggedInUser == null){
             setMsg("You need to login first");
             return;
@@ -29,10 +29,10 @@ public class UpgradeClient {
         }
         catch (NullPointerException e){
             setMsg("only clients can upgrade their accounts");
-            return;
+
         }
     }
-    public void CancelUpgradeClientPerform(){
+    public void cancelUpgradeClientPerform(){
         loggedInClient.setOrganizer(false);
     }
 
@@ -54,5 +54,5 @@ public class UpgradeClient {
 
     public Client getLoggedInClient() {
         return loggedInClient;
-    }
+}
 }

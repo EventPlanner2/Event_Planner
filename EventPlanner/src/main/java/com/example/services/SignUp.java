@@ -22,11 +22,11 @@ public class SignUp {
             setMsg(SOME_MISSING_FIELDS);
             return false;
         }
-        if (email_existed(email)) {
+        if (emailExisted(email)) {
             setMsg("the email you registred is not available");
             return false;
         }
-        if (!email_format_check(email)) {
+        if (!emailFormatCheck(email)) {
             setMsg("the email you registred is invalid format");
             return false;
         }
@@ -34,7 +34,7 @@ public class SignUp {
             setMsg(SOME_MISSING_FIELDS);
             return false;
         }
-        if (username_existed(username)) {
+        if (usernameExisted(username)) {
             setMsg("the username you entered is already registred");
             return false;
         }
@@ -55,7 +55,7 @@ public class SignUp {
         return true;
     }
 
-    public boolean username_existed(String username) {
+    public boolean usernameExisted(String username) {
         boolean flag = false;
         for (User u : users) {
             flag = (username.equals(u.getUsername()));
@@ -64,7 +64,7 @@ public class SignUp {
         return flag;
     }
 
-    public boolean email_existed(String email) {
+    public boolean emailExisted(String email) {
         boolean flag = false;
         for (User u : users) {
             flag = (email.equalsIgnoreCase(u.getContactEmail()));
@@ -73,7 +73,7 @@ public class SignUp {
         return flag;
     }
 
-    private boolean email_format_check(String email) {
+    private boolean emailFormatCheck(String email) {
 
         if (email == null || email.isEmpty()) {
             return false;
@@ -87,15 +87,17 @@ public class SignUp {
         }
         if (atSymbolCount != 1) {
             return false;
+
         }
 
         int atIndex = email.indexOf('@');
         int lastDotIndex = email.lastIndexOf('.');
-        if (lastDotIndex <= atIndex) {
-            return false;
-        }
+        return lastDotIndex > atIndex;
 
-        return true;
+
+
+
+
     }
 
     private void setMsg(String msg) {
@@ -105,5 +107,4 @@ public class SignUp {
 
     public String getMsg() {
         return msg;
-    }
-}
+    }}

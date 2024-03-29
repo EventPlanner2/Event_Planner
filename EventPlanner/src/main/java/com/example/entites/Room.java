@@ -10,15 +10,15 @@ public class Room {
     private int capacity;
     private double costPerHour;
     private String description;
-    private boolean Available;
+    private boolean available;
 
-    public Room(int id, String name, int capacity, double costPerHour, String description,boolean Available) {
+    public Room(int id, String name, int capacity, double costPerHour, String description,boolean available) {
         this.id = id;
         this.name = name;
         this.capacity = capacity;
         this.costPerHour = costPerHour;
         this.description = description;
-        this.Available = Available;
+        this.available = available;
     }
 
 
@@ -70,10 +70,10 @@ public class Room {
     }
 
     public boolean isAvailable() {
-        return Available;
+        return available;
     }
 
     public void setAvailable(boolean available) {
-        Available = available;
-    }
+        this.available = available;
+}
 }

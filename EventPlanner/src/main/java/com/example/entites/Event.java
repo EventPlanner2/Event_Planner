@@ -19,10 +19,17 @@ public class Event {
     private int attendeeCount;
     private boolean isComplete;
     private int roomID;
-    public List<ServiceProvider> serviceEntity;
+    private List<ServiceProvider> serviceEntity;
+    public void setServiceEntity(List<ServiceProvider> serviceEntity) {
+        this.serviceEntity = serviceEntity;
+    }
+    public List<ServiceProvider> getServiceEntity() {
+        return serviceEntity;
+    }
+
 
     public Event(String username,int id, String eventName, String eventDescription, DateEvent dateEvent, int attendeeCount,String pathImage) {
-       this.username=username;
+        this.username=username;
         this.eventid = id;
         this.eventName = eventName;
         this.eventDescription = eventDescription;
@@ -135,7 +142,7 @@ public class Event {
         this.attendeeCount = attendeeCount;
     }
 
-    public void setServices(ArrayList<ServiceProvider> services) {
+    public void setServices(List<ServiceProvider> services)  {
         this.serviceEntity = services;
     }
 
@@ -149,5 +156,5 @@ public class Event {
 
     public String getPathImage() {
         return pathImage;
-    }
+}
 }

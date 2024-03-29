@@ -31,7 +31,7 @@ public class CompleteSpAcc {
     }
     @When("he logs in for the first time")
     public void heLogsInForTheFirstTime() {
-        app.setLoggedInUser ( app.getLoginService ().LoginPerformed ( "Amr", "123456789" ) );
+        app.setLoggedInUser ( app.getLoginService ().loginPerformed ( "Amr", "123456789" ) );
     }
     @Then("the system should prompt him to complete his account details \\(location,type,price)")
     public void theSystemShouldPromptHimToCompleteHisAccountDetailsLocationTypePrice() {
@@ -40,7 +40,7 @@ public class CompleteSpAcc {
 
     @Given("the service provider has logged in")
     public void theServiceProviderHasLoggedIn() {
-        app.setLoggedInUser ( app.getLoginService ().LoginPerformed ( SPusername, "123456789" ) );
+        app.setLoggedInUser ( app.getLoginService ().loginPerformed ( SPusername, "123456789" ) );
     }
     @When("he completes the account details with valid inputs Location {string} price {string} type {string}")
     public void heCompletesTheAccountDetailsWithValidInputs(String location,String price , String type) {

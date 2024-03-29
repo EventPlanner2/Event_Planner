@@ -4,7 +4,7 @@ import com.example.Main;
 import com.example.data.EventData;
 
 import com.example.data.NotifcationData;
-import com.example.data.UserData;
+
 import com.example.entites.*;
 
 import java.io.File;
@@ -14,7 +14,7 @@ import java.time.format.DateTimeParseException;
 
 public class AddEvent {
 
-    private boolean AddingEvent;
+    private boolean addingEvent;
     private String msg;
     private String username;
     private User loggedInUser;
@@ -116,11 +116,11 @@ public class AddEvent {
     }
 
     public boolean isAddingEvent() {
-        return AddingEvent;
+        return addingEvent;
     }
 
     public void setAddingEvent(boolean addingEvent) {
-        AddingEvent = addingEvent;
+        this.addingEvent = addingEvent;
     }
 
     private boolean validateDate(String date, String fieldName) {
@@ -197,6 +197,6 @@ public class AddEvent {
         } catch (DateTimeParseException | NumberFormatException e) {
             setMsg("Invalid input format");
             return null;
-        }
-    }
+}
+}
 }

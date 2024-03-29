@@ -15,7 +15,7 @@ public class logoutSteps {
 
     @Given("the user is logged in")
     public void the_user_is_logged_in() {
-        app.setLoggedInUser ( app.getLoginService ().LoginPerformed ( "Admin", "123456" ) );
+        app.setLoggedInUser ( app.getLoginService ().loginPerformed ( "Admin", "123456" ) );
         assertNotNull( app.getLoggedInUser () );
     }
     @When("the user selects the option to log out")

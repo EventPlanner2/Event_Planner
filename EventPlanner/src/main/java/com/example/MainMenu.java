@@ -77,7 +77,7 @@ public class MainMenu {
             username = input.next();
             logger.info("Password :");
             password = input.next();
-            user = app.getLoginService().LoginPerformed(username, password);
+            user = app.getLoginService().loginPerformed(username, password);
             if (user == null) {
                 logger.info(app.getLoginService().getErrorMessage());
             } else {
@@ -455,7 +455,7 @@ public class MainMenu {
         while (true) {
             if (Back()) return;
             app.getUpgradeClient().setLoggedInUser(user);
-            app.getUpgradeClient().UpgradeClientPerform();
+            app.getUpgradeClient().upgradeClientPerform();
             logger.info(app.getUpgradeClient().getMsg());
         }
     }

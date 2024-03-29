@@ -46,7 +46,7 @@ public class AddEventSteps {
     @Given("the user is logged in with their account")
     public void theUserIsLoggedInWithTheirAccount()
     {
-         app.setLoggedInUser ( app.getLoginService ().LoginPerformed ( username, password ) );
+         app.setLoggedInUser ( app.getLoginService ().loginPerformed ( username, password ) );
 
     }
 

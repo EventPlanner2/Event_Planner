@@ -6,14 +6,15 @@ public class ServiceProvider extends User {
 
     private boolean firstLogin;
     private String type;
-    private String Location;
+    private String location;
+
     private int price;
 
     public ServiceProvider(String username, String password, String contactEmail, Character role) {
         super(username, password, contactEmail, role);
         firstLogin = true;
         type = "";
-        Location = "";
+        location = "";
         price = 0;
     }
 
@@ -34,11 +35,11 @@ public class ServiceProvider extends User {
     }
 
     public String getLocation() {
-        return Location;
+        return location;
     }
 
     public void setLocation(String location) {
-        Location = location;
+        this.location = location;
     }
 
     public int getPrice() {
@@ -55,5 +56,5 @@ public class ServiceProvider extends User {
 
     public void setFirstLogin(boolean firstLogin) {
         this.firstLogin = firstLogin;
-    }
+}
 }

@@ -18,13 +18,13 @@ public class upgradeClientSteps {
     }
     @Given("the user is logged in as a client")
     public void theUserIsLoggedInAsAClient() {
-        app.setLoggedInUser ( app.getLoginService ().LoginPerformed ( "Ahmad", "Ahmad12345" ) );
+        app.setLoggedInUser ( app.getLoginService ().loginPerformed ( "Ahmad", "Ahmad12345" ) );
         assertEquals('c', (char) app.getLoggedInUser ().getRole());
     }
     @When("the user selects Upgrade your account from the menu")
     public void theUserSelectsUpgradeYourAccountFromTheMenu() {
         service.setLoggedInUser( app.getLoggedInUser () );
-        service.UpgradeClientPerform();
+        service.upgradeClientPerform();
     }
     @Then("the account should be successfully upgraded to organizer status")
     public void theAccountShouldBeSuccessfullyUpgradedToOrganizerStatus() {
@@ -45,7 +45,7 @@ public class upgradeClientSteps {
 
     @When("then cancels the upgrade process")
     public void thenCancelsTheUpgradeProcess() {
-        service.CancelUpgradeClientPerform();
+        service.cancelUpgradeClientPerform();
     }
     @Then("the account should remain as a client")
     public void theAccountShouldRemainAsAClient() {
@@ -71,13 +71,13 @@ public class upgradeClientSteps {
 
     @Given("the user is logged in as an organizer")
     public void theUserIsLoggedInAsAnOrganizer() {
-        app.setLoggedInUser ( app.getLoginService ().LoginPerformed ( "Ahmad", "Ahmad12345" ) );
+        app.setLoggedInUser ( app.getLoginService ().loginPerformed ( "Ahmad", "Ahmad12345" ) );
     }
 
 
     @Given("the user is logged in as a {string} with {string} with {string} with {string}")
     public void theUserIsLoggedInAsAWithWithWith(String string, String string2, String username, String pass) {
-        app.setLoggedInUser ( app.getLoginService ().LoginPerformed ( username, pass ) );
+        app.setLoggedInUser ( app.getLoginService ().loginPerformed ( username, pass ) );
     }
 
     @Then("the system should inform the user with invalid role {string}")

@@ -59,7 +59,7 @@ public class signUpSteps {
 
     @Given("an existing user with email {string}")
     public void an_existing_user_with_email(String string) {
-        assertTrue( app.getSignUpService ().email_existed(string));
+        assertTrue( app.getSignUpService ().emailExisted(string));
     }
     @When("the user provides a contact email {string} that is already registered")
     public void the_user_provides_a_contact_email_that_is_already_registered(String string) {
@@ -106,7 +106,7 @@ public class signUpSteps {
     }
     @Given("an existing user with username {string}")
     public void an_existing_user_with_username(String string) {
-        assertTrue( app.getSignUpService ().username_existed(string));
+        assertTrue( app.getSignUpService ().usernameExisted(string));
     }
     @When("the user provides the existing username {string}")
     public void the_user_provides_the_existing_username(String string) {

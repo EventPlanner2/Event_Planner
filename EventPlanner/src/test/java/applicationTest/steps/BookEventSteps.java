@@ -30,7 +30,7 @@ public class BookEventSteps {
     @Given("the client user is logged in with their account")
     public void theClientUserIsLoggedInWithTheirAccount() {
       
-         app.setLoggedInUser ( app.getLoginService ().LoginPerformed ( "Ali Turabi", "123456789" ) );
+         app.setLoggedInUser ( app.getLoginService ().loginPerformed ( "Ali Turabi", "123456789" ) );
         //app.loggedInUser = app.loginService.LoginPerformed("Ali Turabi","123456789");
         app.getCalenderService().setLoggedInUser(app.getLoggedInUser());
         
@@ -101,7 +101,7 @@ public class BookEventSteps {
     @When("the user logs in as a role not client")
     public void theUserLogsInAsARoleNotClient(){
         app.logoutPerform();
-        app.setLoggedInUser ( app.getLoginService ().LoginPerformed ( "Admin", "123456" ) );
+        app.setLoggedInUser ( app.getLoginService ().loginPerformed ( "Admin", "123456" ) );
     }
 
 }

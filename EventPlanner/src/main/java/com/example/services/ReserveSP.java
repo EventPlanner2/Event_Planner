@@ -49,7 +49,7 @@ public class ReserveSP {
             int eventid = Integer.parseInt(eventID);
             for (Event e : getEvents()) {
                 if (e.getId() == eventid) {
-                    e.serviceEntity.add(sp);
+                    e.getServiceEntity ().add(sp);
                     msg = "Service Provider has been reserved";
                     String notification = LocalDate.now()+"| "+ "Service Provider "+sp.getUsername()+" Has Been Reserved For Event "+e.getEventName();
                     NotifcationData.addNotification(notification);

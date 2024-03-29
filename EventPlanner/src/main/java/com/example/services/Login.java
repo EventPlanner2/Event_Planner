@@ -21,7 +21,7 @@ public class Login {
         errorMessage = "";
     }
 
-    public User LoginPerformed(String username, String password) {
+    public User loginPerformed(String username, String password) {
         if (username.isEmpty() || password.isEmpty()) {
             setErrorMessage("Login Failed");
             return null;
@@ -51,5 +51,5 @@ public class Login {
 
     public String getErrorMessage() {
         return errorMessage;
-    }
+}
 }

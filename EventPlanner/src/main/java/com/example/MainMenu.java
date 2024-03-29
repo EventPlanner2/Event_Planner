@@ -275,14 +275,14 @@ public class MainMenu {
         logger.info(app.getBookEventService().getMsg());
     }
 
-    public String bookList(String cancel, ArrayList<Event> arrayList) {
+    public String bookList(String cancel, List<Event> list) {
         StringBuilder listEvent = new StringBuilder();
         listEvent.append("\n");
-        if (arrayList.isEmpty()) {
+        if (list.isEmpty()) {
             logger.info("There is no Events to " + cancel);
             return null;
         }
-        for (Event e : arrayList) {
+        for (Event e : list) {
             listEvent.append("ID : " + e.getId() + "\tEvent Name :" + e.getEventName() + "\tEvent Date : " + e.getStartDate() + "\n");
         }
         logger.info(listEvent.toString());

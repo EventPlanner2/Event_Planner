@@ -19,12 +19,12 @@ public class DeleteRoomSteps {
     @Given("there is a room with ID {string}")
     public void thereIsARoomWithID(String string) {
         id = string;
-        assertTrue(app.getDeleteRoomService().DoesRoomExists(Integer.parseInt(string)));
+        assertTrue(app.getDeleteRoomService().doesRoomExists(Integer.parseInt(string)));
     }
     @When("the admin deletes the room with ID provided")
     public void theAdminDeletesTheRoomWithIDProvided() {
         old_size = RoomData.getRooms().size();
-        flag = app.getDeleteRoomService().DeleteRoomPerform(id);
+        flag = app.getDeleteRoomService().deleteRoomPerform(id);
     }
     @Then("the room should be deleted")
     public void theRoomShouldBeDeleted() {
@@ -35,7 +35,7 @@ public class DeleteRoomSteps {
     @Given("there is no room with ID {string}")
     public void thereIsNoRoomWithID(String string) {
         id = string;
-        assertFalse(app.getDeleteRoomService().DoesRoomExists(Integer.parseInt(string)));
+        assertFalse(app.getDeleteRoomService().doesRoomExists(Integer.parseInt(string)));
     }
     @Then("the system should display an error message room {string}")
     public void theSystemShouldDisplayAnErrorMessageRoom(String string) {

@@ -265,7 +265,7 @@ public class MainMenu {
         showAllRooms();
         logger.info("Please enter the id of the room to be deleted");
         String id = input.next();
-        app.getDeleteRoomService().DeleteRoomPerform(id);
+        app.getDeleteRoomService().deleteRoomPerform(id);
         logger.info(app.getDeleteRoomService().getMsg());
     }
 

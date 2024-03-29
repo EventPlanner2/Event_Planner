@@ -1,17 +1,14 @@
 package com.example.services;
-import com.example.entites.Client;
 import com.example.entites.Room;
-
-import static com.example.data.EventData.getEvents;
 import static com.example.data.RoomData.getRooms;
 public class DeleteRoom {
 
     String msg;
-    public boolean DeleteRoomPerform(String id){
+    public boolean deleteRoomPerform(String id){
 
         try {
             int roomid = Integer.parseInt(id);
-            if(!DoesRoomExists(roomid)){
+            if(!doesRoomExists(roomid)){
 
                 setMsg("Non-Existing Room");
                 return false;
@@ -30,7 +27,7 @@ public class DeleteRoom {
         }
         return false;
     }
-    public boolean DoesRoomExists(int id){
+    public boolean doesRoomExists(int id){
         for(Room r : getRooms()){
             if(r.getId() == id) return true;
         }
@@ -42,7 +39,7 @@ public class DeleteRoom {
     }
 
     public void setMsg(String msg) {
-        this.msg = msg;
+        this.msg=msg;
     }
 
 }

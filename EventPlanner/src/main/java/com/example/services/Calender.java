@@ -3,12 +3,9 @@ import com.example.data.EventData;
 import com.example.entites.Client;
 import com.example.entites.Event;
 import com.example.entites.User;
-import io.cucumber.java.bs.A;
-
 import java.time.LocalDate;
 import java.util.ArrayList;
-
-import static com.example.data.EventData.getEvents;
+import java.util.List;
 
 
 public class Calender {
@@ -68,7 +65,7 @@ public class Calender {
         return null;
     }
 
-    public ArrayList<Event> showUpcomingEvents(){
+    public List<Event> showUpcomingEvents(){
         ArrayList <Event> resTmp = new ArrayList<>();
         for(Event e : EventData.getEvents()){
             if(e.getStartDate().isAfter(LocalDate.now())){
@@ -81,7 +78,7 @@ public class Calender {
     public void clearCalenderEvents(){
         if(!resEvents.isEmpty()) resEvents.clear();
     }
-    public ArrayList<Event> getResEvents() {
+    public List<Event> getResEvents() {
         return resEvents;
     }
 
@@ -94,6 +91,6 @@ public class Calender {
     }
 
     public void setMsg(String msg) {
-        this.msg = msg;
-    }
+        this.msg=msg;
+}
 }

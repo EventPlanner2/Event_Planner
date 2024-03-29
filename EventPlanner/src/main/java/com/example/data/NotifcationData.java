@@ -3,17 +3,18 @@ package com.example.data;
 import com.example.entites.Notification;
 
 import java.util.ArrayList;
+import java.util.List;
 
 public class NotifcationData {
-    private static ArrayList<Notification> notifcations = new ArrayList<>();
+    private static List<Notification> notifcations = new ArrayList<>();
 
     private NotifcationData() {
 
     }
 
-    private static int ID = 1;
+    private static int id = 1;
     public static int oldSize;
-    public static ArrayList<Notification> getNotifcations() {
+    public static List<Notification> getNotifcations() {
         return notifcations;
     }
     public static void addNotification(String msg){
@@ -21,6 +22,6 @@ public class NotifcationData {
         notifcations.add(new Notification(getID(),msg));
     }
     private static int getID(){
-        return ID++;
+        return id++;
     }
 }

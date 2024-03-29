@@ -674,7 +674,7 @@ public class MainMenu {
         app.getSearchSP().setPrice("1000");
         printCriteria(app.getSearchSP().SearchSPPerformed());
         String SP = input.next();
-        app.getReserveSPService().ReserveSPPerform(event, SP);
+        app.getReserveSPService().reserveSPPerform(event, SP);
         logger.info(app.getReserveSPService().getMsg());
     }
 

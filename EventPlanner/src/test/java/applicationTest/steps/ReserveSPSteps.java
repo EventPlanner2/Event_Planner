@@ -10,6 +10,7 @@ import io.cucumber.datatable.DataTable;
 import io.cucumber.java.en.*;
 
 import java.util.ArrayList;
+import java.util.List;
 import java.util.Objects;
 
 import static org.junit.Assert.*;
@@ -26,12 +27,12 @@ public class ReserveSPSteps {
     @When("the organizer selects to reserve a service provider")
     public void theOrganizerSelectsToReserveAServiceProvider() {
         app.getReserveSPService ().setLoggedInUser( app.getLoggedInUser () );
-        app.getReserveSPService ().ChooseReserveSP();
+        app.getReserveSPService ().chooseReserveSP();
     }
     @Then("the system should display a list of events related to him")
     public void theSystemShouldDisplayAListOfEventsRelatedToHim() {
 
-        ArrayList <Event> arr = app.getReserveSPService ().res_event;
+        List<Event> arr = app.getReserveSPService ().getRes_event ();
         for(Event e : arr){
             if(!e.getUsername().equals( app.getLoggedInUser ().getUsername()))
                 fail();
@@ -40,7 +41,7 @@ public class ReserveSPSteps {
     }
     @Then("the system should list all registered service providers with complete account")
     public void theSystemShouldListAllRegisteredServiceProviders() {
-        ArrayList <ServiceProvider> arr = app.getReserveSPService ().res_sps;
+        List<ServiceProvider> arr = app.getReserveSPService().getRes_Sps();
         for(ServiceProvider sp : arr){
             if(sp.isFirstLogin())
                 fail();
@@ -49,7 +50,7 @@ public class ReserveSPSteps {
 
     @When("the organizer selects EventID {string} and ProviderName {string}")
     public void theOrganizerSelectsEventIDAndProviderName(String string, String string2) {
-        flag = app.getReserveSPService ().ReserveSPPerform(string,string2);
+        flag = app.getReserveSPService ().reserveSPPerform(string,string2);
     }
     @Then("the service provider is reserved to event")
     public void theServiceProviderIsReservedToEvent() {

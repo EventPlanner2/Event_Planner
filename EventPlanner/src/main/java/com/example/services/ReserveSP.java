@@ -2,15 +2,12 @@ package com.example.services;
 
 
 import com.example.data.NotifcationData;
-import com.example.entites.*;
-import io.cucumber.java.bs.A;
-
 import com.example.entites.Event;
 import com.example.entites.ServiceProvider;
 import com.example.entites.User;
-
 import java.time.LocalDate;
 import java.util.ArrayList;
+import java.util.List;
 
 import static com.example.data.EventData.getEvents;
 import static com.example.data.UserData.getSps;
@@ -19,14 +16,16 @@ import static com.example.entites.ServiceProvider.getSPFromData;
 public class ReserveSP {
 
 
-    public ArrayList<Event> res_event;
-    public ArrayList<ServiceProvider> res_sps;
+
+
+    private List<Event> res_Event;
+    private List<ServiceProvider> res_Sps;
     private String msg;
 
     public ReserveSP(User loggedInUser) {
         this.loggedInUser = loggedInUser;
-        res_event = new ArrayList<>();
-        res_sps = new ArrayList<>();
+        res_Event = new ArrayList<>();
+        res_Sps = new ArrayList<>();
         msg = "";
     }
 
@@ -40,14 +39,14 @@ public class ReserveSP {
         this.loggedInUser = loggedInUser;
     }
 
-    public boolean ReserveSPPerform(String EventID,String SPUsername){
+    public boolean reserveSPPerform(String eventID,String sapUsername){
         try {
-            ServiceProvider sp = getSPFromData(SPUsername);
+            ServiceProvider sp = getSPFromData(sapUsername);
             if(sp.isFirstLogin()){
                 msg = "incomplete account of service provider";
                 return false;
             }
-            int eventid = Integer.parseInt(EventID);
+            int eventid = Integer.parseInt(eventID);
             for (Event e : getEvents()) {
                 if (e.getId() == eventid) {
                     e.serviceEntity.add(sp);
@@ -71,17 +70,17 @@ public class ReserveSP {
 
     }
 
-    public void ChooseReserveSP(){
+    public void chooseReserveSP(){
 
         for(Event e : getEvents()){
             if(e.getUsername().equals(loggedInUser.getUsername())){
-                res_event.add(e);
+                res_Event.add(e);
             }
         }
 
         for(ServiceProvider sp : getSps()){
             if(!sp.isFirstLogin()){
-                res_sps.add(sp);
+                res_Sps.add(sp);
             }
         }
 
@@ -94,5 +93,23 @@ public class ReserveSP {
 
     public void setMsg(String msg) {
         this.msg = msg;
+    }
+
+    // Getter method for res_event
+    public List<Event> getRes_event() {
+        return res_Event;
+    }
+
+    // Setter method for res_event
+    public void setRes_event(List<Event> res_event) {
+        this.res_Event = res_event;
+    }
+
+    public List<ServiceProvider> getRes_Sps() {
+        return res_Sps;
+    }
+
+    public void setRes_Sps(List<ServiceProvider> res_Sps) {
+        this.res_Sps = res_Sps;
     }
 }

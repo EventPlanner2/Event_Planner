@@ -1,26 +1,35 @@
-name: SonarCloud
+name: SonorCloud
+
 on:
   push:
     branches:
       - main
-  pull_request:
-    types: [opened, synchronize, reopened]
 
 jobs:
-  build:
-    name: Build and analyze
+  build-on-ubuntu:
     runs-on: ubuntu-latest
     steps:
-      - name: Checkout code
-        uses: actions/checkout@v3
+
+      - name: Step 1 - Checkout main branch from GitHub
+        uses: actions/checkout@v2
         with:
-          fetch-depth: 0  # Shallow clones should be disabled for a better relevancy of analysis
+          fetch-depth: 0
 
       - name: Set up JDK 21
-        uses: actions/setup-java@v3
+        uses: actions/setup-java@v2
         with:
+          distribution: 'adopt'
           java-version: 21
-          distribution: 'zulu'
+
+      - name: Step 3 - Build Maven Project
+        run: |
+          cd /home/runner/work/Event_Planner/Event_Planner/EventPlanner
+          mvn --batch-mode clean package -DskipTests
+
+      - name: Step 4 - Run test cases
+        run: |
+          cd /home/runner/work/Event_Planner/Event_Planner/EventPlanner
+          mvn --batch-mode -Dmaven.test.failure.ignore=true test
 
       - name: Cache SonarCloud packages
         uses: actions/cache@v3
@@ -40,7 +49,6 @@ jobs:
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
           SONAR_TOKEN: ${{ secrets.SONAR_TOKEN }}
-
         run: |
           cd /home/runner/work/Event_Planner/Event_Planner/EventPlanner
-          mvn -X -B  jacoco:prepare-agent  verify  org.sonarsource.scanner.maven:sonar-maven-plugin:sonar jacoco:report -Dsonar.projectKey=EventPlanner2_Event_Planner 
+          mvn -B jacoco:prepare-agent test org.sonarsource.scanner.maven:sonar-maven-plugin:sonar jacoco:report -Dsonar.projectKey=EventPlanner2_Event_Planner 

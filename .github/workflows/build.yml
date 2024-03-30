@@ -1,4 +1,4 @@
-name: SonorCloud
+name: SonarCloud
 
 on:
   push:
@@ -9,7 +9,6 @@ jobs:
   build-on-ubuntu:
     runs-on: ubuntu-latest
     steps:
-
       - name: Step 1 - Checkout main branch from GitHub
         uses: actions/checkout@v2
         with:
@@ -41,8 +40,17 @@ jobs:
           key: ${{ runner.os }}-m2-${{ hashFiles('**/pom.xml') }}
           restore-keys: ${{ runner.os }}-m2
 
-      - name: Build and analyze
+      - name: Build with Cobertura
+        run: mvn cobertura:cobertura
+
+      - name: Upload Cobertura coverage report
+        uses: actions/upload-artifact@v2
+        with:
+          name: cobertura-report
+          path: target/site/cobertura/index.html
+
+      - name: Build and analyze with SonarCloud
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
           SONAR_TOKEN: ${{ secrets.SONAR_TOKEN }}
-        run: mvn -B jacoco:prepare-agent test org.sonarsource.scanner.maven:sonar-maven-plugin:sonar jacoco:report -Dsonar.projectKey=EventPlanner2_Event_Planner 
+        run: mvn -B org.sonarsource.scanner.maven:sonar-maven-plugin:sonar -Dsonar.projectKey=EventPlanner2_Event_Planner

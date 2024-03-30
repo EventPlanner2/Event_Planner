@@ -4,9 +4,7 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="9fc2b4a3-4e80-4dc3-b513-a55cbae36512" name="Changes" comment="reset project">
-      <change beforePath="$PROJECT_DIR$/EventPlanner/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/EventPlanner/pom.xml" afterDir="false" />
-    </list>
+    <list default="true" id="b83c84ab-4b8d-45df-9a9e-d68f70b0baad" name="Changes" comment="update pom" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -22,42 +20,16 @@
   <component name="Git.Settings">
     <option name="RECENT_BRANCH_BY_REPOSITORY">
       <map>
-        <entry key="$PROJECT_DIR$" value="Modify-MainMenu" />
+        <entry key="$PROJECT_DIR$/.." value="amr_branch" />
       </map>
     </option>
-    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
-    <option name="UPDATE_TYPE" value="REBASE" />
-  </component>
-  <component name="GitHubPullRequestSearchHistory">{
-  &quot;lastFilter&quot;: {
-  }
-}</component>
-  <component name="GithubPullRequestsUISettings">
-    <option name="recentNewPullRequestHead">
-      <RepoCoordinatesHolder>
-        <option name="owner" value="amrbadran" />
-        <option name="repository" value="Event_Planner" />
-      </RepoCoordinatesHolder>
-    </option>
-    <option name="selectedUrlAndAccountId">
-      <UrlAndAccount>
-        <option name="accountId" value="a106474c-5a54-4114-a68f-d6030b6ffffd" />
-        <option name="url" value="https://github.com/EventPlanner2/Event_Planner.git" />
-      </UrlAndAccount>
-    </option>
-  </component>
-  <component name="MarkdownSettingsMigration">
-    <option name="stateVersion" value="1" />
-  </component>
-  <component name="ProblemsViewState">
-    <option name="selectedTabId" value="CurrentFile" />
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$/.." />
   </component>
   <component name="ProjectColorInfo">{
   &quot;customColor&quot;: &quot;&quot;,
   &quot;associatedIndex&quot;: 4
 }</component>
-  <component name="ProjectId" id="2d8eKep6lAMukfLULPASRlaBWFy" />
-  <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
+  <component name="ProjectId" id="2clFtPlw8tWlcToMG4vzneb2w07" />
   <component name="ProjectViewState">
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
@@ -65,24 +37,86 @@
   <component name="PropertiesComponent">{
   &quot;keyToString&quot;: {
     &quot;Application.Main.executor&quot;: &quot;Run&quot;,
+    &quot;Cucumber Java.Feature: Login.executor&quot;: &quot;Run&quot;,
+    &quot;Cucumber Java.Feature: Logout.executor&quot;: &quot;Run&quot;,
+    &quot;Cucumber Java.Feature: SignUp.executor&quot;: &quot;Run&quot;,
+    &quot;Cucumber Java.Feature: test.executor&quot;: &quot;Run&quot;,
     &quot;JUnit.acceptanceTest.executor&quot;: &quot;Run&quot;,
+    &quot;JUnit.java in EventPlanner.executor&quot;: &quot;Coverage&quot;,
     &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,
     &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
-    &quot;SHARE_PROJECT_CONFIGURATION_FILES&quot;: &quot;true&quot;,
+    &quot;dart.analysis.tool.window.visible&quot;: &quot;false&quot;,
     &quot;git-widget-placeholder&quot;: &quot;main&quot;,
     &quot;kotlin-language-version-configured&quot;: &quot;true&quot;,
-    &quot;last_opened_file_path&quot;: &quot;C:/SoftwareProject/Event_Planner&quot;,
     &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
+    &quot;node.js.detected.package.tslint&quot;: &quot;true&quot;,
     &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,
     &quot;node.js.selected.package.tslint&quot;: &quot;(autodetect)&quot;,
     &quot;nodejs_package_manager_path&quot;: &quot;npm&quot;,
+    &quot;onboarding.tips.debug.path&quot;: &quot;C:/Users/amr_b/IdeaProjects/Event_Planner/EventPlanner/src/main/java/com/example/Main.java&quot;,
     &quot;project.structure.last.edited&quot;: &quot;Project&quot;,
-    &quot;project.structure.proportion&quot;: &quot;0.0&quot;,
-    &quot;project.structure.side.proportion&quot;: &quot;0.48505747&quot;,
+    &quot;project.structure.proportion&quot;: &quot;0.15&quot;,
+    &quot;project.structure.side.proportion&quot;: &quot;0.0&quot;,
+    &quot;settings.editor.selected.configurable&quot;: &quot;editor.preferences.fonts.default&quot;,
     &quot;vue.rearranger.settings.migration&quot;: &quot;true&quot;
   }
 }</component>
-  <component name="RunManager">
+  <component name="RecentsManager">
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="C:\Users\amr_b\IdeaProjects\Event_Planner\EventPlanner\src\main\resources" />
+    </key>
+  </component>
+  <component name="RunManager" selected="JUnit.java in EventPlanner">
+    <configuration name="Main" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="com.example.Main" />
+      <module name="EventPlanner" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="com.example.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="Feature: SignUp" type="CucumberJavaRunConfigurationType" factoryName="Cucumber java" temporary="true" nameIsGenerated="true">
+      <option name="CUCUMBER_CORE_VERSION" value="5" />
+      <option name="FILE_PATH" value="$PROJECT_DIR$/src/test/resources/features/SignUp.feature" />
+      <option name="MAIN_CLASS_NAME" value="io.cucumber.core.cli.Main" />
+      <module name="EventPlanner" />
+      <option name="PROGRAM_PARAMETERS" value=" --plugin org.jetbrains.plugins.cucumber.java.run.CucumberJvm5SMFormatter" />
+      <option name="SUGGESTED_NAME" value="Feature: SignUp" />
+      <option name="WORKING_DIRECTORY" value="$MODULE_WORKING_DIR$" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="io.cucumber.core.cli.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="Feature: test" type="CucumberJavaRunConfigurationType" factoryName="Cucumber java" temporary="true" nameIsGenerated="true">
+      <option name="CUCUMBER_CORE_VERSION" value="5" />
+      <option name="FILE_PATH" value="$PROJECT_DIR$/src/test/resources/features/test.feature" />
+      <option name="GLUE" value="applicationTest.steps" />
+      <option name="MAIN_CLASS_NAME" value="io.cucumber.core.cli.Main" />
+      <module name="EventPlanner" />
+      <option name="PROGRAM_PARAMETERS" value=" --plugin org.jetbrains.plugins.cucumber.java.run.CucumberJvm5SMFormatter" />
+      <option name="SUGGESTED_NAME" value="Feature: test" />
+      <option name="WORKING_DIRECTORY" value="$MODULE_WORKING_DIR$" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="io.cucumber.core.cli.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
     <configuration name="acceptanceTest" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="EventPlanner" />
       <extension name="coverage">
@@ -98,400 +132,246 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration default="true" type="JetRunConfigurationType">
+    <configuration name="java in EventPlanner" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="EventPlanner" />
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
-    </configuration>
-    <configuration default="true" type="KotlinStandaloneScriptRunConfigurationType">
-      <module name="EventPlanner" />
-      <option name="filePath" />
+      <option name="TEST_OBJECT" value="directory" />
+      <dir value="$PROJECT_DIR$/src/test/java" />
       <method v="2">
         <option name="Make" enabled="true" />
       </method>
     </configuration>
     <recent_temporary>
       <list>
+        <item itemvalue="JUnit.java in EventPlanner" />
         <item itemvalue="JUnit.acceptanceTest" />
-        <item itemvalue="JUnit.acceptanceTest" />
-        <item itemvalue="JUnit.acceptanceTest" />
-        <item itemvalue="JUnit.acceptanceTest" />
-        <item itemvalue="JUnit.acceptanceTest" />
+        <item itemvalue="Application.Main" />
+        <item itemvalue="Cucumber Java.Feature: test" />
+        <item itemvalue="Cucumber Java.Feature: SignUp" />
       </list>
     </recent_temporary>
   </component>
   <component name="SharedIndexes">
     <attachedChunks>
       <set>
-        <option value="jdk-21.0.2-corretto-21.0.2-3183f394aec4-09c6784e" />
+        <option value="jdk-21.0.2-openjdk-21.0.2-4caba194b151-4f524021" />
       </set>
     </attachedChunks>
   </component>
   <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
   <component name="TaskManager">
     <task active="true" id="Default" summary="Default task">
-      <changelist id="9fc2b4a3-4e80-4dc3-b513-a55cbae36512" name="Changes" comment="" />
-      <created>1709394069522</created>
+      <changelist id="b83c84ab-4b8d-45df-9a9e-d68f70b0baad" name="Changes" comment="" />
+      <created>1708678475332</created>
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
-      <updated>1709394069522</updated>
-      <workItem from="1711635888460" duration="195000" />
-      <workItem from="1711826147681" duration="448000" />
+      <updated>1708678475332</updated>
+      <workItem from="1708678476611" duration="11543000" />
+      <workItem from="1708789654397" duration="15696000" />
+      <workItem from="1708960919615" duration="4591000" />
+      <workItem from="1708971659464" duration="36000" />
+      <workItem from="1709062750200" duration="2925000" />
+      <workItem from="1709226242241" duration="4618000" />
+      <workItem from="1709276492704" duration="6791000" />
+      <workItem from="1709284846935" duration="962000" />
+      <workItem from="1709296718207" duration="7956000" />
+      <workItem from="1709363950032" duration="20245000" />
+      <workItem from="1709465888826" duration="7828000" />
+      <workItem from="1709897714244" duration="150000" />
+      <workItem from="1710495564393" duration="13236000" />
+      <workItem from="1710579464649" duration="17252000" />
+      <workItem from="1710757208283" duration="11797000" />
+      <workItem from="1711100796027" duration="5635000" />
+      <workItem from="1711132366590" duration="3680000" />
+      <workItem from="1711312746309" duration="1465000" />
+      <workItem from="1711566273041" duration="4447000" />
+      <workItem from="1711648762444" duration="5425000" />
+      <workItem from="1711825568485" duration="6910000" />
     </task>
-    <task id="LOCAL-00001" summary="Delete event feature file ,needs testing">
+    <task id="LOCAL-00001" summary="Upgrade Client to Orginizer">
       <option name="closed" value="true" />
-      <created>1709467401233</created>
+      <created>1709283085979</created>
       <option name="number" value="00001" />
       <option name="presentableId" value="LOCAL-00001" />
       <option name="project" value="LOCAL" />
-      <updated>1709467401233</updated>
+      <updated>1709283085979</updated>
     </task>
-    <task id="LOCAL-00002" summary="fix">
+    <task id="LOCAL-00002" summary="Add Room">
       <option name="closed" value="true" />
-      <created>1709477254163</created>
+      <created>1709370826136</created>
       <option name="number" value="00002" />
       <option name="presentableId" value="LOCAL-00002" />
       <option name="project" value="LOCAL" />
-      <updated>1709477254163</updated>
+      <updated>1709370826136</updated>
     </task>
-    <task id="LOCAL-00003" summary="add DeleteEvent-feature file">
+    <task id="LOCAL-00003" summary="Complete Service Provider Account">
       <option name="closed" value="true" />
-      <created>1709477538444</created>
+      <created>1709392090930</created>
       <option name="number" value="00003" />
       <option name="presentableId" value="LOCAL-00003" />
       <option name="project" value="LOCAL" />
-      <updated>1709477538444</updated>
+      <updated>1709392090931</updated>
     </task>
-    <task id="LOCAL-00005" summary="Complete ,Update,Add room,MainMenu Decoration">
+    <task id="LOCAL-00004" summary="First Submission">
       <option name="closed" value="true" />
-      <created>1710791419223</created>
-      <option name="number" value="00005" />
-      <option name="presentableId" value="LOCAL-00005" />
-      <option name="project" value="LOCAL" />
-      <updated>1710791419223</updated>
-    </task>
-    <task id="LOCAL-00006" summary="DeleteRoom feature steaaaaps and service">
-      <option name="closed" value="true" />
-      <created>1711050597362</created>
-      <option name="number" value="00006" />
-      <option name="presentableId" value="LOCAL-00006" />
-      <option name="project" value="LOCAL" />
-      <updated>1711050597362</updated>
-    </task>
-    <task id="LOCAL-00007" summary="DeleteRoom feature steaaaaps and service">
-      <option name="closed" value="true" />
-      <created>1711058955191</created>
-      <option name="number" value="00007" />
-      <option name="presentableId" value="LOCAL-00007" />
-      <option name="project" value="LOCAL" />
-      <updated>1711058955191</updated>
-    </task>
-    <task id="LOCAL-00008" summary="DeleteRoom feature steaaaaps and service">
-      <option name="closed" value="true" />
-      <created>1711060400176</created>
-      <option name="number" value="00008" />
-      <option name="presentableId" value="LOCAL-00008" />
-      <option name="project" value="LOCAL" />
-      <updated>1711060400176</updated>
-    </task>
-    <task id="LOCAL-00004" summary="Upgrade clint done , Some decorations on the menu">
-      <option name="closed" value="true" />
-      <created>1710590862994</created>
+      <created>1709897798416</created>
       <option name="number" value="00004" />
       <option name="presentableId" value="LOCAL-00004" />
       <option name="project" value="LOCAL" />
-      <updated>1710590862994</updated>
+      <updated>1709897798416</updated>
     </task>
-    <task id="LOCAL-00009" summary="DeleteRoom feature steaaaaps and service">
+    <task id="LOCAL-00005" summary="Update + Delete (Event)">
       <option name="closed" value="true" />
-      <created>1711060826458</created>
+      <created>1710537398125</created>
+      <option name="number" value="00005" />
+      <option name="presentableId" value="LOCAL-00005" />
+      <option name="project" value="LOCAL" />
+      <updated>1710537398125</updated>
+    </task>
+    <task id="LOCAL-00006" summary="Reserve Room">
+      <option name="closed" value="true" />
+      <created>1710585576844</created>
+      <option name="number" value="00006" />
+      <option name="presentableId" value="LOCAL-00006" />
+      <option name="project" value="LOCAL" />
+      <updated>1710585576844</updated>
+    </task>
+    <task id="LOCAL-00007" summary="Reserve Service provider">
+      <option name="closed" value="true" />
+      <created>1710595660730</created>
+      <option name="number" value="00007" />
+      <option name="presentableId" value="LOCAL-00007" />
+      <option name="project" value="LOCAL" />
+      <updated>1710595660730</updated>
+    </task>
+    <task id="LOCAL-00008" summary="fix bugs after merge">
+      <option name="closed" value="true" />
+      <created>1711112839847</created>
+      <option name="number" value="00008" />
+      <option name="presentableId" value="LOCAL-00008" />
+      <option name="project" value="LOCAL" />
+      <updated>1711112839847</updated>
+    </task>
+    <task id="LOCAL-00009" summary="Delete Room">
+      <option name="closed" value="true" />
+      <created>1711118962801</created>
       <option name="number" value="00009" />
       <option name="presentableId" value="LOCAL-00009" />
       <option name="project" value="LOCAL" />
-      <updated>1711060826458</updated>
+      <updated>1711118962801</updated>
     </task>
-    <task id="LOCAL-00010" summary="DeleteRoom feature steaaaaps and service">
+    <task id="LOCAL-00010" summary="minor update on search sp">
       <option name="closed" value="true" />
-      <created>1711060914031</created>
+      <created>1711119604041</created>
       <option name="number" value="00010" />
       <option name="presentableId" value="LOCAL-00010" />
       <option name="project" value="LOCAL" />
-      <updated>1711060914031</updated>
+      <updated>1711119604041</updated>
     </task>
-    <task id="LOCAL-00011" summary="DeleteRoom feature steaaaaps and service">
+    <task id="LOCAL-00011" summary="Cancel Booking Event">
       <option name="closed" value="true" />
-      <created>1711061312429</created>
+      <created>1711125207752</created>
       <option name="number" value="00011" />
       <option name="presentableId" value="LOCAL-00011" />
       <option name="project" value="LOCAL" />
-      <updated>1711061312429</updated>
+      <updated>1711125207752</updated>
     </task>
-    <task id="LOCAL-00012" summary="DeleteRoom feature steaaaaps and service">
+    <task id="LOCAL-00012" summary="fix test cases">
       <option name="closed" value="true" />
-      <created>1711062144789</created>
+      <created>1711568245918</created>
       <option name="number" value="00012" />
       <option name="presentableId" value="LOCAL-00012" />
       <option name="project" value="LOCAL" />
-      <updated>1711062144789</updated>
+      <updated>1711568245918</updated>
     </task>
-    <task id="LOCAL-00013" summary="DeleteRoom feature steaaaaps and service">
+    <task id="LOCAL-00013" summary="refactor medium bad smells">
       <option name="closed" value="true" />
-      <created>1711062219512</created>
+      <created>1711652782584</created>
       <option name="number" value="00013" />
       <option name="presentableId" value="LOCAL-00013" />
       <option name="project" value="LOCAL" />
-      <updated>1711062219512</updated>
+      <updated>1711652782584</updated>
     </task>
-    <task id="LOCAL-00014" summary="DeleteRoom feature steaaaaps and service">
+    <task id="LOCAL-00014" summary="security problem">
       <option name="closed" value="true" />
-      <created>1711063348641</created>
+      <created>1711653535134</created>
       <option name="number" value="00014" />
       <option name="presentableId" value="LOCAL-00014" />
       <option name="project" value="LOCAL" />
-      <updated>1711063348641</updated>
+      <updated>1711653535134</updated>
     </task>
-    <task id="LOCAL-00015" summary="DeleteRoom feature steaaaaps and service">
+    <task id="LOCAL-00015" summary="security problem 2">
       <option name="closed" value="true" />
-      <created>1711063576856</created>
+      <created>1711653625752</created>
       <option name="number" value="00015" />
       <option name="presentableId" value="LOCAL-00015" />
       <option name="project" value="LOCAL" />
-      <updated>1711063576856</updated>
+      <updated>1711653625752</updated>
     </task>
-    <task id="LOCAL-00016" summary="DeleteRoom feature steaaaaps and service">
+    <task id="LOCAL-00016" summary="update pom file">
       <option name="closed" value="true" />
-      <created>1711063778089</created>
+      <created>1711825739332</created>
       <option name="number" value="00016" />
       <option name="presentableId" value="LOCAL-00016" />
       <option name="project" value="LOCAL" />
-      <updated>1711063778089</updated>
+      <updated>1711825739332</updated>
     </task>
-    <task id="LOCAL-00017" summary="DeleteRoom feature steaaaaps and service">
+    <task id="LOCAL-00017" summary="add coverage.xml">
       <option name="closed" value="true" />
-      <created>1711063960663</created>
+      <created>1711833090608</created>
       <option name="number" value="00017" />
       <option name="presentableId" value="LOCAL-00017" />
       <option name="project" value="LOCAL" />
-      <updated>1711063960663</updated>
+      <updated>1711833090608</updated>
     </task>
-    <task id="LOCAL-00018" summary="DeleteRoom feature steaaaaps and service">
+    <task id="LOCAL-00018" summary="update to pom">
       <option name="closed" value="true" />
-      <created>1711064164340</created>
+      <created>1711833425591</created>
       <option name="number" value="00018" />
       <option name="presentableId" value="LOCAL-00018" />
       <option name="project" value="LOCAL" />
-      <updated>1711064164340</updated>
+      <updated>1711833425591</updated>
     </task>
-    <task id="LOCAL-00019" summary="DeleteRoom feature steaaaaps and service">
+    <task id="LOCAL-00019" summary="update to pom">
       <option name="closed" value="true" />
-      <created>1711064263159</created>
+      <created>1711834124988</created>
       <option name="number" value="00019" />
       <option name="presentableId" value="LOCAL-00019" />
       <option name="project" value="LOCAL" />
-      <updated>1711064263159</updated>
+      <updated>1711834124988</updated>
     </task>
-    <task id="LOCAL-00020" summary="DeleteRoom feature steaaaaps and service">
+    <task id="LOCAL-00020" summary="update jdk">
       <option name="closed" value="true" />
-      <created>1711064527804</created>
+      <created>1711834604586</created>
       <option name="number" value="00020" />
       <option name="presentableId" value="LOCAL-00020" />
       <option name="project" value="LOCAL" />
-      <updated>1711064527804</updated>
+      <updated>1711834604586</updated>
     </task>
-    <task id="LOCAL-00021" summary="DeleteRoom feature steaaaaps and service">
+    <task id="LOCAL-00021" summary="update version of jacoco">
       <option name="closed" value="true" />
-      <created>1711064991161</created>
+      <created>1711834946371</created>
       <option name="number" value="00021" />
       <option name="presentableId" value="LOCAL-00021" />
       <option name="project" value="LOCAL" />
-      <updated>1711064991161</updated>
+      <updated>1711834946371</updated>
     </task>
-    <task id="LOCAL-00022" summary="DeleteRoom feature steaaaaps and service">
+    <task id="LOCAL-00022" summary="update pom">
       <option name="closed" value="true" />
-      <created>1711065595785</created>
+      <created>1711835605564</created>
       <option name="number" value="00022" />
       <option name="presentableId" value="LOCAL-00022" />
       <option name="project" value="LOCAL" />
-      <updated>1711065595785</updated>
+      <updated>1711835605564</updated>
     </task>
-    <task id="LOCAL-00023" summary="DeleteRoom feature steaaaaps and service">
+    <task id="LOCAL-00023" summary="update pom">
       <option name="closed" value="true" />
-      <created>1711065971343</created>
+      <created>1711835807837</created>
       <option name="number" value="00023" />
       <option name="presentableId" value="LOCAL-00023" />
       <option name="project" value="LOCAL" />
-      <updated>1711065971343</updated>
+      <updated>1711835807837</updated>
     </task>
-    <task id="LOCAL-00024" summary="DeleteRoom feature steaaaaps and service">
-      <option name="closed" value="true" />
-      <created>1711066612518</created>
-      <option name="number" value="00024" />
-      <option name="presentableId" value="LOCAL-00024" />
-      <option name="project" value="LOCAL" />
-      <updated>1711066612518</updated>
-    </task>
-    <task id="LOCAL-00025" summary="DeleteRoom feature steaaaaps and service">
-      <option name="closed" value="true" />
-      <created>1711066852900</created>
-      <option name="number" value="00025" />
-      <option name="presentableId" value="LOCAL-00025" />
-      <option name="project" value="LOCAL" />
-      <updated>1711066852900</updated>
-    </task>
-    <task id="LOCAL-00026" summary="DeleteRoom feature steaaaaps and service">
-      <option name="closed" value="true" />
-      <created>1711067335684</created>
-      <option name="number" value="00026" />
-      <option name="presentableId" value="LOCAL-00026" />
-      <option name="project" value="LOCAL" />
-      <updated>1711067335684</updated>
-    </task>
-    <task id="LOCAL-00027" summary="DeleteRoom feature steaaaaps and service">
-      <option name="closed" value="true" />
-      <created>1711071786557</created>
-      <option name="number" value="00027" />
-      <option name="presentableId" value="LOCAL-00027" />
-      <option name="project" value="LOCAL" />
-      <updated>1711071786557</updated>
-    </task>
-    <task id="LOCAL-00028" summary="DeleteRoom feature steaaaaps and service">
-      <option name="closed" value="true" />
-      <created>1711072066048</created>
-      <option name="number" value="00028" />
-      <option name="presentableId" value="LOCAL-00028" />
-      <option name="project" value="LOCAL" />
-      <updated>1711072066048</updated>
-    </task>
-    <task id="LOCAL-00029" summary="DeleteRoom feature steaaaaps and service">
-      <option name="closed" value="true" />
-      <created>1711072137571</created>
-      <option name="number" value="00029" />
-      <option name="presentableId" value="LOCAL-00029" />
-      <option name="project" value="LOCAL" />
-      <updated>1711072137571</updated>
-    </task>
-    <task id="LOCAL-00030" summary="DeleteRoom feature steaaaaps and service">
-      <option name="closed" value="true" />
-      <created>1711074273018</created>
-      <option name="number" value="00030" />
-      <option name="presentableId" value="LOCAL-00030" />
-      <option name="project" value="LOCAL" />
-      <updated>1711074273018</updated>
-    </task>
-    <task id="LOCAL-00031" summary="DeleteRoom feature steaaaaps and service">
-      <option name="closed" value="true" />
-      <created>1711074984064</created>
-      <option name="number" value="00031" />
-      <option name="presentableId" value="LOCAL-00031" />
-      <option name="project" value="LOCAL" />
-      <updated>1711074984064</updated>
-    </task>
-    <task id="LOCAL-00032" summary="DeleteRoom feature steaaaaps and service">
-      <option name="closed" value="true" />
-      <created>1711075762715</created>
-      <option name="number" value="00032" />
-      <option name="presentableId" value="LOCAL-00032" />
-      <option name="project" value="LOCAL" />
-      <updated>1711075762715</updated>
-    </task>
-    <task id="LOCAL-00033" summary="DeleteRoom feature steaaaaps and service">
-      <option name="closed" value="true" />
-      <created>1711075865834</created>
-      <option name="number" value="00033" />
-      <option name="presentableId" value="LOCAL-00033" />
-      <option name="project" value="LOCAL" />
-      <updated>1711075865834</updated>
-    </task>
-    <task id="LOCAL-00034" summary="DeleteRoom feature steaaaaps and service">
-      <option name="closed" value="true" />
-      <created>1711076343568</created>
-      <option name="number" value="00034" />
-      <option name="presentableId" value="LOCAL-00034" />
-      <option name="project" value="LOCAL" />
-      <updated>1711076343568</updated>
-    </task>
-    <task id="LOCAL-00035" summary="DeleteRoom feature steaaaaps and service">
-      <option name="closed" value="true" />
-      <created>1711076434435</created>
-      <option name="number" value="00035" />
-      <option name="presentableId" value="LOCAL-00035" />
-      <option name="project" value="LOCAL" />
-      <updated>1711076434435</updated>
-    </task>
-    <task id="LOCAL-00036" summary="admin page done">
-      <option name="closed" value="true" />
-      <created>1711125579523</created>
-      <option name="number" value="00036" />
-      <option name="presentableId" value="LOCAL-00036" />
-      <option name="project" value="LOCAL" />
-      <updated>1711125579523</updated>
-    </task>
-    <task id="LOCAL-00037" summary="admin page done">
-      <option name="closed" value="true" />
-      <created>1711635991117</created>
-      <option name="number" value="00037" />
-      <option name="presentableId" value="LOCAL-00037" />
-      <option name="project" value="LOCAL" />
-      <updated>1711635991117</updated>
-    </task>
-    <task id="LOCAL-00038" summary="push test to ignore main">
-      <option name="closed" value="true" />
-      <created>1711739824737</created>
-      <option name="number" value="00038" />
-      <option name="presentableId" value="LOCAL-00038" />
-      <option name="project" value="LOCAL" />
-      <updated>1711739824737</updated>
-    </task>
-    <task id="LOCAL-00039" summary="remove config file">
-      <option name="closed" value="true" />
-      <created>1711741200688</created>
-      <option name="number" value="00039" />
-      <option name="presentableId" value="LOCAL-00039" />
-      <option name="project" value="LOCAL" />
-      <updated>1711741200688</updated>
-    </task>
-    <task id="LOCAL-00040" summary="edit config file">
-      <option name="closed" value="true" />
-      <created>1711741341489</created>
-      <option name="number" value="00040" />
-      <option name="presentableId" value="LOCAL-00040" />
-      <option name="project" value="LOCAL" />
-      <updated>1711741341489</updated>
-    </task>
-    <task id="LOCAL-00041" summary="edit config file">
-      <option name="closed" value="true" />
-      <created>1711741531059</created>
-      <option name="number" value="00041" />
-      <option name="presentableId" value="LOCAL-00041" />
-      <option name="project" value="LOCAL" />
-      <updated>1711741531059</updated>
-    </task>
-    <task id="LOCAL-00042" summary="edit config file">
-      <option name="closed" value="true" />
-      <created>1711741644232</created>
-      <option name="number" value="00042" />
-      <option name="presentableId" value="LOCAL-00042" />
-      <option name="project" value="LOCAL" />
-      <updated>1711741644232</updated>
-    </task>
-    <task id="LOCAL-00043" summary="edit config file">
-      <option name="closed" value="true" />
-      <created>1711741834813</created>
-      <option name="number" value="00043" />
-      <option name="presentableId" value="LOCAL-00043" />
-      <option name="project" value="LOCAL" />
-      <updated>1711741834813</updated>
-    </task>
-    <task id="LOCAL-00044" summary="reset project">
-      <option name="closed" value="true" />
-      <created>1711826174592</created>
-      <option name="number" value="00044" />
-      <option name="presentableId" value="LOCAL-00044" />
-      <option name="project" value="LOCAL" />
-      <updated>1711826174592</updated>
-    </task>
-    <option name="localTasksCounter" value="45" />
+    <option name="localTasksCounter" value="24" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -509,22 +389,34 @@
     </option>
   </component>
   <component name="VcsManagerConfiguration">
-    <MESSAGE value="ali turabi ,added feature : add event" />
-    <MESSAGE value="ali turabi ,added class : add event entity" />
-    <MESSAGE value="ali turabi ,added class : add data eventdata class" />
-    <MESSAGE value="Upgrade clint done , Some decorations on the menu" />
-    <MESSAGE value="Complete ,Update,Add room,MainMenu Decoration" />
-    <MESSAGE value="DeleteRoom feature steaaaaps and service" />
-    <MESSAGE value="admin page done" />
-    <MESSAGE value="push test to ignore main" />
-    <MESSAGE value="remove config file" />
-    <MESSAGE value="edit config file" />
-    <MESSAGE value="reset project" />
-    <option name="LAST_COMMIT_MESSAGE" value="reset project" />
+    <MESSAGE value="Upgrade Client to Orginizer" />
+    <MESSAGE value="Add Room" />
+    <MESSAGE value="Complete Service Provider Account" />
+    <MESSAGE value="First Submission" />
+    <MESSAGE value="Update + Delete (Event)" />
+    <MESSAGE value="Reserve Room" />
+    <MESSAGE value="Reserve Service provider" />
+    <MESSAGE value="fix bugs after merge" />
+    <MESSAGE value="Delete Room" />
+    <MESSAGE value="minor update on search sp" />
+    <MESSAGE value="Cancel Booking Event" />
+    <MESSAGE value="fix test cases" />
+    <MESSAGE value="refactor medium bad smells" />
+    <MESSAGE value="security problem" />
+    <MESSAGE value="security problem 2" />
+    <MESSAGE value="update pom file" />
+    <MESSAGE value="add coverage.xml" />
+    <MESSAGE value="update to pom" />
+    <MESSAGE value="update jdk" />
+    <MESSAGE value="update version of jacoco" />
+    <MESSAGE value="update pom" />
+    <option name="LAST_COMMIT_MESSAGE" value="update pom" />
+  </component>
+  <component name="XSLT-Support.FileAssociations.UIState">
+    <expand />
+    <select />
   </component>
   <component name="com.intellij.coverage.CoverageDataManagerImpl">
-    <SUITE FILE_PATH="coverage/Event_Planner$acceptanceTest.ic" NAME="acceptanceTest Coverage Results" MODIFIED="1709402770636" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false">
-      <FILTER>applicationTest.*</FILTER>
-    </SUITE>
+    <SUITE FILE_PATH="coverage/EventPlanner$java_in_EventPlanner.ic" NAME="java in EventPlanner Coverage Results" MODIFIED="1711654136958" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" />
   </component>
 </project>

@@ -4,9 +4,10 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="b83c84ab-4b8d-45df-9a9e-d68f70b0baad" name="Changes" comment="update pom file">
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+    <list default="true" id="b83c84ab-4b8d-45df-9a9e-d68f70b0baad" name="Changes" comment="add coverage.xml">
+      <change beforePath="$PROJECT_DIR$/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/pom.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/com/example/services/EmailSender.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/services/EmailSender.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/coverage.xml" beforeDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -181,7 +182,7 @@
       <workItem from="1711312746309" duration="1465000" />
       <workItem from="1711566273041" duration="4447000" />
       <workItem from="1711648762444" duration="5425000" />
-      <workItem from="1711825568485" duration="3910000" />
+      <workItem from="1711825568485" duration="4303000" />
     </task>
     <task id="LOCAL-00001" summary="Upgrade Client to Orginizer">
       <option name="closed" value="true" />
@@ -311,7 +312,15 @@
       <option name="project" value="LOCAL" />
       <updated>1711825739332</updated>
     </task>
-    <option name="localTasksCounter" value="17" />
+    <task id="LOCAL-00017" summary="add coverage.xml">
+      <option name="closed" value="true" />
+      <created>1711833090608</created>
+      <option name="number" value="00017" />
+      <option name="presentableId" value="LOCAL-00017" />
+      <option name="project" value="LOCAL" />
+      <updated>1711833090608</updated>
+    </task>
+    <option name="localTasksCounter" value="18" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -345,7 +354,8 @@
     <MESSAGE value="security problem" />
     <MESSAGE value="security problem 2" />
     <MESSAGE value="update pom file" />
-    <option name="LAST_COMMIT_MESSAGE" value="update pom file" />
+    <MESSAGE value="add coverage.xml" />
+    <option name="LAST_COMMIT_MESSAGE" value="add coverage.xml" />
   </component>
   <component name="XSLT-Support.FileAssociations.UIState">
     <expand />

@@ -31,7 +31,8 @@ public class DeleteUpdateEvent {
 
             boolean tmp2 = addEvent.addEvent(username, eventid, name, description,
                     dateEvent, attendeeCount, imagePath);
-            this.msg = addEvent.getMsg();
+            this.msg = "Event with ID = " + id + " has been Updated";
+
             return tmp && tmp2;
         } catch (NumberFormatException e) {
             msg = "Invalid ID";

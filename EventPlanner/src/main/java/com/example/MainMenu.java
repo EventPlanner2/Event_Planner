@@ -5,8 +5,6 @@ import com.example.data.NotifcationData;
 import com.example.data.RoomData;
 import com.example.entites.*;
 
-import java.time.LocalDate;
-import java.time.LocalTime;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Scanner;
@@ -25,8 +23,8 @@ public class MainMenu {
                \\ \\/  \\/ // _ \\| | / __|/ _ \\ | '_ ` _ \\  / _ \\    | | / _ \\   \\___ \\ | __|| | | | / _` || | | | |  ___/ | | / _` || '_ \\ | '_ \\  / _ \\| '__|
                 \\  /\\  /|  __/| || (__| (_) || | | | | ||  __/    | || (_) |  ____) || |_ | |_| || (_| || |_| | | |     | || (_| || | | || | | ||  __/| |   
                  \\/  \\/  \\___||_| \\___|\\___/ |_| |_| |_| \\___|    |_| \\___/  |_____/  \\__| \\__,_| \\__,_| \\__, | |_|     |_| \\__,_||_| |_||_| |_| \\___||_|   
-                                                                                                       __/ |                                             
-                                                                                                      |___/                                              
+                                                                                                          __/ |                                             
+                                                                                                         |___/                                              
             """;
     App app = new App();
     private String username;
@@ -397,9 +395,11 @@ public class MainMenu {
     }
 
     public void showUpcomingEvents() {
+        StringBuilder stringBuilder = new StringBuilder("\n");
         for (Event e : app.getCalenderService().showUpcomingEvents()) {
-            logger.info(e.getId() + " " + e.getEventName() + " " + e.getEventDescription() + " " + e.getStartDate() + " " + e.getEndDate() + " " + e.getStartClock() + " " + e.getEndClock() + " " + e.getAttendeeCount());
+            stringBuilder.append(e.getId() + " " + e.getEventName() + " " + e.getEventDescription() + " " + e.getStartDate() + " " + e.getEndDate() + " " + e.getStartClock() + " " + e.getEndClock() + " " + e.getAttendeeCount() + "\n");
         }
+        logger.info(stringBuilder.toString());
     }
 
     public void showAllRooms() {
@@ -587,7 +587,7 @@ public class MainMenu {
             logger.info("Image path :");
             String imagePath = input.next();
 
-            DateEvent dateEvent = new DateEvent(startDate,endDate,startHour,endHour);
+            DateEvent dateEvent = new DateEvent(startDate, endDate, startHour, endHour);
             boolean flag = app.getAddEventService().addEvent(user.getUsername(), EventData.getEvents().size() + 1, eventName, eventDes, dateEvent, attendeeCount, imagePath);
             if (flag) {
                 logger.info(app.getAddEventService().getMsg());

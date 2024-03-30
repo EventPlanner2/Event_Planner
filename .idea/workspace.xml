@@ -4,7 +4,9 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="9fc2b4a3-4e80-4dc3-b513-a55cbae36512" name="Changes" comment="edit config file" />
+    <list default="true" id="9fc2b4a3-4e80-4dc3-b513-a55cbae36512" name="Changes" comment="reset project">
+      <change beforePath="$PROJECT_DIR$/EventPlanner/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/EventPlanner/pom.xml" afterDir="false" />
+    </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -122,8 +124,7 @@
   <component name="SharedIndexes">
     <attachedChunks>
       <set>
-        <option value="jdk-19.0.2-corretto-19.0.2-4caba194b151-48ba4555" />
-        <option value="jdk-21.0.2-openjdk-21.0.2-4caba194b151-4f524021" />
+        <option value="jdk-21.0.2-corretto-21.0.2-3183f394aec4-09c6784e" />
       </set>
     </attachedChunks>
   </component>
@@ -136,6 +137,7 @@
       <option name="presentableId" value="Default" />
       <updated>1709394069522</updated>
       <workItem from="1711635888460" duration="195000" />
+      <workItem from="1711826147681" duration="448000" />
     </task>
     <task id="LOCAL-00001" summary="Delete event feature file ,needs testing">
       <option name="closed" value="true" />
@@ -481,7 +483,15 @@
       <option name="project" value="LOCAL" />
       <updated>1711741834813</updated>
     </task>
-    <option name="localTasksCounter" value="44" />
+    <task id="LOCAL-00044" summary="reset project">
+      <option name="closed" value="true" />
+      <created>1711826174592</created>
+      <option name="number" value="00044" />
+      <option name="presentableId" value="LOCAL-00044" />
+      <option name="project" value="LOCAL" />
+      <updated>1711826174592</updated>
+    </task>
+    <option name="localTasksCounter" value="45" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -509,7 +519,8 @@
     <MESSAGE value="push test to ignore main" />
     <MESSAGE value="remove config file" />
     <MESSAGE value="edit config file" />
-    <option name="LAST_COMMIT_MESSAGE" value="edit config file" />
+    <MESSAGE value="reset project" />
+    <option name="LAST_COMMIT_MESSAGE" value="reset project" />
   </component>
   <component name="com.intellij.coverage.CoverageDataManagerImpl">
     <SUITE FILE_PATH="coverage/Event_Planner$acceptanceTest.ic" NAME="acceptanceTest Coverage Results" MODIFIED="1709402770636" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false">

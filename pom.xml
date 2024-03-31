@@ -17,15 +17,15 @@
         <sonar.coverage.exclusions>
             **/Main.java,
             **/MainMenu.java,
-            **/entities/**/*
+            **/entities/**/*,
         </sonar.coverage.exclusions>
         <sonar.exclusions>
             **/Main.java,
-            **/MainMenu.java
+            **/MainMenu.java,
         </sonar.exclusions>
         <sonar.test.exclusions>
             **/Main.java,
-            **/MainMenu.java
+            **/MainMenu.java,
         </sonar.test.exclusions>
     </properties>
     <dependencies>

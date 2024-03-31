@@ -4,8 +4,7 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="b83c84ab-4b8d-45df-9a9e-d68f70b0baad" name="Changes" comment="update pom and build">
-      <change beforePath="$PROJECT_DIR$/.idea/vcs.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/vcs.xml" afterDir="false" />
+    <list default="true" id="b83c84ab-4b8d-45df-9a9e-d68f70b0baad" name="Changes" comment="update pom">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/pom.xml" afterDir="false" />
     </list>
@@ -194,7 +193,7 @@
       <workItem from="1711825568485" duration="6910000" />
       <workItem from="1711839920003" duration="374000" />
       <workItem from="1711840378828" duration="2522000" />
-      <workItem from="1711878518099" duration="694000" />
+      <workItem from="1711878518099" duration="873000" />
     </task>
     <task id="LOCAL-00001" summary="Upgrade Client to Orginizer">
       <option name="closed" value="true" />
@@ -396,7 +395,15 @@
       <option name="project" value="LOCAL" />
       <updated>1711844498464</updated>
     </task>
-    <option name="localTasksCounter" value="26" />
+    <task id="LOCAL-00026" summary="update pom">
+      <option name="closed" value="true" />
+      <created>1711879255891</created>
+      <option name="number" value="00026" />
+      <option name="presentableId" value="LOCAL-00026" />
+      <option name="project" value="LOCAL" />
+      <updated>1711879255891</updated>
+    </task>
+    <option name="localTasksCounter" value="27" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -434,9 +441,9 @@
     <MESSAGE value="update to pom" />
     <MESSAGE value="update jdk" />
     <MESSAGE value="update version of jacoco" />
-    <MESSAGE value="update pom" />
     <MESSAGE value="update pom and build" />
-    <option name="LAST_COMMIT_MESSAGE" value="update pom and build" />
+    <MESSAGE value="update pom" />
+    <option name="LAST_COMMIT_MESSAGE" value="update pom" />
   </component>
   <component name="XSLT-Support.FileAssociations.UIState">
     <expand />

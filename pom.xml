@@ -17,7 +17,7 @@
         <sonar.coverage.exclusions>
             **/Main.java,
             **/MainMenu.java,
-            **/entities/**/*,
+            src/main/java/com/example/entites/*,
         </sonar.coverage.exclusions>
         <sonar.exclusions>
             **/Main.java,

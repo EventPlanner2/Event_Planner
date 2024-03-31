@@ -9,10 +9,13 @@ public class RoomData {
     private static final List<Room> rooms = new ArrayList<>();
 
     private static int id = 1;
-    public RoomData(){
-        initializeData();
-    }
 
+   public  RoomData()
+   {
+
+
+
+   }
     public void initializeData(){
 
         addRoom("Room 1",60,150.0,"First room in system",true);

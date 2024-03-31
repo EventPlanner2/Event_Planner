@@ -28,7 +28,7 @@ public class App {
 
     private DeleteRoom deleteRoomService;
 
-    private RoomData rd;
+
 
     private Calender calenderService;
 
@@ -45,8 +45,8 @@ public class App {
         loginService = new Login(users);
         loggedInUser = null;
         signUpService = new SignUp(users);
-        rd = new RoomData ();
-        rooms = RoomData.getRooms();
+        new RoomData ().initializeData ();
+        rooms = RoomData.getRooms ();
         addRoomService = new AddRoom(rooms);
         spAccount = new SPAcc();
         loginService.setSpAccObj(spAccount);
@@ -161,15 +161,9 @@ public class App {
         return upgradeClient;
     }
 
-    private UserData getUserData() {
-        return ud;
-    }
 
-    private RoomData getRoomData() {
 
-        return rd;
 
-    }
 
 
 }

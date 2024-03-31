@@ -15,7 +15,6 @@ public class EventData {
 
 
     private static final List<Event> events = new ArrayList<>();
-    //private static int idCurrent = 4;
 
     public EventData() {
         initializeData();

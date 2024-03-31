@@ -4,15 +4,8 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="b83c84ab-4b8d-45df-9a9e-d68f70b0baad" name="Changes" comment="update pom">
-      <change beforePath="$PROJECT_DIR$/../.idea/modules.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../.idea/vcs.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../.idea/vcs.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.github/workflows/build.yml" beforeDir="false" afterPath="$PROJECT_DIR$/.github/workflows/build.yml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/modules.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/vcs.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/vcs.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/pom.xml" afterDir="false" />
+    <list default="true" id="b83c84ab-4b8d-45df-9a9e-d68f70b0baad" name="Changes" comment="update pom and build">
+      <change beforePath="$PROJECT_DIR$" beforeDir="false" afterPath="$PROJECT_DIR$" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -32,7 +25,7 @@
         <entry key="$PROJECT_DIR$/.." value="amr_branch" />
       </map>
     </option>
-    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$/.." />
   </component>
   <component name="MarkdownSettingsMigration">
     <option name="stateVersion" value="1" />
@@ -57,11 +50,18 @@
     "JUnit.All in EventPlanner.executor": "Coverage",
     "JUnit.acceptanceTest.executor": "Run",
     "JUnit.java in EventPlanner.executor": "Coverage",
+    "Maven.EventPlanner [org.jacoco:jacoco-maven-plugin:0.8.11:check].executor": "Run",
+    "Maven.EventPlanner [org.jacoco:jacoco-maven-plugin:0.8.11:dump].executor": "Run",
+    "Maven.EventPlanner [org.jacoco:jacoco-maven-plugin:0.8.11:help].executor": "Run",
+    "Maven.EventPlanner [org.jacoco:jacoco-maven-plugin:0.8.11:instrument].executor": "Run",
+    "Maven.EventPlanner [org.jacoco:jacoco-maven-plugin:0.8.11:report-integration].executor": "Run",
+    "Maven.EventPlanner [org.jacoco:jacoco-maven-plugin:0.8.11:report].executor": "Run",
     "RunOnceActivity.OpenProjectViewOnStart": "true",
     "RunOnceActivity.ShowReadmeOnStart": "true",
     "dart.analysis.tool.window.visible": "false",
     "git-widget-placeholder": "main",
     "kotlin-language-version-configured": "true",
+    "last_opened_file_path": "C:/Users/amr_b/IdeaProjects/Event_Planner",
     "node.js.detected.package.eslint": "true",
     "node.js.detected.package.tslint": "true",
     "node.js.selected.package.eslint": "(autodetect)",
@@ -377,7 +377,23 @@
       <option name="project" value="LOCAL" />
       <updated>1711835807837</updated>
     </task>
-    <option name="localTasksCounter" value="24" />
+    <task id="LOCAL-00024" summary="update pom and build">
+      <option name="closed" value="true" />
+      <created>1711844334256</created>
+      <option name="number" value="00024" />
+      <option name="presentableId" value="LOCAL-00024" />
+      <option name="project" value="LOCAL" />
+      <updated>1711844334256</updated>
+    </task>
+    <task id="LOCAL-00025" summary="update pom and build">
+      <option name="closed" value="true" />
+      <created>1711844498464</created>
+      <option name="number" value="00025" />
+      <option name="presentableId" value="LOCAL-00025" />
+      <option name="project" value="LOCAL" />
+      <updated>1711844498464</updated>
+    </task>
+    <option name="localTasksCounter" value="26" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -416,7 +432,8 @@
     <MESSAGE value="update jdk" />
     <MESSAGE value="update version of jacoco" />
     <MESSAGE value="update pom" />
-    <option name="LAST_COMMIT_MESSAGE" value="update pom" />
+    <MESSAGE value="update pom and build" />
+    <option name="LAST_COMMIT_MESSAGE" value="update pom and build" />
   </component>
   <component name="XSLT-Support.FileAssociations.UIState">
     <expand />
@@ -424,7 +441,7 @@
   </component>
   <component name="com.intellij.coverage.CoverageDataManagerImpl">
     <SUITE FILE_PATH="coverage/EventPlanner$java_in_EventPlanner.ic" NAME="java in EventPlanner Coverage Results" MODIFIED="1711654136958" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" />
-    <SUITE FILE_PATH="coverage/Event_Planner$java_in_EventPlanner.ic" NAME="java in EventPlanner Coverage Results" MODIFIED="1711841401158" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" />
+    <SUITE FILE_PATH="coverage/Event_Planner$java_in_EventPlanner.ic" NAME="java in EventPlanner Coverage Results" MODIFIED="1711844080182" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" />
     <SUITE FILE_PATH="coverage/Event_Planner$All_in_EventPlanner.ic" NAME="All in EventPlanner Coverage Results" MODIFIED="1711840120562" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" />
   </component>
 </project>

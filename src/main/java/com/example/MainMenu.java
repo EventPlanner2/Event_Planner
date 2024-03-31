@@ -602,7 +602,6 @@ public class MainMenu {
 
     public void updateEvent() {
         while (true) {
-            showUpcomingEvents();
             logger.info("Please enter the new information for your event : ");
             logger.info("Event name : ");
             String eventName = input.next();
@@ -711,5 +710,13 @@ public class MainMenu {
             stringBuilder.append(e.getId() + " " + e.getEventName() + " " + e.getEventDescription() + " " + e.getStartDate() + " " + e.getEndDate() + " " + e.getStartClock() + " " + e.getEndClock() + " " + e.getAttendeeCount() + "\n");
         }
         logger.info(stringBuilder.toString());
+    }
+
+    public void showUserAddedEvents(){
+        for(Event e :EventData.getEvents()){
+            if(user.getUsername() == e.getUsername()){
+
+            }
+        }
     }
 }

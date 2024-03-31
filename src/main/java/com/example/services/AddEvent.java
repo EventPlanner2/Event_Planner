@@ -16,17 +16,8 @@ public class AddEvent {
 
     private boolean addingEvent;
     private String msg;
-    private String username;
-    private User loggedInUser;
-    private int eventId;
-    private String eventName;
-    private String eventDescription;
     private LocalDate startDate;
-    private LocalDate endDate;
-    private LocalTime startClock;
-    private LocalTime endClock;
-    private int attendeeCount;
-    private String imagePath;
+
 
 
     public boolean addEvent(String username, int eventId, String name, String description, DateEvent dateEvent, String attendeeCount, String imagePath) {

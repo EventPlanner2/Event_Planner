@@ -1,12 +1,10 @@
 package com.example;
-
 import com.example.data.EventData;
 import com.example.data.RoomData;
 import com.example.data.UserData;
 import com.example.entites.Room;
 import com.example.entites.User;
 import com.example.services.*;
-
 import java.util.List;
 public class App {
     private List<User> users;
@@ -45,8 +43,8 @@ public class App {
         loginService = new Login(users);
         loggedInUser = null;
         signUpService = new SignUp(users);
-        new RoomData ().initializeData ();
-        rooms = RoomData.getRooms ();
+        RoomData rd = new RoomData();
+        rooms = RoomData.getRooms();
         addRoomService = new AddRoom(rooms);
         spAccount = new SPAcc();
         loginService.setSpAccObj(spAccount);
@@ -161,9 +159,8 @@ public class App {
         return upgradeClient;
     }
 
-
-
-
-
+    public UserData getUserData() {
+        return ud;
+    }
 
 }

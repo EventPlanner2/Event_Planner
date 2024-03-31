@@ -13,7 +13,7 @@ import static com.example.data.EventData.getEvents;
 
 public class BookEvent {
 
-    private String temporayUser;
+
     private String msg;
     private boolean emailSent;
 
@@ -28,8 +28,8 @@ public class BookEvent {
         }
         try{
             Client c1 = Client.getClientFromData(userName);
-            temporayUser = c1.getUsername();
-
+            if(c1==null)
+                throw new NullPointerException () ;
             int eventid = Integer.parseInt(id);
             for(Event e : c1.getEventsBooked ()){
                 if(e.getId() == eventid){

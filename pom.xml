@@ -23,7 +23,6 @@
             **/Main.java,
             **/MainMenu.java,
         </sonar.exclusions>
-
         <sonar.test.exclusions>
             **/Main.java,
             **/MainMenu.java,

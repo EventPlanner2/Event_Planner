@@ -601,6 +601,7 @@ public class MainMenu {
     }
 
     public void updateEvent() {
+        printEvents(true);
         while (true) {
             logger.info("Please enter the new information for your event : ");
             logger.info("Event name : ");
@@ -621,7 +622,7 @@ public class MainMenu {
             String attendeeCount = input.next();
             logger.info("Image path :");
             String imagePath = input.next();
-            DateEvent dateEvent = new DateEvent(startDate,endDate,startHour,endHour);
+            DateEvent dateEvent = new DateEvent(startDate, endDate, startHour, endHour);
             boolean flag = app.getDeleteUpdateEventService().updateEventPerform(eventId, user.getUsername(), eventName, eventDes, dateEvent, attendeeCount, imagePath);
             if (flag) {
                 logger.info(app.getDeleteUpdateEventService().getMsg());
@@ -636,6 +637,7 @@ public class MainMenu {
     }
 
     public void deleteEvent() {
+        printEvents(true);
         while (true) {
             showUpcomingEvents();
             logger.info("Please enter the ID of the event you want to delete : ");
@@ -700,23 +702,24 @@ public class MainMenu {
             logger.info("Invalid choice");
             return;
         }
-        printEvents();
+        printEvents(false);
     }
 
-    public void printEvents() {
-        StringBuilder stringBuilder;
-        stringBuilder = new StringBuilder();
+    public void printEvents(boolean flag) {
+        StringBuilder stringBuilder, stringBuilder1;
+        stringBuilder = new StringBuilder("\n");
+        stringBuilder1 = new StringBuilder("\n");
         for (Event e : app.getCalenderService().getResEvents()) {
             stringBuilder.append(e.getId() + " " + e.getEventName() + " " + e.getEventDescription() + " " + e.getStartDate() + " " + e.getEndDate() + " " + e.getStartClock() + " " + e.getEndClock() + " " + e.getAttendeeCount() + "\n");
-        }
-        logger.info(stringBuilder.toString());
-    }
-
-    public void showUserAddedEvents(){
-        for(Event e :EventData.getEvents()){
-            if(user.getUsername() == e.getUsername()){
-
+            if (e.getUsername().equals(user.getUsername())) {
+                stringBuilder1.append(e.getId() + " " + e.getEventName() + " " + e.getEventDescription() + " " + e.getStartDate() + " " + e.getEndDate() + " " + e.getStartClock() + " " + e.getEndClock() + " " + e.getAttendeeCount() + "\n");
             }
         }
+        if (flag)
+            logger.info(stringBuilder1.toString());
+        else
+            logger.info(stringBuilder.toString());
+
     }
+
 }

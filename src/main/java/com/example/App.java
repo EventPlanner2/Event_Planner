@@ -56,7 +56,7 @@ public class App {
         reserveSPService = new ReserveSP(loggedInUser);
         bookEventService = new BookEvent();
 
-        EventData ed =new EventData();
+        new EventData().initializeData ();
         upgradeClient = new UpgradeClient(loggedInUser);
 
         calenderService = new Calender(loggedInUser);

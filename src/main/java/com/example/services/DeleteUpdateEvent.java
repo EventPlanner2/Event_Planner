@@ -18,7 +18,7 @@ public class DeleteUpdateEvent {
         this.addEvent = addEvent;
     }
 
-    public boolean updateEventPerform(String id, String username, String name, String description, DateEvent dateEvent , String attendeeCount, String imagePath) {
+    public boolean updateEventPerform(String id, String username, String name, String description, DateEvent dateEvent, String attendeeCount, String imagePath) {
 
         try {
             int eventid = Integer.parseInt(id);
@@ -26,13 +26,25 @@ public class DeleteUpdateEvent {
                 msg = "Non-Existing Event";
                 return false;
             }
-            boolean tmp = deleteEventPerform(id);
+
 
 
             boolean tmp2 = addEvent.addEvent(username, eventid, name, description,
                     dateEvent, attendeeCount, imagePath);
-            this.msg = "Event with ID = " + id + " has been Updated";
 
+            if(!tmp2){
+                this.msg= addEvent.getMsg();
+                return false;
+            }
+
+
+            boolean tmp = deleteEventPerform(id);
+
+//            if (tmp && tmp2)
+//                this.msg = "Event with ID = " + id + " has been Updated";
+//            else if (!tmp2) {
+//                this.msg = addEvent.getMsg();
+//            }
             return tmp && tmp2;
         } catch (NumberFormatException e) {
             msg = "Invalid ID";
@@ -80,6 +92,6 @@ public class DeleteUpdateEvent {
     }
 
     public void setMsg(String msg) {
-        this.msg=msg;
-}
+        this.msg = msg;
+    }
 }

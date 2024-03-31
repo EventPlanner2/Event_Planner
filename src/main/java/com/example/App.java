@@ -43,7 +43,7 @@ public class App {
         loginService = new Login(users);
         loggedInUser = null;
         signUpService = new SignUp(users);
-        RoomData rd = new RoomData();
+        new RoomData().initializeData ();
         rooms = RoomData.getRooms();
         addRoomService = new AddRoom(rooms);
         spAccount = new SPAcc();

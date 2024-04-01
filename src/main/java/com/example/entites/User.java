@@ -8,6 +8,7 @@ public class User {
 
     private Character role;
 
+    private Double Budget;
 
 
     public User(String username, String password, String contactEmail, Character role) {
@@ -15,7 +16,7 @@ public class User {
         this.password = password;
         this.contactEmail = contactEmail;
         this.role = role;
-
+        this.Budget = 1000.0;
     }
 
     public String getContactEmail() {
@@ -50,5 +51,11 @@ public class User {
         this.role = role;
     }
 
+    public Double getBudget() {
+        return Budget;
+    }
 
+    public void setBudget(Double budget) {
+        Budget = budget;
+    }
 }

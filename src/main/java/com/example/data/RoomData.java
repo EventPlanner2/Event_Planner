@@ -18,7 +18,9 @@ public class RoomData {
         if (rooms.isEmpty()) {
             addRoom("Room 1", 60, 150.0, "First room in system", true);
             Room r1 = new Room(4, "Room 4", 55, 130, "Fourth room in system", true);
+            Room r2 = new Room(1000,"Room 5",60,150.0,"Fifth room in system",true);
             rooms.add(r1);
+            rooms.add(r2);
         }
     }
 

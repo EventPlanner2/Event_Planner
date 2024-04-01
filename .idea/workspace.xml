@@ -4,9 +4,13 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="b83c84ab-4b8d-45df-9a9e-d68f70b0baad" name="Changes" comment="update pom">
+    <list default="true" id="b83c84ab-4b8d-45df-9a9e-d68f70b0baad" name="Changes" comment="try to skip entites and increase coverage">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/pom.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/data/RoomData.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/data/RoomData.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/entites/User.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/entites/User.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/services/ReserveRoom.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/services/ReserveRoom.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/applicationTest/steps/ReserveRoomSteps.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/applicationTest/steps/ReserveRoomSteps.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/resources/features/ReserveRoom.feature" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/resources/features/ReserveRoom.feature" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -27,6 +31,7 @@
       </map>
     </option>
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+    <option name="ROOT_SYNC" value="DONT_SYNC" />
   </component>
   <component name="MarkdownSettingsMigration">
     <option name="stateVersion" value="1" />
@@ -41,47 +46,47 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent">{
-  &quot;keyToString&quot;: {
-    &quot;Application.Main.executor&quot;: &quot;Run&quot;,
-    &quot;Cucumber Java.Feature: Login.executor&quot;: &quot;Run&quot;,
-    &quot;Cucumber Java.Feature: Logout.executor&quot;: &quot;Run&quot;,
-    &quot;Cucumber Java.Feature: SignUp.executor&quot;: &quot;Run&quot;,
-    &quot;Cucumber Java.Feature: test.executor&quot;: &quot;Run&quot;,
-    &quot;JUnit.All in EventPlanner.executor&quot;: &quot;Coverage&quot;,
-    &quot;JUnit.acceptanceTest.executor&quot;: &quot;Run&quot;,
-    &quot;JUnit.java in EventPlanner.executor&quot;: &quot;Coverage&quot;,
-    &quot;Maven.EventPlanner [org.jacoco:jacoco-maven-plugin:0.8.11:check].executor&quot;: &quot;Run&quot;,
-    &quot;Maven.EventPlanner [org.jacoco:jacoco-maven-plugin:0.8.11:dump].executor&quot;: &quot;Run&quot;,
-    &quot;Maven.EventPlanner [org.jacoco:jacoco-maven-plugin:0.8.11:help].executor&quot;: &quot;Run&quot;,
-    &quot;Maven.EventPlanner [org.jacoco:jacoco-maven-plugin:0.8.11:instrument].executor&quot;: &quot;Run&quot;,
-    &quot;Maven.EventPlanner [org.jacoco:jacoco-maven-plugin:0.8.11:report-integration].executor&quot;: &quot;Run&quot;,
-    &quot;Maven.EventPlanner [org.jacoco:jacoco-maven-plugin:0.8.11:report].executor&quot;: &quot;Run&quot;,
-    &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,
-    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
-    &quot;dart.analysis.tool.window.visible&quot;: &quot;false&quot;,
-    &quot;git-widget-placeholder&quot;: &quot;main&quot;,
-    &quot;kotlin-language-version-configured&quot;: &quot;true&quot;,
-    &quot;last_opened_file_path&quot;: &quot;C:/Users/amr_b/IdeaProjects/Event_Planner&quot;,
-    &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
-    &quot;node.js.detected.package.tslint&quot;: &quot;true&quot;,
-    &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,
-    &quot;node.js.selected.package.tslint&quot;: &quot;(autodetect)&quot;,
-    &quot;nodejs_package_manager_path&quot;: &quot;npm&quot;,
-    &quot;onboarding.tips.debug.path&quot;: &quot;C:/Users/amr_b/IdeaProjects/Event_Planner/EventPlanner/src/main/java/com/example/Main.java&quot;,
-    &quot;project.structure.last.edited&quot;: &quot;Project&quot;,
-    &quot;project.structure.proportion&quot;: &quot;0.15&quot;,
-    &quot;project.structure.side.proportion&quot;: &quot;0.0&quot;,
-    &quot;settings.editor.selected.configurable&quot;: &quot;preferences.pluginManager&quot;,
-    &quot;vue.rearranger.settings.migration&quot;: &quot;true&quot;
+  <component name="PropertiesComponent"><![CDATA[{
+  "keyToString": {
+    "Application.Main.executor": "Run",
+    "Cucumber Java.Feature: Login.executor": "Run",
+    "Cucumber Java.Feature: Logout.executor": "Run",
+    "Cucumber Java.Feature: SignUp.executor": "Run",
+    "Cucumber Java.Feature: test.executor": "Run",
+    "JUnit.All in EventPlanner.executor": "Coverage",
+    "JUnit.acceptanceTest.executor": "Run",
+    "JUnit.java in EventPlanner.executor": "Coverage",
+    "Maven.EventPlanner [org.jacoco:jacoco-maven-plugin:0.8.11:check].executor": "Run",
+    "Maven.EventPlanner [org.jacoco:jacoco-maven-plugin:0.8.11:dump].executor": "Run",
+    "Maven.EventPlanner [org.jacoco:jacoco-maven-plugin:0.8.11:help].executor": "Run",
+    "Maven.EventPlanner [org.jacoco:jacoco-maven-plugin:0.8.11:instrument].executor": "Run",
+    "Maven.EventPlanner [org.jacoco:jacoco-maven-plugin:0.8.11:report-integration].executor": "Run",
+    "Maven.EventPlanner [org.jacoco:jacoco-maven-plugin:0.8.11:report].executor": "Run",
+    "RunOnceActivity.OpenProjectViewOnStart": "true",
+    "RunOnceActivity.ShowReadmeOnStart": "true",
+    "dart.analysis.tool.window.visible": "false",
+    "git-widget-placeholder": "main",
+    "kotlin-language-version-configured": "true",
+    "last_opened_file_path": "C:/Users/amr_b/IdeaProjects/Event_Planner",
+    "node.js.detected.package.eslint": "true",
+    "node.js.detected.package.tslint": "true",
+    "node.js.selected.package.eslint": "(autodetect)",
+    "node.js.selected.package.tslint": "(autodetect)",
+    "nodejs_package_manager_path": "npm",
+    "onboarding.tips.debug.path": "C:/Users/amr_b/IdeaProjects/Event_Planner/EventPlanner/src/main/java/com/example/Main.java",
+    "project.structure.last.edited": "Project",
+    "project.structure.proportion": "0.15",
+    "project.structure.side.proportion": "0.0",
+    "settings.editor.selected.configurable": "preferences.pluginManager",
+    "vue.rearranger.settings.migration": "true"
   }
-}</component>
+}]]></component>
   <component name="RecentsManager">
     <key name="MoveFile.RECENT_KEYS">
       <recent name="C:\Users\amr_b\IdeaProjects\Event_Planner\EventPlanner\src\main\resources" />
     </key>
   </component>
-  <component name="RunManager" selected="JUnit.java in EventPlanner">
+  <component name="RunManager" selected="JUnit.acceptanceTest">
     <configuration name="Main" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
       <option name="MAIN_CLASS_NAME" value="com.example.Main" />
       <module name="EventPlanner" />
@@ -147,10 +152,10 @@
     </configuration>
     <recent_temporary>
       <list>
-        <item itemvalue="JUnit.java in EventPlanner" />
-        <item itemvalue="JUnit.All in EventPlanner" />
         <item itemvalue="JUnit.acceptanceTest" />
         <item itemvalue="Application.Main" />
+        <item itemvalue="JUnit.java in EventPlanner" />
+        <item itemvalue="JUnit.All in EventPlanner" />
         <item itemvalue="Cucumber Java.Feature: test" />
       </list>
     </recent_temporary>
@@ -193,7 +198,11 @@
       <workItem from="1711825568485" duration="6910000" />
       <workItem from="1711839920003" duration="374000" />
       <workItem from="1711840378828" duration="2522000" />
-      <workItem from="1711878518099" duration="1358000" />
+      <workItem from="1711878518099" duration="2327000" />
+      <workItem from="1711884741896" duration="1622000" />
+      <workItem from="1711893754148" duration="768000" />
+      <workItem from="1711962600061" duration="6026000" />
+      <workItem from="1711972679628" duration="3163000" />
     </task>
     <task id="LOCAL-00001" summary="Upgrade Client to Orginizer">
       <option name="closed" value="true" />
@@ -427,7 +436,15 @@
       <option name="project" value="LOCAL" />
       <updated>1711879693568</updated>
     </task>
-    <option name="localTasksCounter" value="30" />
+    <task id="LOCAL-00030" summary="try to skip entites and increase coverage">
+      <option name="closed" value="true" />
+      <created>1711879901462</created>
+      <option name="number" value="00030" />
+      <option name="presentableId" value="LOCAL-00030" />
+      <option name="project" value="LOCAL" />
+      <updated>1711879901462</updated>
+    </task>
+    <option name="localTasksCounter" value="31" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -467,7 +484,8 @@
     <MESSAGE value="update version of jacoco" />
     <MESSAGE value="update pom and build" />
     <MESSAGE value="update pom" />
-    <option name="LAST_COMMIT_MESSAGE" value="update pom" />
+    <MESSAGE value="try to skip entites and increase coverage" />
+    <option name="LAST_COMMIT_MESSAGE" value="try to skip entites and increase coverage" />
   </component>
   <component name="XSLT-Support.FileAssociations.UIState">
     <expand />

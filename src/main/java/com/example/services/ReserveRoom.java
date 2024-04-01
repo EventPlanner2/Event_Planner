@@ -5,6 +5,8 @@ import com.example.entites.Event;
 import com.example.entites.Room;
 import com.example.entites.User;
 
+import java.math.BigDecimal;
+import java.time.Duration;
 import java.time.LocalDate;
 import java.util.ArrayList;
 import java.util.List;
@@ -18,12 +20,14 @@ public class ReserveRoom {
     private List<Event> resEvent;
     private List<Room> resRoom;
     private String msg;
+    private Double Cost;
 
     public ReserveRoom(User loggedInUser) {
         this.loggedInUser = loggedInUser;
         resRoom = new ArrayList<>();
         resEvent = new ArrayList<>();
         msg = "";
+        Cost = 0.0;
     }
 
     public boolean reserveRoomPerform(String eventID, String roomID) {
@@ -35,6 +39,9 @@ public class ReserveRoom {
 
             for (Event e : getEvents()) {
                 if (e.getId() == eventId) {
+
+                    Cost = calculateCost(e,roomId);
+                    if(Room.getRoomFromData(roomId) == null) throw new NullPointerException();
                     if (!validateRoomReservation(e, roomId)) {
                         return false;
                     }
@@ -50,7 +57,7 @@ public class ReserveRoom {
             msg = "the " + (flag ? "room" : "event") + " ID is invalid";
             return false;
         } catch (NullPointerException e) {
-            msg = "the event ID is invalid";
+            msg = "the Room ID is invalid";
             return false;
         }
     }
@@ -72,6 +79,10 @@ public class ReserveRoom {
             msg = "the room is lower capacity than attendance count";
             return false;
         }
+        if(Cost > loggedInUser.getBudget()){
+            msg = "Low Budget";
+            return false;
+        }
         return true;
     }
 
@@ -79,11 +90,12 @@ public class ReserveRoom {
         event.setRoomID(roomId);
         event.setComplete(true);
         Room.getRoomFromData(roomId).setAvailable(false);
-        msg = "Room has been reserved";
+        msg = "Room has been reserved with cost "+Cost;
         String notification = LocalDate.now().toString() + "| " +
                 "Room with name " + Room.getRoomFromData(roomId).getName() +
                 " has been reserved for Event " + event.getEventName();
         NotifcationData.addNotification(notification);
+        loggedInUser.setBudget(loggedInUser.getBudget() - Cost);
     }
 
     public void chooseReserveRoom() {
@@ -100,6 +112,11 @@ public class ReserveRoom {
         }
     }
 
+
+    Double calculateCost(Event e,Integer rid) throws NullPointerException{
+        Double duration = new BigDecimal(Duration.between(e.getStartClock(),e.getEndClock()).toHours()).doubleValue();
+        return (duration* Room.getRoomFromData(rid).getCostPerHour());
+    }
     public User getLoggedInUser() {
         return loggedInUser;
     }

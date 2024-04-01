@@ -18,10 +18,12 @@ public class ReserveRoomSteps {
     App app;
     ArrayList <Object> arr_res;
     boolean flag;
+    Double oldBudget;
     public ReserveRoomSteps(App app){
         this.app = app;
         arr_res = new ArrayList<>();
         flag =false;
+        oldBudget = 0.0;
     }
 
     @When("they choose to Reserve Room")
@@ -52,6 +54,7 @@ public class ReserveRoomSteps {
 
     @When("the organizer enters EventID {string} and RoomID {string} to reserve")
     public void theOrganizerEntersEventIDAndRoomIDToReserve(String string, String string2) {
+        oldBudget=app.getLoggedInUser().getBudget();
         flag = app.getReserveRoomService ().reserveRoomPerform(string,string2);
     }
     @Then("the room should be reserved for the event and the event become complete")
@@ -86,16 +89,20 @@ public class ReserveRoomSteps {
     }
 
 
+    @And("the Budget of orgainzer should be decreased")
+    public void theBudgetOfOrgainzerShouldBeDecreased() {
+        assertTrue(app.getLoggedInUser().getBudget() < oldBudget);
+    }
 
+    @And("the budget of the orgainzer is lower than the cost")
+    public void theBudgetOfTheOrgainzerIsLowerThanTheCost() {
+        oldBudget = app.getLoggedInUser().getBudget();
+        app.getLoggedInUser().setBudget(50.0);
+    }
 
-
-
-
-
-
-
-
-
-
-
+    @And("the organizer enters a valid {string} for event and {string} for room")
+    public void theOrganizerEntersAValidForEventAndForRoom(String string, String string2) {
+        flag = app.getReserveRoomService ().reserveRoomPerform(string,string2);
+        app.getLoggedInUser().setBudget(oldBudget);
+    }
 }

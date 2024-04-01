@@ -1,6 +1,7 @@
 package com.example.services;
 
 import com.example.data.NotifcationData;
+import com.example.data.UserData;
 import com.example.entites.Event;
 import com.example.entites.Room;
 import com.example.entites.User;
@@ -20,14 +21,14 @@ public class ReserveRoom {
     private List<Event> resEvent;
     private List<Room> resRoom;
     private String msg;
-    private Double Cost;
+    private Double cost;
 
     public ReserveRoom(User loggedInUser) {
         this.loggedInUser = loggedInUser;
         resRoom = new ArrayList<>();
         resEvent = new ArrayList<>();
         msg = "";
-        Cost = 0.0;
+        cost = 0.0;
     }
 
     public boolean reserveRoomPerform(String eventID, String roomID) {
@@ -40,7 +41,7 @@ public class ReserveRoom {
             for (Event e : getEvents()) {
                 if (e.getId() == eventId) {
 
-                    Cost = calculateCost(e,roomId);
+                    cost = calculateCost(e,roomId);
                     if(Room.getRoomFromData(roomId) == null) throw new NullPointerException();
                     if (!validateRoomReservation(e, roomId)) {
                         return false;
@@ -79,7 +80,7 @@ public class ReserveRoom {
             msg = "the room is lower capacity than attendance count";
             return false;
         }
-        if(Cost > loggedInUser.getBudget()){
+        if(cost > loggedInUser.getBudget()){
             msg = "Low Budget";
             return false;
         }
@@ -90,12 +91,13 @@ public class ReserveRoom {
         event.setRoomID(roomId);
         event.setComplete(true);
         Room.getRoomFromData(roomId).setAvailable(false);
-        msg = "Room has been reserved with cost "+Cost;
+        msg = "Room has been reserved with cost "+cost;
         String notification = LocalDate.now().toString() + "| " +
                 "Room with name " + Room.getRoomFromData(roomId).getName() +
                 " has been reserved for Event " + event.getEventName();
         NotifcationData.addNotification(notification);
-        loggedInUser.setBudget(loggedInUser.getBudget() - Cost);
+        loggedInUser.setBudget(loggedInUser.getBudget() - cost);
+        UserData.getAdmin().setBudget(UserData.getAdmin().getBudget()+cost);
     }
 
     public void chooseReserveRoom() {

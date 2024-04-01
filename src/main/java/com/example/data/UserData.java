@@ -80,4 +80,12 @@ public class UserData {
         return clients;
 }
 
+    public static User getAdmin(){
+        for(User u : users){
+            if(u.getRole()=='a') return u;
+        }
+
+        return null;
+    }
+
 }

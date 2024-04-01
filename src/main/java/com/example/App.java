@@ -30,12 +30,6 @@ public class App {
 
     private Calender calenderService;
 
-
-
-
-
-
-
     public App()
     {
         ud=new UserData();
@@ -70,16 +64,8 @@ public class App {
         return deleteRoomService;
     }
 
-    public void setDeleteRoomService(DeleteRoom deleteRoomService) {
-        this.deleteRoomService = deleteRoomService;
-    }
-
     public Calender getCalenderService() {
         return calenderService;
-    }
-
-    public void setCalenderService(Calender calenderService) {
-        this.calenderService = calenderService;
     }
 
     public String logoutPerform(){
@@ -111,9 +97,6 @@ public class App {
         this.loggedInUser = loggedInUser;
     }
 
-    public String getCurrentPage() {
-        return currentPage;
-    }
 
     public void setCurrentPage(String currentPage) {
         this.currentPage = currentPage;
@@ -159,8 +142,5 @@ public class App {
         return upgradeClient;
     }
 
-    public UserData getUserData() {
-        return ud;
-    }
 
 }

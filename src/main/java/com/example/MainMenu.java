@@ -608,13 +608,7 @@ public class MainMenu {
 
     public void updateEvent() {
         if(Back())return;
-        boolean flag1 = false;
-        for (Event e : EventData.getEvents()) {
-            if (e.getUsername().equals(user.getUsername())) {
-                flag1 = true ;
-                break;
-            }
-        }
+        boolean flag1 = forBack();
         if(!flag1) {
             logger.info("You Don't have any event to update");
             return;
@@ -658,13 +652,7 @@ public class MainMenu {
 
     public void deleteEvent() {
         if(Back())return;
-        boolean flag1 = false;
-        for (Event e : EventData.getEvents()) {
-            if (e.getUsername().equals(user.getUsername())) {
-                flag1 = true ;
-                break;
-            }
-        }
+        boolean flag1 = forBack();
         if(!flag1) {
             logger.info("You Don't have any event to delete");
             return;
@@ -681,12 +669,17 @@ public class MainMenu {
 
             } else {
                 logger.info(app.getDeleteUpdateEventService().getMsg());
+                break;
             }
 
         }
     }
 
     public void reserveRoom() {
+        if(forBack()){
+            logger.info("You don't have events to reserve room for it");
+            return;
+        }
         logger.info("Please enter the ID of the event to reserve a room for it :");
         showUpcomingEvents();
         String event = input.next();
@@ -698,6 +691,10 @@ public class MainMenu {
     }
 
     public void reserveServiceProvider() {
+        if(forBack()){
+            logger.info("You don't have events to reserve a Service Provider for it ");
+            return;
+        }
         logger.info("Please enter the ID of the event to reserve a Service Provider for it :");
         showUpcomingEvents();
         String event = input.next();
@@ -711,6 +708,10 @@ public class MainMenu {
     }
 
     public void showEventDetails() {
+        if(forBack()){
+            logger.info("You don't have events  ");
+            return;
+        }
         logger.info("Please Enter the ID of the Event : ");
         String id = input.next();
         Event e = app.getCalenderService().showEventDetails(id);
@@ -722,6 +723,10 @@ public class MainMenu {
     }
 
     public void yourEvents() {
+        if(forBack()){
+            logger.info("You don't have events to reserve a Service Provider for it ");
+            return;
+        }
         logger.info("Please enter 1 (Past) or 2 (Future) to show your events :");
         String pastOrFuture = input.next();
         app.getCalenderService().clearCalenderEvents();
@@ -746,4 +751,12 @@ public class MainMenu {
         logger.info(stringBuilder.toString());
     }
 
+    public boolean forBack (){
+        for (Event e : EventData.getEvents()) {
+            if (e.getUsername().equals(user.getUsername())) {
+                return true ;
+            }
+        }
+        return false;
+    }
 }

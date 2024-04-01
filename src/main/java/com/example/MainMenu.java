@@ -686,6 +686,7 @@ public class MainMenu {
         logger.info("Please enter the ID of the room :");
         showAllRooms();
         String room = input.next();
+        app.getReserveRoomService().setLoggedInUser(app.getLoggedInUser());
         app.getReserveRoomService().reserveRoomPerform(event, room);
         logger.info(app.getReserveRoomService().getMsg());
     }
@@ -700,7 +701,7 @@ public class MainMenu {
         String event = input.next();
         logger.info("Please enter the ID of the Service Provider :");
         app.getSearchSP().setSelectedCriteria("price");
-        app.getSearchSP().setPrice("1000");
+        app.getSearchSP().setPrice("100000");
         printCriteria(app.getSearchSP().searchSPPerformed());
         String SP = input.next();
         app.getReserveSPService().reserveSPPerform(event, SP);

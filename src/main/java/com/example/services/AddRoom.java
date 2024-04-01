@@ -52,7 +52,7 @@ public class AddRoom {
                 return false;
             }
             tmpFlag = true;
-            double costPerHour = new BigDecimal(costPerHour1.substring(2)).doubleValue();
+            double costPerHour = new BigDecimal(costPerHour1.substring(1)).doubleValue();
 
             String description = description1;
 

@@ -49,7 +49,7 @@ public class AddEvent {
         Client c = Client.getClientFromData(username);
         c.setNumberEvent(c.getNumberEvent() + 1);
 
-        String notification = LocalDate.now()+"| "+ "Event With Name "+name+" And StartDate "+startDate+" Has Been Added";
+        String notification = LocalDate.now()+"| "+ "Event With Name "+name+" And StartDate "+dateEvent.getStartDate()+" Has Been Added";
         NotifcationData.addNotification(notification);
         return true;
 

@@ -2,7 +2,6 @@ package com.example;
 
 import com.example.data.EventData;
 import com.example.data.NotifcationData;
-import com.example.data.RoomData;
 import com.example.entites.*;
 
 import java.util.ArrayList;
@@ -404,7 +403,7 @@ public class MainMenu {
 
     public void showAllRooms() {
         StringBuilder stringBuilder = new StringBuilder("\n");
-        for (Room r : RoomData.getRooms()) {
+        for (Room r : app.getRooms()) {
             stringBuilder.append("ID : " + r.getId() + "\tName : " + r.getName() + "\tCapacity : " + r.getCapacity() + "\tCost Per Hour : " + r.getCostPerHour() + "\tDescription : " + r.getDescription());
             if (r.isAvailable()) {
                 stringBuilder.append("\tAvailability : Available");
@@ -591,6 +590,14 @@ public class MainMenu {
             boolean flag = app.getAddEventService().addEvent(user.getUsername(), EventData.getEvents().size() + 1, eventName, eventDes, dateEvent, attendeeCount, imagePath);
             if (flag) {
                 logger.info(app.getAddEventService().getMsg());
+                for (Event e : EventData.getEvents()) {
+                    if (e.getId() == EventData.getEvents().size()) {
+                        e.setUsername(user.getUsername());
+                        logger.info("the msg is " + e.getId());
+                    }
+                }
+
+
                 break;
             } else {
                 logger.info(app.getAddEventService().getMsg());
@@ -601,13 +608,22 @@ public class MainMenu {
     }
 
     public void updateEvent() {
-        printEvents(true);
+        boolean flag1 = false;
+        for (Event e : EventData.getEvents()) {
+            if (e.getUsername().equals(user.getUsername())) {
+                flag1 = true ;
+                break;
+            }
+        }
+        if(!flag1) {
+            logger.info("You Don't have any event to update");
+            return;
+        }
+        printEvents();
         while (true) {
             logger.info("Please enter the new information for your event : ");
             logger.info("Event name : ");
             String eventName = input.next();
-            logger.info("Event id : ");
-            String eventId = input.next();
             logger.info("Description :");
             String eventDes = input.next();
             logger.info("Start date : ");
@@ -622,14 +638,17 @@ public class MainMenu {
             String attendeeCount = input.next();
             logger.info("Image path :");
             String imagePath = input.next();
+
+            Integer eventId =EventData.getEvents().size();
             DateEvent dateEvent = new DateEvent(startDate, endDate, startHour, endHour);
-            boolean flag = app.getDeleteUpdateEventService().updateEventPerform(eventId, user.getUsername(), eventName, eventDes, dateEvent, attendeeCount, imagePath);
+            boolean flag = app.getDeleteUpdateEventService().updateEventPerform(eventId.toString(), user.getUsername(), eventName, eventDes, dateEvent, attendeeCount, imagePath);
             if (flag) {
                 logger.info(app.getDeleteUpdateEventService().getMsg());
                 //Created getMsg in DeleteUpdateEvent
                 break;
             } else {
                 logger.info(app.getDeleteUpdateEventService().getMsg());
+                break;
             }
         }
 
@@ -637,9 +656,19 @@ public class MainMenu {
     }
 
     public void deleteEvent() {
-        printEvents(true);
+        boolean flag1 = false;
+        for (Event e : EventData.getEvents()) {
+            if (e.getUsername().equals(user.getUsername())) {
+                flag1 = true ;
+                break;
+            }
+        }
+        if(!flag1) {
+            logger.info("You Don't have any event to delete");
+            return;
+        }
+        printEvents();
         while (true) {
-            showUpcomingEvents();
             logger.info("Please enter the ID of the event you want to delete : ");
             String eventId = input.next();
             boolean flag = app.getDeleteUpdateEventService().deleteEventPerform(eventId);
@@ -702,24 +731,17 @@ public class MainMenu {
             logger.info("Invalid choice");
             return;
         }
-        printEvents(false);
+        printEvents();
     }
 
-    public void printEvents(boolean flag) {
-        StringBuilder stringBuilder, stringBuilder1;
-        stringBuilder = new StringBuilder("\n");
-        stringBuilder1 = new StringBuilder("\n");
-        for (Event e : app.getCalenderService().getResEvents()) {
-            stringBuilder.append(e.getId() + " " + e.getEventName() + " " + e.getEventDescription() + " " + e.getStartDate() + " " + e.getEndDate() + " " + e.getStartClock() + " " + e.getEndClock() + " " + e.getAttendeeCount() + "\n");
+    public void printEvents() {
+        StringBuilder stringBuilder = new StringBuilder("Your Events : \n");
+        for (Event e : EventData.getEvents()) {
             if (e.getUsername().equals(user.getUsername())) {
-                stringBuilder1.append(e.getId() + " " + e.getEventName() + " " + e.getEventDescription() + " " + e.getStartDate() + " " + e.getEndDate() + " " + e.getStartClock() + " " + e.getEndClock() + " " + e.getAttendeeCount() + "\n");
+                stringBuilder.append(e.getId() + " " + e.getEventName() + " " + e.getEventDescription() + " " + e.getStartDate() + " " + e.getEndDate() + " " + e.getStartClock() + " " + e.getEndClock() + " " + e.getAttendeeCount() + "\n");
             }
         }
-        if (flag)
-            logger.info(stringBuilder1.toString());
-        else
-            logger.info(stringBuilder.toString());
-
+        logger.info(stringBuilder.toString());
     }
 
 }

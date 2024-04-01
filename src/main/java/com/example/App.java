@@ -11,7 +11,6 @@ public class App {
     private List<Room> rooms;
     private Login loginService;
     private User loggedInUser;
-    private String currentPage;
     private SignUp signUpService;
     private AddRoom addRoomService;
     private SPAcc spAccount;
@@ -25,8 +24,6 @@ public class App {
     private UserData ud;
 
     private DeleteRoom deleteRoomService;
-
-
 
     private Calender calenderService;
 
@@ -55,7 +52,6 @@ public class App {
 
         calenderService = new Calender(loggedInUser);
 
-
         deleteRoomService=new DeleteRoom();
 
     }
@@ -77,9 +73,6 @@ public class App {
             return "Failed Logout";
         }
     }
-    public List<User> getUsers() {
-        return users;
-    }
 
     public List<Room> getRooms() {
         return rooms;
@@ -98,9 +91,6 @@ public class App {
     }
 
 
-    public void setCurrentPage(String currentPage) {
-        this.currentPage = currentPage;
-    }
 
     public SignUp getSignUpService() {
         return signUpService;

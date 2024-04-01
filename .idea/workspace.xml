@@ -4,8 +4,11 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="b83c84ab-4b8d-45df-9a9e-d68f70b0baad" name="Changes" comment="Budget for room reserve">
+    <list default="true" id="b83c84ab-4b8d-45df-9a9e-d68f70b0baad" name="Changes" comment="a try to increase coverage">
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/com/example/App.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/App.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/services/SignUp.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/services/SignUp.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/applicationTest/steps/signUpSteps.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/applicationTest/steps/signUpSteps.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -197,7 +200,7 @@
       <workItem from="1711884741896" duration="1622000" />
       <workItem from="1711893754148" duration="768000" />
       <workItem from="1711962600061" duration="6026000" />
-      <workItem from="1711972679628" duration="6583000" />
+      <workItem from="1711972679628" duration="7055000" />
     </task>
     <task id="LOCAL-00001" summary="Upgrade Client to Orginizer">
       <option name="closed" value="true" />
@@ -463,7 +466,15 @@
       <option name="project" value="LOCAL" />
       <updated>1711983146223</updated>
     </task>
-    <option name="localTasksCounter" value="34" />
+    <task id="LOCAL-00034" summary="a try to increase coverage">
+      <option name="closed" value="true" />
+      <created>1711983358917</created>
+      <option name="number" value="00034" />
+      <option name="presentableId" value="LOCAL-00034" />
+      <option name="project" value="LOCAL" />
+      <updated>1711983358917</updated>
+    </task>
+    <option name="localTasksCounter" value="35" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -505,7 +516,8 @@
     <MESSAGE value="update pom" />
     <MESSAGE value="try to skip entites and increase coverage" />
     <MESSAGE value="Budget for room reserve" />
-    <option name="LAST_COMMIT_MESSAGE" value="Budget for room reserve" />
+    <MESSAGE value="a try to increase coverage" />
+    <option name="LAST_COMMIT_MESSAGE" value="a try to increase coverage" />
   </component>
   <component name="XSLT-Support.FileAssociations.UIState">
     <expand />

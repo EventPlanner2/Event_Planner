@@ -1,7 +1,6 @@
 package applicationTest.steps;
 
 import com.example.App;
-import com.example.entites.User;
 import io.cucumber.java.en.*;
 import static org.junit.Assert.*;
 public class signUpSteps {
@@ -23,7 +22,7 @@ public class signUpSteps {
     }
     @Given("the user is on the SignUp page")
     public void the_user_is_on_the_sign_up_page() {
-        app.setCurrentPage ( "SignUp" );
+        app.getSignUpService ().pageSelected = true;
     }
     @When("the user provides available username {string}")
     public void the_user_provides_available_username(String string) {

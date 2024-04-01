@@ -739,12 +739,22 @@ public class MainMenu {
             logger.info("Invalid choice");
             return;
         }
-        printEvents();
+        printEvents(app.getCalenderService().getResEvents());
     }
 
     public void printEvents() {
         StringBuilder stringBuilder = new StringBuilder("Your Events : \n");
         for (Event e : EventData.getEvents()) {
+            if (e.getUsername().equals(user.getUsername())) {
+                stringBuilder.append(e.getId() + " " + e.getEventName() + " " + e.getEventDescription() + " " + e.getStartDate() + " " + e.getEndDate() + " " + e.getStartClock() + " " + e.getEndClock() + " " + e.getAttendeeCount() + "\n");
+            }
+        }
+        logger.info(stringBuilder.toString());
+    }
+
+    public void printEvents(List <Event> resEvents) {
+        StringBuilder stringBuilder = new StringBuilder("Your Events : \n");
+        for (Event e : resEvents) {
             if (e.getUsername().equals(user.getUsername())) {
                 stringBuilder.append(e.getId() + " " + e.getEventName() + " " + e.getEventDescription() + " " + e.getStartDate() + " " + e.getEndDate() + " " + e.getStartClock() + " " + e.getEndClock() + " " + e.getAttendeeCount() + "\n");
             }

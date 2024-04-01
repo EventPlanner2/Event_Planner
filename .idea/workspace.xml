@@ -7,8 +7,6 @@
     <list default="true" id="b83c84ab-4b8d-45df-9a9e-d68f70b0baad" name="Changes" comment="fixing some issues">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/com/example/MainMenu.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/MainMenu.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/services/AddEvent.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/services/AddEvent.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/services/AddRoom.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/services/AddRoom.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -30,6 +28,7 @@
     </option>
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
     <option name="ROOT_SYNC" value="DONT_SYNC" />
+    <option name="UPDATE_TYPE" value="REBASE" />
   </component>
   <component name="MarkdownSettingsMigration">
     <option name="stateVersion" value="1" />
@@ -201,7 +200,7 @@
       <workItem from="1711893754148" duration="768000" />
       <workItem from="1711962600061" duration="6026000" />
       <workItem from="1711972679628" duration="7687000" />
-      <workItem from="1712004785004" duration="6372000" />
+      <workItem from="1712004785004" duration="7033000" />
     </task>
     <task id="LOCAL-00001" summary="Upgrade Client to Orginizer">
       <option name="closed" value="true" />
@@ -483,7 +482,15 @@
       <option name="project" value="LOCAL" />
       <updated>1711983845104</updated>
     </task>
-    <option name="localTasksCounter" value="36" />
+    <task id="LOCAL-00036" summary="fixing some issues">
+      <option name="closed" value="true" />
+      <created>1712011371025</created>
+      <option name="number" value="00036" />
+      <option name="presentableId" value="LOCAL-00036" />
+      <option name="project" value="LOCAL" />
+      <updated>1712011371026</updated>
+    </task>
+    <option name="localTasksCounter" value="37" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">

@@ -40,11 +40,9 @@ public class DeleteUpdateEvent {
 
             boolean tmp = deleteEventPerform(id);
 
-//            if (tmp && tmp2)
-//                this.msg = "Event with ID = " + id + " has been Updated";
-//            else if (!tmp2) {
-//                this.msg = addEvent.getMsg();
-//            }
+            if (tmp && tmp2)
+                this.msg = "Event with ID = " + id + " has been Updated";
+
             return tmp && tmp2;
         } catch (NumberFormatException e) {
             msg = "Invalid ID";

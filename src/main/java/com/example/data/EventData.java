@@ -11,7 +11,7 @@ import java.util.List;
 
 public class EventData {
     private static final String EVENT_NAME = "Ali Turabi's Event";
-    private static final String CREATOR_NAME = "Ahmad";
+    private static final String CREATOR_NAME = "Ali Turabi";
 
 
     private static final List<Event> events = new ArrayList<>();

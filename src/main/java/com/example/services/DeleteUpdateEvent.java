@@ -40,7 +40,7 @@ public class DeleteUpdateEvent {
 
             boolean tmp = deleteEventPerform(id);
 
-            if (tmp && tmp2)
+            if (tmp)
                 this.msg = "Event with ID = " + id + " has been Updated";
 
             return tmp && tmp2;

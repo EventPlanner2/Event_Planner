@@ -2,6 +2,7 @@ package applicationTest.steps;
 
 import com.example.App;
 import com.example.data.RoomData;
+import com.example.data.UserData;
 import com.example.entites.Event;
 import com.example.entites.Room;
 import com.example.entites.User;
@@ -19,11 +20,13 @@ public class ReserveRoomSteps {
     ArrayList <Object> arr_res;
     boolean flag;
     Double oldBudget;
+    Double adminBudget;
     public ReserveRoomSteps(App app){
         this.app = app;
         arr_res = new ArrayList<>();
         flag =false;
         oldBudget = 0.0;
+        adminBudget = 0.0;
     }
 
     @When("they choose to Reserve Room")
@@ -55,6 +58,7 @@ public class ReserveRoomSteps {
     @When("the organizer enters EventID {string} and RoomID {string} to reserve")
     public void theOrganizerEntersEventIDAndRoomIDToReserve(String string, String string2) {
         oldBudget=app.getLoggedInUser().getBudget();
+        adminBudget = UserData.getAdmin().getBudget();
         flag = app.getReserveRoomService ().reserveRoomPerform(string,string2);
     }
     @Then("the room should be reserved for the event and the event become complete")
@@ -92,6 +96,7 @@ public class ReserveRoomSteps {
     @And("the Budget of orgainzer should be decreased")
     public void theBudgetOfOrgainzerShouldBeDecreased() {
         assertTrue(app.getLoggedInUser().getBudget() < oldBudget);
+        assertTrue(adminBudget < UserData.getAdmin().getBudget());
     }
 
     @And("the budget of the orgainzer is lower than the cost")

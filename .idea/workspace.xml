@@ -6,9 +6,9 @@
   <component name="ChangeListManager">
     <list default="true" id="b83c84ab-4b8d-45df-9a9e-d68f70b0baad" name="Changes" comment="Budget for room reserve">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/data/UserData.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/data/UserData.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/entites/Admin.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/entites/Admin.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/services/ReserveRoom.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/services/ReserveRoom.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/entites/User.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/entites/User.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/services/DeleteUpdateEvent.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/services/DeleteUpdateEvent.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/applicationTest/steps/ReserveRoomSteps.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/applicationTest/steps/ReserveRoomSteps.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -200,7 +200,7 @@
       <workItem from="1711884741896" duration="1622000" />
       <workItem from="1711893754148" duration="768000" />
       <workItem from="1711962600061" duration="6026000" />
-      <workItem from="1711972679628" duration="5845000" />
+      <workItem from="1711972679628" duration="6376000" />
     </task>
     <task id="LOCAL-00001" summary="Upgrade Client to Orginizer">
       <option name="closed" value="true" />
@@ -450,7 +450,15 @@
       <option name="project" value="LOCAL" />
       <updated>1711976775932</updated>
     </task>
-    <option name="localTasksCounter" value="32" />
+    <task id="LOCAL-00032" summary="Budget for room reserve">
+      <option name="closed" value="true" />
+      <created>1711982595288</created>
+      <option name="number" value="00032" />
+      <option name="presentableId" value="LOCAL-00032" />
+      <option name="project" value="LOCAL" />
+      <updated>1711982595288</updated>
+    </task>
+    <option name="localTasksCounter" value="33" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">

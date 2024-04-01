@@ -730,6 +730,7 @@ public class MainMenu {
         }
         logger.info("Please enter 1 (Past) or 2 (Future) to show your events :");
         String pastOrFuture = input.next();
+        app.getCalenderService().setLoggedInUser(user);
         app.getCalenderService().clearCalenderEvents();
         if (pastOrFuture.equals("1")) {
             app.getCalenderService().calenderPerform("past");
@@ -755,9 +756,7 @@ public class MainMenu {
     public void printEvents(List <Event> resEvents) {
         StringBuilder stringBuilder = new StringBuilder("Your Events : \n");
         for (Event e : resEvents) {
-            if (e.getUsername().equals(user.getUsername())) {
-                stringBuilder.append(e.getId() + " " + e.getEventName() + " " + e.getEventDescription() + " " + e.getStartDate() + " " + e.getEndDate() + " " + e.getStartClock() + " " + e.getEndClock() + " " + e.getAttendeeCount() + "\n");
-            }
+            stringBuilder.append(e.getId() + " " + e.getEventName() + " " + e.getEventDescription() + " " + e.getStartDate() + " " + e.getEndDate() + " " + e.getStartClock() + " " + e.getEndClock() + " " + e.getAttendeeCount() + "\n");
         }
         logger.info(stringBuilder.toString());
     }

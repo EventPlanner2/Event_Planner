@@ -593,7 +593,6 @@ public class MainMenu {
                 for (Event e : EventData.getEvents()) {
                     if (e.getId() == EventData.getEvents().size()) {
                         e.setUsername(user.getUsername());
-                        logger.info("the msg is " + e.getId());
                     }
                 }
 
@@ -608,6 +607,7 @@ public class MainMenu {
     }
 
     public void updateEvent() {
+        if(Back())return;
         boolean flag1 = false;
         for (Event e : EventData.getEvents()) {
             if (e.getUsername().equals(user.getUsername())) {
@@ -622,6 +622,8 @@ public class MainMenu {
         printEvents();
         while (true) {
             logger.info("Please enter the new information for your event : ");
+            logger.info("Event ID : ");
+            String eventId = input.next();
             logger.info("Event name : ");
             String eventName = input.next();
             logger.info("Description :");
@@ -639,9 +641,8 @@ public class MainMenu {
             logger.info("Image path :");
             String imagePath = input.next();
 
-            Integer eventId =EventData.getEvents().size();
             DateEvent dateEvent = new DateEvent(startDate, endDate, startHour, endHour);
-            boolean flag = app.getDeleteUpdateEventService().updateEventPerform(eventId.toString(), user.getUsername(), eventName, eventDes, dateEvent, attendeeCount, imagePath);
+            boolean flag = app.getDeleteUpdateEventService().updateEventPerform(eventId, user.getUsername(), eventName, eventDes, dateEvent, attendeeCount, imagePath);
             if (flag) {
                 logger.info(app.getDeleteUpdateEventService().getMsg());
                 //Created getMsg in DeleteUpdateEvent
@@ -656,6 +657,7 @@ public class MainMenu {
     }
 
     public void deleteEvent() {
+        if(Back())return;
         boolean flag1 = false;
         for (Event e : EventData.getEvents()) {
             if (e.getUsername().equals(user.getUsername())) {

@@ -105,7 +105,6 @@ public class BookEvent {
                 res.add(e);
             }
         }
-
         return res;
     }
     public List<Event> chooseCancelBookEvent(String userName) {

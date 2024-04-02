@@ -315,6 +315,7 @@ public class MainMenu {
             } else {
                 info += "Role : Clint";
             }
+            info+= "Budget : "+ user.getBudget();
             logger.info(info);
             if (Back())
                 return;
@@ -681,7 +682,7 @@ public class MainMenu {
             return;
         }
         logger.info("Please enter the ID of the event to reserve a room for it :");
-        showUpcomingEvents();
+        printEvents();
         String event = input.next();
         logger.info("Please enter the ID of the room :");
         showAllRooms();
@@ -697,7 +698,7 @@ public class MainMenu {
             return;
         }
         logger.info("Please enter the ID of the event to reserve a Service Provider for it :");
-        showUpcomingEvents();
+        printEvents();
         String event = input.next();
         logger.info("Please enter the ID of the Service Provider :");
         app.getSearchSP().setSelectedCriteria("price");
@@ -764,9 +765,9 @@ public class MainMenu {
     public boolean forBack (){
         for (Event e : EventData.getEvents()) {
             if (e.getUsername().equals(user.getUsername())) {
-                return true ;
+                return false ;
             }
         }
-        return false;
+        return true;
     }
 }

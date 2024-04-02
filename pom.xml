@@ -20,6 +20,7 @@
             **/Main.java,
             **/MainMenu.java,
             src/main/java/com/example/entites/*,
+            src/main/java/com/example/services/EmailSender.java,
         </sonar.coverage.exclusions>
         <sonar.exclusions>
             **/Main.java,

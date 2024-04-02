@@ -4,12 +4,9 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="b83c84ab-4b8d-45df-9a9e-d68f70b0baad" name="Changes" comment="fixing some issues#2">
+    <list default="true" id="b83c84ab-4b8d-45df-9a9e-d68f70b0baad" name="Changes" comment="fixing some issues#3">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/data/NotifcationData.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/data/NotifcationData.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/services/DeleteUpdateEvent.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/services/DeleteUpdateEvent.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/services/ReserveRoom.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/services/ReserveRoom.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/services/ReserveSP.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/services/ReserveSP.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/pom.xml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -31,7 +28,6 @@
     </option>
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
     <option name="ROOT_SYNC" value="DONT_SYNC" />
-    <option name="UPDATE_TYPE" value="REBASE" />
   </component>
   <component name="MarkdownSettingsMigration">
     <option name="stateVersion" value="1" />
@@ -205,7 +201,7 @@
       <workItem from="1711972679628" duration="7687000" />
       <workItem from="1712004785004" duration="8476000" />
       <workItem from="1712013570512" duration="37000" />
-      <workItem from="1712071446605" duration="2302000" />
+      <workItem from="1712071446605" duration="3417000" />
     </task>
     <task id="LOCAL-00001" summary="Upgrade Client to Orginizer">
       <option name="closed" value="true" />
@@ -511,7 +507,15 @@
       <option name="project" value="LOCAL" />
       <updated>1712013276723</updated>
     </task>
-    <option name="localTasksCounter" value="39" />
+    <task id="LOCAL-00039" summary="fixing some issues#3">
+      <option name="closed" value="true" />
+      <created>1712085011996</created>
+      <option name="number" value="00039" />
+      <option name="presentableId" value="LOCAL-00039" />
+      <option name="project" value="LOCAL" />
+      <updated>1712085011996</updated>
+    </task>
+    <option name="localTasksCounter" value="40" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -529,7 +533,6 @@
     </option>
   </component>
   <component name="VcsManagerConfiguration">
-    <MESSAGE value="Complete Service Provider Account" />
     <MESSAGE value="First Submission" />
     <MESSAGE value="Update + Delete (Event)" />
     <MESSAGE value="Reserve Room" />
@@ -554,7 +557,8 @@
     <MESSAGE value="a try to increase coverage" />
     <MESSAGE value="fixing some issues" />
     <MESSAGE value="fixing some issues#2" />
-    <option name="LAST_COMMIT_MESSAGE" value="fixing some issues#2" />
+    <MESSAGE value="fixing some issues#3" />
+    <option name="LAST_COMMIT_MESSAGE" value="fixing some issues#3" />
   </component>
   <component name="XSLT-Support.FileAssociations.UIState">
     <expand />

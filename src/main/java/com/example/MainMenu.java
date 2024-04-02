@@ -30,6 +30,8 @@ public class MainMenu {
     private String password;
     private User user;
 
+    boolean upgradeOrCancel = true;
+
 
     Scanner input = new Scanner(System.in);
 
@@ -86,6 +88,7 @@ public class MainMenu {
 
         app.setLoggedInUser(user);
         app.getCalenderService().setLoggedInUser(user);
+        app.getUpgradeClient().setLoggedInUser(user);
         switch (role) {
             case 'a':
                 logger.info("""
@@ -144,6 +147,11 @@ public class MainMenu {
 
     public void Page(String specification, char role) {
         while (true) {
+            if (upgradeOrCancel) {
+                specification = "2. Upgrade";
+            } else {
+                specification = "2. Cancel Upgrade ";
+            }
             String info = generateMenu(specification, role);
             logger.info(info);
             logger.info("Enter your choice please : ");
@@ -243,8 +251,19 @@ public class MainMenu {
         } else if (role == 's') {
             complete();
         } else {
-            upgrade();
+            if (upgradeOrCancel)
+                upgrade();
+            else {
+                cancelUpgrade();
+            }
         }
+    }
+
+    public void cancelUpgrade() {
+        app.getUpgradeClient().setLoggedInUser(user);
+        app.getUpgradeClient().cancelUpgradeClientPerform();
+        upgradeOrCancel=true;
+        logger.info(app.getUpgradeClient().getMsg());
     }
 
     private boolean handleChoiceFive(char role) {
@@ -315,7 +334,7 @@ public class MainMenu {
             } else {
                 info += "Role : Clint";
             }
-            info+= "Budget : "+ user.getBudget();
+            info += "Budget : " + user.getBudget();
             logger.info(info);
             if (Back())
                 return;
@@ -452,12 +471,13 @@ public class MainMenu {
     }
 
     public void upgrade() {
-        while (true) {
-            if (Back()) return;
-            app.getUpgradeClient().setLoggedInUser(user);
-            app.getUpgradeClient().upgradeClientPerform();
-            logger.info(app.getUpgradeClient().getMsg());
+        if (Back()) {
+            return;
         }
+        app.getUpgradeClient().setLoggedInUser(user);
+        app.getUpgradeClient().upgradeClientPerform();
+        logger.info(app.getUpgradeClient().getMsg());
+        upgradeOrCancel = false;
     }
 
     public void printCriteria(List<ServiceProvider> serviceProviders) {
@@ -608,10 +628,9 @@ public class MainMenu {
     }
 
     public void updateEvent() {
-        if(Back())return;
-        boolean flag1 = forBack();
-        if(!flag1) {
-            logger.info("You Don't have any event to update");
+        if (Back()) return;
+        if (forBack()) {
+            logger.info("You Don't have any events to update");
             return;
         }
         printEvents();
@@ -652,9 +671,9 @@ public class MainMenu {
     }
 
     public void deleteEvent() {
-        if(Back())return;
-        boolean flag1 = forBack();
-        if(!flag1) {
+        if (Back()) return;
+
+        if (forBack()) {
             logger.info("You Don't have any event to delete");
             return;
         }
@@ -677,7 +696,7 @@ public class MainMenu {
     }
 
     public void reserveRoom() {
-        if(forBack()){
+        if (forBack()) {
             logger.info("You don't have events to reserve room for it");
             return;
         }
@@ -693,7 +712,7 @@ public class MainMenu {
     }
 
     public void reserveServiceProvider() {
-        if(forBack()){
+        if (forBack()) {
             logger.info("You don't have events to reserve a Service Provider for it ");
             return;
         }
@@ -710,10 +729,6 @@ public class MainMenu {
     }
 
     public void showEventDetails() {
-        if(forBack()){
-            logger.info("You don't have events  ");
-            return;
-        }
         logger.info("Please Enter the ID of the Event : ");
         String id = input.next();
         Event e = app.getCalenderService().showEventDetails(id);
@@ -725,10 +740,6 @@ public class MainMenu {
     }
 
     public void yourEvents() {
-        if(forBack()){
-            logger.info("You don't have events to reserve a Service Provider for it ");
-            return;
-        }
         logger.info("Please enter 1 (Past) or 2 (Future) to show your events :");
         String pastOrFuture = input.next();
         app.getCalenderService().setLoggedInUser(user);
@@ -754,7 +765,7 @@ public class MainMenu {
         logger.info(stringBuilder.toString());
     }
 
-    public void printEvents(List <Event> resEvents) {
+    public void printEvents(List<Event> resEvents) {
         StringBuilder stringBuilder = new StringBuilder("Your Events : \n");
         for (Event e : resEvents) {
             stringBuilder.append(e.getId() + " " + e.getEventName() + " " + e.getEventDescription() + " " + e.getStartDate() + " " + e.getEndDate() + " " + e.getStartClock() + " " + e.getEndClock() + " " + e.getAttendeeCount() + "\n");
@@ -762,10 +773,10 @@ public class MainMenu {
         logger.info(stringBuilder.toString());
     }
 
-    public boolean forBack (){
+    public boolean forBack() {
         for (Event e : EventData.getEvents()) {
             if (e.getUsername().equals(user.getUsername())) {
-                return false ;
+                return false;
             }
         }
         return true;

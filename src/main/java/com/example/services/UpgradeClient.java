@@ -33,6 +33,7 @@ public class UpgradeClient {
         }
     }
     public void cancelUpgradeClientPerform(){
+        setMsg("You are not Organizer anymore ");
         loggedInClient.setOrganizer(false);
     }
 

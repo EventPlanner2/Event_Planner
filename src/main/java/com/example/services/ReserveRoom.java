@@ -135,23 +135,12 @@ public class ReserveRoom {
         this.msg = msg;
     }
 
-    // Getter method for resEvent
     public List<Event> getResEvent() {
         return resEvent;
     }
 
-    // Setter method for resEvent
-    public void setResEvent(List<Event> resEvent) {
-        this.resEvent = resEvent;
-    }
-
-    // Getter method for resRoom
     public List<Room> getResRoom() {
         return resRoom;
     }
 
-    // Setter method for resRoom
-    public void setResRoom(List<Room> resRoom) {
-        this.resRoom = resRoom;
-    }
 }

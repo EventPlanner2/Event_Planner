@@ -15,9 +15,6 @@ import static com.example.entites.ServiceProvider.getSPFromData;
 
 public class ReserveSP {
 
-
-
-
     private List<Event> resEvent;
     private List<ServiceProvider> resSps;
     private String msg;
@@ -90,26 +87,13 @@ public class ReserveSP {
     public String getMsg() {
         return msg;
     }
-
-    public void setMsg(String msg) {
-        this.msg = msg;
-    }
-
-    // Getter method for res_event
     public List<Event> getResEvent() {
         return resEvent;
-    }
-
-    // Setter method for res_event
-    public void setResEvent(List<Event> resEvent) {
-        this.resEvent = resEvent;
     }
 
     public List<ServiceProvider> getResSps() {
         return resSps;
     }
 
-    public void setResSps(List<ServiceProvider> resSps) {
-        this.resSps = resSps;
-    }
+
 }

@@ -28,8 +28,4 @@ public class NotifcationData {
     public static int getOldSize() {
         return oldSize;
     }
-
-    public static void setOldSize(int oldSize) {
-        NotifcationData.oldSize = oldSize;
-    }
 }

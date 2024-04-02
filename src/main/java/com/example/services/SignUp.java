@@ -11,7 +11,7 @@ public class SignUp {
 
     private String msg = "";
 
-    public boolean pageSelected;
+    public static boolean  pageSelected;
     public SignUp(List<User> users) {
         this.users = users;
     }

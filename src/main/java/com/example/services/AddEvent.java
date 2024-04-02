@@ -16,7 +16,7 @@ public class AddEvent {
 
     private boolean addingEvent;
     private String msg;
-    private LocalDate startDate;
+
 
 
 
@@ -86,8 +86,6 @@ public class AddEvent {
         else {
             if(c.isOrganizer())
                 return true;
-
-
         }
 
         return false;

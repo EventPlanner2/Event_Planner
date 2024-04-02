@@ -109,6 +109,9 @@ public class SignUp {
     public void setPageSelected(boolean pageSelected) {
         this.pageSelected = pageSelected;
     }
+    public boolean getPageSelected(){
+        return this.pageSelected;
+    }
 
     public String getMsg() {
         return msg;

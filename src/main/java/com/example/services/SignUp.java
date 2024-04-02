@@ -11,9 +11,10 @@ public class SignUp {
 
     private String msg = "";
 
-    public static boolean  pageSelected;
+    private boolean pageSelected;
     public SignUp(List<User> users) {
         this.users = users;
+        this.pageSelected=false;
     }
 
     private static final String SOME_MISSING_FIELDS = "some fields are missing";
@@ -105,6 +106,9 @@ public class SignUp {
         this.msg = msg;
     }
 
+    public void setPageSelected(boolean pageSelected) {
+        this.pageSelected = pageSelected;
+    }
 
     public String getMsg() {
         return msg;

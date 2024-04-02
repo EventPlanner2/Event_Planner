@@ -23,7 +23,7 @@ public class signUpSteps {
     }
     @Given("the user is on the SignUp page")
     public void the_user_is_on_the_sign_up_page() {
-        SignUp.pageSelected = true;
+         app.getSignUpService().setPageSelected(true);
     }
     @When("the user provides available username {string}")
     public void the_user_provides_available_username(String string) {

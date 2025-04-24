@@ -1,7 +1,7 @@
 # 🎉 Event Planner System
 An event planner system for managing and organizing events such as weddings, birthdays, and workshops.
 
-🧰 Tech Stack
+## 🧰 Tech Stack
 Java (Core Application Logic)
 
 Command Line Interface (CLI-based User Interaction)
@@ -11,6 +11,23 @@ Cucumber (BDD - Behavior Driven Development)
 JUnit (TDD - Test Driven Development)
 
 SonarCloud (Code Quality & Coverage Analysis)
+
+## Project Structure
+```
+src/
+├── main/
+│   └── java/com/example/
+│       ├── data/
+│       ├── entites/
+│       ├── services/
+│       ├── App.java
+│       ├── Main.java
+│       └── MainMenu.java
+│   └── resources/
+├── test/
+│   ├── java/applicationTest/
+│   └── resources/features/
+```
 
 ## 🚀 Features
 ### 👤 User Management
